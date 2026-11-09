@@ -2,10 +2,11 @@ import SwiftUI
 
 struct WatchSinBinListWidget: View {
     let cards: [MatchCard]
+    var title: LocalizedStringKey = "SIN-BIN"
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("SIN-BIN")
+            Text(title)
                 .font(.system(size: 7, weight: .bold))
                 .tracking(0.7)
                 .foregroundStyle(Color.outline)

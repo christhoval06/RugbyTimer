@@ -78,6 +78,7 @@
 				Info.plist,
 				Tests/CardCountdownTests.swift,
 				Tests/LiveMatchIntegrationTests.swift,
+				Tests/MatchStatsTests.swift,
 				Tests/MatchTimerTests.swift,
 				Tests/SetupValidationTests.swift,
 				Tests/TimerRingTests.swift,
@@ -90,6 +91,7 @@
 			membershipExceptions = (
 				Tests/CardCountdownTests.swift,
 				Tests/LiveMatchIntegrationTests.swift,
+				Tests/MatchStatsTests.swift,
 				Tests/MatchTimerTests.swift,
 				Tests/SetupValidationTests.swift,
 				Tests/TimerRingTests.swift,
@@ -106,6 +108,7 @@
 				Models/MatchCard.swift,
 				Models/MatchEvent.swift,
 				Models/MatchPeriod.swift,
+				Models/MatchStats.swift,
 				Services/HapticService.swift,
 				Services/MatchTimerService.swift,
 				Services/WatchConnectivityService.swift,

@@ -1,48 +1,48 @@
 import SwiftUI
 
-/// Result page: the scoreboard, players currently in the sin-bin and, at full time,
-/// the discipline summary.
+/// Result page: the scoreboard, players in the sin-bin while playing and, once play stops,
+/// the scoring breakdown (with points per half) and, at full time, the discipline summary.
 struct WatchResultPageWidget: View {
-    let homeTeamName: String
-    let awayTeamName: String
-    let homeScore: Int
-    let awayScore: Int
-    let matchPeriod: MatchPeriod
-    let activeCards: [MatchCard]
-    let matchEvents: [MatchEvent]
+    let summary: WatchMatchSummary
 
-    private var openSinBins: [MatchCard] {
-        activeCards.filter { $0.type == .red || !$0.isExpired }
-    }
+    private var isFullTime: Bool { summary.matchPeriod == .fullTime }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 6) {
                 WatchPageTitleWidget(
-                    eyebrow: matchPeriod == .fullTime ? "FINAL" : "LIVE",
+                    eyebrow: isFullTime ? "FINAL" : "LIVE",
                     title: "RESULT",
-                    tint: matchPeriod == .fullTime ? .iceTitanium : .pitchEmerald
+                    tint: isFullTime ? .iceTitanium : .pitchEmerald
                 )
 
                 WatchScoreboardWidget(
-                    homeTeamName: homeTeamName,
-                    awayTeamName: awayTeamName,
-                    homeScore: homeScore,
-                    awayScore: awayScore
+                    homeTeamName: summary.homeTeamName,
+                    awayTeamName: summary.awayTeamName,
+                    homeScore: summary.homeScore,
+                    awayScore: summary.awayScore
                 )
 
-                if matchPeriod == .fullTime {
+                if summary.isStopped {
+                    WatchScoringBreakdownWidget(summary: summary)
+                }
+
+                if isFullTime {
                     WatchDisciplineStatsWidget(
-                        homeTeamName: homeTeamName,
-                        awayTeamName: awayTeamName,
-                        events: matchEvents
+                        homeTeamName: summary.homeTeamName,
+                        awayTeamName: summary.awayTeamName,
+                        events: summary.matchEvents
                     )
-                } else if !openSinBins.isEmpty {
-                    WatchSinBinListWidget(cards: openSinBins)
+                } else if !summary.carriedSinBins.isEmpty {
+                    WatchSinBinListWidget(cards: summary.carriedSinBins)
                 }
             }
             .padding(.vertical, 4)
             .scenePadding(.horizontal)
         }
     }
+}
+
+#Preview("Full-time result") {
+    WatchResultPageWidget(summary: .preview)
 }

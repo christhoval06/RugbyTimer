@@ -22,6 +22,12 @@ struct WatchLiveMatchWidget: View {
 
     private var isPlaying: Bool { matchPeriod == .firstHalf || matchPeriod == .secondHalf }
 
+    private var summary: WatchMatchSummary {
+        WatchMatchSummary(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
+                          homeScore: homeScore, awayScore: awayScore, matchPeriod: matchPeriod,
+                          activeCards: activeCards, matchEvents: matchEvents)
+    }
+
     var body: some View {
         TabView(selection: $page) {
             if isPlaying {
@@ -39,7 +45,7 @@ struct WatchLiveMatchWidget: View {
 
             WatchClockPageWidget(
                 timerService: timerService,
-                matchPeriod: matchPeriod,
+                summary: summary,
                 totalDuration: totalDuration,
                 onStartSecondHalf: onStartSecondHalf,
                 onEndPeriod: onEndPeriod
@@ -60,16 +66,8 @@ struct WatchLiveMatchWidget: View {
                 .tag(Page.score)
             }
 
-            WatchResultPageWidget(
-                homeTeamName: homeTeamName,
-                awayTeamName: awayTeamName,
-                homeScore: homeScore,
-                awayScore: awayScore,
-                matchPeriod: matchPeriod,
-                activeCards: activeCards,
-                matchEvents: matchEvents
-            )
-            .tag(Page.result)
+            WatchResultPageWidget(summary: summary)
+                .tag(Page.result)
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
         .background(Color.pitchVoid.ignoresSafeArea())

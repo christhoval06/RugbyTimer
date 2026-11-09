@@ -1,14 +1,22 @@
 import SwiftUI
 
 struct WatchHalfTimeWidget: View {
+    var homeScore = 0
+    var awayScore = 0
     let onStartSecondHalf: () -> Void
 
     var body: some View {
         VStack(spacing: 6) {
-            Text("BREAK")
-                .font(.system(size: 20, weight: .black).width(.condensed))
-                .foregroundStyle(Color.iceTitanium)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            HStack(alignment: .firstTextBaseline) {
+                Text("BREAK")
+                    .font(.system(size: 20, weight: .black).width(.condensed))
+                    .foregroundStyle(Color.iceTitanium)
+                Spacer(minLength: 4)
+                Text(verbatim: "\(homeScore)–\(awayScore)")
+                    .font(.system(size: 16, weight: .heavy, design: .monospaced))
+                    .foregroundStyle(Color.sinBinAmber)
+                    .accessibilityLabel(Text("Half-time score \(homeScore) to \(awayScore)"))
+            }
 
             Button(action: onStartSecondHalf) {
                 HStack(spacing: 6) {
@@ -35,4 +43,9 @@ struct WatchHalfTimeWidget: View {
             .accessibilityHint("Starts the second-half match clock")
         }
     }
+}
+
+#Preview("Half-time") {
+    WatchHalfTimeWidget(homeScore: 7, awayScore: 0, onStartSecondHalf: {})
+        .padding()
 }

@@ -7,6 +7,9 @@ struct LiveScoreRowWidget: View {
     let color: Color
     let isLeading: Bool
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var isPopping = false
+
     var body: some View {
         HStack(spacing: 13) {
             RoundedRectangle(cornerRadius: 2)
@@ -36,11 +39,33 @@ struct LiveScoreRowWidget: View {
                 .font(.system(size: 44, weight: .black).width(.condensed))
                 .monospacedDigit()
                 .foregroundStyle(isLeading ? color : Color.iceTitanium)
-                .contentTransition(.numericText())
+                // Digits roll up as points are added; the animation is what drives the transition.
+                .contentTransition(.numericText(value: Double(score)))
+                .scaleEffect(isPopping ? 1.18 : 1, anchor: .trailing)
+                .animation(reduceMotion ? nil : .snappy(duration: 0.35), value: score)
+        }
+        .onChange(of: score) { old, new in
+            guard new > old, !reduceMotion else { return }
+            withAnimation(.spring(response: 0.25, dampingFraction: 0.5)) { isPopping = true }
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.7).delay(0.2)) { isPopping = false }
         }
         .padding(16)
         .frame(minHeight: 94)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(name), \(score) points")
     }
+}
+
+#Preview("Score change animation") {
+    @Previewable @State var score = 12
+    VStack(spacing: 20) {
+        LiveScoreRowWidget(title: "HOME", name: "Rangers RFC", score: score,
+                           color: Color.pitchEmerald, isLeading: true)
+        Button("TRY +5") { score += 5 }
+            .buttonStyle(.borderedProminent)
+            .tint(Color.pitchEmerald)
+    }
+    .padding(20)
+    .background(Color.pitchVoid)
+    .preferredColorScheme(.dark)
 }
