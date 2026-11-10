@@ -9,7 +9,7 @@ struct WatchDisciplineLogRowWidget: View {
 
     private var offender: String {
         guard let number = event.playerNumber else { return event.teamName }
-        return String(localized: "number \(number), \(event.teamName)")
+        return String(appLocalized: "number \(number), \(event.teamName)")
     }
 
     private var accessibilityText: Text {

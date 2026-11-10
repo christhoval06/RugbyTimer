@@ -6,6 +6,8 @@ public struct RugbyTimerWatchApp: App {
     @StateObject private var appState = AppState()
     @StateObject private var runtime = WatchMatchRuntime()
     @Environment(\.scenePhase) private var scenePhase
+    /// Set by the iPhone (Settings › Language); `system` follows the Watch's own language.
+    @AppStorage(AppLanguage.defaultsKey) private var languageCode = AppLanguage.system.rawValue
 
     public init() {
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
@@ -37,15 +39,19 @@ public struct RugbyTimerWatchApp: App {
                         homeScore: appState.homeScore,
                         awayScore: appState.awayScore,
                         matchEvents: appState.matchEvents,
+                        halfTimeBreakEndsAt: appState.halfTimeBreakEndsAt,
+                        halfTimeBreakSeconds: appState.halfTimeBreakSeconds,
                         onAddCard: { appState.addCard(team: $0, playerNum: $1, type: $2) },
                         onScore: { appState.recordScore(team: $0, playerNumber: $1, points: $2, description: $3) },
                         onStartSecondHalf: appState.startSecondHalf,
-                        onEndPeriod: appState.endPeriod
+                        onEndPeriod: appState.endPeriod,
+                        onEndMatch: appState.endMatch
                     )
                 }
             }
             .environment(\.playerNumberRange, appState.playerNumbers)
             .environment(\.tapLockEnabled, appState.tapLockEnabled)
+            .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .system).locale)
             .onAppear {
                 runtime.attach(to: appState)
                 let device = WKInterfaceDevice.current()

@@ -4,10 +4,12 @@ struct LiveFooterWidget: View {
     let matchPeriod: MatchPeriod
     let homeTeamName: String
     let awayTeamName: String
-    let matchRecord: () -> String
+    let onShowRecord: () -> Void
     let onReturnToSetup: (() -> Void)?
     var isRunning = false
     var phoneControls: LiveMatchControls?
+    /// False in landscape, where the share button sits under the final result in the clock column.
+    var showsShareRecord = true
 
     var body: some View {
         VStack(spacing: 10) {
@@ -15,8 +17,8 @@ struct LiveFooterWidget: View {
                 LivePhoneControlsWidget(matchPeriod: matchPeriod, isRunning: isRunning,
                                         homeTeamName: homeTeamName, awayTeamName: awayTeamName, controls: phoneControls)
             }
-            if matchPeriod == .fullTime {
-                LiveShareRecordWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, makeRecord: matchRecord)
+            if matchPeriod == .fullTime, showsShareRecord {
+                LiveShareRecordWidget(onShowRecord: onShowRecord)
             }
             if matchPeriod == .preMatch || matchPeriod == .fullTime, let onReturnToSetup {
                 LiveSetupButtonWidget(isProminent: matchPeriod == .preMatch && phoneControls == nil,

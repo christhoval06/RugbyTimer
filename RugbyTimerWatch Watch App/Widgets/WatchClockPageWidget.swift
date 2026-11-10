@@ -7,6 +7,7 @@ struct WatchClockPageWidget: View {
     let totalDuration: Int
     let onStartSecondHalf: () -> Void
     let onEndPeriod: () -> Void
+    var onEndMatch: () -> Void = {}
 
     var body: some View {
         ScrollView {
@@ -17,13 +18,20 @@ struct WatchClockPageWidget: View {
                     WatchHalfTimeWidget(homeScore: summary.homeScore, awayScore: summary.awayScore,
                                         kickOffTeamName: summary.secondHalfKickOff,
                                         onStartSecondHalf: onStartSecondHalf)
+                    if let breakEndsAt = summary.breakEndsAt {
+                        WatchBreakCountdownWidget(endsAt: breakEndsAt, totalSeconds: summary.breakSeconds)
+                    }
                     // Players still off when the second half kicks off.
                     if !summary.carriedSinBins.isEmpty {
                         WatchSinBinListWidget(cards: summary.carriedSinBins, title: "STILL OFF FOR H2")
                     }
+                    WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
+                                             onEndMatch: onEndMatch)
                 case .fullTime:
                     WatchLivePeriodWidget(matchPeriod: summary.matchPeriod)
                     WatchFullTimeWidget(summary: summary)
+                    WatchTimePastClockWidget(firstHalf: summary.timePastClock.firstHalf,
+                                             secondHalf: summary.timePastClock.secondHalf)
                 default:
                     // The dial carries the period label, like the iPhone clock.
                     WatchLiveClockWidget(timerService: timerService, totalDuration: totalDuration,
@@ -34,6 +42,8 @@ struct WatchClockPageWidget: View {
                         matchPeriod: summary.matchPeriod,
                         onEndPeriod: onEndPeriod
                     )
+                    WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
+                                             onEndMatch: onEndMatch)
                 }
             }
             .padding(.vertical, 4)

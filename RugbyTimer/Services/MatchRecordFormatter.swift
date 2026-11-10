@@ -12,17 +12,17 @@ public enum MatchRecordFormatter {
         date: Date = Date()
     ) -> String {
         var lines: [String] = [
-            String(localized: "RUGBY TIMER · MATCH RECORD"),
-            date.formatted(date: .long, time: .shortened),
+            String(appLocalized: "RUGBY TIMER · MATCH RECORD"),
+            date.formatted(Date.FormatStyle(date: .long, time: .shortened).locale(AppLanguage.current.locale)),
             "",
             "\(homeTeam) \(homeScore) – \(awayScore) \(awayTeam)",
-            String(localized: "FULL TIME · 2 × \(halfDurationSeconds / 60) min"),
+            String(appLocalized: "FULL TIME · 2 × \(halfDurationSeconds / 60) min"),
             "",
-            String(localized: "TIMELINE")
+            String(appLocalized: "TIMELINE")
         ]
 
         if events.isEmpty {
-            lines.append(String(localized: "No recorded events."))
+            lines.append(String(appLocalized: "No recorded events."))
         } else {
             for event in events {
                 let minute = "\(event.minute)'".padding(toLength: 5, withPad: " ", startingAt: 0)
@@ -35,7 +35,7 @@ public enum MatchRecordFormatter {
         let yellow = events.filter { $0.type == .yellowCard }
         let red = events.filter { $0.type == .redCard }
         if !yellow.isEmpty || !red.isEmpty {
-            lines += ["", String(localized: "DISCIPLINE"), String(localized: "Yellow cards: \(yellow.count) · Red cards: \(red.count)")]
+            lines += ["", String(appLocalized: "DISCIPLINE"), String(appLocalized: "Yellow cards: \(yellow.count) · Red cards: \(red.count)")]
         }
 
         return lines.joined(separator: "\n")

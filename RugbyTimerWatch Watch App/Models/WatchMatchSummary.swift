@@ -10,6 +10,9 @@ struct WatchMatchSummary {
     let matchPeriod: MatchPeriod
     let activeCards: [MatchCard]
     let matchEvents: [MatchEvent]
+    /// When the half-time interval is due to end; nil outside the break.
+    var breakEndsAt: Date? = nil
+    var breakSeconds = 120
 
     var result: MatchResult {
         MatchStats.result(home: homeTeamName, away: awayTeamName, homeScore: homeScore, awayScore: awayScore)
@@ -23,6 +26,8 @@ struct WatchMatchSummary {
     }
 
     var carriedSinBins: [MatchCard] { MatchStats.carriedSinBins(activeCards) }
+
+    var timePastClock: (firstHalf: Int?, secondHalf: Int?) { MatchStats.timePastClock(of: matchEvents) }
 
     /// The team kicking off the second half, when a coin toss was recorded.
     var secondHalfKickOff: String? {

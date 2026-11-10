@@ -12,6 +12,8 @@ import Combine
 final class AppSettings: ObservableObject {
     static let halfLengthOptions = [40, 35, 30, 25, 20, 15, 10, 7]
     static let sinBinOptions = [10, 5, 2, 1]
+    /// World Rugby allows up to 15 minutes at half-time.
+    static let halfTimeBreakOptions = [15, 10, 5, 2]
     static let playerRangeOptions: [(max: Int, label: LocalizedStringResource)] = [
         (15, "Starting XV"), (23, "Match-day squad"), (30, "Extended squad"),
         (40, "Squad + extras"), (50, "Large squad"), (99, "Any number")
@@ -20,6 +22,7 @@ final class AppSettings: ObservableObject {
     static let standardHalfSeconds = 2400
     static let standardSinBinSeconds = 600
     static let standardMaxPlayerNumber = 40
+    static let standardHalfTimeBreakSeconds = 120
     static let standardHomeTeam = "Rangers RFC"
     static let standardAwayTeam = "City Lions"
 
@@ -34,6 +37,8 @@ final class AppSettings: ObservableObject {
         static let keepAwake = "settings.keepScreenAwake"
         static let tapLock = "settings.tapLockEnabled"
         static let coinToss = "settings.coinTossEnabled"
+        static let halfTimeBreak = "settings.halfTimeBreakSeconds"
+        static let language = AppLanguage.defaultsKey
     }
 
     private let defaults: UserDefaults
@@ -48,6 +53,9 @@ final class AppSettings: ObservableObject {
     @Published var keepScreenAwake: Bool { didSet { defaults.set(keepScreenAwake, forKey: Key.keepAwake) } }
     @Published var tapLockEnabled: Bool { didSet { defaults.set(tapLockEnabled, forKey: Key.tapLock) } }
     @Published var coinTossEnabled: Bool { didSet { defaults.set(coinTossEnabled, forKey: Key.coinToss) } }
+    @Published var halfTimeBreakSeconds: Int { didSet { defaults.set(halfTimeBreakSeconds, forKey: Key.halfTimeBreak) } }
+    /// Not part of "Restore defaults": resetting would switch the app to a language the referee may not read.
+    @Published var language: AppLanguage { didSet { defaults.set(language.rawValue, forKey: Key.language) } }
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -61,6 +69,8 @@ final class AppSettings: ObservableObject {
         keepScreenAwake = defaults.object(forKey: Key.keepAwake) as? Bool ?? true
         tapLockEnabled = defaults.object(forKey: Key.tapLock) as? Bool ?? true
         coinTossEnabled = defaults.bool(forKey: Key.coinToss)
+        halfTimeBreakSeconds = defaults.positiveInt(forKey: Key.halfTimeBreak) ?? Self.standardHalfTimeBreakSeconds
+        language = defaults.string(forKey: Key.language).flatMap(AppLanguage.init(rawValue:)) ?? .system
         // UI tests launch straight into Match Setup; not persisted.
         if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") { hasCompletedOnboarding = true }
     }
@@ -76,6 +86,7 @@ final class AppSettings: ObservableObject {
         keepScreenAwake = true
         tapLockEnabled = true
         coinTossEnabled = false
+        halfTimeBreakSeconds = Self.standardHalfTimeBreakSeconds
     }
 }
 

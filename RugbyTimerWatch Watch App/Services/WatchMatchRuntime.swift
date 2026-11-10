@@ -18,6 +18,7 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
     private var session: WKExtendedRuntimeSession?
     private var subscriptions = Set<AnyCancellable>()
     private let notificationCenter = UNUserNotificationCenter.current()
+    private let breakAlerts = WatchBreakAlerts()
 
     func attach(to appState: AppState) {
         guard self.appState !== appState else { return }
@@ -27,7 +28,8 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
         notificationCenter.requestAuthorization(options: [.alert, .sound]) { _, _ in }
 
         appState.timerService.$isRunning
-            .combineLatest(appState.$matchPeriod, appState.$activeCards.map { $0.map(\.id) }.removeDuplicates())
+            .combineLatest(appState.$matchPeriod, appState.$activeCards.map { $0.map(\.id) }.removeDuplicates(),
+                           appState.$halfTimeStartedAt)
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.sync() }
             .store(in: &subscriptions)
@@ -43,8 +45,10 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
     private func sync() {
         guard let appState else { return }
         let isPlaying = appState.matchPeriod == .firstHalf || appState.matchPeriod == .secondHalf
-        isPlaying ? startSessionIfNeeded() : stopSession()
+        // The session also covers the half-time break so its countdown alerts can play.
+        isPlaying || appState.halfTimeBreakEndsAt != nil ? startSessionIfNeeded() : stopSession()
         scheduleAlerts(for: appState)
+        breakAlerts.sync(endsAt: appState.halfTimeBreakEndsAt)
     }
 
     // MARK: - Extended runtime session
@@ -80,18 +84,18 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
 
         schedule(
             id: Self.periodEndID,
-            title: String(localized: "Time up"),
+            title: String(appLocalized: "Time up"),
             body: appState.matchPeriod == .firstHalf
-                ? String(localized: "End of the first half at the next dead ball.")
-                : String(localized: "End of the second half at the next dead ball."),
+                ? String(appLocalized: "End of the first half at the next dead ball.")
+                : String(appLocalized: "End of the second half at the next dead ball."),
             after: endDate.timeIntervalSinceNow
         )
 
         for card in appState.activeCards where card.type == .yellow && !card.isExpired {
             schedule(
                 id: Self.sinBinPrefix + card.id.uuidString,
-                title: String(localized: "Sin-bin over"),
-                body: String(localized: "#\(card.playerNumber) \(card.teamName) can return"),
+                title: String(appLocalized: "Sin-bin over"),
+                body: String(appLocalized: "#\(card.playerNumber) \(card.teamName) can return"),
                 after: TimeInterval(card.remainingSeconds)
             )
         }

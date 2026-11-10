@@ -6,15 +6,15 @@ struct SettingsSupportWidget: View {
     @Environment(\.requestReview) private var requestReview
 
     var body: some View {
-        SettingsGroupWidget(number: "04", title: "CONTACT & SUPPORT", detail: "WE READ EVERYTHING") {
+        SettingsGroupWidget(number: "05", title: "CONTACT & SUPPORT", detail: "WE READ EVERYTHING") {
             mailRow(symbol: "envelope", title: "Contact the developer",
-                    subtitle: "\(AppInfo.supportEmail)", subject: "Hello")
+                    subtitle: "\(AppInfo.supportEmail)", subject: "Hello") // l10n-ignore
             SettingsDividerWidget()
             mailRow(symbol: "ladybug", title: "Report a problem",
-                    subtitle: "Includes your app version", subject: "Bug report", tint: .expulsionRed)
+                    subtitle: "Includes your app version", subject: "Bug report", tint: .expulsionRed) // l10n-ignore
             SettingsDividerWidget()
             mailRow(symbol: "lightbulb", title: "Suggest a feature",
-                    subtitle: "Tell us what referees need", subject: "Feature idea", tint: .cardYellow)
+                    subtitle: "Tell us what referees need", subject: "Feature idea", tint: .cardYellow) // l10n-ignore
             SettingsDividerWidget()
             Button {
                 requestReview()

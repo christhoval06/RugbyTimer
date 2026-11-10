@@ -13,10 +13,13 @@ struct WatchLiveMatchWidget: View {
     let homeScore: Int
     let awayScore: Int
     var matchEvents: [MatchEvent] = []
+    var halfTimeBreakEndsAt: Date? = nil
+    var halfTimeBreakSeconds = 120
     let onAddCard: (String, Int, CardType) -> Void
     let onScore: (String, Int?, Int, String) -> Void
     let onStartSecondHalf: () -> Void
     let onEndPeriod: () -> Void
+    var onEndMatch: () -> Void = {}
 
     @State private var page: Page = .clock
 
@@ -25,7 +28,8 @@ struct WatchLiveMatchWidget: View {
     private var summary: WatchMatchSummary {
         WatchMatchSummary(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
                           homeScore: homeScore, awayScore: awayScore, matchPeriod: matchPeriod,
-                          activeCards: activeCards, matchEvents: matchEvents)
+                          activeCards: activeCards, matchEvents: matchEvents,
+                          breakEndsAt: halfTimeBreakEndsAt, breakSeconds: halfTimeBreakSeconds)
     }
 
     var body: some View {
@@ -48,7 +52,8 @@ struct WatchLiveMatchWidget: View {
                 summary: summary,
                 totalDuration: totalDuration,
                 onStartSecondHalf: onStartSecondHalf,
-                onEndPeriod: onEndPeriod
+                onEndPeriod: onEndPeriod,
+                onEndMatch: onEndMatch
             )
             .tag(Page.clock)
 
@@ -79,57 +84,4 @@ struct WatchLiveMatchWidget: View {
     private func returnToMatch() {
         withAnimation { page = .clock }
     }
-}
-
-#Preview("First half") {
-    WatchLiveMatchWidget(
-        timerService: MatchTimerService(initialSeconds: 2345),
-        activeCards: [
-            MatchCard(teamName: "Rangers RFC", playerNumber: 8, type: .yellow, durationSeconds: 412),
-            MatchCard(teamName: "City Lions", playerNumber: 13, type: .red)
-        ],
-        homeTeamName: "Rangers RFC", awayTeamName: "City Lions",
-        matchPeriod: .firstHalf, totalDuration: 2400,
-        homeScore: 12, awayScore: 7,
-        onAddCard: { _, _, _ in }, onScore: { _, _, _, _ in }, onStartSecondHalf: {}, onEndPeriod: {}
-    )
-}
-
-#Preview("Time up") {
-    let timer = MatchTimerService(initialSeconds: -37)
-    WatchLiveMatchWidget(
-        timerService: timer,
-        activeCards: [],
-        homeTeamName: "Rangers RFC", awayTeamName: "City Lions",
-        matchPeriod: .firstHalf, totalDuration: 2400,
-        homeScore: 12, awayScore: 7,
-        onAddCard: { _, _, _ in }, onScore: { _, _, _, _ in }, onStartSecondHalf: {}, onEndPeriod: {}
-    )
-}
-
-#Preview("Half-time") {
-    WatchLiveMatchWidget(
-        timerService: MatchTimerService(initialSeconds: 0),
-        activeCards: [],
-        homeTeamName: "Rangers RFC", awayTeamName: "City Lions",
-        matchPeriod: .halfTime, totalDuration: 2400,
-        homeScore: 12, awayScore: 7,
-        onAddCard: { _, _, _ in }, onScore: { _, _, _, _ in }, onStartSecondHalf: {}, onEndPeriod: {}
-    )
-}
-
-#Preview("Full time") {
-    WatchLiveMatchWidget(
-        timerService: MatchTimerService(initialSeconds: 0),
-        activeCards: [],
-        homeTeamName: "Rangers RFC", awayTeamName: "City Lions",
-        matchPeriod: .fullTime, totalDuration: 2400,
-        homeScore: 12, awayScore: 7,
-        matchEvents: [
-            MatchEvent(minute: 28, teamName: "City Lions", playerNumber: 8, type: .yellowCard, description: "Yellow Card (Sin-Bin) - #8"),
-            MatchEvent(minute: 55, teamName: "Rangers RFC", playerNumber: 4, type: .yellowCard, description: "Yellow Card (Sin-Bin) - #4"),
-            MatchEvent(minute: 71, teamName: "City Lions", playerNumber: 13, type: .redCard, description: "Red Card (Expulsion) - #13")
-        ],
-        onAddCard: { _, _, _ in }, onScore: { _, _, _, _ in }, onStartSecondHalf: {}, onEndPeriod: {}
-    )
 }

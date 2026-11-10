@@ -91,3 +91,12 @@ RugbyTimer/
 2. **Always include `#Preview` blocks** in view files using modern `@Previewable @State` where applicable, or standard mock states.
 3. **Target Membership:** Ensure shared models/views (`MatchCard`, `LiveMatchView`, `DesignTokens`, etc.) have their Target Membership checked for **both** `RugbyTimer` (iOS) and `RugbyTimerWatch` (watchOS).
 4. **Platform Safety:** Wrap watchOS-specific APIs (`WKInterfaceDevice`) and iOS-specific APIs (`UIImpactFeedbackGenerator`) in conditional compilation blocks (`#if os(watchOS)`, `#if os(iOS)`).
+
+---
+
+## 7. Localization (English base; Spanish, French, Brazilian Portuguese)
+* **No hardcoded UI text.** SwiftUI text goes through `LocalizedStringKey` (widget parameters are `LocalizedStringKey`, never `String`). Text built in code uses `String(appLocalized:)` from `Core/AppLanguage.swift`; never `String(localized:)`, which ignores the in-app language setting.
+* **Language setting:** Settings › Language (`AppSettings.language`, `AppLanguage`). `system` follows the device and falls back to English. The iPhone sends the choice to the Watch.
+* **Synced values stay English:** `MatchEvent.description`, `MatchPeriod.rawValue`, `"OFFICIAL"`. Display them via `localizedDescription` / `title`.
+* **Every new string** needs `es`, `fr` and `pt-BR` entries in both `Localizable.xcstrings` catalogs (iPhone and Watch). Mark intentional English with `// l10n-ignore`.
+* **Check before finishing:** build both schemes, then run `scripts/check_localization.py --derived-data <DerivedData>`. It must report 0 problems.

@@ -93,8 +93,8 @@ struct WatchScorePageWidget: View {
     private func scoreAccessibilityLabel(_ scoreType: ScoreType) -> String {
         let event = MatchEvent(minute: 0, teamName: selectedTeam, type: .tryScore(points: scoreType.points),
                                description: scoreType.description)
-        guard let scorer else { return String(localized: "\(event.localizedDescription) for \(selectedTeam)") }
-        return String(localized: "\(event.localizedDescription) for \(selectedTeam), number \(scorer)")
+        guard let scorer else { return String(appLocalized: "\(event.localizedDescription) for \(selectedTeam)") }
+        return String(appLocalized: "\(event.localizedDescription) for \(selectedTeam), number \(scorer)")
     }
 }
 

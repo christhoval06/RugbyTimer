@@ -5,6 +5,7 @@ public struct SetupView: View {
     @Binding public var awayTeamName: String
     @Binding public var selectedDurationSeconds: Int
     @Binding public var sinBinDurationSeconds: Int
+    @Binding public var halfTimeBreakSeconds: Int
     public var isWatchSynced: Bool
     public var watchName: String
     public var watchBattery: Int
@@ -17,6 +18,7 @@ public struct SetupView: View {
         awayTeamName: Binding<String>,
         selectedDurationSeconds: Binding<Int>,
         sinBinDurationSeconds: Binding<Int>,
+        halfTimeBreakSeconds: Binding<Int> = .constant(120),
         isWatchSynced: Bool = true,
         watchName: String = "APPLE WATCH ULTRA",
         watchBattery: Int = 98,
@@ -28,6 +30,7 @@ public struct SetupView: View {
         self._awayTeamName = awayTeamName
         self._selectedDurationSeconds = selectedDurationSeconds
         self._sinBinDurationSeconds = sinBinDurationSeconds
+        self._halfTimeBreakSeconds = halfTimeBreakSeconds
         self.isWatchSynced = isWatchSynced
         self.watchName = watchName
         self.watchBattery = watchBattery
@@ -45,7 +48,8 @@ public struct SetupView: View {
                                            watchBattery: watchBattery, isWatchAvailable: isWatchAvailable)
                     SetupTeamsWidget(homeTeamName: $homeTeamName, awayTeamName: $awayTeamName)
                     SetupDurationWidget(selectedDurationSeconds: $selectedDurationSeconds)
-                    SetupRulesWidget(sinBinDurationSeconds: $sinBinDurationSeconds)
+                    SetupRulesWidget(sinBinDurationSeconds: $sinBinDurationSeconds,
+                                     halfTimeBreakSeconds: $halfTimeBreakSeconds)
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)

@@ -64,18 +64,23 @@ public struct LiveMatchView: View {
     var isPlaying: Bool { matchPeriod == .firstHalf || matchPeriod == .secondHalf }
 
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @State var shownRecord: MatchRecordSheetItem?
     var isPhoneHosted: Bool { phoneControls != nil }
 
     public var body: some View {
         Group {
             if verticalSizeClass == .compact {
                 LiveLandscapeLayoutWidget { height in
-                    clock(ringScale: min(1, max(0.5, (height - 100) / 276)), showsHeading: false)
+                    if matchPeriod == .fullTime {
+                        fullTimePanel
+                    } else {
+                        clock(ringScale: min(1, max(0.5, (height - 100) / 276)), showsHeading: false)
+                    }
                 } details: {
                     if let watchLink { LiveWatchLinkWidget(status: watchLink) }
                     periodStatus
                     matchDetails
-                } footer: { footer }
+                } footer: { footer(showsShareRecord: false) }
             } else {
                 VStack(spacing: 0) {
                     if let watchLink {
@@ -89,11 +94,14 @@ public struct LiveMatchView: View {
                         periodStatus
                         clock()
                         matchDetails
-                    } footer: { footer }
+                    } footer: { footer() }
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.pitchVoid.ignoresSafeArea())
+        .sheet(item: $shownRecord) { shown in
+            LiveMatchRecordSheetWidget(record: shown.text, subject: recordSubject, onDone: { shownRecord = nil })
+        }
     }
 }

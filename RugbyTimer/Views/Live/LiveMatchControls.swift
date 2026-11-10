@@ -33,6 +33,6 @@ public struct LiveMatchControls {
         ("TRY", "TRY", 5, "Try scored (+5)"),
         ("CONVERSION", "CONVERSION", 2, "Conversion (+2)"),
         ("PENALTY", "PENALTY", 3, "Penalty goal (+3)"),
-        ("DROPGOAL", "DROP GOAL", 3, "Drop goal (+3)")
+        ("DROPGOAL", "DROP GOAL", 3, "Drop goal (+3)") // l10n-ignore: id and description are English by design
     ]
 }

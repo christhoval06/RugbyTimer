@@ -26,15 +26,29 @@ extension LiveMatchView {
         LiveSinBinWidget(cards: activeCards)
     }
 
-    var footer: some View {
+    /// Landscape clock column at full time: the result and the record share button.
+    var fullTimePanel: some View {
+        VStack(spacing: 14) {
+            LiveFinalResultWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
+                                  homeScore: homeScore, awayScore: awayScore)
+            LiveShareRecordWidget(onShowRecord: showRecord)
+        }
+    }
+
+    func showRecord() {
+        shownRecord = MatchRecordSheetItem(text: matchRecord())
+    }
+
+    func footer(showsShareRecord: Bool = true) -> some View {
         LiveFooterWidget(
             matchPeriod: matchPeriod,
             homeTeamName: homeTeamName,
             awayTeamName: awayTeamName,
-            matchRecord: matchRecord,
+            onShowRecord: showRecord,
             onReturnToSetup: onReturnToSetup,
             isRunning: timerService.isRunning,
-            phoneControls: phoneControls
+            phoneControls: phoneControls,
+            showsShareRecord: showsShareRecord
         )
     }
 
@@ -48,4 +62,14 @@ extension LiveMatchView {
             events: matchEvents
         )
     }
+
+    var recordSubject: String {
+        String(appLocalized: "Match record: \(homeTeamName) vs \(awayTeamName)")
+    }
+}
+
+/// The record text travels with the sheet's item, so the sheet can never open on stale (empty) text.
+struct MatchRecordSheetItem: Identifiable {
+    let id = UUID()
+    let text: String
 }

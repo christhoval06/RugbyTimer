@@ -15,6 +15,8 @@ public struct MatchConfiguration: Codable, Equatable {
     public var tapLockEnabled: Bool? = nil
     // Optional so older companions skip the Watch coin toss.
     public var coinTossEnabled: Bool? = nil
+    // Optional so older companions get the standard 2-minute half-time break.
+    public var halfTimeBreakSeconds: Int? = nil
 }
 
 public struct MatchSnapshot: Codable, Equatable {
@@ -70,6 +72,12 @@ public class WatchConnectivityService: NSObject, ObservableObject {
         flushContext()
     }
 
+    /// iPhone only: the Watch shows text in the language picked in iPhone Settings.
+    public func sendAppLanguage(_ language: AppLanguage) {
+        outgoingContext["language"] = language.rawValue
+        flushContext()
+    }
+
     public func sendWatchTelemetry(watchName: String, battery: Int) {
         outgoingContext["watchName"] = watchName
         outgoingContext["battery"] = battery
@@ -107,6 +115,7 @@ public class WatchConnectivityService: NSObject, ObservableObject {
             receivedSnapshot = snapshot
         }
         #endif
+        if let language = context["language"] as? String { UserDefaults.standard.set(language, forKey: AppLanguage.defaultsKey) }
         if let name = context["watchName"] as? String { connectedWatchName = name.uppercased() }
         if let battery = context["battery"] as? Int { watchBatteryLevel = battery }
     }

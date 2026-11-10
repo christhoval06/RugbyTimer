@@ -4,7 +4,7 @@ struct SettingsOfficiatingWidget: View {
     @ObservedObject var settings: AppSettings
 
     private var playerRangeOptions: [(value: Int, label: String)] {
-        AppSettings.playerRangeOptions.map { ($0.max, "1–\($0.max) · \(String(localized: $0.label))") }
+        AppSettings.playerRangeOptions.map { ($0.max, "1–\($0.max) · \(String(appLocalized: $0.label))") }
     }
 
     var body: some View {

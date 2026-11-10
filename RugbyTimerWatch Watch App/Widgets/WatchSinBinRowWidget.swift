@@ -29,8 +29,8 @@ struct WatchSinBinRowWidget: View {
     }
 
     private var statusText: String {
-        if card.type == .red { return String(localized: "OFF") }
-        if card.isExpired { return String(localized: "READY") }
+        if card.type == .red { return String(appLocalized: "OFF") }
+        if card.isExpired { return String(appLocalized: "READY") }
         return String(format: "%02d:%02d", card.remainingSeconds / 60, card.remainingSeconds % 60)
     }
 }

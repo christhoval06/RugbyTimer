@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
     "#%lld" : {
       "shouldTranslate" : false
     },
@@ -8,6 +11,31 @@
       "shouldTranslate" : false
     },
     "%@" : {
+      "shouldTranslate" : false
+    },
+    "%@ WIN" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GANA %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ L'EMPORTE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ VENCE"
+          }
+        }
+      }
+    },
+    "%@%@" : {
       "shouldTranslate" : false
     },
     "%@, %@, %@" : {
@@ -34,9 +62,6 @@
           }
         }
       }
-    },
-    "%@%@" : {
-      "shouldTranslate" : false
     },
     "%lld" : {
       "shouldTranslate" : false
@@ -175,9 +200,6 @@
         }
       }
     },
-    "%lld min" : {
-      "shouldTranslate" : false
-    },
     "%lld MIN" : {
       "shouldTranslate" : false
     },
@@ -202,6 +224,9 @@
           }
         }
       }
+    },
+    "%lld min" : {
+      "shouldTranslate" : false
     },
     "%lld minutes" : {
       "localizations" : {
@@ -301,19 +326,16 @@
         }
       }
     },
-    "%lld'" : {
+    "%lld%%" : {
       "shouldTranslate" : false
     },
-    "%lld%%" : {
+    "%lld'" : {
       "shouldTranslate" : false
     },
     "+%lld" : {
       "shouldTranslate" : false
     },
     "1 MIN" : {
-      "shouldTranslate" : false
-    },
-    "2 MIN" : {
       "shouldTranslate" : false
     },
     "10 MIN" : {
@@ -341,6 +363,9 @@
         }
       }
     },
+    "2 MIN" : {
+      "shouldTranslate" : false
+    },
     "ABOUT" : {
       "localizations" : {
         "es" : {
@@ -359,6 +384,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SOBRE"
+          }
+        }
+      }
+    },
+    "AWAY" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VISITANTE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EXTÉRIEUR"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VISITANTE"
+          }
+        }
+      }
+    },
+    "AWAY TEAM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EQUIPO VISITANTE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÉQUIPE VISITEUSE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIME VISITANTE"
           }
         }
       }
@@ -407,29 +476,6 @@
         }
       }
     },
-    "Add Item" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Añadir elemento"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajouter un élément"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adicionar item"
-          }
-        }
-      }
-    },
     "Any number" : {
       "localizations" : {
         "es" : {
@@ -452,24 +498,24 @@
         }
       }
     },
-    "AWAY" : {
+    "App language" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "VISITANTE"
+            "value" : "Idioma de la app"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EXTÉRIEUR"
+            "value" : "Langue de l'app"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "VISITANTE"
+            "value" : "Idioma do app"
           }
         }
       }
@@ -496,24 +542,24 @@
         }
       }
     },
-    "AWAY TEAM" : {
+    "BUILT BY\nA RUGBY PLAYER" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EQUIPO VISITANTE"
+            "value" : "HECHA POR\nUN JUGADOR DE RUGBY"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ÉQUIPE VISITEUSE"
+            "value" : "CRÉÉE PAR\nUN RUGBYMAN"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TIME VISITANTE"
+            "value" : "FEITO POR\nUM JOGADOR DE RUGBY"
           }
         }
       }
@@ -558,50 +604,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apitar o intervalo"
-          }
-        }
-      }
-    },
-    "BUILT BY\nA RUGBY PLAYER" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HECHA POR\nUN JUGADOR DE RUGBY"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CRÉÉE PAR\nUN RUGBYMAN"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FEITO POR\nUM JOGADOR DE RUGBY"
-          }
-        }
-      }
-    },
-    "Cancel" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancelar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Annuler"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancelar"
           }
         }
       }
@@ -672,6 +674,160 @@
         }
       }
     },
+    "CONFIRM RED · #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR ROJA · #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMER ROUGE · #%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR VERMELHO · #%lld"
+          }
+        }
+      }
+    },
+    "CONFIRM YELLOW · #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR AMARILLA · #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMER JAUNE · #%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR AMARELO · #%lld"
+          }
+        }
+      }
+    },
+    "CONTACT & SUPPORT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONTACTO Y SOPORTE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONTACT ET ASSISTANCE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONTATO E SUPORTE"
+          }
+        }
+      }
+    },
+    "CONVERSION" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONVERSIÓN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TRANSFORMATION"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONVERSÃO"
+          }
+        }
+      }
+    },
+    "COPIED" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COPIADO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COPIÉ"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COPIADO"
+          }
+        }
+      }
+    },
+    "COPY TEXT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COPIAR TEXTO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COPIER LE TEXTE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COPIAR TEXTO"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
     "Clock, cards and score are controlled on Apple Watch" : {
       "localizations" : {
         "es" : {
@@ -738,95 +894,6 @@
         }
       }
     },
-    "CONFIRM RED · #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR ROJA · #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMER ROUGE · #%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR VERMELHO · #%lld"
-          }
-        }
-      }
-    },
-    "CONFIRM SANCTION" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR SANCIÓN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMER LA SANCTION"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR PUNIÇÃO"
-          }
-        }
-      }
-    },
-    "CONFIRM YELLOW · #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR AMARILLA · #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMER JAUNE · #%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR AMARELO · #%lld"
-          }
-        }
-      }
-    },
-    "CONTACT & SUPPORT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONTACTO Y SOPORTE"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONTACT ET ASSISTANCE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONTATO E SUPORTE"
-          }
-        }
-      }
-    },
     "Contact the developer" : {
       "localizations" : {
         "es" : {
@@ -845,28 +912,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Falar com o desenvolvedor"
-          }
-        }
-      }
-    },
-    "CONVERSION" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONVERSIÓN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TRANSFORMATION"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONVERSÃO"
           }
         }
       }
@@ -893,46 +938,24 @@
         }
       }
     },
-    "COPIED" : {
+    "Countdown on the Watch" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "COPIADO"
+            "value" : "Cuenta regresiva en el Watch"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "COPIÉ"
+            "value" : "Compte à rebours sur la Watch"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "COPIADO"
-          }
-        }
-      }
-    },
-    "COPY TEXT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COPIAR TEXTO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COPIER LE TEXTE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COPIAR TEXTO"
+            "value" : "Contagem regressiva no Watch"
           }
         }
       }
@@ -981,6 +1004,28 @@
         }
       }
     },
+    "Custom Half-Time Break" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descanso personalizado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause personnalisée"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intervalo personalizado"
+          }
+        }
+      }
+    },
     "Custom Sin-Bin Duration" : {
       "localizations" : {
         "es" : {
@@ -1021,6 +1066,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Personalizar…"
+          }
+        }
+      }
+    },
+    "DISCIPLINE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DISCIPLINA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DISCIPLINE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DISCIPLINA"
+          }
+        }
+      }
+    },
+    "DROP GOAL" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DROP"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DROP"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DROP GOAL"
           }
         }
       }
@@ -1113,28 +1202,6 @@
         }
       }
     },
-    "DISCIPLINE" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DISCIPLINA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DISCIPLINE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DISCIPLINA"
-          }
-        }
-      }
-    },
     "Done" : {
       "localizations" : {
         "es" : {
@@ -1153,28 +1220,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
-          }
-        }
-      }
-    },
-    "DROP GOAL" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DROP"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DROP"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DROP GOAL"
           }
         }
       }
@@ -1267,28 +1312,6 @@
         }
       }
     },
-    "Email" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Correo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "E-mail"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "E-mail"
-          }
-        }
-      }
-    },
     "END FIRST HALF" : {
       "localizations" : {
         "es" : {
@@ -1329,50 +1352,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ENCERRAR JOGO"
-          }
-        }
-      }
-    },
-    "Enter the number of minutes per half (a positive whole number)." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ingresa los minutos de cada tiempo (un número entero positivo)."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saisissez la durée de chaque mi-temps en minutes (nombre entier positif)."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Digite os minutos de cada tempo (um número inteiro positivo)."
-          }
-        }
-      }
-    },
-    "Enter the yellow card countdown in minutes (a positive whole number)." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ingresa la cuenta regresiva de la tarjeta amarilla en minutos (un número entero positivo)."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saisissez la durée du carton jaune en minutes (nombre entier positif)."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Digite a contagem do cartão amarelo em minutos (um número inteiro positivo)."
           }
         }
       }
@@ -1421,48 +1400,112 @@
         }
       }
     },
-    "EXPIRED • READY" : {
-      "extractionState" : "stale",
+    "Email" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CUMPLIDA • LISTO"
+            "value" : "Correo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TERMINÉE • PRÊT"
+            "value" : "E-mail"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CUMPRIDA • PRONTO"
+            "value" : "E-mail"
           }
         }
       }
     },
-    "EXPORT / SHARE SUMMARY" : {
-      "extractionState" : "stale",
+    "English when your language isn't available" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EXPORTAR / COMPARTIR RESUMEN"
+            "value" : "Inglés si tu idioma no está disponible"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EXPORTER / PARTAGER LE RÉSUMÉ"
+            "value" : "Anglais si votre langue n'est pas disponible"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EXPORTAR / COMPARTILHAR RESUMO"
+            "value" : "Inglês se seu idioma não estiver disponível"
+          }
+        }
+      }
+    },
+    "Enter the half-time break in minutes (1–30)." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce el descanso de medio tiempo en minutos (1–30)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez la pause de la mi-temps en minutes (1–30)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite o intervalo em minutos (1–30)."
+          }
+        }
+      }
+    },
+    "Enter the number of minutes per half (a positive whole number)." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingresa los minutos de cada tiempo (un número entero positivo)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez la durée de chaque mi-temps en minutes (nombre entier positif)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite os minutos de cada tempo (um número inteiro positivo)."
+          }
+        }
+      }
+    },
+    "Enter the yellow card countdown in minutes (a positive whole number)." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingresa la cuenta regresiva de la tarjeta amarilla en minutos (un número entero positivo)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez la durée du carton jaune en minutes (nombre entier positif)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite a contagem do cartão amarelo em minutos (um número inteiro positivo)."
           }
         }
       }
@@ -1511,28 +1554,6 @@
         }
       }
     },
-    "FIRST HALF · H1" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRIMER TIEMPO · T1"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1RE MI-TEMPS · MT1"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRIMEIRO TEMPO · T1"
-          }
-        }
-      }
-    },
     "FIRST HALF (H1)" : {
       "localizations" : {
         "es" : {
@@ -1551,6 +1572,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRIMEIRO TEMPO (T1)"
+          }
+        }
+      }
+    },
+    "FIRST HALF · H1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRIMER TIEMPO · T1"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1RE MI-TEMPS · MT1"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRIMEIRO TEMPO · T1"
           }
         }
       }
@@ -1621,6 +1664,37 @@
         }
       }
     },
+    "Footer" : {
+      "shouldTranslate" : false
+    },
+    "Full time: %@ %lld, %@ %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Full time: %1$@ %2$lld, %3$@ %4$lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Final del partido: %@ %lld, %@ %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fin du match : %@ %lld, %@ %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fim de jogo: %@ %lld, %@ %lld"
+          }
+        }
+      }
+    },
     "GET STARTED" : {
       "localizations" : {
         "es" : {
@@ -1664,50 +1738,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TEMPO"
-          }
-        }
-      }
-    },
-    "Half length" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duración del tiempo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Durée de la mi-temps"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duração do tempo"
-          }
-        }
-      }
-    },
-    "Half length, sin-bin, teams, shirt numbers, tap lock and toggles go back to their standard values." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La duración del tiempo, la exclusión, los equipos, los números de camiseta, el bloqueo de toques y los interruptores vuelven a sus valores estándar."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La durée de mi-temps, l'exclusion, les équipes, les numéros de maillot, l'anti-appui et les options reviennent à leurs valeurs standard."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duração do tempo, exclusão, times, números de camisa, bloqueio de toques e opções voltam aos valores padrão."
           }
         }
       }
@@ -1756,28 +1786,6 @@
         }
       }
     },
-    "Hold to start, pause, score, card or end a half" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mantén pulsado para iniciar, pausar, anotar, sancionar o terminar un tiempo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maintenez pour lancer, mettre en pause, marquer, sanctionner ou finir une mi-temps"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Segure para iniciar, pausar, pontuar, dar cartão ou encerrar um tempo"
-          }
-        }
-      }
-    },
     "HOME" : {
       "localizations" : {
         "es" : {
@@ -1796,28 +1804,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MANDANTE"
-          }
-        }
-      }
-    },
-    "Home team" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Equipo local"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Équipe recevante"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Time mandante"
           }
         }
       }
@@ -1866,6 +1852,138 @@
         }
       }
     },
+    "Half length" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duración del tiempo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durée de la mi-temps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração do tempo"
+          }
+        }
+      }
+    },
+    "Half length, sin-bin, teams, shirt numbers, tap lock and toggles go back to their standard values." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La duración del tiempo, la exclusión, los equipos, los números de camiseta, el bloqueo de toques y los interruptores vuelven a sus valores estándar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La durée de mi-temps, l'exclusion, les équipes, les numéros de maillot, l'anti-appui et les options reviennent à leurs valeurs standard."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração do tempo, exclusão, times, números de camisa, bloqueio de toques e opções voltam aos valores padrão."
+          }
+        }
+      }
+    },
+    "Half-time break" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descanso de medio tiempo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause de la mi-temps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intervalo"
+          }
+        }
+      }
+    },
+    "Half-time break duration" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duración del descanso de medio tiempo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durée de la pause de la mi-temps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração do intervalo"
+          }
+        }
+      }
+    },
+    "Hold to start, pause, score, card or end a half" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantén pulsado para iniciar, pausar, anotar, sancionar o terminar un tiempo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenez pour lancer, mettre en pause, marquer, sanctionner ou finir une mi-temps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segure para iniciar, pausar, pontuar, dar cartão ou encerrar um tempo"
+          }
+        }
+      }
+    },
+    "Home team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Equipo local"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Équipe recevante"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time mandante"
+          }
+        }
+      }
+    },
     "I've played rugby in Panama for more than 15 years with Titanes Rugby Club, and represented the national team from 2015 to 2022. Today I also referee. Rugby Timer is the tool I wanted with the whistle in my hand: the clock, the sin-bins and the score on my wrist, so my eyes stay on the game." : {
       "localizations" : {
         "es" : {
@@ -1888,68 +2006,24 @@
         }
       }
     },
-    "Includes your app version" : {
+    "IPHONE & WATCH" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Incluye la versión de tu app"
+            "value" : "IPHONE Y WATCH"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inclut la version de l'app"
+            "value" : "IPHONE ET WATCH"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inclui a versão do app"
-          }
-        }
-      }
-    },
-    "iOS developer · Rugby player · Referee" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desarrollador iOS · Jugador de rugby · Árbitro"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Développeur iOS · Joueur de rugby · Arbitre"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desenvolvedor iOS · Jogador de rugby · Árbitro"
-          }
-        }
-      }
-    },
-    "iPhone haptics" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vibración del iPhone"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Retour haptique de l'iPhone"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vibração do iPhone"
+            "value" : "IPHONE E WATCH"
           }
         }
       }
@@ -1976,25 +2050,24 @@
         }
       }
     },
-    "ISSUE SANCTION" : {
-      "extractionState" : "stale",
+    "Includes your app version" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "APLICAR SANCIÓN"
+            "value" : "Incluye la versión de tu app"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "INFLIGER UNE SANCTION"
+            "value" : "Inclut la version de l'app"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "APLICAR PUNIÇÃO"
+            "value" : "Inclui a versão do app"
           }
         }
       }
@@ -2017,73 +2090,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajuda outros árbitros a encontrá-lo"
-          }
-        }
-      }
-    },
-    "Item at %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elemento: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Élément : %@"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Item: %@"
-          }
-        }
-      }
-    },
-    "Keep playing" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seguir jugando"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continuer à jouer"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Continuar jogando"
-          }
-        }
-      }
-    },
-    "Keep screen awake" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mantener pantalla encendida"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Garder l'écran allumé"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Manter tela ligada"
           }
         }
       }
@@ -2132,6 +2138,50 @@
         }
       }
     },
+    "Keep playing" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seguir jugando"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer à jouer"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar jogando"
+          }
+        }
+      }
+    },
+    "Keep screen awake" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantener pantalla encendida"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garder l'écran allumé"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manter tela ligada"
+          }
+        }
+      }
+    },
     "Know the app" : {
       "localizations" : {
         "es" : {
@@ -2154,30 +2204,27 @@
         }
       }
     },
-    "Large squad" : {
+    "LANGUAGE" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plantel grande"
+            "value" : "IDIOMA"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grand groupe"
+            "value" : "LANGUE"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elenco grande"
+            "value" : "IDIOMA"
           }
         }
       }
-    },
-    "Last update %@ ago. The clock keeps counting here; scores and cards update when the Watch reconnects." : {
-
     },
     "LEADING" : {
       "localizations" : {
@@ -2219,6 +2266,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "JOGO AO VIVO"
+          }
+        }
+      }
+    },
+    "Large squad" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plantel grande"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grand groupe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elenco grande"
+          }
+        }
+      }
+    },
+    "Last update %@ ago. The clock keeps counting here; scores and cards update when the Watch reconnects." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última actualización hace %@. El reloj sigue corriendo aquí; el marcador y las tarjetas se actualizan cuando el Watch se reconecte."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernière mise à jour il y a %@. Le chrono continue ici ; le score et les cartons se mettent à jour quand la Watch se reconnecte."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última atualização há %@. O relógio continua contando aqui; placar e cartões atualizam quando o Watch reconectar."
           }
         }
       }
@@ -2289,25 +2380,46 @@
         }
       }
     },
-    "MATCH EVENT TIMELINE" : {
-      "extractionState" : "stale",
+    "MATCH DRAWN" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CRONOLOGÍA DEL PARTIDO"
+            "value" : "PARTIDO EMPATADO"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CHRONOLOGIE DU MATCH"
+            "value" : "MATCH NUL"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LINHA DO TEMPO DO JOGO"
+            "value" : "JOGO EMPATADO"
+          }
+        }
+      }
+    },
+    "MATCH ENDED EARLY" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PARTIDO TERMINADO ANTES"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MATCH ARRÊTÉ AVANT LA FIN"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JOGO ENCERRADO ANTES"
           }
         }
       }
@@ -2334,28 +2446,6 @@
         }
       }
     },
-    "Match format per half" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formato del partido por tiempo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Format du match par mi-temps"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formato do jogo por tempo"
-          }
-        }
-      }
-    },
     "MATCH RECORD" : {
       "localizations" : {
         "es" : {
@@ -2374,6 +2464,53 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SÚMULA"
+          }
+        }
+      }
+    },
+    "MATCH SETUP" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIGURAR PARTIDO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRÉPARER LE MATCH"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIGURAR JOGO"
+          }
+        }
+      }
+    },
+    "MIN" : {
+      "shouldTranslate" : false
+    },
+    "Match format per half" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formato del partido por tiempo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Format du match par mi-temps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formato do jogo por tempo"
           }
         }
       }
@@ -2422,51 +2559,6 @@
         }
       }
     },
-    "MATCH SETUP" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIGURAR PARTIDO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRÉPARER LE MATCH"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIGURAR JOGO"
-          }
-        }
-      }
-    },
-    "MATCH SUMMARY" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RESUMEN DEL PARTIDO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RÉSUMÉ DU MATCH"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RESUMO DO JOGO"
-          }
-        }
-      }
-    },
     "Match-day squad" : {
       "localizations" : {
         "es" : {
@@ -2488,9 +2580,6 @@
           }
         }
       }
-    },
-    "MIN" : {
-      "shouldTranslate" : false
     },
     "Minutes" : {
       "localizations" : {
@@ -2532,28 +2621,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espelhando o Apple Watch do árbitro."
-          }
-        }
-      }
-    },
-    "Name the teams and pick the half length, send the setup to your Watch, then start the match from your wrist. You can replay this tour any time from Settings." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nombra los equipos y elige la duración de cada tiempo, envía la configuración a tu Watch y empieza el partido desde tu muñeca. Puedes repetir este recorrido cuando quieras desde Ajustes."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nommez les équipes et choisissez la durée des mi-temps, envoyez la configuration à votre Watch, puis lancez le match depuis votre poignet. Vous pouvez revoir cette présentation à tout moment dans Réglages."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dê nome aos times e escolha a duração de cada tempo, envie a configuração para o Watch e comece o jogo pelo pulso. Você pode rever este tour quando quiser em Ajustes."
           }
         }
       }
@@ -2602,28 +2669,6 @@
         }
       }
     },
-    "No accounts. No tracking. Your matches stay on your devices." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sin cuentas. Sin rastreo. Tus partidos se quedan en tus dispositivos."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun compte. Aucun suivi. Vos matchs restent sur vos appareils."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem contas. Sem rastreamento. Seus jogos ficam nos seus dispositivos."
-          }
-        }
-      }
-    },
     "NO APPLE WATCH NEEDED" : {
       "localizations" : {
         "es" : {
@@ -2664,6 +2709,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "NENHUM APPLE WATCH EMPARELHADO"
+          }
+        }
+      }
+    },
+    "Name the teams and pick the half length, send the setup to your Watch, then start the match from your wrist. You can replay this tour any time from Settings." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombra los equipos y elige la duración de cada tiempo, envía la configuración a tu Watch y empieza el partido desde tu muñeca. Puedes repetir este recorrido cuando quieras desde Ajustes."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nommez les équipes et choisissez la durée des mi-temps, envoyez la configuration à votre Watch, puis lancez le match depuis votre poignet. Vous pouvez revoir cette présentation à tout moment dans Réglages."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dê nome aos times e escolha a duração de cada tempo, envie a configuração para o Watch e comece o jogo pelo pulso. Você pode rever este tour quando quiser em Ajustes."
+          }
+        }
+      }
+    },
+    "No accounts. No tracking. Your matches stay on your devices." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin cuentas. Sin rastreo. Tus partidos se quedan en tus dispositivos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun compte. Aucun suivi. Vos matchs restent sur vos appareils."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem contas. Sem rastreamento. Seus jogos ficam nos seus dispositivos."
           }
         }
       }
@@ -2756,50 +2845,6 @@
         }
       }
     },
-    "Off · kick off without a toss" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desactivado · patada inicial sin sorteo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé · coup d'envoi sans tirage"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desativado · pontapé sem sorteio"
-          }
-        }
-      }
-    },
-    "Off · single tap on Watch" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desactivado · un toque en el Watch"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé · un seul appui sur la Watch"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desativado · um toque no Watch"
-          }
-        }
-      }
-    },
     "OFFENDING SIDE" : {
       "localizations" : {
         "es" : {
@@ -2844,28 +2889,6 @@
         }
       }
     },
-    "Officiating matches today" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arbitrando partidos hoy"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arbitre aujourd'hui"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arbitrando jogos hoje"
-          }
-        }
-      }
-    },
     "ON THE PITCH" : {
       "localizations" : {
         "es" : {
@@ -2884,53 +2907,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "EM CAMPO"
-          }
-        }
-      }
-    },
-    "On the Watch before kick-off" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "En el Watch antes de la patada inicial"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sur la Watch avant le coup d'envoi"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Watch antes do pontapé inicial"
-          }
-        }
-      }
-    },
-    "Open RugbyTimer on the Watch. The setup arrives when it reconnects." : {
-
-    },
-    "Open RugbyTimer on your Watch" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abre RugbyTimer en tu Watch"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ouvrez RugbyTimer sur votre Watch"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abra o RugbyTimer no seu Watch"
           }
         }
       }
@@ -2979,24 +2955,134 @@
         }
       }
     },
-    "Page %lld of %lld" : {
+    "Off · kick off without a toss" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Página %lld de %lld"
+            "value" : "Desactivado · patada inicial sin sorteo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Page %lld sur %lld"
+            "value" : "Désactivé · coup d'envoi sans tirage"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Página %lld de %lld"
+            "value" : "Desativado · pontapé sem sorteio"
+          }
+        }
+      }
+    },
+    "Off · single tap on Watch" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado · un toque en el Watch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé · un seul appui sur la Watch"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desativado · um toque no Watch"
+          }
+        }
+      }
+    },
+    "Officiating matches today" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbitrando partidos hoy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbitre aujourd'hui"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbitrando jogos hoje"
+          }
+        }
+      }
+    },
+    "On the Watch before kick-off" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En el Watch antes de la patada inicial"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur la Watch avant le coup d'envoi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Watch antes do pontapé inicial"
+          }
+        }
+      }
+    },
+    "Open RugbyTimer on the Watch. The setup arrives when it reconnects." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre RugbyTimer en el Watch. La configuración llega cuando se reconecte."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrez RugbyTimer sur la Watch. La configuration arrivera à la reconnexion."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra o RugbyTimer no Watch. A configuração chega quando ele reconectar."
+          }
+        }
+      }
+    },
+    "Open RugbyTimer on your Watch" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre RugbyTimer en tu Watch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrez RugbyTimer sur votre Watch"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra o RugbyTimer no seu Watch"
           }
         }
       }
@@ -3067,28 +3153,6 @@
         }
       }
     },
-    "Penalty goal (+3)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Penal (+3)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pénalité (+3)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Penal (+3)"
-          }
-        }
-      }
-    },
     "PER HALF" : {
       "localizations" : {
         "es" : {
@@ -3129,6 +3193,116 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "JOGADOR"
+          }
+        }
+      }
+    },
+    "POINTS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PUNTOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POINTS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PONTOS"
+          }
+        }
+      }
+    },
+    "PRE-MATCH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREVIA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVANT-MATCH"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRÉ-JOGO"
+          }
+        }
+      }
+    },
+    "Page %lld of %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Página %lld de %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page %lld sur %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Página %lld de %lld"
+          }
+        }
+      }
+    },
+    "Panama National Team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selección de Panamá"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Équipe nationale du Panama"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleção do Panamá"
+          }
+        }
+      }
+    },
+    "Penalty goal (+3)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penal (+3)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pénalité (+3)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penal (+3)"
           }
         }
       }
@@ -3177,51 +3351,6 @@
         }
       }
     },
-    "PLAYER NUMBER: #%lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "NÚMERO DE JUGADOR: #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "NUMÉRO DU JOUEUR : #%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "NÚMERO DO JOGADOR: #%lld"
-          }
-        }
-      }
-    },
-    "POINTS" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PUNTOS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "POINTS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PONTOS"
-          }
-        }
-      }
-    },
     "Pre-filled in Team Lineup" : {
       "localizations" : {
         "es" : {
@@ -3240,28 +3369,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preenchidos na Escalação"
-          }
-        }
-      }
-    },
-    "PRE-MATCH" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PREVIA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AVANT-MATCH"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRÉ-JOGO"
           }
         }
       }
@@ -3306,73 +3413,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "AJUSTES RÁPIDOS"
-          }
-        }
-      }
-    },
-    "R" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "R"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "R"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "V"
-          }
-        }
-      }
-    },
-    "Range offered for scorers and cards" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rango para anotadores y tarjetas"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plage proposée pour les marqueurs et cartons"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faixa para pontuadores e cartões"
-          }
-        }
-      }
-    },
-    "Rate Rugby Timer" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Califica Rugby Timer"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noter Rugby Timer"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avalie o Rugby Timer"
           }
         }
       }
@@ -3465,95 +3505,6 @@
         }
       }
     },
-    "RED (OFF)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ROJA (FUERA)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ROUGE (EXCLU)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VERMELHO (FORA)"
-          }
-        }
-      }
-    },
-    "Red card · Sent off" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tarjeta roja · Expulsado"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge · Exclu"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cartão vermelho · Expulso"
-          }
-        }
-      }
-    },
-    "Red Card (Expulsion)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tarjeta roja (expulsión)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge (expulsion)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cartão vermelho (expulsão)"
-          }
-        }
-      }
-    },
-    "Red Card (Expulsion) - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tarjeta roja (expulsión) - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge (expulsion) - #%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cartão vermelho (expulsão) - #%lld"
-          }
-        }
-      }
-    },
     "REMAINING" : {
       "localizations" : {
         "es" : {
@@ -3576,50 +3527,6 @@
         }
       }
     },
-    "Replay the welcome tour" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repite el recorrido de bienvenida"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revoir la présentation"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reveja o tour de boas-vindas"
-          }
-        }
-      }
-    },
-    "Report a problem" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reportar un problema"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Signaler un problème"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Relatar um problema"
-          }
-        }
-      }
-    },
     "REQUIRED" : {
       "localizations" : {
         "es" : {
@@ -3638,72 +3545,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OBRIGATÓRIO"
-          }
-        }
-      }
-    },
-    "Restore default settings" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar ajustes predeterminados"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurer les réglages par défaut"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar ajustes padrão"
-          }
-        }
-      }
-    },
-    "Restore default settings?" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Restaurar ajustes predeterminados?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurer les réglages par défaut ?"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar ajustes padrão?"
-          }
-        }
-      }
-    },
-    "Restore Defaults" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar predeterminados"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurer"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar padrões"
           }
         }
       }
@@ -3755,6 +3596,9 @@
     "RUGBY TIMER" : {
       "shouldTranslate" : false
     },
+    "RUGBY TIMER %@" : {
+      "shouldTranslate" : false
+    },
     "RUGBY TIMER · MATCH RECORD" : {
       "localizations" : {
         "es" : {
@@ -3773,31 +3617,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RUGBY TIMER · SÚMULA"
-          }
-        }
-      }
-    },
-    "RUGBY TIMER %@" : {
-      "shouldTranslate" : false
-    },
-    "Rugby Timer is a referee's match clock. Set up the match on iPhone, kick off on Apple Watch and keep your eyes on the game." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby Timer es el reloj de partido para árbitros. Configura el partido en el iPhone, inícialo en el Apple Watch y no le quites los ojos al juego."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby Timer est le chrono de match de l'arbitre. Préparez le match sur l'iPhone, donnez le coup d'envoi sur l'Apple Watch et gardez les yeux sur le jeu."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O Rugby Timer é o relógio de jogo do árbitro. Configure o jogo no iPhone, dê o pontapé inicial no Apple Watch e mantenha os olhos no jogo."
           }
         }
       }
@@ -3868,28 +3687,6 @@
         }
       }
     },
-    "Run the clock, record tries, conversions and goals, and send players to the sin-bin. Countdowns run with the match clock, and your wrist taps when time is up." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Controla el reloj, registra tries, conversiones y goles, y manda jugadores a la exclusión temporal. Las cuentas regresivas siguen al reloj del partido y tu muñeca vibra cuando se acaba el tiempo."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gérez le chrono, notez les essais, transformations et pénalités, et envoyez les joueurs en exclusion temporaire. Les décomptes suivent le chrono du match, et votre poignet vibre quand le temps est écoulé."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Controle o relógio, registre tries, conversões e chutes, e mande jogadores para a exclusão temporária. As contagens seguem o relógio do jogo e o pulso vibra quando o tempo acaba."
-          }
-        }
-      }
-    },
     "RUNNING" : {
       "localizations" : {
         "es" : {
@@ -3908,6 +3705,292 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RODANDO"
+          }
+        }
+      }
+    },
+    "Range offered for scorers and cards" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rango para anotadores y tarjetas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plage proposée pour les marqueurs et cartons"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faixa para pontuadores e cartões"
+          }
+        }
+      }
+    },
+    "Rate Rugby Timer" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Califica Rugby Timer"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noter Rugby Timer"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avalie o Rugby Timer"
+          }
+        }
+      }
+    },
+    "Red Card (Expulsion)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta roja (expulsión)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge (expulsion)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartão vermelho (expulsão)"
+          }
+        }
+      }
+    },
+    "Red Card (Expulsion) - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta roja (expulsión) - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge (expulsion) - #%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartão vermelho (expulsão) - #%lld"
+          }
+        }
+      }
+    },
+    "Red card · Sent off" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta roja · Expulsado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge · Exclu"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartão vermelho · Expulso"
+          }
+        }
+      }
+    },
+    "Replay the welcome tour" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repite el recorrido de bienvenida"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revoir la présentation"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reveja o tour de boas-vindas"
+          }
+        }
+      }
+    },
+    "Report a problem" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reportar un problema"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signaler un problème"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relatar um problema"
+          }
+        }
+      }
+    },
+    "Restore Defaults" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar predeterminados"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar padrões"
+          }
+        }
+      }
+    },
+    "Restore default settings" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar ajustes predeterminados"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les réglages par défaut"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar ajustes padrão"
+          }
+        }
+      }
+    },
+    "Restore default settings?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Restaurar ajustes predeterminados?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les réglages par défaut ?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar ajustes padrão?"
+          }
+        }
+      }
+    },
+    "Rugby Referee" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Árbitro de rugby"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbitre de rugby"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Árbitro de rugby"
+          }
+        }
+      }
+    },
+    "Rugby Timer is a referee's match clock. Set up the match on iPhone, kick off on Apple Watch and keep your eyes on the game." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer es el reloj de partido para árbitros. Configura el partido en el iPhone, inícialo en el Apple Watch y no le quites los ojos al juego."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer est le chrono de match de l'arbitre. Préparez le match sur l'iPhone, donnez le coup d'envoi sur l'Apple Watch et gardez les yeux sur le jeu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Rugby Timer é o relógio de jogo do árbitro. Configure o jogo no iPhone, dê o pontapé inicial no Apple Watch e mantenha os olhos no jogo."
+          }
+        }
+      }
+    },
+    "Run the clock, record tries, conversions and goals, and send players to the sin-bin. Countdowns run with the match clock, and your wrist taps when time is up." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controla el reloj, registra tries, conversiones y goles, y manda jugadores a la exclusión temporal. Las cuentas regresivas siguen al reloj del partido y tu muñeca vibra cuando se acaba el tiempo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gérez le chrono, notez les essais, transformations et pénalités, et envoyez les joueurs en exclusion temporaire. Les décomptes suivent le chrono du match, et votre poignet vibre quand le temps est écoulé."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controle o relógio, registre tries, conversões e chutes, e mande jogadores para a exclusão temporária. As contagens seguem o relógio do jogo e o pulso vibra quando o tempo acaba."
           }
         }
       }
@@ -4066,28 +4149,6 @@
         }
       }
     },
-    "SECOND HALF · H2" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SEGUNDO TIEMPO · T2"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2E MI-TEMPS · MT2"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SEGUNDO TEMPO · T2"
-          }
-        }
-      }
-    },
     "SECOND HALF (H2)" : {
       "localizations" : {
         "es" : {
@@ -4106,6 +4167,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SEGUNDO TEMPO (T2)"
+          }
+        }
+      }
+    },
+    "SECOND HALF · H2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEGUNDO TIEMPO · T2"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2E MI-TEMPS · MT2"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEGUNDO TEMPO · T2"
           }
         }
       }
@@ -4154,50 +4237,6 @@
         }
       }
     },
-    "Set Duration" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fijar duración"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Définir la durée"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Definir duração"
-          }
-        }
-      }
-    },
-    "Set up and run the match on iPhone." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configura y lleva el partido en el iPhone."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Préparez et gérez le match sur l'iPhone."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configure e conduza o jogo no iPhone."
-          }
-        }
-      }
-    },
     "SET UP. SEND.\nKICK OFF." : {
       "localizations" : {
         "es" : {
@@ -4216,28 +4255,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CONFIGURE. ENVIE.\nCOMECE."
-          }
-        }
-      }
-    },
-    "Settings" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajustes"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Réglages"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajustes"
           }
         }
       }
@@ -4308,6 +4325,160 @@
         }
       }
     },
+    "SKIP" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OMITIR"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASSER"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PULAR"
+          }
+        }
+      }
+    },
+    "STANDARD XVs" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XV ESTÁNDAR"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XV STANDARD"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XV PADRÃO"
+          }
+        }
+      }
+    },
+    "START THE FIRST HALF" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIAR EL PRIMER TIEMPO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LANCER LA 1RE MI-TEMPS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIAR O PRIMEIRO TEMPO"
+          }
+        }
+      }
+    },
+    "START THE SECOND HALF" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIAR EL SEGUNDO TIEMPO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LANCER LA 2E MI-TEMPS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIAR O SEGUNDO TEMPO"
+          }
+        }
+      }
+    },
+    "Set Duration" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fijar duración"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir la durée"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir duração"
+          }
+        }
+      }
+    },
+    "Set up and run the match on iPhone." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configura y lleva el partido en el iPhone."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préparez et gérez le match sur l'iPhone."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configure e conduza o jogo no iPhone."
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        }
+      }
+    },
     "Shirt numbers" : {
       "localizations" : {
         "es" : {
@@ -4326,29 +4497,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Números de camisa"
-          }
-        }
-      }
-    },
-    "SIN-BIN 10 MIN" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EXCLUSIÓN 10 MIN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EXCLUSION 10 MIN"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EXCLUSÃO 10 MIN"
           }
         }
       }
@@ -4419,28 +4567,6 @@
         }
       }
     },
-    "SKIP" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OMITIR"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PASSER"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PULAR"
-          }
-        }
-      }
-    },
     "Squad + extras" : {
       "localizations" : {
         "es" : {
@@ -4463,50 +4589,6 @@
         }
       }
     },
-    "STANDARD XVs" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "XV ESTÁNDAR"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "XV STANDARD"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "XV PADRÃO"
-          }
-        }
-      }
-    },
-    "START THE FIRST HALF" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INICIAR EL PRIMER TIEMPO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LANCER LA 1RE MI-TEMPS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INICIAR O PRIMEIRO TEMPO"
-          }
-        }
-      }
-    },
     "Start the match on Apple Watch" : {
       "localizations" : {
         "es" : {
@@ -4525,28 +4607,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comece o jogo no Apple Watch"
-          }
-        }
-      }
-    },
-    "START THE SECOND HALF" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INICIAR EL SEGUNDO TIEMPO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LANCER LA 2E MI-TEMPS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INICIAR O SEGUNDO TEMPO"
           }
         }
       }
@@ -4617,46 +4677,24 @@
         }
       }
     },
-    "Tap Kick Off H2 when the teams are ready" : {
+    "System" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toca Patada inicial T2 cuando los equipos estén listos"
+            "value" : "Sistema"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Touchez Coup d'envoi MT2 quand les équipes sont prêtes"
+            "value" : "Système"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toque em Pontapé inicial T2 quando os times estiverem prontos"
-          }
-        }
-      }
-    },
-    "Tap Kick Off to start the clock" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toca Patada inicial para iniciar el reloj"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Touchez Coup d'envoi pour lancer le chrono"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque em Pontapé inicial para iniciar o relógio"
+            "value" : "Sistema"
           }
         }
       }
@@ -4749,28 +4787,6 @@
         }
       }
     },
-    "Tell us what referees need" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cuéntanos qué necesitan los árbitros"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dites-nous ce dont les arbitres ont besoin"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conte o que os árbitros precisam"
-          }
-        }
-      }
-    },
     "THE APP & ITS MAKER" : {
       "localizations" : {
         "es" : {
@@ -4789,50 +4805,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O APP E SEU CRIADOR"
-          }
-        }
-      }
-    },
-    "The clock stops and the half is recorded in the match record." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El reloj se detiene y el tiempo queda registrado en el acta."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le chrono s'arrête et la mi-temps est inscrite sur la feuille de match."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O relógio para e o tempo fica registrado na súmula."
-          }
-        }
-      }
-    },
-    "The match has finished" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El partido ha terminado"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le match est terminé"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O jogo terminou"
           }
         }
       }
@@ -4925,27 +4897,8 @@
         }
       }
     },
-    "Try scored (+5)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Try (+5)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Essai marqué (+5)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Try (+5)"
-          }
-        }
-      }
+    "TRY +5" : {
+      "shouldTranslate" : false
     },
     "TYPE" : {
       "localizations" : {
@@ -4965,6 +4918,141 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TIPO"
+          }
+        }
+      }
+    },
+    "Tap Kick Off H2 when the teams are ready" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca Patada inicial T2 cuando los equipos estén listos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touchez Coup d'envoi MT2 quand les équipes sont prêtes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em Pontapé inicial T2 quando os times estiverem prontos"
+          }
+        }
+      }
+    },
+    "Tap Kick Off to start the clock" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca Patada inicial para iniciar el reloj"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touchez Coup d'envoi pour lancer le chrono"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em Pontapé inicial para iniciar o relógio"
+          }
+        }
+      }
+    },
+    "Tell us what referees need" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuéntanos qué necesitan los árbitros"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dites-nous ce dont les arbitres ont besoin"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conte o que os árbitros precisam"
+          }
+        }
+      }
+    },
+    "The clock stops and the half is recorded in the match record." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El reloj se detiene y el tiempo queda registrado en el acta."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le chrono s'arrête et la mi-temps est inscrite sur la feuille de match."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O relógio para e o tempo fica registrado na súmula."
+          }
+        }
+      }
+    },
+    "The match has finished" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El partido ha terminado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le match est terminé"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O jogo terminou"
+          }
+        }
+      }
+    },
+    "Titanes Rugby Club" : {
+      "shouldTranslate" : false
+    },
+    "Try scored (+5)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try (+5)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essai marqué (+5)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try (+5)"
           }
         }
       }
@@ -5035,28 +5123,6 @@
         }
       }
     },
-    "Watch alerts always play" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Las alertas del Watch siempre suenan"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les alertes de la Watch restent actives"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Os alertas do Watch sempre tocam"
-          }
-        }
-      }
-    },
     "WATCH CONNECTED" : {
       "localizations" : {
         "es" : {
@@ -5080,10 +5146,48 @@
       }
     },
     "WATCH LINK LOST" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONEXIÓN CON EL WATCH PERDIDA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LIAISON AVEC LA WATCH PERDUE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONEXÃO COM O WATCH PERDIDA"
+          }
+        }
+      }
     },
     "WATCH NOT CONNECTED" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WATCH NO CONECTADO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WATCH NON CONNECTÉE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WATCH NÃO CONECTADO"
+          }
+        }
+      }
     },
     "WE READ EVERYTHING" : {
       "localizations" : {
@@ -5107,28 +5211,6 @@
         }
       }
     },
-    "Website" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sitio web"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Site web"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Site"
-          }
-        }
-      }
-    },
     "WELCOME" : {
       "localizations" : {
         "es" : {
@@ -5147,28 +5229,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "BOAS-VINDAS"
-          }
-        }
-      }
-    },
-    "While following a live match" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mientras sigues un partido en vivo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pendant le suivi d'un match en direct"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enquanto acompanha um jogo ao vivo"
           }
         }
       }
@@ -5239,6 +5299,72 @@
         }
       }
     },
+    "Watch alerts always play" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las alertas del Watch siempre suenan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les alertes de la Watch restent actives"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os alertas do Watch sempre tocam"
+          }
+        }
+      }
+    },
+    "Website" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitio web"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Site web"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Site"
+          }
+        }
+      }
+    },
+    "While following a live match" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mientras sigues un partido en vivo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pendant le suivi d'un match en direct"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enquanto acompanha um jogo ao vivo"
+          }
+        }
+      }
+    },
     "Won the toss · chose an end" : {
       "localizations" : {
         "es" : {
@@ -5283,29 +5409,6 @@
         }
       }
     },
-    "Y" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "J"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A"
-          }
-        }
-      }
-    },
     "YELLOW" : {
       "localizations" : {
         "es" : {
@@ -5328,47 +5431,68 @@
         }
       }
     },
-    "YELLOW (10M)" : {
-      "extractionState" : "stale",
+    "YOUR HALF-LENGTH" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AMARILLA (10M)"
+            "value" : "TU DURACIÓN"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "JAUNE (10M)"
+            "value" : "VOTRE DURÉE"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AMARELO (10M)"
+            "value" : "SUA DURAÇÃO"
           }
         }
       }
     },
-    "Yellow card · Sin-bin" : {
+    "YOUR MATCH,\nON YOUR WRIST" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tarjeta amarilla · Exclusión"
+            "value" : "TU PARTIDO,\nEN TU MUÑECA"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carton jaune · Exclusion"
+            "value" : "VOTRE MATCH,\nAU POIGNET"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cartão amarelo · Exclusão"
+            "value" : "SEU JOGO,\nNO SEU PULSO"
+          }
+        }
+      }
+    },
+    "YOUTH / LOWER GRADES" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JUVENILES / CATEGORÍAS MENORES"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JEUNES / NIVEAUX INFÉRIEURS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BASE / DIVISÕES INFERIORES"
           }
         }
       }
@@ -5439,6 +5563,28 @@
         }
       }
     },
+    "Yellow card · Sin-bin" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta amarilla · Exclusión"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton jaune · Exclusion"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartão amarelo · Exclusão"
+          }
+        }
+      }
+    },
     "Yellow cards: %lld · Red cards: %lld" : {
       "localizations" : {
         "es" : {
@@ -5483,71 +5629,52 @@
         }
       }
     },
-    "YOUR HALF-LENGTH" : {
+    "iOS developer · Rugby player · Referee" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TU DURACIÓN"
+            "value" : "Desarrollador iOS · Jugador de rugby · Árbitro"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "VOTRE DURÉE"
+            "value" : "Développeur iOS · Joueur de rugby · Arbitre"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SUA DURAÇÃO"
+            "value" : "Desenvolvedor iOS · Jogador de rugby · Árbitro"
           }
         }
       }
     },
-    "YOUR MATCH,\nON YOUR WRIST" : {
+    "iPhone haptics" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TU PARTIDO,\nEN TU MUÑECA"
+            "value" : "Vibración del iPhone"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "VOTRE MATCH,\nAU POIGNET"
+            "value" : "Retour haptique de l'iPhone"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SEU JOGO,\nNO SEU PULSO"
+            "value" : "Vibração do iPhone"
           }
         }
       }
     },
-    "YOUTH / LOWER GRADES" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "JUVENILES / CATEGORÍAS MENORES"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "JEUNES / NIVEAUX INFÉRIEURS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BASE / DIVISÕES INFERIORES"
-          }
-        }
-      }
+    "–" : {
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"

@@ -24,14 +24,18 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
     public let playerNumber: Int?
     public let type: MatchEventType
     public let description: String
-    
+    /// On half-time and full-time whistles: how long play ran after the clock reached zero.
+    /// Optional so events from older versions keep decoding.
+    public let overtimeSeconds: Int?
+
     public init(
         id: UUID = UUID(),
         minute: Int,
         teamName: String,
         playerNumber: Int? = nil,
         type: MatchEventType,
-        description: String
+        description: String,
+        overtimeSeconds: Int? = nil
     ) {
         self.id = id
         self.minute = minute
@@ -39,30 +43,35 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
         self.playerNumber = playerNumber
         self.type = type
         self.description = description
+        self.overtimeSeconds = overtimeSeconds
     }
 }
 
 public extension MatchEvent {
+    /// Recorded when the referee ends the match before time (abandoned match).
+    static let matchEndedEarly = "MATCH ENDED EARLY"
+
     /// `description` stays in English because it is synced between iPhone and Watch.
     /// This is the text shown on screen and in the shared match record, in the reader's language.
     var localizedDescription: String {
         switch type {
         case .yellowCard:
-            if let playerNumber { return String(localized: "Yellow Card (Sin-Bin) - #\(playerNumber)") }
-            return String(localized: "Yellow Card (Sin-Bin)")
+            if let playerNumber { return String(appLocalized: "Yellow Card (Sin-Bin) - #\(playerNumber)") }
+            return String(appLocalized: "Yellow Card (Sin-Bin)")
         case .redCard:
-            if let playerNumber { return String(localized: "Red Card (Expulsion) - #\(playerNumber)") }
-            return String(localized: "Red Card (Expulsion)")
+            if let playerNumber { return String(appLocalized: "Red Card (Expulsion) - #\(playerNumber)") }
+            return String(appLocalized: "Red Card (Expulsion)")
         case .tryScore, .sub:
             switch description {
-            case "Try scored (+5)": return String(localized: "Try scored (+5)")
-            case "Conversion (+2)": return String(localized: "Conversion (+2)")
-            case "Penalty goal (+3)": return String(localized: "Penalty goal (+3)")
-            case "Drop goal (+3)": return String(localized: "Drop goal (+3)")
-            case "HALF-TIME WHISTLE": return String(localized: "HALF-TIME WHISTLE")
-            case "FULL-TIME WHISTLE": return String(localized: "FULL-TIME WHISTLE")
-            case "Won the toss · kicks off": return String(localized: "Won the toss · kicks off")
-            case "Won the toss · chose an end": return String(localized: "Won the toss · chose an end")
+            case "Try scored (+5)": return String(appLocalized: "Try scored (+5)")
+            case "Conversion (+2)": return String(appLocalized: "Conversion (+2)")
+            case "Penalty goal (+3)": return String(appLocalized: "Penalty goal (+3)")
+            case "Drop goal (+3)": return String(appLocalized: "Drop goal (+3)")
+            case "HALF-TIME WHISTLE": return String(appLocalized: "HALF-TIME WHISTLE")
+            case "FULL-TIME WHISTLE": return String(appLocalized: "FULL-TIME WHISTLE")
+            case Self.matchEndedEarly: return String(appLocalized: "MATCH ENDED EARLY")
+            case "Won the toss · kicks off": return String(appLocalized: "Won the toss · kicks off")
+            case "Won the toss · chose an end": return String(appLocalized: "Won the toss · chose an end")
             default: return description
             }
         }

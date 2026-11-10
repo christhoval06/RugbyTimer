@@ -10,6 +10,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 26) {
                     SettingsMatchDefaultsWidget(settings: settings)
                     SettingsOfficiatingWidget(settings: settings)
+                    SettingsLanguageWidget(settings: settings)
                     SettingsAboutWidget(settings: settings)
                     SettingsSupportWidget()
                     SettingsResetWidget(onReset: settings.resetToStandard)

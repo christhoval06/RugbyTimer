@@ -57,6 +57,15 @@ public enum MatchStats {
         )
     }
 
+    /// Seconds played after the clock reached zero in each half, from the whistle events.
+    /// A half is nil until its whistle is recorded (or when an older version recorded it).
+    public static func timePastClock(of events: [MatchEvent]) -> (firstHalf: Int?, secondHalf: Int?) {
+        func overtime(_ whistle: String) -> Int? {
+            events.first { $0.type == .sub && $0.description == whistle }?.overtimeSeconds
+        }
+        return (overtime(halfTimeWhistle), overtime("FULL-TIME WHISTLE"))
+    }
+
     public static func result(home: String, away: String, homeScore: Int, awayScore: Int) -> MatchResult {
         if homeScore == awayScore { return .draw }
         return homeScore > awayScore

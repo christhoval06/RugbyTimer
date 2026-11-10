@@ -27,6 +27,7 @@ public struct RugbyTimerApp: App {
                         awayTeamName: $appState.awayTeamName,
                         selectedDurationSeconds: $appState.matchDurationSeconds,
                         sinBinDurationSeconds: $appState.sinBinDurationSeconds,
+                        halfTimeBreakSeconds: $appState.halfTimeBreakSeconds,
                         isWatchSynced: appState.connectivityService.isWatchReachable,
                         watchName: appState.connectivityService.connectedWatchName,
                         watchBattery: appState.connectivityService.watchBatteryLevel,
@@ -61,10 +62,15 @@ public struct RugbyTimerApp: App {
                 }
             }
             .environmentObject(settings)
+            .environment(\.locale, settings.language.locale)
             .preferredColorScheme(.dark)
             .fullScreenCover(isPresented: showsOnboarding) {
                 OnboardingView { settings.hasCompletedOnboarding = true }
+                    .environment(\.locale, settings.language.locale)
                     .preferredColorScheme(.dark)
+            }
+            .onChange(of: settings.language, initial: true) { _, language in
+                appState.connectivityService.sendAppLanguage(language)
             }
             .task { applyAllDefaults() }
             .onChange(of: settings.defaultHalfSeconds) { _, value in applySetupDefault { appState.matchDurationSeconds = value } }
@@ -73,6 +79,7 @@ public struct RugbyTimerApp: App {
             .onChange(of: settings.defaultAwayTeam) { _, value in applySetupDefault { appState.awayTeamName = value } }
             .onChange(of: settings.maxPlayerNumber, initial: true) { _, value in appState.maxPlayerNumber = value }
             .onChange(of: settings.tapLockEnabled, initial: true) { _, value in appState.tapLockEnabled = value }
+            .onChange(of: settings.halfTimeBreakSeconds) { _, value in applySetupDefault { appState.halfTimeBreakSeconds = value } }
             .onChange(of: settings.coinTossEnabled, initial: true) { _, value in appState.coinTossEnabled = value }
             .environment(\.playerNumberRange, appState.playerNumbers)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in
@@ -113,6 +120,7 @@ public struct RugbyTimerApp: App {
         guard !appState.hasConfiguredMatch else { return }
         appState.matchDurationSeconds = settings.defaultHalfSeconds
         appState.sinBinDurationSeconds = settings.defaultSinBinSeconds
+        appState.halfTimeBreakSeconds = settings.halfTimeBreakSeconds
         appState.homeTeamName = settings.defaultHomeTeam
         appState.awayTeamName = settings.defaultAwayTeam
     }

@@ -107,7 +107,7 @@ struct WatchTimerDialWidget: View {
         }
         .aspectRatio(1, contentMode: .fit)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(Text(periodLabel)), \(String(localized: status).lowercased()), \(readout)")
+        .accessibilityLabel("\(Text(periodLabel)), \(String(appLocalized: status).lowercased()), \(readout)")
     }
 }
 

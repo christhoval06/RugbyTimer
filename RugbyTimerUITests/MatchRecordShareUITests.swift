@@ -44,6 +44,34 @@ final class MatchRecordShareUITests: XCTestCase {
     }
 
     @MainActor
+    func testLandscapeFullTimeShowsResultAndShareOnLeft() throws {
+        let app = XCUIApplication()
+        app.launchArguments.append("-skipOnboarding")
+        app.launch()
+        playPhoneMatchToFullTime(app)
+        defer { XCUIDevice.shared.orientation = .portrait }
+
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let result = app.otherElements.matching(NSPredicate(format: "label BEGINSWITH 'Full time:'")).firstMatch
+        let share = app.buttons["shareMatchRecord"]
+        XCTAssertTrue(result.waitForExistence(timeout: 5), "Final result is missing in landscape")
+        XCTAssertTrue(share.waitForExistence(timeout: 5))
+        XCTAssertEqual(app.buttons.matching(identifier: "shareMatchRecord").count, 1, "Share should appear once")
+        let midX = app.windows.firstMatch.frame.midX
+        XCTAssertLessThan(share.frame.maxX, midX, "Share button should be in the left column")
+        XCTAssertLessThan(share.frame.minY, result.frame.maxY + 40, "Share button should sit under the result")
+
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = "Landscape full time"
+        shot.lifetime = .keepAlways
+        add(shot)
+
+        share.tap()
+        let recordBody = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'RUGBY TIMER'")).firstMatch
+        XCTAssertTrue(recordBody.waitForExistence(timeout: 5))
+    }
+
+    @MainActor
     private func playPhoneMatchToFullTime(_ app: XCUIApplication) {
         let runOnPhone = app.buttons["runMatchOnPhone"]
         XCTAssertTrue(runOnPhone.waitForExistence(timeout: 5))

@@ -9,7 +9,7 @@ struct DeveloperLinksWidget: View {
             link(AppInfo.githubURL, symbol: "chevron.left.forwardslash.chevron.right", title: "GitHub",
                  subtitle: "\(AppInfo.developerHandle)", tint: .iceTitanium)
             SettingsDividerWidget()
-            if let mail = AppInfo.mailURL(subject: "Hello") {
+            if let mail = AppInfo.mailURL(subject: "Hello") { // l10n-ignore: subject stays English
                 link(mail, symbol: "envelope", title: "Email", subtitle: "\(AppInfo.supportEmail)", tint: .sinBinAmber)
             }
         }

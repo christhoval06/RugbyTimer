@@ -24,7 +24,7 @@ struct OnboardingPageWidget: View {
             .opacity(isActive ? 1 : 0)
             .offset(y: isActive ? 0 : 12)
             .animation(.easeOut(duration: 0.45).delay(0.1), value: isActive)
-            OnboardingTypewriterTextWidget(text: String(localized: page.description), isActive: isActive)
+            OnboardingTypewriterTextWidget(text: String(appLocalized: page.description), isActive: isActive)
             Spacer(minLength: 0)
             Spacer(minLength: 0)
         }

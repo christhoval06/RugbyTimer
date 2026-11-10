@@ -1,17 +1,13 @@
 import SwiftUI
 
 struct LiveShareRecordWidget: View {
-    let homeTeamName: String
-    let awayTeamName: String
-    let makeRecord: () -> String
-
-    /// The record travels with the sheet's item, so the sheet can never open on stale (empty) text.
-    @State private var shownRecord: ShownRecord?
+    /// The sheet lives in `LiveMatchView`, above the portrait/landscape switch, so redraws and rotation keep it.
+    let onShowRecord: () -> Void
 
     var body: some View {
         Button {
             HapticService.playStartStop()
-            shownRecord = ShownRecord(text: makeRecord())
+            onShowRecord()
         } label: {
             HStack(spacing: 12) {
                 Image(systemName: "doc.text")
@@ -35,17 +31,5 @@ struct LiveShareRecordWidget: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("shareMatchRecord")
-        .sheet(item: $shownRecord) { shown in
-            LiveMatchRecordSheetWidget(
-                record: shown.text,
-                subject: String(localized: "Match record: \(homeTeamName) vs \(awayTeamName)"),
-                onDone: { shownRecord = nil }
-            )
-        }
     }
-}
-
-private struct ShownRecord: Identifiable {
-    let id = UUID()
-    let text: String
 }

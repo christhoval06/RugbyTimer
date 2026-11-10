@@ -97,6 +97,6 @@ struct LiveTimerRingWidget: View {
         }
         .frame(width: 260, height: 260)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(Text(periodLabel)), \(String(localized: status).lowercased()), \(readout)")
+        .accessibilityLabel("\(Text(periodLabel)), \(String(appLocalized: status).lowercased()), \(readout)")
     }
 }

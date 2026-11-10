@@ -8,8 +8,8 @@ struct DeveloperRugbyCareerWidget: View {
             ForEach(Array(AppInfo.rugbyCareer.enumerated()), id: \.offset) { index, item in
                 if index > 0 { SettingsDividerWidget() }
                 HStack {
-                    SetupSettingLabelWidget(symbol: item.symbol, title: "\(item.title)",
-                                            subtitle: "\(String(localized: item.detail))", tint: tints[index % tints.count])
+                    SetupSettingLabelWidget(symbol: item.symbol, title: "\(String(appLocalized: item.title))",
+                                            subtitle: "\(String(appLocalized: item.detail))", tint: tints[index % tints.count])
                     Spacer(minLength: 0)
                 }
                 .padding(14)

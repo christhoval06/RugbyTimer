@@ -5,7 +5,7 @@ struct SettingsAboutWidget: View {
     @State private var isShowingTour = false
 
     var body: some View {
-        SettingsGroupWidget(number: "03", title: "ABOUT", detail: "THE APP & ITS MAKER") {
+        SettingsGroupWidget(number: "04", title: "ABOUT", detail: "THE APP & ITS MAKER") {
             Button {
                 isShowingTour = true
             } label: {
@@ -23,6 +23,7 @@ struct SettingsAboutWidget: View {
         }
         .fullScreenCover(isPresented: $isShowingTour) {
             OnboardingView { isShowingTour = false }
+                .environment(\.locale, settings.language.locale)
                 .preferredColorScheme(.dark)
         }
     }
