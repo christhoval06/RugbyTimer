@@ -1,3 +1,61 @@
-build/
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode: build output
+build/
+DerivedData/
+*.xcarchive
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Xcode: per-user settings
 xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+
+# Xcode: test results and logs
+*.xcresult
+*.xcactivitylog
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved.bak
+
+# CocoaPods / Carthage (not used today; kept out if added later)
+Pods/
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Python (scripts/)
+__pycache__/
+*.py[cod]
+.venv/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Secrets and local environment
+.env
+.env.*
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+
+# Tool output
+graphify-out/
