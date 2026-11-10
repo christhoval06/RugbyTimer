@@ -66,6 +66,9 @@ public class AppState: ObservableObject {
     var rejectedConfigurationID: UUID?
     /// iPhone: the Watch match the referee left with NEW MATCH SETUP; its snapshots are ignored.
     var dismissedMatchID: UUID?
+    /// Watch: a Quick Match set up on the Watch itself. It is never synced to the iPhone.
+    @Published public internal(set) var isWatchOnlyMatch = false
+    var lastAppliedConfigurationID: UUID?
     var lastClockReading: Int
 
     public var hasConfiguredMatch: Bool { matchID != nil }

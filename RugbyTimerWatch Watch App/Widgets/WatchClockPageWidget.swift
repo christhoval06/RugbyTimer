@@ -8,6 +8,8 @@ struct WatchClockPageWidget: View {
     let onStartSecondHalf: () -> Void
     let onEndPeriod: () -> Void
     var onEndMatch: () -> Void = {}
+    /// Full time only: back to the Watch main screen for the next match.
+    var onNewMatch: (() -> Void)? = nil
 
     var body: some View {
         ScrollView {
@@ -32,6 +34,9 @@ struct WatchClockPageWidget: View {
                     WatchFullTimeWidget(summary: summary)
                     WatchTimePastClockWidget(firstHalf: summary.timePastClock.firstHalf,
                                              secondHalf: summary.timePastClock.secondHalf)
+                    if let onNewMatch {
+                        WatchLeaveMatchWidget(kind: .newMatch, onLeave: onNewMatch)
+                    }
                 default:
                     // The dial carries the period label, like the iPhone clock.
                     WatchLiveClockWidget(timerService: timerService, totalDuration: totalDuration,

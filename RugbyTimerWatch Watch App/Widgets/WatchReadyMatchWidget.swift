@@ -9,6 +9,9 @@ struct WatchReadyMatchWidget: View {
     var needsCoinToss = false
     var onCoinToss: ((CoinTossResult) -> Void)? = nil
     let onStartMatch: () -> Void
+    /// Back to the main screen: CHANGE SETUP for a Quick Match, QUICK MATCH INSTEAD for an iPhone setup.
+    var leaveKind: WatchLeaveMatchWidget.Kind = .quickMatchInstead
+    var onLeave: (() -> Void)? = nil
 
     @State private var showsCoinToss = false
 
@@ -28,6 +31,9 @@ struct WatchReadyMatchWidget: View {
                                                onRedo: onCoinToss == nil ? nil : { showsCoinToss = true })
                     }
                     WatchKickoffButtonWidget(onStartMatch: onStartMatch)
+                }
+                if let onLeave {
+                    WatchLeaveMatchWidget(kind: leaveKind, onLeave: onLeave)
                 }
             }
             .padding(.vertical, 4)

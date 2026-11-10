@@ -20,6 +20,7 @@ struct WatchLiveMatchWidget: View {
     let onStartSecondHalf: () -> Void
     let onEndPeriod: () -> Void
     var onEndMatch: () -> Void = {}
+    var onNewMatch: (() -> Void)? = nil
 
     @State private var page: Page = .clock
 
@@ -53,7 +54,8 @@ struct WatchLiveMatchWidget: View {
                 totalDuration: totalDuration,
                 onStartSecondHalf: onStartSecondHalf,
                 onEndPeriod: onEndPeriod,
-                onEndMatch: onEndMatch
+                onEndMatch: onEndMatch,
+                onNewMatch: onNewMatch
             )
             .tag(Page.clock)
 

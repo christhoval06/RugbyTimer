@@ -18,7 +18,7 @@ public struct RugbyTimerWatchApp: App {
         WindowGroup {
             NavigationStack {
                 if !appState.hasConfiguredMatch {
-                    WatchSetupRequiredWidget()
+                    WatchSetupRequiredWidget { appState.startQuickMatch($0) }
                 } else if appState.matchPeriod == .preMatch {
                     WatchReadyMatchWidget(
                         homeTeamName: appState.homeTeamName,
@@ -27,7 +27,9 @@ public struct RugbyTimerWatchApp: App {
                         kickOffTeamName: appState.kickOffTeamName(for: .firstHalf),
                         needsCoinToss: appState.needsCoinToss,
                         onCoinToss: appState.coinTossEnabled ? { appState.recordCoinToss($0) } : nil,
-                        onStartMatch: appState.startMatch
+                        onStartMatch: appState.startMatch,
+                        leaveKind: appState.isWatchOnlyMatch ? .changeSetup : .quickMatchInstead,
+                        onLeave: { appState.leaveMatch() }
                     )
                 } else {
                     WatchLiveMatchWidget(
@@ -46,7 +48,8 @@ public struct RugbyTimerWatchApp: App {
                         onScore: { appState.recordScore(team: $0, playerNumber: $1, points: $2, description: $3) },
                         onStartSecondHalf: appState.startSecondHalf,
                         onEndPeriod: appState.endPeriod,
-                        onEndMatch: appState.endMatch
+                        onEndMatch: appState.endMatch,
+                        onNewMatch: newMatchAction
                     )
                 }
             }
@@ -67,5 +70,11 @@ public struct RugbyTimerWatchApp: App {
                 if phase == .active { runtime.appDidBecomeActive() }
             }
         }
+    }
+
+    /// NEW MATCH at full time: back to the main screen for the next match.
+    private var newMatchAction: (() -> Void)? {
+        guard appState.matchPeriod == .fullTime else { return nil }
+        return { appState.leaveMatch() }
     }
 }

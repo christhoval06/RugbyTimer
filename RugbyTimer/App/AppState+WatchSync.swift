@@ -7,7 +7,10 @@ import Foundation
 
 extension AppState {
     func receiveConfiguration(_ configuration: MatchConfiguration) {
-        guard configuration.matchID != matchID else { return }
+        // The iPhone resends its last setup with every context update (language, telemetry);
+        // one already applied or left on the Watch must not replace a Watch-only match.
+        guard configuration.matchID != matchID, configuration.matchID != lastAppliedConfigurationID,
+              configuration.matchID != dismissedConfigurationID else { return }
         guard matchPeriod == .preMatch || matchPeriod == .fullTime else {
             // A delayed setup cannot replace a match already started on Watch.
             rejectedConfigurationID = configuration.matchID
@@ -15,6 +18,8 @@ extension AppState {
             return
         }
         matchID = configuration.matchID
+        lastAppliedConfigurationID = configuration.matchID
+        isWatchOnlyMatch = false
         homeTeamName = configuration.home
         awayTeamName = configuration.away
         matchDurationSeconds = configuration.duration
@@ -60,7 +65,7 @@ extension AppState {
 
     public func publishWatchSnapshot() {
         #if os(watchOS)
-        guard let matchID else { return }
+        guard let matchID, !isWatchOnlyMatch else { return }
         connectivityService.sendMatchSnapshot(MatchSnapshot(
             matchID: matchID, home: homeTeamName, away: awayTeamName,
             duration: matchDurationSeconds, period: matchPeriod,

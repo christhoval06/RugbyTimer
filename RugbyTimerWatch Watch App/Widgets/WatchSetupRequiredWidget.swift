@@ -1,6 +1,11 @@
 import SwiftUI
 
+/// Watch main screen with no match: set up on iPhone, or start a Quick Match on the Watch.
 struct WatchSetupRequiredWidget: View {
+    var onQuickMatch: (WatchQuickSetup) -> Void = { _ in }
+
+    @State private var showsQuickSetup = false
+
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
@@ -24,6 +29,12 @@ struct WatchSetupRequiredWidget: View {
                     .font(.system(size: 11))
                     .foregroundStyle(Color.outline)
                     .fixedSize(horizontal: false, vertical: true)
+
+                Text("or")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundStyle(Color.outline)
+
+                quickMatchButton
             }
             .multilineTextAlignment(.center)
             .frame(maxWidth: .infinity)
@@ -31,6 +42,21 @@ struct WatchSetupRequiredWidget: View {
             .scenePadding(.horizontal)
         }
         .background(Color.pitchVoid.ignoresSafeArea())
+        .sheet(isPresented: $showsQuickSetup) {
+            WatchQuickSetupWidget(onReady: onQuickMatch)
+        }
+    }
+
+    private var quickMatchButton: some View {
+        Button { showsQuickSetup = true } label: {
+            Label("QUICK MATCH", systemImage: "bolt.fill")
+                .font(.system(size: 13, weight: .heavy).width(.condensed))
+                .foregroundStyle(Color.pitchVoid)
+                .frame(maxWidth: .infinity, minHeight: 40)
+                .background(Color.pitchEmerald, in: RoundedRectangle(cornerRadius: 11))
+        }
+        .buttonStyle(.plain)
+        .accessibilityHint("Sets up a match on the Watch, without the iPhone")
     }
 }
 

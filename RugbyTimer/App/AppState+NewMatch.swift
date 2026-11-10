@@ -25,4 +25,13 @@ extension AppState {
         resetMatchData()
         connectivityService.clearMatchSnapshot()
     }
+
+    static let dismissedSetupKey = "watch.dismissedSetupID" // l10n-ignore: defaults key
+
+    /// Watch: the iPhone setup the referee left on the Watch (CHANGE SETUP / NEW MATCH).
+    /// Kept across launches, so the iPhone resending it doesn't bring it back.
+    var dismissedConfigurationID: UUID? {
+        get { UserDefaults.standard.string(forKey: Self.dismissedSetupKey).flatMap(UUID.init(uuidString:)) }
+        set { UserDefaults.standard.set(newValue?.uuidString, forKey: Self.dismissedSetupKey) }
+    }
 }
