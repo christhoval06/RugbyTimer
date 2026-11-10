@@ -61,7 +61,7 @@ struct LiveScoreRowWidget: View {
     VStack(spacing: 20) {
         LiveScoreRowWidget(title: "HOME", name: "Rangers RFC", score: score,
                            color: Color.pitchEmerald, isLeading: true)
-        Button("TRY +5") { score += 5 }
+        Button { score += 5 } label: { Text(verbatim: "TRY +5") }
             .buttonStyle(.borderedProminent)
             .tint(Color.pitchEmerald)
     }

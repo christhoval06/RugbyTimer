@@ -51,7 +51,7 @@ struct LiveLandscapeLayoutWidget<Clock: View, Details: View, Footer: View>: View
         LiveScoreboardWidget(homeTeamName: "Rangers RFC", awayTeamName: "City Lions", homeScore: 12, awayScore: 7)
         LiveSinBinWidget(cards: [MatchCard(teamName: "City Lions", playerNumber: 6, type: .yellow, durationSeconds: 380)])
     } footer: {
-        Text("Footer").foregroundStyle(Color.outline).padding()
+        Text(verbatim: "Footer").foregroundStyle(Color.outline).padding()
     }
     .background(Color.pitchVoid)
     .preferredColorScheme(.dark)

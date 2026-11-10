@@ -13,6 +13,7 @@ public struct RugbyTimerApp: App {
     @StateObject private var appState = AppState()
     @StateObject private var settings = AppSettings()
     @Environment(\.scenePhase) private var scenePhase
+    @State private var isShowingSplash = !SplashOverlay.isSkipped
 
     public init() {}
 
@@ -61,6 +62,7 @@ public struct RugbyTimerApp: App {
 
                 }
             }
+            .splashOverlay(isPresented: $isShowingSplash)
             .environmentObject(settings)
             .environment(\.locale, settings.language.locale)
             .preferredColorScheme(.dark)
@@ -107,7 +109,8 @@ public struct RugbyTimerApp: App {
 
     private var showsOnboarding: Binding<Bool> {
         Binding(
-            get: { !settings.hasCompletedOnboarding },
+            // Onboarding waits for the splash, so it doesn't cover it on first launch.
+            get: { !settings.hasCompletedOnboarding && !isShowingSplash },
             set: { if !$0 { settings.hasCompletedOnboarding = true } }
         )
     }

@@ -8,6 +8,7 @@ public struct RugbyTimerWatchApp: App {
     @Environment(\.scenePhase) private var scenePhase
     /// Set by the iPhone (Settings › Language); `system` follows the Watch's own language.
     @AppStorage(AppLanguage.defaultsKey) private var languageCode = AppLanguage.system.rawValue
+    @State private var isShowingSplash = !SplashOverlay.isSkipped
 
     public init() {
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
@@ -49,6 +50,7 @@ public struct RugbyTimerWatchApp: App {
                     )
                 }
             }
+            .splashOverlay(isPresented: $isShowingSplash, compact: true)
             .environment(\.playerNumberRange, appState.playerNumbers)
             .environment(\.tapLockEnabled, appState.tapLockEnabled)
             .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .system).locale)

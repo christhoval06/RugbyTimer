@@ -35,7 +35,9 @@ struct WatchCoinTossOptionWidget: View {
 
 #Preview("Toss option") {
     VStack {
-        WatchCoinTossOptionWidget(title: "City Lions", detail: "AWAY", tint: .sinBinAmber, action: {})
+        // Team names are never translated.
+        WatchCoinTossOptionWidget(title: LocalizedStringKey(String("City Lions")), detail: "AWAY", // l10n-ignore
+                                  tint: .sinBinAmber, action: {})
         WatchCoinTossOptionWidget(title: "HEADS", action: {})
     }
 }

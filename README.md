@@ -29,7 +29,7 @@ A match clock for rugby referees, built for iPhone and Apple Watch. It keeps the
 2. Pick the `RugbyTimer` scheme to run on iPhone, or `RugbyTimerWatch Watch App` to run on Apple Watch.
 3. To try iPhone and Watch together, run on a paired iPhone and Watch simulator pair.
 
-Pass the `-skipOnboarding` launch argument to go straight to Match Setup. The UI tests use it.
+Pass the `-skipOnboarding` launch argument to skip the splash screen and onboarding and go straight to Match Setup. The UI tests use it.
 
 ## Running tests
 

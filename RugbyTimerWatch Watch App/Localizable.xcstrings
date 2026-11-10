@@ -4,6 +4,31 @@
     "" : {
       "shouldTranslate" : false
     },
+    "MATCH CLOCK FOR REFEREES" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RELOJ DE PARTIDO PARA ÁRBITROS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CHRONO DE MATCH POUR ARBITRES"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CRONÔMETRO DE PARTIDA PARA ÁRBITROS"
+          }
+        }
+      }
+    },
+    "RUGBY TIMER" : {
+      "shouldTranslate" : false
+    },
     "—" : {
       "shouldTranslate" : false
     },

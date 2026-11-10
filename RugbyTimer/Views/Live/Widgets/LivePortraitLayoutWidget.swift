@@ -32,7 +32,7 @@ struct LivePortraitLayoutWidget<Content: View, Footer: View>: View {
         LivePeriodStatusWidget(matchPeriod: .firstHalf, isRunning: true)
         LiveScoreboardWidget(homeTeamName: "Rangers RFC", awayTeamName: "City Lions", homeScore: 12, awayScore: 7)
     } footer: {
-        Text("Footer").foregroundStyle(Color.outline).padding()
+        Text(verbatim: "Footer").foregroundStyle(Color.outline).padding()
     }
     .background(Color.pitchVoid)
     .preferredColorScheme(.dark)

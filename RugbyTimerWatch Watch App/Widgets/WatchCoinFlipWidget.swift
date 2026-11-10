@@ -76,7 +76,7 @@ private struct CoinFaceShape: View {
     @Previewable @State var outcome: CoinFace?
     VStack(spacing: 12) {
         WatchCoinFlipWidget(outcome: outcome)
-        Button("Flip") { outcome = outcome == nil ? .tails : nil }
+        Button { outcome = outcome == nil ? .tails : nil } label: { Text(verbatim: "Flip") }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color.pitchVoid)
