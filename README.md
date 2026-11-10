@@ -87,3 +87,7 @@ It flags missing or stale translations, strings the compiler extracted but the c
 Built by [Christhoval Barba](https://christhoval.dev), a player with Titanes Rugby Club, a former Panama national team player, and a rugby referee.
 
 Support: me@christhoval.dev
+
+## Privacy
+
+Rugby Timer collects no data. Read the full [privacy policy](PRIVACY.md).
