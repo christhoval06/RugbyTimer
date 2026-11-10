@@ -20,7 +20,7 @@ enum AppInfo {
         ("flag.fill", "Panama National Team", "Player · 2015–2022"),
         ("stopwatch.fill", "Rugby Referee", "Officiating matches today")
     ]
-    static let supportEmail = "support@christhoval.dev"
+    static let supportEmail = "me@christhoval.dev"
     static let websiteURL = URL(string: "https://christhoval.dev")!
     static let githubURL = URL(string: "https://github.com/christhoval")!
 
