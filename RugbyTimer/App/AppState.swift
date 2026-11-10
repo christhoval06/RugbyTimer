@@ -27,6 +27,11 @@ public class AppState: ObservableObject {
     /// Watch scoring, cards and ending a half need a press-and-hold instead of a tap.
     @Published public var tapLockEnabled: Bool = true
 
+    /// When on, the Watch runs the coin toss before kick-off (the Setup "Coin toss" toggle).
+    @Published public var coinTossEnabled: Bool = false
+    /// The coin toss done on the Watch for this match; nil until it happens.
+    @Published public var coinToss: CoinTossResult?
+
     public var playerNumbers: ClosedRange<Int> { 1...max(1, maxPlayerNumber) }
 
     // Match Live Data
@@ -116,7 +121,7 @@ public class AppState: ObservableObject {
         connectivityService.sendMatchConfig(MatchConfiguration(
             matchID: id, home: homeTeamName, away: awayTeamName, duration: matchDurationSeconds,
             sinBinDurationSeconds: sinBinDurationSeconds, maxPlayerNumber: maxPlayerNumber,
-            tapLockEnabled: tapLockEnabled
+            tapLockEnabled: tapLockEnabled, coinTossEnabled: coinTossEnabled
         ))
         currentScreen = .liveMatch
     }
@@ -131,12 +136,13 @@ public class AppState: ObservableObject {
         awayScore = 0
         activeCards = []
         mirroredCards = []
+        coinToss = nil
         matchEvents = []
         timerService.reset(to: matchDurationSeconds)
     }
 
     public func startMatch() {
-        guard runsClockLocally, matchPeriod == .preMatch, hasConfiguredMatch else { return }
+        guard runsClockLocally, matchPeriod == .preMatch, hasConfiguredMatch, !needsCoinToss else { return }
         HapticService.playHalfTime()
         matchPeriod = .firstHalf
         timerService.reset(to: matchDurationSeconds)
@@ -168,6 +174,7 @@ public class AppState: ObservableObject {
         sinBinDurationSeconds = configuration.sinBinDurationSeconds ?? 600
         maxPlayerNumber = configuration.maxPlayerNumber ?? MatchEvent.playerNumbers.upperBound
         tapLockEnabled = configuration.tapLockEnabled ?? false
+        coinTossEnabled = configuration.coinTossEnabled ?? false
         resetMatchData()
         publishWatchSnapshot()
     }

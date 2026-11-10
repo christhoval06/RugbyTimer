@@ -21,6 +21,9 @@ public struct RugbyTimerWatchApp: App {
                         homeTeamName: appState.homeTeamName,
                         awayTeamName: appState.awayTeamName,
                         durationSeconds: appState.matchDurationSeconds,
+                        kickOffTeamName: appState.kickOffTeamName(for: .firstHalf),
+                        needsCoinToss: appState.needsCoinToss,
+                        onCoinToss: appState.coinTossEnabled ? { appState.recordCoinToss($0) } : nil,
                         onStartMatch: appState.startMatch
                     )
                 } else {

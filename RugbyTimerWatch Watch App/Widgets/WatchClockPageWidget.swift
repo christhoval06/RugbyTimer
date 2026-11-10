@@ -15,6 +15,7 @@ struct WatchClockPageWidget: View {
                 case .halfTime:
                     WatchLivePeriodWidget(matchPeriod: summary.matchPeriod)
                     WatchHalfTimeWidget(homeScore: summary.homeScore, awayScore: summary.awayScore,
+                                        kickOffTeamName: summary.secondHalfKickOff,
                                         onStartSecondHalf: onStartSecondHalf)
                     // Players still off when the second half kicks off.
                     if !summary.carriedSinBins.isEmpty {

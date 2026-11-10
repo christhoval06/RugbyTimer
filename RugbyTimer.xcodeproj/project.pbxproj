@@ -103,12 +103,15 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				App/AppState.swift,
+				"App/AppState+CoinToss.swift",
 				Core/DesignTokens.swift,
 				Core/PlayerNumberEnvironment.swift,
+				Models/CoinToss.swift,
 				Models/MatchCard.swift,
 				Models/MatchEvent.swift,
 				Models/MatchPeriod.swift,
 				Models/MatchStats.swift,
+				Services/CoinTossService.swift,
 				Services/HapticService.swift,
 				Services/MatchTimerService.swift,
 				Services/WatchConnectivityService.swift,

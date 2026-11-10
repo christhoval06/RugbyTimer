@@ -73,6 +73,7 @@ public struct RugbyTimerApp: App {
             .onChange(of: settings.defaultAwayTeam) { _, value in applySetupDefault { appState.awayTeamName = value } }
             .onChange(of: settings.maxPlayerNumber, initial: true) { _, value in appState.maxPlayerNumber = value }
             .onChange(of: settings.tapLockEnabled, initial: true) { _, value in appState.tapLockEnabled = value }
+            .onChange(of: settings.coinTossEnabled, initial: true) { _, value in appState.coinTossEnabled = value }
             .environment(\.playerNumberRange, appState.playerNumbers)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in
                 UIApplication.shared.isIdleTimerDisabled = awake

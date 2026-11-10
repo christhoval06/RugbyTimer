@@ -13,6 +13,8 @@ public struct MatchConfiguration: Codable, Equatable {
     public var maxPlayerNumber: Int? = nil
     // Optional so older companions keep plain taps on the Watch.
     public var tapLockEnabled: Bool? = nil
+    // Optional so older companions skip the Watch coin toss.
+    public var coinTossEnabled: Bool? = nil
 }
 
 public struct MatchSnapshot: Codable, Equatable {

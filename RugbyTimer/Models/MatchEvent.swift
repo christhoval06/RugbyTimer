@@ -61,6 +61,8 @@ public extension MatchEvent {
             case "Drop goal (+3)": return String(localized: "Drop goal (+3)")
             case "HALF-TIME WHISTLE": return String(localized: "HALF-TIME WHISTLE")
             case "FULL-TIME WHISTLE": return String(localized: "FULL-TIME WHISTLE")
+            case "Won the toss · kicks off": return String(localized: "Won the toss · kicks off")
+            case "Won the toss · chose an end": return String(localized: "Won the toss · chose an end")
             default: return description
             }
         }

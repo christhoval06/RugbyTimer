@@ -3,6 +3,7 @@ import SwiftUI
 struct WatchHalfTimeWidget: View {
     var homeScore = 0
     var awayScore = 0
+    var kickOffTeamName: String? = nil
     let onStartSecondHalf: () -> Void
 
     var body: some View {
@@ -16,6 +17,10 @@ struct WatchHalfTimeWidget: View {
                     .font(.system(size: 16, weight: .heavy, design: .monospaced))
                     .foregroundStyle(Color.sinBinAmber)
                     .accessibilityLabel(Text("Half-time score \(homeScore) to \(awayScore)"))
+            }
+
+            if let kickOffTeamName {
+                WatchKickOffTeamWidget(label: "H2 KO", teamName: kickOffTeamName)
             }
 
             Button(action: onStartSecondHalf) {
@@ -46,6 +51,6 @@ struct WatchHalfTimeWidget: View {
 }
 
 #Preview("Half-time") {
-    WatchHalfTimeWidget(homeScore: 7, awayScore: 0, onStartSecondHalf: {})
+    WatchHalfTimeWidget(homeScore: 7, awayScore: 0, kickOffTeamName: "Rangers RFC", onStartSecondHalf: {})
         .padding()
 }

@@ -33,6 +33,7 @@ final class AppSettings: ObservableObject {
         static let haptics = HapticService.enabledDefaultsKey
         static let keepAwake = "settings.keepScreenAwake"
         static let tapLock = "settings.tapLockEnabled"
+        static let coinToss = "settings.coinTossEnabled"
     }
 
     private let defaults: UserDefaults
@@ -46,6 +47,7 @@ final class AppSettings: ObservableObject {
     @Published var hapticsEnabled: Bool { didSet { defaults.set(hapticsEnabled, forKey: Key.haptics) } }
     @Published var keepScreenAwake: Bool { didSet { defaults.set(keepScreenAwake, forKey: Key.keepAwake) } }
     @Published var tapLockEnabled: Bool { didSet { defaults.set(tapLockEnabled, forKey: Key.tapLock) } }
+    @Published var coinTossEnabled: Bool { didSet { defaults.set(coinTossEnabled, forKey: Key.coinToss) } }
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -58,6 +60,7 @@ final class AppSettings: ObservableObject {
         hapticsEnabled = defaults.object(forKey: Key.haptics) as? Bool ?? true
         keepScreenAwake = defaults.object(forKey: Key.keepAwake) as? Bool ?? true
         tapLockEnabled = defaults.object(forKey: Key.tapLock) as? Bool ?? true
+        coinTossEnabled = defaults.bool(forKey: Key.coinToss)
         // UI tests launch straight into Match Setup; not persisted.
         if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") { hasCompletedOnboarding = true }
     }
@@ -72,6 +75,7 @@ final class AppSettings: ObservableObject {
         hapticsEnabled = true
         keepScreenAwake = true
         tapLockEnabled = true
+        coinTossEnabled = false
     }
 }
 

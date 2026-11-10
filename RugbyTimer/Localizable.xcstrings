@@ -716,6 +716,28 @@
         }
       }
     },
+    "Coin toss" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorteo con moneda"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tirage au sort"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cara ou coroa"
+          }
+        }
+      }
+    },
     "CONFIRM RED · #%lld" : {
       "localizations" : {
         "es" : {
@@ -2734,6 +2756,28 @@
         }
       }
     },
+    "Off · kick off without a toss" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado · patada inicial sin sorteo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé · coup d'envoi sans tirage"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desativado · pontapé sem sorteio"
+          }
+        }
+      }
+    },
     "Off · single tap on Watch" : {
       "localizations" : {
         "es" : {
@@ -2840,6 +2884,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "EM CAMPO"
+          }
+        }
+      }
+    },
+    "On the Watch before kick-off" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En el Watch antes de la patada inicial"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur la Watch avant le coup d'envoi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Watch antes do pontapé inicial"
           }
         }
       }
@@ -5169,6 +5235,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "POR QUE USAR"
+          }
+        }
+      }
+    },
+    "Won the toss · chose an end" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganó el sorteo · eligió campo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A gagné le tirage · a choisi son côté"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venceu o sorteio · escolheu o campo"
+          }
+        }
+      }
+    },
+    "Won the toss · kicks off" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganó el sorteo · patea"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A gagné le tirage · donne le coup d'envoi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venceu o sorteio · dá o pontapé"
           }
         }
       }

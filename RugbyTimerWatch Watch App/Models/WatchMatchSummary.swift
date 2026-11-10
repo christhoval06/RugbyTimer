@@ -24,6 +24,11 @@ struct WatchMatchSummary {
 
     var carriedSinBins: [MatchCard] { MatchStats.carriedSinBins(activeCards) }
 
+    /// The team kicking off the second half, when a coin toss was recorded.
+    var secondHalfKickOff: String? {
+        CoinTossResult.kickOffTeams(in: matchEvents, home: homeTeamName, away: awayTeamName)?.secondHalf
+    }
+
     /// True at half-time and full time, when the break/result summaries are shown.
     var isStopped: Bool { matchPeriod == .halfTime || matchPeriod == .fullTime }
 }
