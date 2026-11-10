@@ -3,9 +3,12 @@ import SwiftUI
 struct SettingsFooterWidget: View {
     var body: some View {
         VStack(spacing: 6) {
-            Image(systemName: "sportscourt")
-                .font(.system(size: 18, weight: .light))
-                .foregroundStyle(Color.pitchEmerald)
+            Image("AppIconImage")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 44, height: 44)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .accessibilityHidden(true)
             Text("RUGBY TIMER \(AppInfo.version)")
                 .font(.system(size: 10, weight: .bold, design: .monospaced))
                 .tracking(2)
@@ -19,4 +22,11 @@ struct SettingsFooterWidget: View {
         .padding(.top, 4)
         .accessibilityElement(children: .combine)
     }
+}
+
+#Preview("Settings footer") {
+    SettingsFooterWidget()
+        .padding()
+        .background(Color.pitchVoid)
+        .preferredColorScheme(.dark)
 }
