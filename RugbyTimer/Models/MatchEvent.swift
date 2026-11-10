@@ -27,6 +27,9 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
     /// On half-time and full-time whistles: how long play ran after the clock reached zero.
     /// Optional so events from older versions keep decoding.
     public let overtimeSeconds: Int?
+    /// Match time of the event in seconds since kick-off (second half continues from the first).
+    /// Optional so events from older versions keep decoding; those show the minute only.
+    public let matchSeconds: Int?
 
     public init(
         id: UUID = UUID(),
@@ -35,7 +38,8 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
         playerNumber: Int? = nil,
         type: MatchEventType,
         description: String,
-        overtimeSeconds: Int? = nil
+        overtimeSeconds: Int? = nil,
+        matchSeconds: Int? = nil
     ) {
         self.id = id
         self.minute = minute
@@ -44,12 +48,19 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
         self.type = type
         self.description = description
         self.overtimeSeconds = overtimeSeconds
+        self.matchSeconds = matchSeconds
     }
 }
 
 public extension MatchEvent {
     /// Recorded when the referee ends the match before time (abandoned match).
     static let matchEndedEarly = "MATCH ENDED EARLY"
+
+    /// Match clock of the event: `MM:SS` when the second is known, otherwise the minute (`41'`).
+    var clockLabel: String {
+        guard let matchSeconds else { return "\(minute)'" }
+        return String(format: "%02d:%02d", matchSeconds / 60, matchSeconds % 60)
+    }
 
     /// `description` stays in English because it is synced between iPhone and Watch.
     /// This is the text shown on screen and in the shared match record, in the reader's language.

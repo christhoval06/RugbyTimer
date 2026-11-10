@@ -21,6 +21,12 @@ extension AppState {
         return halfOffset + max(1, elapsedSeconds / 60)
     }
 
+    /// Seconds since kick-off; the second half continues from the end of the first.
+    var currentMatchSeconds: Int {
+        let elapsedSeconds = max(0, matchDurationSeconds - timerService.clockSeconds)
+        return (matchPeriod == .secondHalf ? matchDurationSeconds : 0) + elapsedSeconds
+    }
+
     /// `playerNumber` is optional: the referee may record points without naming the scorer.
     public func recordScore(team: String, playerNumber: Int? = nil, points: Int, description: String) {
         if team == homeTeamName {
@@ -34,7 +40,8 @@ extension AppState {
             teamName: team,
             playerNumber: playerNumber,
             type: .tryScore(points: points),
-            description: description
+            description: description,
+            matchSeconds: currentMatchSeconds
         )
         matchEvents.append(event)
         publishWatchSnapshot()

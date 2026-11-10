@@ -19,7 +19,8 @@ extension AppState {
             teamName: team,
             playerNumber: playerNum,
             type: eventType,
-            description: "\(cardTitle) - #\(playerNum)"
+            description: "\(cardTitle) - #\(playerNum)",
+            matchSeconds: currentMatchSeconds
         )
         matchEvents.append(event)
         publishWatchSnapshot()

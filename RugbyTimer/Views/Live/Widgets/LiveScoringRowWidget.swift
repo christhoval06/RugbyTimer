@@ -12,10 +12,11 @@ struct LiveScoringRowWidget: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Text("\(event.minute)'")
+            Text(verbatim: event.clockLabel)
                 .font(.system(size: 13, weight: .bold, design: .monospaced))
+                .monospacedDigit()
                 .foregroundStyle(tint)
-                .frame(width: 40, height: 34)
+                .frame(width: 52, height: 34)
                 .background(tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 7))
             VStack(alignment: .leading, spacing: 4) {
                 Text(event.localizedDescription)

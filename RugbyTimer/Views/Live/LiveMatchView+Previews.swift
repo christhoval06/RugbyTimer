@@ -8,11 +8,11 @@ import SwiftUI
             MatchCard(teamName: "City Lions", playerNumber: 13, type: .red)
         ],
         matchEvents: [
-            MatchEvent(minute: 6, teamName: "Rangers RFC", playerNumber: 11, type: .tryScore(points: 5), description: "Try scored (+5)"),
-            MatchEvent(minute: 7, teamName: "Rangers RFC", playerNumber: 10, type: .tryScore(points: 2), description: "Conversion (+2)"),
-            MatchEvent(minute: 15, teamName: "City Lions", type: .tryScore(points: 5), description: "Try scored (+5)"),
-            MatchEvent(minute: 22, teamName: "Rangers RFC", playerNumber: 10, type: .tryScore(points: 5), description: "Try scored (+5)"),
-            MatchEvent(minute: 29, teamName: "City Lions", playerNumber: 15, type: .tryScore(points: 2), description: "Conversion (+2)")
+            MatchEvent(minute: 6, teamName: "Rangers RFC", playerNumber: 11, type: .tryScore(points: 5), description: "Try scored (+5)", matchSeconds: 342),
+            MatchEvent(minute: 7, teamName: "Rangers RFC", playerNumber: 10, type: .tryScore(points: 2), description: "Conversion (+2)", matchSeconds: 401),
+            MatchEvent(minute: 15, teamName: "City Lions", type: .tryScore(points: 5), description: "Try scored (+5)", matchSeconds: 887),
+            MatchEvent(minute: 22, teamName: "Rangers RFC", playerNumber: 10, type: .tryScore(points: 5), description: "Try scored (+5)", matchSeconds: 1295),
+            MatchEvent(minute: 29, teamName: "City Lions", playerNumber: 15, type: .tryScore(points: 2), description: "Conversion (+2)", matchSeconds: 1718)
         ],
         homeTeamName: "Rangers RFC",
         awayTeamName: "City Lions",

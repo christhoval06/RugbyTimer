@@ -79,7 +79,8 @@ extension AppState {
             matchEvents.append(MatchEvent(
                 minute: secondsPlayed / 60, teamName: "OFFICIAL", type: .sub,
                 description: MatchEvent.matchEndedEarly,
-                overtimeSeconds: matchPeriod == .halfTime ? 0 : timerService.overtimeSeconds
+                overtimeSeconds: matchPeriod == .halfTime ? 0 : timerService.overtimeSeconds,
+                matchSeconds: secondsPlayed
             ))
         }
         timerService.pause()
