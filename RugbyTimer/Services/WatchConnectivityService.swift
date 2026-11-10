@@ -42,6 +42,8 @@ public struct MatchSnapshot: Codable, Equatable {
 public class WatchConnectivityService: NSObject, ObservableObject {
     @Published public var receivedConfiguration: MatchConfiguration?
     @Published public var receivedSnapshot: MatchSnapshot?
+    /// Watch only: the iPhone went back to Match Setup for this match (see `+MatchReset`).
+    @Published public var receivedMatchReset: UUID?
     @Published public var isWatchReachable = false
     @Published public var connectedWatchName = "APPLE WATCH"
     @Published public var watchBatteryLevel = 0
@@ -50,7 +52,7 @@ public class WatchConnectivityService: NSObject, ObservableObject {
     @Published public var isWatchAvailable = false
 
     private let session = WCSession.default
-    private var outgoingContext: [String: Any] = [:]
+    var outgoingContext: [String: Any] = [:]
 
     public override init() {
         super.init()
@@ -63,6 +65,7 @@ public class WatchConnectivityService: NSObject, ObservableObject {
     public func sendMatchConfig(_ configuration: MatchConfiguration) {
         guard let data = try? JSONEncoder().encode(configuration) else { return }
         outgoingContext["configuration"] = data
+        outgoingContext.removeValue(forKey: Self.matchResetKey)
         flushContext()
     }
 
@@ -84,7 +87,7 @@ public class WatchConnectivityService: NSObject, ObservableObject {
         flushContext()
     }
 
-    private func flushContext() {
+    func flushContext() {
         guard session.activationState == .activated, !outgoingContext.isEmpty else { return }
         // Retain the latest configuration/state for an unreachable companion.
         do {
@@ -109,6 +112,7 @@ public class WatchConnectivityService: NSObject, ObservableObject {
            let configuration = try? JSONDecoder().decode(MatchConfiguration.self, from: data) {
             receivedConfiguration = configuration
         }
+        receiveMatchReset(from: context)
         #else
         if let data = context["snapshot"] as? Data,
            let snapshot = try? JSONDecoder().decode(MatchSnapshot.self, from: data) {

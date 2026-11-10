@@ -30,7 +30,7 @@ extension AppState {
     public func applyWatchSnapshot(_ snapshot: MatchSnapshot) {
         #if !os(watchOS)
         // In iPhone-only mode the phone owns the match; a stale Watch must not overwrite it.
-        guard !isPhoneHosted else { return }
+        guard !isPhoneHosted, snapshot.matchID != dismissedMatchID else { return }
         guard matchID == nil || matchID == snapshot.matchID || snapshot.rejectedConfigurationID == matchID else { return }
         if let lastWatchUpdate, snapshot.updatedAt <= lastWatchUpdate { return }
         lastWatchUpdate = snapshot.updatedAt

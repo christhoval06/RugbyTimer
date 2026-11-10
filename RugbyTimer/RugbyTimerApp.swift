@@ -55,7 +55,7 @@ public struct RugbyTimerApp: App {
                         onAddCard: { _, _, _ in },
                         onScoreTapped: {},
                         onStartSecondHalf: {},
-                        onReturnToSetup: { appState.currentScreen = .setup },
+                        onReturnToSetup: { appState.returnToSetup() },
                         phoneControls: appState.isPhoneHosted ? phoneControls : nil,
                         watchLink: appState.watchLinkStatus
                     )

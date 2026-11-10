@@ -64,6 +64,8 @@ public class AppState: ObservableObject {
     var mirroredCards: [MatchCard] = []
     var mirroredClock = 0
     var rejectedConfigurationID: UUID?
+    /// iPhone: the Watch match the referee left with NEW MATCH SETUP; its snapshots are ignored.
+    var dismissedMatchID: UUID?
     var lastClockReading: Int
 
     public var hasConfiguredMatch: Bool { matchID != nil }
@@ -99,6 +101,9 @@ public class AppState: ObservableObject {
         #if os(watchOS)
         connectivityService.$receivedConfiguration.compactMap { $0 }
             .sink { [weak self] in self?.receiveConfiguration($0) }
+            .store(in: &subscriptions)
+        connectivityService.$receivedMatchReset.compactMap { $0 }
+            .sink { [weak self] in self?.receiveMatchReset($0) }
             .store(in: &subscriptions)
         timerService.$isRunning.dropFirst().receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.publishWatchSnapshot() }
