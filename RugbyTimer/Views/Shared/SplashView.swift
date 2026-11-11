@@ -9,37 +9,41 @@ struct SplashView: View {
     @State private var isRevealed = false
     @State private var progress: CGFloat = 0
 
+    /// The iPhone launch screen already shows the icon, so it starts visible; the Watch has none and fades it in.
+    private var isIconShown: Bool { isRevealed || !compact }
+
     private var iconSize: CGFloat { compact ? 64 : 112 }
     private var barWidth: CGFloat { compact ? 72 : 140 }
 
     var body: some View {
         ZStack {
             Color.pitchVoid.ignoresSafeArea()
-            VStack(spacing: compact ? 8 : 16) {
-                Image("AppIconImage")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: iconSize, height: iconSize)
-                    .clipShape(RoundedRectangle(cornerRadius: iconSize * 0.22, style: .continuous))
-                    .scaleEffect(isRevealed || reduceMotion ? 1 : 0.82)
+            // The icon sits dead centre, where the iPhone launch screen (`LaunchIcon`) draws it,
+            // so launch hands over to the splash without a jump; the name and bar reveal below it.
+            Image("AppIconImage")
+                .resizable()
+                .scaledToFit()
+                .frame(width: iconSize, height: iconSize)
+                .clipShape(RoundedRectangle(cornerRadius: iconSize * 0.22, style: .continuous))
+                .scaleEffect(isIconShown || reduceMotion ? 1 : 0.82)
+                .opacity(isIconShown ? 1 : 0)
+                .accessibilityHidden(true)
+                .overlay(alignment: .top) {
+                    VStack(spacing: compact ? 2 : 6) {
+                        Text("RUGBY TIMER")
+                            .font(.system(size: compact ? 16 : 28, weight: .heavy).width(.condensed))
+                            .tracking(compact ? 1.5 : 3)
+                            .foregroundStyle(Color.iceTitanium)
+                        Text("MATCH CLOCK FOR REFEREES")
+                            .font(.system(size: compact ? 8 : 11, weight: .bold, design: .monospaced))
+                            .tracking(compact ? 0.8 : 2)
+                            .foregroundStyle(Color.outline)
+                        progressBar
+                    }
+                    .fixedSize()
                     .opacity(isRevealed ? 1 : 0)
-                    .accessibilityHidden(true)
-                VStack(spacing: compact ? 2 : 6) {
-                    Text("RUGBY TIMER")
-                        .font(.system(size: compact ? 16 : 28, weight: .heavy).width(.condensed))
-                        .tracking(compact ? 1.5 : 3)
-                        .foregroundStyle(Color.iceTitanium)
-                    Text("MATCH CLOCK FOR REFEREES")
-                        .font(.system(size: compact ? 8 : 11, weight: .bold, design: .monospaced))
-                        .tracking(compact ? 0.8 : 2)
-                        .foregroundStyle(Color.outline)
-                        .multilineTextAlignment(.center)
+                    .offset(y: iconSize + (compact ? 8 : 16) + (isRevealed || reduceMotion ? 0 : 8))
                 }
-                .opacity(isRevealed ? 1 : 0)
-                .offset(y: isRevealed || reduceMotion ? 0 : 8)
-                progressBar
-            }
-            .padding(.horizontal, 16)
         }
         .accessibilityElement(children: .combine)
         .onAppear(perform: reveal)
