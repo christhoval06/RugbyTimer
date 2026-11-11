@@ -7,9 +7,11 @@
 
 import Foundation
 
-/// How a team scored: tries, conversions, penalty goals and drop goals.
+/// How a team scored: tries, penalty tries, conversions, penalty goals and drop goals.
 public struct ScoreBreakdown: Equatable {
     public var tries = 0
+    /// Awarded tries (+7, no conversion attempt).
+    public var penaltyTries = 0
     public var conversions = 0
     public var penalties = 0
     public var dropGoals = 0
@@ -31,7 +33,9 @@ public enum MatchStats {
             total.points += points
             // Descriptions stay English (synced across devices); points break ties for older events.
             let text = event.description.lowercased()
-            if text.hasPrefix("conversion") || (points == 2 && !text.hasPrefix("try")) {
+            if text.hasPrefix("penalty try") || points == 7 { // l10n-ignore: synced English
+                total.penaltyTries += 1
+            } else if text.hasPrefix("conversion") || (points == 2 && !text.hasPrefix("try")) {
                 total.conversions += 1
             } else if text.hasPrefix("drop") {
                 total.dropGoals += 1

@@ -15,6 +15,8 @@ struct SetupRulesWidget: View {
                 SetupTapLockWidget()
                 Rectangle().fill(Color.armorBorder).frame(height: 1).padding(.horizontal, 14)
                 SetupCoinTossToggleWidget()
+                Rectangle().fill(Color.armorBorder).frame(height: 1).padding(.horizontal, 14)
+                SetupTwentyMinuteRedToggleWidget()
             }
             .buttonStyle(.plain)
             .background(Color.surfaceContainer, in: RoundedRectangle(cornerRadius: 14))

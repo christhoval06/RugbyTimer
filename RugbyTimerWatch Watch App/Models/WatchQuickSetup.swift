@@ -13,6 +13,7 @@ struct WatchQuickSetup: Codable, Equatable {
     var sinBinSeconds = 600
     var tapLockEnabled = true
     var coinTossEnabled = false
+    var twentyMinuteRedEnabled = false
 
     static func load(from defaults: UserDefaults = .standard) -> WatchQuickSetup {
         guard let data = defaults.data(forKey: defaultsKey),

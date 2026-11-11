@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Quick Match setup on the Watch: half length, half-time break, sin-bin, tap lock and coin toss.
+/// Quick Match setup on the Watch: half length, half-time break, sin-bin, tap lock, coin toss and 20-minute red.
 /// Teams are always Team A and Team B; there's no team editor on the wrist.
 struct WatchQuickSetupWidget: View {
     let onReady: (WatchQuickSetup) -> Void
@@ -22,6 +22,7 @@ struct WatchQuickSetupWidget: View {
                 Section {
                     Toggle("Tap lock", isOn: $setup.tapLockEnabled)
                     Toggle("Coin toss", isOn: $setup.coinTossEnabled)
+                    Toggle("20-minute red", isOn: $setup.twentyMinuteRedEnabled)
                 }
                 .tint(Color.pitchEmerald)
                 Section {

@@ -60,6 +60,17 @@ public class MatchTimerService: ObservableObject, TimeKeeping {
         clockSeconds = seconds
     }
 
+    /// Picks a saved clock back up after a relaunch. A running clock continues from its end
+    /// date, so the time the app was gone is counted.
+    public func restore(clock: Int, endDate: Date?) {
+        reset(to: clock)
+        guard let endDate else { return }
+        self.endDate = endDate
+        isRunning = true
+        refresh()
+        startTicking()
+    }
+
     /// Recomputes the clock from the wall clock; call when the app returns to the foreground.
     /// The clock keeps running past zero into overtime until the period is ended.
     public func refresh() {

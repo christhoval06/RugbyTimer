@@ -17,13 +17,14 @@ struct WatchScoringBreakdownRowWidget: View {
                 .lineLimit(1)
                 .truncationMode(.tail)
             Spacer(minLength: 2)
-            count(breakdown.tries)
+            // Penalty tries count as tries in the T column.
+            count(breakdown.tries + breakdown.penaltyTries)
             count(breakdown.conversions)
             count(breakdown.penalties)
             count(breakdown.dropGoals)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(name): \(breakdown.tries) tries, \(breakdown.conversions) conversions, \(breakdown.penalties) penalty goals, \(breakdown.dropGoals) drop goals"))
+        .accessibilityLabel(Text("\(name): \(breakdown.tries + breakdown.penaltyTries) tries, \(breakdown.conversions) conversions, \(breakdown.penalties) penalty goals, \(breakdown.dropGoals) drop goals"))
     }
 
     private func count(_ value: Int) -> some View {

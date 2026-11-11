@@ -22,9 +22,14 @@ extension AppState {
             matchID: id, home: homeTeamName, away: awayTeamName, duration: matchDurationSeconds,
             sinBinDurationSeconds: sinBinDurationSeconds, maxPlayerNumber: maxPlayerNumber,
             tapLockEnabled: tapLockEnabled, coinTossEnabled: coinTossEnabled,
-            halfTimeBreakSeconds: halfTimeBreakSeconds
+            halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled
         ))
         currentScreen = .liveMatch
+    }
+
+    public var matchDurationText: String {
+        let totalSeconds = matchDurationSeconds * 2
+        return String(format: "%d:%02d Total", totalSeconds / 60, totalSeconds % 60) // l10n-ignore: unused
     }
 
     // Keep the new setup and match identity while discarding the previous match.

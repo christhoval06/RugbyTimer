@@ -109,7 +109,9 @@
 				"App/AppState+MatchFlow.swift",
 				"App/AppState+NewMatch.swift",
 				"App/AppState+PeriodEnd.swift",
+				"App/AppState+Persistence.swift",
 				"App/AppState+Scoring.swift",
+				"App/AppState+Undo.swift",
 				"App/AppState+WatchSync.swift",
 				Core/AppLanguage.swift,
 				Core/DesignTokens.swift,
@@ -119,8 +121,11 @@
 				Models/MatchEvent.swift,
 				Models/MatchPeriod.swift,
 				Models/MatchStats.swift,
+				Models/SavedMatch.swift,
+				Models/Sanction.swift,
 				Services/CoinTossService.swift,
 				Services/HapticService.swift,
+				Services/MatchPersistence.swift,
 				Services/MatchTimerService.swift,
 				Services/WatchConnectivityService.swift,
 				"Services/WatchConnectivityService+MatchReset.swift",
@@ -882,6 +887,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RugbyTimerWatch Watch App/RugbyTimerWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HA64587VPE;
@@ -889,6 +895,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RugbyTimerWatch Watch App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = RugbyTimerWatch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Rugby Timer reads your heart rate, distance and energy while it records each match you referee as a Rugby workout.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Rugby Timer saves each match you referee to Health as a Rugby workout, with its time, distance and energy.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.christhoval.apps.RugbyTimer;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -917,6 +925,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RugbyTimerWatch Watch App/RugbyTimerWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HA64587VPE;
@@ -924,6 +933,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RugbyTimerWatch Watch App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = RugbyTimerWatch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Rugby Timer reads your heart rate, distance and energy while it records each match you referee as a Rugby workout.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Rugby Timer saves each match you referee to Health as a Rugby workout, with its time, distance and energy.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.christhoval.apps.RugbyTimer;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;

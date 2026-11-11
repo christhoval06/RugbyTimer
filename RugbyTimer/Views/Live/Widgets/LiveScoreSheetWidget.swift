@@ -38,19 +38,10 @@ struct LiveScoreSheetWidget: View {
             VStack(spacing: 10) {
                 SetupSectionHeadingWidget(number: "03", title: "TYPE", detail: "TAP TO RECORD")
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
-                    ForEach(LiveMatchControls.scoreTypes, id: \.id) { scoreType in
-                        Button {
-                            HapticService.playCardIssued()
-                            onScore(selectedTeam, scorer, scoreType.points, scoreType.description)
-                            dismiss()
-                        } label: {
-                            LiveScoreTypeTileWidget(points: scoreType.points, label: scoreType.label)
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("\(Text(scoreType.label)), \(scoreType.points) points")
-                        .accessibilityIdentifier("score\(scoreType.id)")
-                    }
+                    ForEach(LiveMatchControls.scoreTypes.dropLast(), id: \.id) { scoreButton($0) }
                 }
+                // The penalty try, rarer and worth more, gets the full width under the grid.
+                if let penaltyTry = LiveMatchControls.scoreTypes.last { scoreButton(penaltyTry) }
             }
             .padding(20)
             .background(Color.pitchVoid)
@@ -60,5 +51,18 @@ struct LiveScoreSheetWidget: View {
         .frame(maxWidth: .infinity)
         .background(Color.pitchVoid.ignoresSafeArea())
         .presentationDragIndicator(.visible)
+    }
+
+    private func scoreButton(_ scoreType: (id: String, label: LocalizedStringResource, points: Int, description: String)) -> some View {
+        Button {
+            HapticService.playCardIssued()
+            onScore(selectedTeam, scorer, scoreType.points, scoreType.description)
+            dismiss()
+        } label: {
+            LiveScoreTypeTileWidget(points: scoreType.points, label: scoreType.label)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(Text(scoreType.label)), \(scoreType.points) points")
+        .accessibilityIdentifier("score\(scoreType.id)")
     }
 }

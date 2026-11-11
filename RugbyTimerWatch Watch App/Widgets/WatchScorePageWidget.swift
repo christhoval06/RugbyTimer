@@ -15,7 +15,8 @@ struct WatchScorePageWidget: View {
         ScoreType(id: "TRY", label: "TRY", points: 5, description: "Try scored (+5)"),
         ScoreType(id: "CONV", label: "CONV", points: 2, description: "Conversion (+2)"),
         ScoreType(id: "PEN", label: "PEN", points: 3, description: "Penalty goal (+3)"),
-        ScoreType(id: "DROP", label: "DROP", points: 3, description: "Drop goal (+3)")
+        ScoreType(id: "DROP", label: "DROP", points: 3, description: "Drop goal (+3)"),
+        ScoreType(id: "PT", label: "PEN TRY", points: 7, description: "Penalty try (+7)")
     ]
 
     init(
@@ -55,10 +56,12 @@ struct WatchScorePageWidget: View {
                 WatchPlayerPickerWidget(playerNumber: $scorer, allowsNone: true)
 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 6), GridItem(.flexible(), spacing: 6)], spacing: 6) {
-                    ForEach(Self.scoreTypes, id: \.id) { scoreType in
+                    ForEach(Self.scoreTypes.dropLast(), id: \.id) { scoreType in
                         scoreButton(scoreType)
                     }
                 }
+                // The penalty try gets the full width under the grid.
+                if let penaltyTry = Self.scoreTypes.last { scoreButton(penaltyTry) }
             }
             .padding(.vertical, 4)
             .scenePadding(.horizontal)

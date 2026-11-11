@@ -10,7 +10,7 @@ import UIKit
 
 @main
 public struct RugbyTimerApp: App {
-    @StateObject private var appState = AppState()
+    @StateObject private var appState = AppState.launch()
     @StateObject private var settings = AppSettings()
     @Environment(\.scenePhase) private var scenePhase
     @State private var isShowingSplash = !SplashOverlay.isSkipped
@@ -83,19 +83,22 @@ public struct RugbyTimerApp: App {
             .onChange(of: settings.tapLockEnabled, initial: true) { _, value in appState.tapLockEnabled = value }
             .onChange(of: settings.halfTimeBreakSeconds) { _, value in applySetupDefault { appState.halfTimeBreakSeconds = value } }
             .onChange(of: settings.coinTossEnabled, initial: true) { _, value in appState.coinTossEnabled = value }
+            .onChange(of: settings.twentyMinuteRedEnabled, initial: true) { _, value in
+                applySetupDefault { appState.twentyMinuteRedEnabled = value }
+            }
             .environment(\.playerNumberRange, appState.playerNumbers)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in
                 UIApplication.shared.isIdleTimerDisabled = awake
             }
             // In iPhone-only mode the clock comes from a wall-clock end date; catch up after the app was in the background.
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { appState.timerService.refresh() }
+                if phase == .active { appState.timerService.refresh() } else { appState.saveMatch() }
             }
         }
     }
 
     private var phoneControls: LiveMatchControls {
-        LiveMatchControls(
+        var controls = LiveMatchControls(
             onKickOff: { appState.startMatch() },
             onToggleClock: { appState.toggleClock() },
             onEndPeriod: { appState.endPeriod() },
@@ -103,8 +106,13 @@ public struct RugbyTimerApp: App {
             onScore: { team, player, points, description in
                 appState.recordScore(team: team, playerNumber: player, points: points, description: description)
             },
-            onCard: { team, player, type in appState.addCard(team: team, playerNum: player, type: type) }
+            onCard: { team, player, sanction in appState.issue(sanction, team: team, playerNum: player) }
         )
+        controls.lastEntry = appState.matchEvents.last
+        controls.matchEvents = appState.matchEvents
+        controls.twentyMinuteRedEnabled = appState.twentyMinuteRedEnabled
+        controls.onUndo = { appState.undoLastEntry() }
+        return controls
     }
 
     private var showsOnboarding: Binding<Bool> {

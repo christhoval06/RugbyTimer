@@ -34,8 +34,9 @@ Each field shows its store limit. Paste the contents of the code block only.
 | Secondary category | Utilities |
 | Age rating | 4+ (answer "None" to every content question) |
 | Platforms | iPhone, Apple Watch |
-| Apple Watch | Ships with a watchOS app. The Watch app is not standalone: it needs the iPhone app for match setup. |
-| App Privacy | **Data Not Collected** |
+| Apple Watch | Ships with a watchOS app. The Watch runs matches set up on the iPhone, and can also run a Quick Match on its own. |
+| App Privacy | **Data Not Collected**. The optional Rugby workout is written to Apple Health on the device and never leaves it, which Apple doesn't count as collection. |
+| HealthKit | Uses HealthKit to save each match as a Rugby workout. Health permission prompts are localized in `InfoPlist.xcstrings`. App Review needs the privacy policy URL to be live. |
 
 ### English (U.S.)
 
@@ -74,16 +75,21 @@ RUN THE MATCH FROM YOUR WRIST
 • Half-time break countdown (2, 5, 10 or 15 minutes, or your own) with an alert when it ends
 • Alerts at half-time and when a sin-bin ends, even with your wrist down
 • Accidental tap lock, so a sleeve or a wet glove doesn't change the match
+• Each match runs as a Rugby workout: the Watch stays on the match from kick-off to full time, then saves it to Health with your distance, heart rate and energy (optional)
+• No phone at the ground? Start a Quick Match straight from the Watch
 
 CARDS AND SIN-BINS
 • Yellow cards start a sin-bin countdown (10 minutes by default, adjustable)
 • See every player in the bin and how long they have left
 • Red cards logged as sent off, with the shirt number
+• Optional 20-minute red card: a countdown until the team can bring on a replacement
+• A second yellow for the same player prompts a red card
 
 SCORING
-• Tries (+5), conversions (+2), penalty goals and drop goals (+3)
+• Tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3)
 • Record the scorer's shirt number
 • Half-time and full-time stats: the score by half and a scoring breakdown for each team
+• Tapped the wrong team or number? Undo the last score or card for 15 seconds
 
 BEFORE AND AFTER THE MATCH
 • Optional coin toss on the Watch to decide who kicks off
@@ -92,12 +98,13 @@ BEFORE AND AFTER THE MATCH
 
 WORKS YOUR WAY
 • No Apple Watch? Run the whole match on your iPhone
+• If the app closes or crashes mid-match, it reopens right where you were: clock, score and sin-bins included
 • Save your default team names, half length, sin-bin length and shirt-number range
 • Designed for direct sunlight and floodlights: high-contrast dark screens and large numbers
 • In English, Spanish, French and Brazilian Portuguese
 
 PRIVATE BY DESIGN
-No accounts. No ads. No tracking. Your matches stay on your devices.
+No accounts. No ads. No tracking. Your matches stay on your devices, and workouts go only to the Health app.
 
 Requires an iPhone with iOS 26.5 or later. Apple Watch with watchOS 26.5 or later is optional.
 ```
@@ -145,16 +152,21 @@ DIRIGE EL PARTIDO DESDE TU MUÑECA
 • Cuenta regresiva del descanso de medio tiempo (2, 5, 10 o 15 minutos, o el que elijas) con aviso al terminar
 • Avisos al medio tiempo y al terminar una exclusión, aunque tengas la muñeca abajo
 • Bloqueo de toques accidentales, para que una manga o un guante mojado no cambien el partido
+• Cada partido se registra como un entrenamiento de rugby: el Watch sigue el partido del pitazo inicial al final y lo guarda en Salud con tu distancia, frecuencia cardíaca y energía (opcional)
+• ¿Sin teléfono en la cancha? Inicia un Partido Rápido directamente desde el Watch
 
 TARJETAS Y EXCLUSIONES
 • La tarjeta amarilla inicia la cuenta regresiva de la exclusión (10 minutos por defecto, ajustable)
 • Ve a cada jugador excluido y el tiempo que le queda
 • Tarjetas rojas registradas como expulsión, con el número de camiseta
+• Tarjeta roja de 20 minutos opcional: cuenta regresiva hasta que el equipo pueda hacer entrar un reemplazo
+• Una segunda amarilla al mismo jugador propone mostrar la roja
 
 MARCADOR
-• Try (+5), conversión (+2), penal y drop (+3)
+• Try (+5), try penal (+7), conversión (+2), penal y drop (+3)
 • Registra el número de camiseta de quien anota
 • Estadísticas de medio tiempo y final: marcador por tiempo y desglose de puntos de cada equipo
+• ¿Tocaste el equipo o el número equivocado? Deshaz la última anotación o tarjeta durante 15 segundos
 
 ANTES Y DESPUÉS DEL PARTIDO
 • Sorteo con moneda opcional en el Watch para decidir quién hace la patada inicial
@@ -163,12 +175,13 @@ ANTES Y DESPUÉS DEL PARTIDO
 
 A TU MANERA
 • ¿Sin Apple Watch? Dirige todo el partido desde tu iPhone
+• Si la app se cierra o falla a mitad del partido, vuelve justo donde estabas: con el reloj, el marcador y las exclusiones
 • Guarda los nombres de equipo, la duración de cada tiempo, la duración de la exclusión y el rango de números de camiseta
 • Diseñada para sol directo y luz artificial: pantallas oscuras de alto contraste y números grandes
 • En español, inglés, francés y portugués de Brasil
 
 PRIVACIDAD DESDE EL DISEÑO
-Sin cuentas. Sin anuncios. Sin rastreo. Tus partidos se quedan en tus dispositivos.
+Sin cuentas. Sin anuncios. Sin rastreo. Tus partidos se quedan en tus dispositivos, y los entrenamientos van solo a la app Salud.
 
 Requiere un iPhone con iOS 26.5 o posterior. El Apple Watch con watchOS 26.5 o posterior es opcional.
 ```
@@ -216,16 +229,21 @@ DIRIGEZ LE MATCH DEPUIS VOTRE POIGNET
 • Décompte de la pause de la mi-temps (2, 5, 10 ou 15 minutes, ou la durée de votre choix) avec une alerte à la fin
 • Alertes à la mi-temps et à la fin d'une exclusion, même poignet baissé
 • Anti-appui accidentel : une manche ou un gant mouillé ne modifie pas le match
+• Chaque match est enregistré comme une séance de rugby : la Watch suit le match du coup d'envoi au coup de sifflet final, puis l'enregistre dans Santé avec votre distance, votre fréquence cardiaque et votre énergie (facultatif)
+• Pas de téléphone au bord du terrain ? Lancez un Match rapide directement depuis la Watch
 
 CARTONS ET EXCLUSIONS
 • Le carton jaune lance le décompte de l'exclusion (10 minutes par défaut, réglable)
 • Voyez chaque joueur exclu et le temps qu'il lui reste
 • Cartons rouges enregistrés comme expulsion, avec le numéro de maillot
+• Carton rouge de 20 minutes en option : un décompte jusqu'à l'entrée d'un remplaçant
+• Un deuxième carton jaune pour le même joueur propose un carton rouge
 
 SCORE
-• Essais (+5), transformations (+2), pénalités et drops (+3)
+• Essais (+5), essais de pénalité (+7), transformations (+2), pénalités et drops (+3)
 • Notez le numéro de maillot du marqueur
 • Statistiques à la mi-temps et en fin de match : score par mi-temps et détail des points de chaque équipe
+• Mauvaise équipe ou mauvais numéro ? Annulez le dernier point ou carton pendant 15 secondes
 
 AVANT ET APRÈS LE MATCH
 • Tirage au sort facultatif sur la Watch pour décider qui donne le coup d'envoi
@@ -234,12 +252,13 @@ AVANT ET APRÈS LE MATCH
 
 À VOTRE FAÇON
 • Pas d'Apple Watch ? Dirigez tout le match sur votre iPhone
+• Si l'app se ferme ou plante en plein match, elle reprend là où vous en étiez : chrono, score et exclusions compris
 • Enregistrez vos noms d'équipe, la durée des mi-temps, la durée d'exclusion et la plage de numéros de maillot
 • Pensée pour le plein soleil et les projecteurs : écrans sombres à fort contraste et grands chiffres
 • En français, anglais, espagnol et portugais du Brésil
 
 CONFIDENTIALITÉ PAR CONCEPTION
-Aucun compte. Aucune publicité. Aucun suivi. Vos matchs restent sur vos appareils.
+Aucun compte. Aucune publicité. Aucun suivi. Vos matchs restent sur vos appareils, et les séances vont uniquement dans l'app Santé.
 
 Nécessite un iPhone avec iOS 26.5 ou version ultérieure. L'Apple Watch avec watchOS 26.5 ou version ultérieure est facultative.
 ```
@@ -287,16 +306,21 @@ CONDUZA A PARTIDA PELO PULSO
 • Contagem regressiva do intervalo (2, 5, 10 ou 15 minutos, ou o tempo que você quiser) com alerta no final
 • Alertas no intervalo e no fim de uma exclusão, mesmo com o pulso abaixado
 • Bloqueio de toques acidentais, para que uma manga ou uma luva molhada não altere a partida
+• Cada partida é registrada como um treino de rúgbi: o Watch acompanha a partida do pontapé inicial ao apito final e salva no Saúde com sua distância, frequência cardíaca e energia (opcional)
+• Sem celular no campo? Comece uma Partida Rápida direto pelo Watch
 
 CARTÕES E EXCLUSÕES
 • O cartão amarelo inicia a contagem da exclusão (10 minutos por padrão, ajustável)
 • Veja cada jogador excluído e quanto tempo falta
 • Cartões vermelhos registrados como expulsão, com o número da camisa
+• Cartão vermelho de 20 minutos opcional: contagem até a equipe poder colocar um substituto
+• Um segundo amarelo para o mesmo jogador sugere o cartão vermelho
 
 PLACAR
-• Try (+5), conversão (+2), penal e drop goal (+3)
+• Try (+5), try de penal (+7), conversão (+2), penal e drop goal (+3)
 • Registre o número da camisa de quem pontuou
 • Estatísticas do intervalo e do fim de jogo: placar por tempo e pontos de cada equipe
+• Tocou na equipe ou no número errado? Desfaça o último ponto ou cartão por 15 segundos
 
 ANTES E DEPOIS DA PARTIDA
 • Cara ou coroa opcional no Watch para decidir quem dá o pontapé inicial
@@ -305,12 +329,13 @@ ANTES E DEPOIS DA PARTIDA
 
 DO SEU JEITO
 • Sem Apple Watch? Conduza a partida inteira pelo iPhone
+• Se o app fechar ou travar no meio da partida, ele volta exatamente de onde parou: cronômetro, placar e exclusões incluídos
 • Salve os nomes das equipes, a duração dos tempos, a duração da exclusão e a faixa de números de camisa
 • Feito para sol forte e refletores: telas escuras de alto contraste e números grandes
 • Em português do Brasil, inglês, espanhol e francês
 
 PRIVACIDADE DESDE O INÍCIO
-Sem contas. Sem anúncios. Sem rastreamento. Suas partidas ficam nos seus dispositivos.
+Sem contas. Sem anúncios. Sem rastreamento. Suas partidas ficam nos seus dispositivos, e os treinos vão apenas para o app Saúde.
 
 Requer iPhone com iOS 26.5 ou posterior. Apple Watch com watchOS 26.5 ou posterior é opcional.
 ```
@@ -332,11 +357,15 @@ Rugby Timer is a match clock for rugby referees. No account or sign-in is needed
 
 To test on iPhone only: complete or skip the onboarding, set the teams and half length on Match Setup, then tap RUN MATCH ON IPHONE (or RUN ON THIS IPHONE INSTEAD when a Watch is paired). Kick off, add a score or a yellow card, and end the half.
 
-To test with Apple Watch: open the Watch app, then on iPhone tap SEND SETUP TO WATCH. The match appears on the Watch, ready to kick off.
+To test with Apple Watch: open the Watch app, then on iPhone tap SEND SETUP TO WATCH. The match appears on the Watch, ready to kick off. To test the Watch on its own, tap QUICK MATCH on the Watch main screen.
 
-Background use on Apple Watch: during a match the Watch app runs an extended runtime session so the match clock, half-time and sin-bin alerts stay accurate while the referee's wrist is down. It doesn't read health or workout data.
+To test undo: record a score or card, then tap UNDO LAST ENTRY within 15 seconds.
 
-The app collects no data and makes no network requests.
+To test the 20-minute red card: turn on "20-minute red card" on Match Setup, run the match on iPhone, then issue a RED 20' card. Giving the same player a second yellow asks to show a red instead.
+
+HealthKit and background use on Apple Watch: the Watch asks for Health access once, on the ready screen before kick-off. With access, each match runs as an HKWorkoutSession (activity type Rugby). This keeps the match clock, half-time and sin-bin alerts accurate for the whole match while the referee's wrist is down, and the workout is saved to Health at full time. The app reads heart rate, distance and active energy only for that workout. If Health access is declined, the Watch uses an extended runtime session (physical-therapy mode) during each half and the half-time break instead, which reads no health data.
+
+The app collects no data and makes no network requests. Health data stays in Apple Health on the user's devices.
 ```
 
 ---
@@ -385,11 +414,14 @@ CARDS AND SIN-BINS
 • Yellow cards start a sin-bin countdown (10 minutes by default, adjustable)
 • See every player in the bin and how long they have left
 • Red cards logged as sent off, with the shirt number
+• Optional 20-minute red card: a countdown until the team can bring on a replacement
+• A second yellow for the same player prompts a red card
 
 SCORING
-• Tries (+5), conversions (+2), penalty goals and drop goals (+3)
+• Tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3)
 • Record the scorer's shirt number
 • Half-time and full-time stats: the score by half and a scoring breakdown for each team
+• Tapped the wrong team or number? Undo the last score or card for 15 seconds
 
 AFTER THE FINAL WHISTLE
 • End a match early if it's abandoned for weather, injury or the pitch
@@ -398,6 +430,7 @@ AFTER THE FINAL WHISTLE
 WORKS YOUR WAY
 • Save your default team names, half length, sin-bin length and shirt-number range
 • Keep the screen awake during the match
+• If the app closes or crashes mid-match, it reopens right where you were: clock, score and sin-bins included
 • Designed for direct sunlight and floodlights: high-contrast dark screens and large numbers
 • In English, Spanish, French and Brazilian Portuguese
 
@@ -433,11 +466,14 @@ TARJETAS Y EXCLUSIONES
 • La tarjeta amarilla inicia la cuenta regresiva de la exclusión (10 minutos por defecto, ajustable)
 • Ve a cada jugador excluido y el tiempo que le queda
 • Tarjetas rojas registradas como expulsión, con el número de camiseta
+• Tarjeta roja de 20 minutos opcional: cuenta regresiva hasta que el equipo pueda hacer entrar un reemplazo
+• Una segunda amarilla al mismo jugador propone mostrar la roja
 
 MARCADOR
-• Try (+5), conversión (+2), penal y drop (+3)
+• Try (+5), try penal (+7), conversión (+2), penal y drop (+3)
 • Registra el número de camiseta de quien anota
 • Estadísticas de medio tiempo y final: marcador por tiempo y desglose de puntos de cada equipo
+• ¿Tocaste el equipo o el número equivocado? Deshaz la última anotación o tarjeta durante 15 segundos
 
 DESPUÉS DEL SILBATO FINAL
 • Termina el partido antes de tiempo si se suspende por clima, lesión o estado de la cancha
@@ -446,6 +482,7 @@ DESPUÉS DEL SILBATO FINAL
 A TU MANERA
 • Guarda los nombres de equipo, la duración de cada tiempo, la duración de la exclusión y el rango de números de camiseta
 • Mantén la pantalla encendida durante el partido
+• Si la app se cierra o falla a mitad del partido, vuelve justo donde estabas: con el reloj, el marcador y las exclusiones
 • Diseñada para sol directo y luz artificial: pantallas oscuras de alto contraste y números grandes
 • En español, inglés, francés y portugués de Brasil
 
@@ -481,11 +518,14 @@ CARTONS ET EXCLUSIONS
 • Le carton jaune lance le décompte de l'exclusion (10 minutes par défaut, réglable)
 • Voyez chaque joueur exclu et le temps qu'il lui reste
 • Cartons rouges enregistrés comme expulsion, avec le numéro de maillot
+• Carton rouge de 20 minutes en option : un décompte jusqu'à l'entrée d'un remplaçant
+• Un deuxième carton jaune pour le même joueur propose un carton rouge
 
 SCORE
-• Essais (+5), transformations (+2), pénalités et drops (+3)
+• Essais (+5), essais de pénalité (+7), transformations (+2), pénalités et drops (+3)
 • Notez le numéro de maillot du marqueur
 • Statistiques à la mi-temps et en fin de match : score par mi-temps et détail des points de chaque équipe
+• Mauvaise équipe ou mauvais numéro ? Annulez le dernier point ou carton pendant 15 secondes
 
 APRÈS LE COUP DE SIFFLET FINAL
 • Arrêtez le match avant la fin s'il est interrompu pour la météo, une blessure ou l'état du terrain
@@ -494,6 +534,7 @@ APRÈS LE COUP DE SIFFLET FINAL
 À VOTRE FAÇON
 • Enregistrez vos noms d'équipe, la durée des mi-temps, la durée d'exclusion et la plage de numéros de maillot
 • Gardez l'écran allumé pendant le match
+• Si l'app se ferme ou plante en plein match, elle reprend là où vous en étiez : chrono, score et exclusions compris
 • Pensée pour le plein soleil et les projecteurs : écrans sombres à fort contraste et grands chiffres
 • En français, anglais, espagnol et portugais du Brésil
 
@@ -529,11 +570,14 @@ CARTÕES E EXCLUSÕES
 • O cartão amarelo inicia a contagem da exclusão (10 minutos por padrão, ajustável)
 • Veja cada jogador excluído e quanto tempo falta
 • Cartões vermelhos registrados como expulsão, com o número da camisa
+• Cartão vermelho de 20 minutos opcional: contagem até a equipe poder colocar um substituto
+• Um segundo amarelo para o mesmo jogador sugere o cartão vermelho
 
 PLACAR
-• Try (+5), conversão (+2), penal e drop goal (+3)
+• Try (+5), try de penal (+7), conversão (+2), penal e drop goal (+3)
 • Registre o número da camisa de quem pontuou
 • Estatísticas do intervalo e do fim de jogo: placar por tempo e pontos de cada equipe
+• Tocou na equipe ou no número errado? Desfaça o último ponto ou cartão por 15 segundos
 
 DEPOIS DO APITO FINAL
 • Encerre a partida antes do tempo se ela for suspensa por clima, lesão ou condição do campo
@@ -542,6 +586,7 @@ DEPOIS DO APITO FINAL
 DO SEU JEITO
 • Salve os nomes das equipes, a duração dos tempos, a duração da exclusão e a faixa de números de camisa
 • Mantenha a tela ligada durante a partida
+• Se o app fechar ou travar no meio da partida, ele volta exatamente de onde parou: cronômetro, placar e exclusões incluídos
 • Feito para sol forte e refletores: telas escuras de alto contraste e números grandes
 • Em português do Brasil, inglês, espanhol e francês
 

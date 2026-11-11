@@ -39,6 +39,7 @@ struct LivePhoneControlsWidget: View {
                         isConfirmingEnd = true
                     }
                 }
+                LiveUndoLastWidget(lastEntry: controls.lastEntry, onUndo: controls.onUndo)
             case .fullTime:
                 EmptyView()
             }
@@ -55,7 +56,9 @@ struct LivePhoneControlsWidget: View {
             LiveScoreSheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, onScore: controls.onScore)
         }
         .sheet(isPresented: $isCarding) {
-            LiveCardSheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, onCard: controls.onCard)
+            LiveCardSheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
+                                matchEvents: controls.matchEvents,
+                                twentyMinuteRedEnabled: controls.twentyMinuteRedEnabled, onCard: controls.onCard)
         }
     }
 }

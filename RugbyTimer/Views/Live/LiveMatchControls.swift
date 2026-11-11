@@ -9,7 +9,14 @@ public struct LiveMatchControls {
     public var onStartSecondHalf: () -> Void
     /// Team, optional scorer number, points, description.
     public var onScore: (String, Int?, Int, String) -> Void
-    public var onCard: (String, Int, CardType) -> Void
+    public var onCard: (String, Int, Sanction) -> Void
+    /// The latest score or card, offered for undo while its window is open.
+    public var lastEntry: MatchEvent?
+    public var onUndo: () -> Void = {}
+    /// The record so far: the card sheet checks it for a player's second yellow.
+    public var matchEvents: [MatchEvent] = []
+    /// Offers a 20-minute red, and makes a second yellow one.
+    public var twentyMinuteRedEnabled = false
 
     public init(
         onKickOff: @escaping () -> Void,
@@ -17,7 +24,7 @@ public struct LiveMatchControls {
         onEndPeriod: @escaping () -> Void,
         onStartSecondHalf: @escaping () -> Void,
         onScore: @escaping (String, Int?, Int, String) -> Void,
-        onCard: @escaping (String, Int, CardType) -> Void
+        onCard: @escaping (String, Int, Sanction) -> Void
     ) {
         self.onKickOff = onKickOff
         self.onToggleClock = onToggleClock
@@ -33,6 +40,7 @@ public struct LiveMatchControls {
         ("TRY", "TRY", 5, "Try scored (+5)"),
         ("CONVERSION", "CONVERSION", 2, "Conversion (+2)"),
         ("PENALTY", "PENALTY", 3, "Penalty goal (+3)"),
-        ("DROPGOAL", "DROP GOAL", 3, "Drop goal (+3)") // l10n-ignore: id and description are English by design
+        ("DROPGOAL", "DROP GOAL", 3, "Drop goal (+3)"), // l10n-ignore: id and description are English by design
+        ("PENALTYTRY", "PENALTY TRY", 7, "Penalty try (+7)") // l10n-ignore: id and description are English by design
     ]
 }

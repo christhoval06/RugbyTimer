@@ -28,6 +28,7 @@ extension AppState {
         tapLockEnabled = configuration.tapLockEnabled ?? false
         coinTossEnabled = configuration.coinTossEnabled ?? false
         halfTimeBreakSeconds = configuration.halfTimeBreakSeconds ?? 120
+        twentyMinuteRedEnabled = configuration.twentyMinuteRedEnabled ?? false
         resetMatchData()
         publishWatchSnapshot()
     }

@@ -15,12 +15,14 @@ struct WatchLiveMatchWidget: View {
     var matchEvents: [MatchEvent] = []
     var halfTimeBreakEndsAt: Date? = nil
     var halfTimeBreakSeconds = 120
-    let onAddCard: (String, Int, CardType) -> Void
+    var twentyMinuteRedEnabled = false
+    let onAddCard: (String, Int, Sanction) -> Void
     let onScore: (String, Int?, Int, String) -> Void
     let onStartSecondHalf: () -> Void
     let onEndPeriod: () -> Void
     var onEndMatch: () -> Void = {}
     var onNewMatch: (() -> Void)? = nil
+    var onUndo: () -> Void = {}
 
     @State private var page: Page = .clock
 
@@ -40,8 +42,10 @@ struct WatchLiveMatchWidget: View {
                     homeTeamName: homeTeamName,
                     awayTeamName: awayTeamName,
                     activeCards: activeCards,
-                    onAddCard: { team, number, type in
-                        onAddCard(team, number, type)
+                    matchEvents: matchEvents,
+                    twentyMinuteRedEnabled: twentyMinuteRedEnabled,
+                    onAddCard: { team, number, sanction in
+                        onAddCard(team, number, sanction)
                         returnToMatch()
                     }
                 )
@@ -55,7 +59,9 @@ struct WatchLiveMatchWidget: View {
                 onStartSecondHalf: onStartSecondHalf,
                 onEndPeriod: onEndPeriod,
                 onEndMatch: onEndMatch,
-                onNewMatch: onNewMatch
+                onNewMatch: onNewMatch,
+                lastEntry: matchEvents.last,
+                onUndo: onUndo
             )
             .tag(Page.clock)
 

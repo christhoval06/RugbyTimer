@@ -17,6 +17,8 @@ public struct MatchConfiguration: Codable, Equatable {
     public var coinTossEnabled: Bool? = nil
     // Optional so older companions get the standard 2-minute half-time break.
     public var halfTimeBreakSeconds: Int? = nil
+    // Optional so older companions keep full red cards only.
+    public var twentyMinuteRedEnabled: Bool? = nil
 }
 
 public struct MatchSnapshot: Codable, Equatable {

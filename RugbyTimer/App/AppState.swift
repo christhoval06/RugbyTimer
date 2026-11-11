@@ -29,6 +29,8 @@ public class AppState: ObservableObject {
 
     /// When on, the Watch runs the coin toss before kick-off (the Setup "Coin toss" toggle).
     @Published public var coinTossEnabled: Bool = false
+    /// When on, red cards can be 20-minute reds and a second yellow becomes one (Setup "20-minute red card").
+    @Published public var twentyMinuteRedEnabled: Bool = false
     /// Length of the half-time interval, counted down on the Watch from the half-time whistle.
     @Published public var halfTimeBreakSeconds: Int = 120
     /// When the half-time whistle went; nil outside the break.
@@ -42,10 +44,6 @@ public class AppState: ObservableObject {
     @Published public var homeScore: Int = 0
     @Published public var awayScore: Int = 0
     @Published public var activeCards: [MatchCard] = []
-    public var matchDurationText: String {
-        let totalSeconds = matchDurationSeconds * 2
-        return String(format: "%d:%02d Total", totalSeconds / 60, totalSeconds % 60) // l10n-ignore: unused
-    }
 
     @Published public var matchEvents: [MatchEvent] = []
 

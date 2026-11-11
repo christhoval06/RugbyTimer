@@ -6,6 +6,9 @@ struct LiveSinBinRowWidget: View {
     private var tint: Color { card.type == .yellow ? Color.cardYellow : Color.expulsionRed }
 
     private var subtitle: LocalizedStringKey {
+        if card.type == .red && card.countsDown {
+            return card.isExpired ? "20-minute red · Replacement can come on" : "20-minute red · Replacement in"
+        }
         if card.type == .red { return "Red card · Sent off" }
         return card.isExpired ? "Sin-bin over · Ready to return" : "Yellow card · Sin-bin"
     }
@@ -15,14 +18,15 @@ struct LiveSinBinRowWidget: View {
             SetupSettingLabelWidget(symbol: "rectangle.portrait.fill", title: "#\(card.playerNumber) · \(card.teamName)",
                                     subtitle: subtitle, tint: tint)
             Spacer(minLength: 4)
-            if card.type == .yellow && !card.isExpired {
+            if card.countsDown && !card.isExpired {
+                let timerTint = card.type == .red ? Color.expulsionRed : Color.sinBinAmber
                 Text(formatTime(card.remainingSeconds))
                     .font(.system(size: 17, weight: .heavy, design: .monospaced))
-                    .foregroundStyle(Color.sinBinAmber)
+                    .foregroundStyle(timerTint)
                     .padding(.horizontal, 12)
                     .frame(minHeight: 36)
-                    .background(Color.sinBinAmber.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
-            } else if card.type == .yellow {
+                    .background(timerTint.opacity(0.12), in: RoundedRectangle(cornerRadius: 8))
+            } else if card.countsDown {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 18))
                     .foregroundStyle(Color.pitchEmerald)

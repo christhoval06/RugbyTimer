@@ -1,0 +1,62 @@
+{
+  "sourceLanguage" : "en",
+  "version" : "1.0",
+  "strings" : {
+    "NSHealthShareUsageDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer reads your heart rate, distance and energy while it records each match you referee as a Rugby workout."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer lee tu frecuencia cardíaca, distancia y energía mientras registra cada partido que arbitras como un entrenamiento de rugby."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer lit votre fréquence cardiaque, votre distance et votre énergie pendant qu’il enregistre chaque match que vous arbitrez comme une séance de rugby."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Rugby Timer lê sua frequência cardíaca, distância e energia enquanto registra cada partida que você apita como um treino de rúgbi."
+          }
+        }
+      }
+    },
+    "NSHealthUpdateUsageDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer saves each match you referee to Health as a Rugby workout, with its time, distance and energy."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer guarda en Salud cada partido que arbitras como un entrenamiento de rugby, con su tiempo, distancia y energía."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby Timer enregistre dans Santé chaque match que vous arbitrez comme une séance de rugby, avec sa durée, sa distance et son énergie."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Rugby Timer salva no Saúde cada partida que você apita como um treino de rúgbi, com tempo, distância e energia."
+          }
+        }
+      }
+    }
+  }
+}

@@ -37,6 +37,7 @@ final class AppSettings: ObservableObject {
         static let keepAwake = "settings.keepScreenAwake"
         static let tapLock = "settings.tapLockEnabled"
         static let coinToss = "settings.coinTossEnabled"
+        static let twentyMinuteRed = "settings.twentyMinuteRedEnabled"
         static let halfTimeBreak = "settings.halfTimeBreakSeconds"
         static let language = AppLanguage.defaultsKey
     }
@@ -53,6 +54,9 @@ final class AppSettings: ObservableObject {
     @Published var keepScreenAwake: Bool { didSet { defaults.set(keepScreenAwake, forKey: Key.keepAwake) } }
     @Published var tapLockEnabled: Bool { didSet { defaults.set(tapLockEnabled, forKey: Key.tapLock) } }
     @Published var coinTossEnabled: Bool { didSet { defaults.set(coinTossEnabled, forKey: Key.coinToss) } }
+    @Published var twentyMinuteRedEnabled: Bool {
+        didSet { defaults.set(twentyMinuteRedEnabled, forKey: Key.twentyMinuteRed) }
+    }
     @Published var halfTimeBreakSeconds: Int { didSet { defaults.set(halfTimeBreakSeconds, forKey: Key.halfTimeBreak) } }
     /// Not part of "Restore defaults": resetting would switch the app to a language the referee may not read.
     @Published var language: AppLanguage { didSet { defaults.set(language.rawValue, forKey: Key.language) } }
@@ -69,6 +73,7 @@ final class AppSettings: ObservableObject {
         keepScreenAwake = defaults.object(forKey: Key.keepAwake) as? Bool ?? true
         tapLockEnabled = defaults.object(forKey: Key.tapLock) as? Bool ?? true
         coinTossEnabled = defaults.bool(forKey: Key.coinToss)
+        twentyMinuteRedEnabled = defaults.bool(forKey: Key.twentyMinuteRed)
         halfTimeBreakSeconds = defaults.positiveInt(forKey: Key.halfTimeBreak) ?? Self.standardHalfTimeBreakSeconds
         language = defaults.string(forKey: Key.language).flatMap(AppLanguage.init(rawValue:)) ?? .system
         // UI tests launch straight into Match Setup; not persisted.
@@ -86,6 +91,7 @@ final class AppSettings: ObservableObject {
         keepScreenAwake = true
         tapLockEnabled = true
         coinTossEnabled = false
+        twentyMinuteRedEnabled = false
         halfTimeBreakSeconds = Self.standardHalfTimeBreakSeconds
     }
 }

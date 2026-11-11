@@ -3,7 +3,7 @@ import WatchKit
 
 @main
 public struct RugbyTimerWatchApp: App {
-    @StateObject private var appState = AppState()
+    @StateObject private var appState = AppState.launch()
     @StateObject private var runtime = WatchMatchRuntime()
     @Environment(\.scenePhase) private var scenePhase
     /// Set by the iPhone (Settings › Language); `system` follows the Watch's own language.
@@ -44,12 +44,14 @@ public struct RugbyTimerWatchApp: App {
                         matchEvents: appState.matchEvents,
                         halfTimeBreakEndsAt: appState.halfTimeBreakEndsAt,
                         halfTimeBreakSeconds: appState.halfTimeBreakSeconds,
-                        onAddCard: { appState.addCard(team: $0, playerNum: $1, type: $2) },
+                        twentyMinuteRedEnabled: appState.twentyMinuteRedEnabled,
+                        onAddCard: { appState.issue($2, team: $0, playerNum: $1) },
                         onScore: { appState.recordScore(team: $0, playerNumber: $1, points: $2, description: $3) },
                         onStartSecondHalf: appState.startSecondHalf,
                         onEndPeriod: appState.endPeriod,
                         onEndMatch: appState.endMatch,
-                        onNewMatch: newMatchAction
+                        onNewMatch: newMatchAction,
+                        onUndo: { appState.undoLastEntry() }
                     )
                 }
             }
@@ -67,7 +69,7 @@ public struct RugbyTimerWatchApp: App {
                 appState.publishWatchSnapshot()
             }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { runtime.appDidBecomeActive() }
+                if phase == .active { runtime.appDidBecomeActive() } else { appState.saveMatch() }
             }
         }
     }

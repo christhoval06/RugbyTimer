@@ -41,7 +41,8 @@ extension AppState {
             playerNumber: playerNumber,
             type: .tryScore(points: points),
             description: description,
-            matchSeconds: currentMatchSeconds
+            matchSeconds: currentMatchSeconds,
+            recordedAt: Date()
         )
         matchEvents.append(event)
         publishWatchSnapshot()

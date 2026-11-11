@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Rugby Timer** for iPhone and Apple Watch
-Effective date: November 9, 2026
+Effective date: November 10, 2026
 
 Rugby Timer is a match clock for rugby referees. It's built so that your matches stay on your devices. This policy explains what the app handles and where that data goes.
 
@@ -17,7 +17,7 @@ Rugby Timer is a match clock for rugby referees. It's built so that your matches
 | Data | What it's for | Where it stays |
 | --- | --- | --- |
 | Team names, half length, sin-bin length, half-time break, shirt-number range | Setting up a match | On your iPhone, and sent to your paired Apple Watch |
-| Scores, cards, shirt numbers and the match timeline | Running the match and building the match record | In the app's memory on your devices while the match is open. It isn't saved to a server. |
+| Scores, cards, shirt numbers and the match timeline | Running the match and building the match record | On the device running the match clock (your Apple Watch, or your iPhone in iPhone-only mode), saved in the app's own storage so the match survives the app closing. It's replaced by the next match and isn't saved to a server. |
 | Preferences (default teams, haptics, keep screen awake, tap lock, coin toss, language) | Remembering your settings | On your device, in the app's local settings |
 | Apple Watch model name and battery level | Showing the Watch status on the iPhone Setup screen | Sent from your Watch to your paired iPhone only |
 
@@ -30,9 +30,10 @@ The iPhone and Watch apps talk to each other through Apple's WatchConnectivity f
 ## Permissions
 
 - **Notifications (Apple Watch):** used for local alerts at half-time, at the end of the half-time break and when a sin-bin ends. These alerts are scheduled on the Watch itself. The app doesn't use push notifications from a server.
-- **Background running (Apple Watch):** the Watch app keeps an extended runtime session during a match so the clock and alerts stay accurate when your wrist is down. It doesn't read health or workout data.
+- **Health (Apple Watch, optional):** if you allow it, the Watch runs each match as a Rugby workout. That keeps the clock and alerts running for the whole match, even with your wrist down, and saves the workout to the Health app at full time. While the workout runs, the Watch reads your heart rate, distance and active energy for that workout. This data goes only to Apple Health on your devices. Rugby Timer doesn't send it anywhere or use it for anything else. You can turn access off at any time in the Health app or in Settings › Health on your iPhone.
+- **Background running (Apple Watch):** if you don't allow Health access, the Watch app uses an extended runtime session during each half and the half-time break instead. That doesn't read any health data.
 
-The app doesn't request your location, contacts, photos, camera, microphone or health data.
+The app doesn't request your location, contacts, photos, camera or microphone.
 
 ## Sharing a match record
 

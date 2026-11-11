@@ -30,6 +30,12 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
     /// Match time of the event in seconds since kick-off (second half continues from the first).
     /// Optional so events from older versions keep decoding; those show the minute only.
     public let matchSeconds: Int?
+    /// Wall-clock time the entry was made; drives "Undo last". Nil on older events.
+    public let recordedAt: Date?
+    /// The sin-bin entry a card event created, so undoing the card removes it too.
+    public let cardID: UUID?
+    /// Second yellow: the running sin-bin the red card ended, so undoing the red puts it back.
+    public let replacedCard: MatchCard?
 
     public init(
         id: UUID = UUID(),
@@ -39,7 +45,10 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
         type: MatchEventType,
         description: String,
         overtimeSeconds: Int? = nil,
-        matchSeconds: Int? = nil
+        matchSeconds: Int? = nil,
+        recordedAt: Date? = nil,
+        cardID: UUID? = nil,
+        replacedCard: MatchCard? = nil
     ) {
         self.id = id
         self.minute = minute
@@ -49,6 +58,9 @@ public struct MatchEvent: Identifiable, Equatable, Codable {
         self.description = description
         self.overtimeSeconds = overtimeSeconds
         self.matchSeconds = matchSeconds
+        self.recordedAt = recordedAt
+        self.cardID = cardID
+        self.replacedCard = replacedCard
     }
 }
 
@@ -70,14 +82,20 @@ public extension MatchEvent {
             if let playerNumber { return String(appLocalized: "Yellow Card (Sin-Bin) - #\(playerNumber)") }
             return String(appLocalized: "Yellow Card (Sin-Bin)")
         case .redCard:
-            if let playerNumber { return String(appLocalized: "Red Card (Expulsion) - #\(playerNumber)") }
-            return String(appLocalized: "Red Card (Expulsion)")
+            guard let playerNumber else { return String(appLocalized: "Red Card (Expulsion)") }
+            switch (isTwentyMinuteRed, isSecondYellow) {
+            case (true, true): return String(appLocalized: "20-Minute Red Card (Second Yellow) - #\(playerNumber)")
+            case (true, false): return String(appLocalized: "20-Minute Red Card - #\(playerNumber)")
+            case (false, true): return String(appLocalized: "Red Card (Second Yellow) - #\(playerNumber)")
+            case (false, false): return String(appLocalized: "Red Card (Expulsion) - #\(playerNumber)")
+            }
         case .tryScore, .sub:
             switch description {
             case "Try scored (+5)": return String(appLocalized: "Try scored (+5)")
             case "Conversion (+2)": return String(appLocalized: "Conversion (+2)")
             case "Penalty goal (+3)": return String(appLocalized: "Penalty goal (+3)")
             case "Drop goal (+3)": return String(appLocalized: "Drop goal (+3)")
+            case "Penalty try (+7)": return String(appLocalized: "Penalty try (+7)")
             case "HALF-TIME WHISTLE": return String(appLocalized: "HALF-TIME WHISTLE")
             case "FULL-TIME WHISTLE": return String(appLocalized: "FULL-TIME WHISTLE")
             case Self.matchEndedEarly: return String(appLocalized: "MATCH ENDED EARLY")

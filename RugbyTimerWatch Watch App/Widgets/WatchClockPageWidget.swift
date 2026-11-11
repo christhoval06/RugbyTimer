@@ -10,6 +10,9 @@ struct WatchClockPageWidget: View {
     var onEndMatch: () -> Void = {}
     /// Full time only: back to the Watch main screen for the next match.
     var onNewMatch: (() -> Void)? = nil
+    /// The latest score or card, offered for undo while its window is open.
+    var lastEntry: MatchEvent? = nil
+    var onUndo: () -> Void = {}
 
     var body: some View {
         ScrollView {
@@ -42,6 +45,7 @@ struct WatchClockPageWidget: View {
                     WatchLiveClockWidget(timerService: timerService, totalDuration: totalDuration,
                                          matchPeriod: summary.matchPeriod)
                     WatchClockStatsWidget(timerService: timerService, totalDuration: totalDuration)
+                    WatchUndoLastWidget(lastEntry: lastEntry, onUndo: onUndo)
                     WatchEndPeriodWidget(
                         timerService: timerService,
                         matchPeriod: summary.matchPeriod,
