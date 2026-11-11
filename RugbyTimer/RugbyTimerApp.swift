@@ -79,6 +79,7 @@ public struct RugbyTimerApp: App {
             .modifier(SettingsSyncModifier(appState: appState, settings: settings))
             .modifier(MatchHistoryRecorder(appState: appState, history: history))
             .modifier(MatchLiveActivityModifier(appState: appState, settings: settings))
+            .modifier(MatchWidgetModifier(appState: appState, history: history, settings: settings))
             .environment(\.playerNumberRange, appState.playerNumbers)
             .environment(\.substitutionRules, appState.substitutionRules)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in

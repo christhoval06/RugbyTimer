@@ -20,8 +20,8 @@ TARGETS = {
                                   "Debug-watchsimulator/RugbyTimerWatch Watch App.build"),
     "RugbyTimerComplicationExtension": ("RugbyTimerComplication/Localizable.xcstrings",
                                         "Debug-watchsimulator/RugbyTimerComplicationExtension.build"),
-    # No catalog: it only shows labels the app translated, so it must extract no strings.
-    "RugbyTimerLiveActivityExtension": (None, "Debug-iphonesimulator/RugbyTimerLiveActivityExtension.build"),
+    "RugbyTimerLiveActivityExtension": ("RugbyTimerLiveActivity/Localizable.xcstrings",
+                                        "Debug-iphonesimulator/RugbyTimerLiveActivityExtension.build"),
 }
 SOURCE_DIRS = ["RugbyTimer", "RugbyTimerWatch Watch App", "RugbyTimerComplication", "RugbyTimerLiveActivity"]
 LITERAL = re.compile(r'"((?:[^"\\]|\\.)*)"')

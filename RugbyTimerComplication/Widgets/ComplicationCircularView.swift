@@ -43,6 +43,7 @@ struct ComplicationCircularView: View {
     }
 }
 
+#if os(watchOS) // the iPhone Lock Screen widget shares this view; its previews are in MatchWidget
 #Preview(as: .accessoryCircular) {
     RugbyTimerComplication()
 } timeline: {
@@ -51,3 +52,4 @@ struct ComplicationCircularView: View {
     MatchClockEntry.samples[2]
     MatchClockEntry.samples[3]
 }
+#endif

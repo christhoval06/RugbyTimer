@@ -26,8 +26,10 @@ struct ComplicationSinBinRow: View {
     }
 }
 
+#if os(watchOS) // the iPhone Lock Screen widget shares this view; its previews are in MatchWidget
 #Preview(as: .accessoryRectangular) {
     RugbyTimerComplication()
 } timeline: {
     MatchClockEntry.samples[1]
 }
+#endif

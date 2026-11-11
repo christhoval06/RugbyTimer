@@ -31,7 +31,7 @@ struct MatchActivityLockScreenView: View {
                     .foregroundStyle(Color.outline)
                 MatchActivityTeamScore(name: glance.awayTeamName, score: glance.awayScore, alignment: .trailing)
             }
-            MatchActivityProgressBar(context: context)
+            MatchActivityProgressBar(glance: context.glance, date: context.displayDate)
             MatchActivitySinBinRow(glance: glance, date: context.displayDate)
         }
         .padding(16)

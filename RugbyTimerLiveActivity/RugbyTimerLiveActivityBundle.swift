@@ -5,5 +5,6 @@ import WidgetKit
 struct RugbyTimerLiveActivityBundle: WidgetBundle {
     var body: some Widget {
         MatchActivityWidget()
+        MatchWidget()
     }
 }

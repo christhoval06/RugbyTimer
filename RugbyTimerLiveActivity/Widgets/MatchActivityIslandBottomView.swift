@@ -15,7 +15,7 @@ struct MatchActivityIslandBottomView: View {
                     .foregroundStyle(context.tint)
                     .multilineTextAlignment(.center)
             }
-            MatchActivityProgressBar(context: context)
+            MatchActivityProgressBar(glance: context.glance, date: context.displayDate)
             MatchActivitySinBinRow(glance: context.glance, date: context.displayDate)
         }
     }

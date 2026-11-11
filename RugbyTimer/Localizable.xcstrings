@@ -1638,6 +1638,28 @@
         }
       }
     },
+    "LAST MATCH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÚLTIMO PARTIDO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DERNIER MATCH"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÚLTIMA PARTIDA"
+          }
+        }
+      }
+    },
     "No more extra time. The match ends level, ready for a kicking competition." : {
       "localizations" : {
         "es" : {

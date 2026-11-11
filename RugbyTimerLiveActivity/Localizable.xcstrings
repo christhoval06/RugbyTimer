@@ -1,0 +1,67 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ %@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@ · %3$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ RUGBY TIMER" : {
+      "shouldTranslate" : false
+    },
+    "+%@" : {
+      "shouldTranslate" : false
+    },
+    "Match" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Match"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partida"
+          }
+        }
+      }
+    },
+    "The live match clock and score, or your last result." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El reloj y el marcador del partido en curso, o tu último resultado."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le chrono et le score du match en cours, ou votre dernier résultat."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O cronômetro e o placar da partida em andamento, ou seu último resultado."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
