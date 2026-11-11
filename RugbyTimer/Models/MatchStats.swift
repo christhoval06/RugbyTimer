@@ -25,7 +25,7 @@ nonisolated public enum MatchResult: Equatable {
 
 /// Pure match statistics derived from the event log, shared by iPhone and Watch.
 nonisolated public enum MatchStats {
-    static let halfTimeWhistle = "HALF-TIME WHISTLE"
+    public static let halfTimeWhistle = "HALF-TIME WHISTLE"
 
     public static func breakdown(of events: [MatchEvent], team: String) -> ScoreBreakdown {
         events.reduce(into: ScoreBreakdown()) { total, event in
@@ -53,12 +53,25 @@ nonisolated public enum MatchStats {
         guard let split = events.firstIndex(where: { $0.type == .sub && $0.description == halfTimeWhistle }) else {
             return nil
         }
+        // The second half runs to the full-time whistle; extra time is counted apart.
+        let end = events.firstIndex(where: { $0.type == .sub && $0.description == "FULL-TIME WHISTLE" }) ?? events.endIndex // l10n-ignore: synced English
         let first = Array(events[..<split])
-        let second = Array(events[split...])
+        let second = split <= end ? Array(events[split..<end]) : []
         return (
             (breakdown(of: first, team: home).points, breakdown(of: first, team: away).points),
             (breakdown(of: second, team: home).points, breakdown(of: second, team: away).points)
         )
+    }
+
+    /// Points scored after the full-time whistle; nil when no extra time was played.
+    public static func extraTimeScore(of events: [MatchEvent], home: String, away: String) -> (home: Int, away: Int)? {
+        let whistles = [ExtraTimeWhistle.halfTime, ExtraTimeWhistle.fullTime, ExtraTimeWhistle.suddenDeath]
+        guard let fullTime = events.firstIndex(where: { $0.type == .sub && $0.description == "FULL-TIME WHISTLE" }) // l10n-ignore: synced English
+        else { return nil }
+        let extra = Array(events[(fullTime + 1)...])
+        let points = (breakdown(of: extra, team: home).points, breakdown(of: extra, team: away).points)
+        guard points != (0, 0) || extra.contains(where: { whistles.contains($0.description) }) else { return nil }
+        return points
     }
 
     /// Seconds played after the clock reached zero in each half, from the whistle events.

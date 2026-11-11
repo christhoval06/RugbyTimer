@@ -14,6 +14,8 @@ public struct LiveMatchView: View {
     public var homeTeamName: String
     public var awayTeamName: String
     public var totalDuration: Int
+    /// The period on the clock when it differs from a half (extra time); nil uses `totalDuration`.
+    public var periodDuration: Int?
     public var homeScore: Int
     public var awayScore: Int
     public var matchPeriod: MatchPeriod
@@ -47,7 +49,8 @@ public struct LiveMatchView: View {
         phoneControls: LiveMatchControls? = nil,
         watchLink: WatchLinkStatus? = nil,
         injuryTimers: [InjuryTimer] = [],
-        offFieldActions: OffFieldActions? = nil
+        offFieldActions: OffFieldActions? = nil,
+        periodDuration: Int? = nil
     ) {
         self.timerService = timerService
         self.activeCards = activeCards
@@ -66,9 +69,10 @@ public struct LiveMatchView: View {
         self.watchLink = watchLink
         self.injuryTimers = injuryTimers
         self.offFieldActions = offFieldActions
+        self.periodDuration = periodDuration
     }
 
-    var isPlaying: Bool { matchPeriod == .firstHalf || matchPeriod == .secondHalf }
+    var isPlaying: Bool { matchPeriod.isPlaying }
 
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @State var shownRecord: MatchRecordSheetItem?

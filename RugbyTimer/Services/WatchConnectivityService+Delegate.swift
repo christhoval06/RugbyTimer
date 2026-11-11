@@ -39,4 +39,10 @@ extension WatchConnectivityService: WCSessionDelegate {
     public func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         DispatchQueue.main.async { self.receive(message) }
     }
+
+    public func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
+        guard let data = userInfo[Self.finishedMatchKey] as? Data,
+              let match = try? JSONDecoder().decode(FinishedMatch.self, from: data) else { return }
+        DispatchQueue.main.async { self.receivedFinishedMatch = match }
+    }
 }

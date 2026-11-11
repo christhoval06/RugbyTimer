@@ -36,8 +36,13 @@ struct WatchMatchSummary {
         CoinTossResult.kickOffTeams(in: matchEvents, home: homeTeamName, away: awayTeamName)?.secondHalf
     }
 
-    /// True at half-time and full time, when the break/result summaries are shown.
-    var isStopped: Bool { matchPeriod == .halfTime || matchPeriod == .fullTime }
+    /// True at the breaks and full time, when the break/result summaries are shown.
+    var isStopped: Bool { matchPeriod.isBreak || matchPeriod == .fullTime }
+
+    /// Points scored in extra time; nil when none was played.
+    var extraTimeScore: (home: Int, away: Int)? {
+        MatchStats.extraTimeScore(of: matchEvents, home: homeTeamName, away: awayTeamName)
+    }
 }
 
 extension WatchMatchSummary {

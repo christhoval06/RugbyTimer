@@ -30,6 +30,7 @@ extension AppState {
         coinTossEnabled = configuration.coinTossEnabled ?? false
         halfTimeBreakSeconds = configuration.halfTimeBreakSeconds ?? 120
         twentyMinuteRedEnabled = configuration.twentyMinuteRedEnabled ?? false
+        extraTimeFormat = configuration.extraTimeFormat ?? .off
         resetMatchData()
         publishWatchSnapshot()
     }
@@ -58,6 +59,7 @@ extension AppState {
         mirroredClock = snapshot.remaining
         if let events = snapshot.events { matchEvents = events }
         injuryTimers = snapshot.injuries ?? []
+        extraTimeFormat = snapshot.extraTimeFormat ?? .off
         // Older Watch builds send no end date; the send time plus the reading is within a second.
         let endDate = snapshot.clockEndDate
             ?? sentAt.addingTimeInterval(TimeInterval(snapshot.remaining))
@@ -78,7 +80,8 @@ extension AppState {
             sinBinDurationSeconds: sinBinDurationSeconds,
             events: matchEvents,
             clockEndDate: timerService.endDate,
-            injuries: injuryTimers
+            injuries: injuryTimers,
+            extraTimeFormat: extraTimeFormat
         ))
         #endif
     }

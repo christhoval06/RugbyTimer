@@ -19,6 +19,12 @@ public struct LiveMatchControls {
     public var twentyMinuteRedEnabled = false
     /// Starts an HIA or blood replacement timer.
     public var onInjury: (InjuryKind, String, Int) -> Void = { _, _, _ in }
+    /// Counts a penalty or free kick against a team.
+    public var onConcede: (Infringement, String) -> Void = { _, _ in }
+    /// Extra-time break: the period the next kick-off starts, and ending level instead.
+    public var nextExtraPeriod: MatchPeriod?
+    public var onStartExtraPeriod: () -> Void = {}
+    public var onEndMatch: () -> Void = {}
 
     public init(
         onKickOff: @escaping () -> Void,

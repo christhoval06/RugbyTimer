@@ -31,14 +31,14 @@ public class AppState: ObservableObject {
     @Published public var coinTossEnabled: Bool = false
     /// When on, red cards can be 20-minute reds and a second yellow becomes one (Setup "20-minute red card").
     @Published public var twentyMinuteRedEnabled: Bool = false
+    /// Extra time when a knockout match is level at full time (see `AppState+ExtraTime`).
+    @Published public var extraTimeFormat: ExtraTimeFormat = .off
     /// Length of the half-time interval, counted down on the Watch from the half-time whistle.
     @Published public var halfTimeBreakSeconds: Int = 120
     /// When the half-time whistle went; nil outside the break.
     @Published public internal(set) var halfTimeStartedAt: Date?
     /// The coin toss done on the Watch for this match; nil until it happens.
     @Published public var coinToss: CoinTossResult?
-
-    public var playerNumbers: ClosedRange<Int> { 1...max(1, maxPlayerNumber) }
 
     // Match Live Data
     @Published public var homeScore: Int = 0

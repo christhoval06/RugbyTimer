@@ -15,6 +15,8 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
     private let extendedSession = WatchExtendedSession()
     private let alerts = WatchMatchAlerts()
     private let breakAlerts = WatchBreakAlerts()
+    /// The Quick Match last handed to the iPhone's history, so it's sent once.
+    private var sentFinishedMatchID: UUID?
 
     func attach(to appState: AppState) {
         guard self.appState !== appState else { return }
@@ -47,8 +49,8 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
     private func sync() {
         guard let appState else { return }
         let period = appState.matchPeriod
-        let isPlaying = period == .firstHalf || period == .secondHalf
-        let isMatchLive = isPlaying || period == .halfTime
+        let isPlaying = period.isPlaying
+        let isMatchLive = isPlaying || period.isBreak
 
         if period == .preMatch && appState.hasConfiguredMatch {
             Task { await workout.requestAuthorizationIfNeeded() }
@@ -67,7 +69,16 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
                 Task { await workout.end(saving: period == .fullTime) }
             }
         }
+        sendQuickMatchToHistory(appState)
         alerts.sync(with: appState)
         breakAlerts.sync(endsAt: appState.halfTimeBreakEndsAt)
+    }
+
+    /// A Quick Match never syncs while it's played; at full time it goes to the iPhone's history.
+    private func sendQuickMatchToHistory(_ appState: AppState) {
+        guard appState.isWatchOnlyMatch, let match = appState.finishedMatch,
+              match.matchID != sentFinishedMatchID else { return }
+        appState.connectivityService.sendFinishedMatch(match)
+        sentFinishedMatchID = match.matchID
     }
 }

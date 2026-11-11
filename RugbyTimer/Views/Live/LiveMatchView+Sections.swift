@@ -10,7 +10,7 @@ extension LiveMatchView {
         LiveClockWidget(
             matchPeriod: matchPeriod,
             timeRemaining: timerService.timeRemaining,
-            totalDuration: totalDuration,
+            totalDuration: periodDuration ?? totalDuration,
             isRunning: timerService.isRunning,
             overtimeSeconds: timerService.overtimeSeconds,
             isPhoneHosted: isPhoneHosted,
@@ -24,6 +24,8 @@ extension LiveMatchView {
                              homeScore: homeScore, awayScore: awayScore)
         LiveScoringWidget(events: matchEvents, homeTeamName: homeTeamName)
         LiveSinBinWidget(cards: activeCards, injuries: injuryTimers, actions: offFieldActions)
+        LivePenaltyCountWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, events: matchEvents,
+                               onConcede: isPlaying ? phoneControls?.onConcede : nil)
     }
 
     /// Landscape clock column at full time: the result and the record share button.

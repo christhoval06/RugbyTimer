@@ -15,7 +15,8 @@ extension AppState {
 
     /// The team kicking off the given half, from the coin toss; nil without a toss.
     public func kickOffTeamName(for period: MatchPeriod) -> String? {
-        guard let coinToss else { return nil }
+        // Extra time has its own toss, which isn't recorded here.
+        guard let coinToss, !period.isExtraTime else { return nil }
         let side = period == .halfTime || period == .secondHalf
             ? coinToss.secondHalfKickOff : coinToss.firstHalfKickOff
         return coinToss.teamName(side, home: homeTeamName, away: awayTeamName)

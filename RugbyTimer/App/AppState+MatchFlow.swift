@@ -23,10 +23,13 @@ extension AppState {
             matchID: id, home: homeTeamName, away: awayTeamName, duration: matchDurationSeconds,
             sinBinDurationSeconds: sinBinDurationSeconds, maxPlayerNumber: maxPlayerNumber,
             tapLockEnabled: tapLockEnabled, coinTossEnabled: coinTossEnabled,
-            halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled
+            halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled,
+            extraTimeFormat: extraTimeFormat
         ))
         currentScreen = .liveMatch
     }
+
+    public var playerNumbers: ClosedRange<Int> { 1...max(1, maxPlayerNumber) }
 
     public var matchDurationText: String {
         let totalSeconds = matchDurationSeconds * 2
@@ -62,7 +65,7 @@ extension AppState {
 
     /// Pauses or resumes the match clock (iPhone-only mode; the Watch has its own control).
     public func toggleClock() {
-        guard runsClockLocally, matchPeriod == .firstHalf || matchPeriod == .secondHalf else { return }
+        guard runsClockLocally, matchPeriod.isPlaying else { return }
         HapticService.playStartStop()
         if timerService.isRunning { timerService.pause() } else { timerService.start() }
         publishWatchSnapshot()
@@ -81,12 +84,13 @@ extension AppState {
     /// Ends the match on the spot, before time is up (e.g. abandoned for weather, injury or the pitch).
     /// The current score becomes the final result.
     public func endMatch() {
-        if matchPeriod == .firstHalf || matchPeriod == .halfTime || matchPeriod == .secondHalf {
+        // From the extra-time break this simply ends the match level (e.g. for a kicking competition).
+        if matchPeriod.isPlaying || matchPeriod == .halfTime {
             HapticService.playHalfTime()
             matchEvents.append(MatchEvent(
                 minute: secondsPlayed / 60, teamName: "OFFICIAL", type: .sub,
                 description: MatchEvent.matchEndedEarly,
-                overtimeSeconds: matchPeriod == .halfTime ? 0 : timerService.overtimeSeconds,
+                overtimeSeconds: matchPeriod.isPlaying ? timerService.overtimeSeconds : 0,
                 matchSeconds: secondsPlayed
             ))
         }
@@ -97,14 +101,8 @@ extension AppState {
         publishWatchSnapshot()
     }
 
-    /// Match seconds played so far, counting both halves and any time past the clock.
+    /// Match seconds played so far, counting every period and any time past the clock.
     private var secondsPlayed: Int {
-        let half = matchDurationSeconds
-        let elapsedInHalf = max(0, half - timerService.clockSeconds)
-        switch matchPeriod {
-        case .firstHalf: return elapsedInHalf
-        case .secondHalf: return half + elapsedInHalf
-        default: return half
-        }
+        matchPeriod.isPlaying ? currentMatchSeconds : matchDurationSeconds
     }
 }

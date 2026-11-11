@@ -7,6 +7,8 @@ public class WatchConnectivityService: NSObject, ObservableObject {
     @Published public var receivedSnapshot: MatchSnapshot?
     /// Watch only: the iPhone went back to Match Setup for this match (see `+MatchReset`).
     @Published public var receivedMatchReset: UUID?
+    /// iPhone only: a Watch Quick Match that reached full time, for the match history.
+    @Published public var receivedFinishedMatch: FinishedMatch?
     @Published public var isWatchReachable = false
     @Published public var connectedWatchName = "APPLE WATCH"
     @Published public var watchBatteryLevel = 0
@@ -37,6 +39,15 @@ public class WatchConnectivityService: NSObject, ObservableObject {
         outgoingContext["snapshot"] = data
         flushContext()
     }
+
+    /// Watch only: hands a finished Quick Match to the iPhone for its history. Queued by
+    /// WatchConnectivity, so it arrives even if the iPhone is out of range right now.
+    public func sendFinishedMatch(_ match: FinishedMatch) {
+        guard session.activationState == .activated, let data = try? JSONEncoder().encode(match) else { return }
+        session.transferUserInfo([Self.finishedMatchKey: data])
+    }
+
+    static let finishedMatchKey = "finishedMatch" // l10n-ignore: message key
 
     /// iPhone only: the Watch shows text in the language picked in iPhone Settings.
     public func sendAppLanguage(_ language: AppLanguage) {

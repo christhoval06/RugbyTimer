@@ -14,6 +14,7 @@ nonisolated struct WatchQuickSetup: Codable, Equatable {
     var tapLockEnabled = true
     var coinTossEnabled = false
     var twentyMinuteRedEnabled = false
+    var extraTimeFormat = ExtraTimeFormat.off
 
     static func load(from defaults: UserDefaults = .standard) -> WatchQuickSetup {
         guard let data = defaults.data(forKey: defaultsKey),

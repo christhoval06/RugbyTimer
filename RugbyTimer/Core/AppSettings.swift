@@ -38,6 +38,7 @@ final class AppSettings: ObservableObject {
         static let tapLock = "settings.tapLockEnabled"
         static let coinToss = "settings.coinTossEnabled"
         static let twentyMinuteRed = "settings.twentyMinuteRedEnabled"
+        static let extraTime = "settings.extraTimeFormat"
         static let halfTimeBreak = "settings.halfTimeBreakSeconds"
         static let language = AppLanguage.defaultsKey
     }
@@ -57,6 +58,9 @@ final class AppSettings: ObservableObject {
     @Published var twentyMinuteRedEnabled: Bool {
         didSet { defaults.set(twentyMinuteRedEnabled, forKey: Key.twentyMinuteRed) }
     }
+    @Published var extraTimeFormat: ExtraTimeFormat {
+        didSet { defaults.set(extraTimeFormat.rawValue, forKey: Key.extraTime) }
+    }
     @Published var halfTimeBreakSeconds: Int { didSet { defaults.set(halfTimeBreakSeconds, forKey: Key.halfTimeBreak) } }
     /// Not part of "Restore defaults": resetting would switch the app to a language the referee may not read.
     @Published var language: AppLanguage { didSet { defaults.set(language.rawValue, forKey: Key.language) } }
@@ -74,6 +78,7 @@ final class AppSettings: ObservableObject {
         tapLockEnabled = defaults.object(forKey: Key.tapLock) as? Bool ?? true
         coinTossEnabled = defaults.bool(forKey: Key.coinToss)
         twentyMinuteRedEnabled = defaults.bool(forKey: Key.twentyMinuteRed)
+        extraTimeFormat = defaults.string(forKey: Key.extraTime).flatMap(ExtraTimeFormat.init(rawValue:)) ?? .off
         halfTimeBreakSeconds = defaults.positiveInt(forKey: Key.halfTimeBreak) ?? Self.standardHalfTimeBreakSeconds
         language = defaults.string(forKey: Key.language).flatMap(AppLanguage.init(rawValue:)) ?? .system
         // UI tests launch straight into Match Setup; not persisted.
@@ -92,6 +97,7 @@ final class AppSettings: ObservableObject {
         tapLockEnabled = true
         coinTossEnabled = false
         twentyMinuteRedEnabled = false
+        extraTimeFormat = .off
         halfTimeBreakSeconds = Self.standardHalfTimeBreakSeconds
     }
 }

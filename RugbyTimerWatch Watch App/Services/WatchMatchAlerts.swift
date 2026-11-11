@@ -39,9 +39,7 @@ final class WatchMatchAlerts: NSObject {
         schedule(
             id: Self.periodEndID,
             title: String(appLocalized: "Time up"),
-            body: appState.matchPeriod == .firstHalf
-                ? String(appLocalized: "End of the first half at the next dead ball.")
-                : String(appLocalized: "End of the second half at the next dead ball."),
+            body: periodEndBody(appState.matchPeriod),
             after: endDate.timeIntervalSinceNow
         )
 
@@ -70,6 +68,14 @@ final class WatchMatchAlerts: NSObject {
                 body: String(appLocalized: "#\(injury.playerNumber) \(injury.teamName): back on or replaced?"),
                 after: injury.endsAt.timeIntervalSinceNow
             )
+        }
+    }
+
+    private func periodEndBody(_ period: MatchPeriod) -> String {
+        switch period {
+        case .firstHalf: String(appLocalized: "End of the first half at the next dead ball.")
+        case .secondHalf: String(appLocalized: "End of the second half at the next dead ball.")
+        default: String(appLocalized: "End of the period at the next dead ball.")
         }
     }
 

@@ -2,7 +2,9 @@ import SwiftUI
 
 struct SetupHeaderWidget: View {
     @EnvironmentObject private var settings: AppSettings
+    @EnvironmentObject private var history: MatchHistory
     @State private var isShowingSettings = false
+    @State private var isShowingHistory = false
     var isWatchAvailable = true
 
     var body: some View {
@@ -21,20 +23,17 @@ struct SetupHeaderWidget: View {
                     .foregroundStyle(Color.outline)
             }
             Spacer(minLength: 0)
-            Button {
-                HapticService.playStartStop()
-                isShowingSettings = true
-            } label: {
-                Image(systemName: "gearshape")
-                    .font(.system(size: 24, weight: .light))
-                    .foregroundStyle(Color.pitchEmerald)
-                    .frame(width: 56, height: 56)
-                    .background(Color.pitchEmerald.opacity(0.08), in: RoundedRectangle(cornerRadius: 16))
-                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.pitchEmerald.opacity(0.2)))
+            HStack(spacing: 8) {
+                SetupHeaderButtonWidget(symbol: "clock.arrow.circlepath", label: "Match History",
+                                        identifier: "openHistory") { isShowingHistory = true }
+                SetupHeaderButtonWidget(symbol: "gearshape", label: "Settings",
+                                        identifier: "openSettings") { isShowingSettings = true }
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Settings")
-            .accessibilityIdentifier("openSettings")
+        }
+        .sheet(isPresented: $isShowingHistory) {
+            MatchHistoryView()
+                .environmentObject(history)
+                .preferredColorScheme(.dark)
         }
         .sheet(isPresented: $isShowingSettings) {
             SettingsView()

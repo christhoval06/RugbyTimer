@@ -66,6 +66,7 @@ RugbyTimer/
 ## 4. Core Architecture & SOLID Principles
 * **Single Responsibility:** Every widget, model, and service lives in its own dedicated file. No file exceeds ~120 lines.
 * **Dependency Injection:** Services like `MatchTimerService` and `WatchConnectivityService` are injected into state containers (`AppState`).
+* **Persistence layer:** `RugbyTimer/Persistence/` owns everything the app stores. Only `MatchRecord` and `SwiftDataMatchHistoryStorage` import SwiftData; screens observe `MatchHistory` and get plain `MatchHistoryEntry` values. New storage goes behind a protocol there (like `MatchHistoryStorage`), with an in-memory version for tests and previews.
 * **Testability:** Business logic (timers, card countdowns) is isolated in pure Swift classes, allowing unit tests without UI instantiation (`XCTest`).
 
 ---

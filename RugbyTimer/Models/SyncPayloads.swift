@@ -25,6 +25,8 @@ nonisolated public struct MatchConfiguration: Codable, Equatable {
     public var halfTimeBreakSeconds: Int? = nil
     // Optional so older companions keep full red cards only.
     public var twentyMinuteRedEnabled: Bool? = nil
+    // Optional so older companions play no extra time.
+    public var extraTimeFormat: ExtraTimeFormat? = nil
 }
 
 nonisolated public struct MatchSnapshot: Codable, Equatable {
@@ -47,4 +49,6 @@ nonisolated public struct MatchSnapshot: Codable, Equatable {
     public var clockEndDate: Date? = nil
     // Optional so snapshots from an older Watch app keep decoding.
     public var injuries: [InjuryTimer]? = nil
+    // The iPhone needs it for the length of extra-time periods.
+    public var extraTimeFormat: ExtraTimeFormat? = nil
 }

@@ -16,15 +16,20 @@ public enum MatchRecordFormatter {
             date.formatted(Date.FormatStyle(date: .long, time: .shortened).locale(AppLanguage.current.locale)),
             "",
             "\(homeTeam) \(homeScore) – \(awayScore) \(awayTeam)",
-            String(appLocalized: "FULL TIME · 2 × \(halfDurationSeconds / 60) min"),
+            events.contains { $0.description == ExtraTimeWhistle.halfTime || $0.description == ExtraTimeWhistle.fullTime
+                || $0.description == ExtraTimeWhistle.suddenDeath }
+                ? String(appLocalized: "FULL TIME · 2 × \(halfDurationSeconds / 60) min + extra time")
+                : String(appLocalized: "FULL TIME · 2 × \(halfDurationSeconds / 60) min"),
             "",
             String(appLocalized: "TIMELINE")
         ]
 
-        if events.isEmpty {
+        // Penalties and free kicks are summed below, not listed one by one.
+        let timeline = events.filter { Infringement.of($0) == nil }
+        if timeline.isEmpty {
             lines.append(String(appLocalized: "No recorded events."))
         } else {
-            for event in events {
+            for event in timeline {
                 let minute = "\(event.minute)'".padding(toLength: 5, withPad: " ", startingAt: 0)
                 let player = event.playerNumber.map { " #\($0)" } ?? ""
                 let team = event.teamName == "OFFICIAL" ? "" : "\(event.teamName)\(player) · "
@@ -38,6 +43,19 @@ public enum MatchRecordFormatter {
             lines += ["", String(appLocalized: "DISCIPLINE"), String(appLocalized: "Yellow cards: \(yellow.count) · Red cards: \(red.count)")]
         }
 
+        lines += penaltyLines(events: events, teams: [homeTeam, awayTeam])
         return lines.joined(separator: "\n")
+    }
+
+    /// "PENALTIES CONCEDED" with each team's penalties (by half) and free kicks; empty when none.
+    private static func penaltyLines(events: [MatchEvent], teams: [String]) -> [String] {
+        guard events.contains(where: { Infringement.of($0) != nil }) else { return [] }
+        var lines = ["", String(appLocalized: "PENALTIES CONCEDED")]
+        for team in teams {
+            let total = InfringementCount.count(in: events, team: team)
+            let halves = InfringementCount.byHalf(in: events, team: team)
+            lines.append(String(appLocalized: "\(team): penalties \(total.penalties) (H1 \(halves.firstHalf.penalties), H2 \(halves.secondHalf.penalties)) · free kicks \(total.freeKicks)"))
+        }
+        return lines
     }
 }

@@ -98,9 +98,14 @@ public extension MatchEvent {
             case "Penalty try (+7)": return String(appLocalized: "Penalty try (+7)")
             case "HALF-TIME WHISTLE": return String(appLocalized: "HALF-TIME WHISTLE")
             case "FULL-TIME WHISTLE": return String(appLocalized: "FULL-TIME WHISTLE")
+            case ExtraTimeWhistle.halfTime: return String(appLocalized: "ET HALF-TIME WHISTLE")
+            case ExtraTimeWhistle.fullTime: return String(appLocalized: "ET FULL-TIME WHISTLE")
+            case ExtraTimeWhistle.suddenDeath: return String(appLocalized: "SUDDEN DEATH WHISTLE")
             case Self.matchEndedEarly: return String(appLocalized: "MATCH ENDED EARLY")
             case "Won the toss · kicks off": return String(appLocalized: "Won the toss · kicks off")
             case "Won the toss · chose an end": return String(appLocalized: "Won the toss · chose an end")
+            case "Penalty conceded": return String(appLocalized: "Penalty conceded")
+            case "Free kick conceded": return String(appLocalized: "Free kick conceded")
             default: return InjuryTimer.localizedDescription(of: description) ?? description
             }
         }

@@ -18,9 +18,9 @@ public struct RugbyTimerWatchApp: App {
         WindowGroup {
             NavigationStack {
                 if !appState.hasConfiguredMatch {
-                    WatchSetupRequiredWidget { appState.startQuickMatch($0) }
+                    WatchHomeView { appState.startQuickMatch($0) }
                 } else if appState.matchPeriod == .preMatch {
-                    WatchReadyMatchWidget(
+                    WatchReadyMatchView(
                         homeTeamName: appState.homeTeamName,
                         awayTeamName: appState.awayTeamName,
                         durationSeconds: appState.matchDurationSeconds,
@@ -32,13 +32,13 @@ public struct RugbyTimerWatchApp: App {
                         onLeave: { appState.leaveMatch() }
                     )
                 } else {
-                    WatchLiveMatchWidget(
+                    WatchLiveMatchView(
                         timerService: appState.timerService,
                         activeCards: appState.activeCards,
                         homeTeamName: appState.homeTeamName,
                         awayTeamName: appState.awayTeamName,
                         matchPeriod: appState.matchPeriod,
-                        totalDuration: appState.matchDurationSeconds,
+                        totalDuration: appState.currentPeriodSeconds,
                         homeScore: appState.homeScore,
                         awayScore: appState.awayScore,
                         matchEvents: appState.matchEvents,
@@ -54,7 +54,10 @@ public struct RugbyTimerWatchApp: App {
                         onEndPeriod: appState.endPeriod,
                         onEndMatch: appState.endMatch,
                         onNewMatch: newMatchAction,
-                        onUndo: { appState.undoLastEntry() }
+                        onUndo: { appState.undoLastEntry() },
+                        nextExtraPeriod: appState.nextExtraPeriod,
+                        onStartExtraPeriod: appState.startExtraPeriod,
+                        onConcede: { appState.concede($0, team: $1) }
                     )
                 }
             }

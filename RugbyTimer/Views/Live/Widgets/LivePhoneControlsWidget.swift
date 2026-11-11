@@ -13,7 +13,17 @@ struct LivePhoneControlsWidget: View {
     @State private var isRecordingInjury = false
     @State private var isConfirmingEnd = false
 
-    private var endTitle: LocalizedStringKey { matchPeriod == .firstHalf ? "END FIRST HALF" : "END MATCH" }
+    private var endTitle: LocalizedStringKey {
+        switch matchPeriod {
+        case .firstHalf: "END FIRST HALF"
+        case .extraTimeFirstHalf: "END ET1"
+        case .extraTimeSecondHalf: "END EXTRA TIME"
+        case .suddenDeath: "END SUDDEN DEATH"
+        default: "END MATCH"
+        }
+    }
+
+    private var endsAHalf: Bool { matchPeriod == .firstHalf || matchPeriod == .extraTimeFirstHalf }
 
     var body: some View {
         VStack(spacing: 10) {
@@ -24,7 +34,10 @@ struct LivePhoneControlsWidget: View {
             case .halfTime:
                 LiveKickOffButtonWidget(title: "KICK OFF H2", subtitle: "START THE SECOND HALF",
                                         identifier: "kickOffSecondHalf", action: controls.onStartSecondHalf)
-            case .firstHalf, .secondHalf:
+            case .extraTimeBreak:
+                LiveExtraTimeBreakWidget(nextPeriod: controls.nextExtraPeriod, onKickOff: controls.onStartExtraPeriod,
+                                         onEndAsDraw: controls.onEndMatch)
+            case .firstHalf, .secondHalf, .extraTimeFirstHalf, .extraTimeSecondHalf, .suddenDeath:
                 HStack(spacing: 10) {
                     LiveControlTileWidget(symbol: "plus.circle.fill", title: "SCORE", tint: Color.pitchEmerald,
                                           isFilled: true) { isScoring = true }
@@ -49,12 +62,12 @@ struct LivePhoneControlsWidget: View {
             }
         }
         .confirmationDialog(endTitle, isPresented: $isConfirmingEnd, titleVisibility: .visible) {
-            Button(matchPeriod == .firstHalf ? "Blow for half-time" : "Blow for full time", role: .destructive) {
+            Button(endsAHalf ? "Blow for half-time" : "Blow the whistle", role: .destructive) {
                 controls.onEndPeriod()
             }
             Button("Keep playing", role: .cancel) {}
         } message: {
-            Text("The clock stops and the half is recorded in the match record.")
+            Text("The clock stops and the period is recorded in the match record. A level match goes to extra time when it's on.")
         }
         .sheet(isPresented: $isScoring) {
             LiveScoreSheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, onScore: controls.onScore)

@@ -91,12 +91,15 @@ SCORING
 • Tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3)
 • Record the scorer's shirt number
 • Half-time and full-time stats: the score by half and a scoring breakdown for each team
+• Count penalties and free kicks against each team with one tap, split by half
 • Tapped the wrong team or number? Undo the last score or card for 15 seconds
 
 BEFORE AND AFTER THE MATCH
 • Optional coin toss on the Watch to decide who kicks off
+• Extra time for knockout matches: two 10-minute halves then sudden death, or 5-minute sudden-death periods for sevens
 • End a match early if it's abandoned for weather, injury or the pitch
 • A match record with every score and card, ready to share as text with the teams or your referees' society
+• Match history: every finished match kept on your iPhone, ready to read and share again
 
 WORKS YOUR WAY
 • No Apple Watch? Run the whole match on your iPhone
@@ -170,12 +173,15 @@ MARCADOR
 • Try (+5), try penal (+7), conversión (+2), penal y drop (+3)
 • Registra el número de camiseta de quien anota
 • Estadísticas de medio tiempo y final: marcador por tiempo y desglose de puntos de cada equipo
+• Cuenta los penales y golpes francos contra cada equipo con un toque, separados por tiempo
 • ¿Tocaste el equipo o el número equivocado? Deshaz la última anotación o tarjeta durante 15 segundos
 
 ANTES Y DESPUÉS DEL PARTIDO
 • Sorteo con moneda opcional en el Watch para decidir quién hace la patada inicial
+• Tiempo extra para partidos de eliminación: dos tiempos de 10 minutos y luego muerte súbita, o periodos de muerte súbita de 5 minutos para rugby 7
 • Termina el partido antes de tiempo si se suspende por clima, lesión o estado de la cancha
 • Acta del partido con cada anotación y tarjeta, lista para compartir como texto con los equipos o tu asociación de árbitros
+• Historial de partidos: cada partido terminado queda guardado en tu iPhone, listo para consultar y compartir
 
 A TU MANERA
 • ¿Sin Apple Watch? Dirige todo el partido desde tu iPhone
@@ -249,12 +255,15 @@ SCORE
 • Essais (+5), essais de pénalité (+7), transformations (+2), pénalités et drops (+3)
 • Notez le numéro de maillot du marqueur
 • Statistiques à la mi-temps et en fin de match : score par mi-temps et détail des points de chaque équipe
+• Comptez les pénalités et coups francs concédés par chaque équipe d'un geste, par mi-temps
 • Mauvaise équipe ou mauvais numéro ? Annulez le dernier point ou carton pendant 15 secondes
 
 AVANT ET APRÈS LE MATCH
 • Tirage au sort facultatif sur la Watch pour décider qui donne le coup d'envoi
+• Prolongations pour les matchs à élimination : deux périodes de 10 minutes puis mort subite, ou périodes de mort subite de 5 minutes pour le rugby à 7
 • Arrêtez le match avant la fin s'il est interrompu pour la météo, une blessure ou l'état du terrain
 • Une feuille de match avec chaque point et chaque carton, prête à partager en texte avec les équipes ou votre comité d'arbitres
+• Historique des matchs : chaque match terminé est gardé sur votre iPhone, prêt à relire et partager
 
 À VOTRE FAÇON
 • Pas d'Apple Watch ? Dirigez tout le match sur votre iPhone
@@ -328,12 +337,15 @@ PLACAR
 • Try (+5), try de penal (+7), conversão (+2), penal e drop goal (+3)
 • Registre o número da camisa de quem pontuou
 • Estatísticas do intervalo e do fim de jogo: placar por tempo e pontos de cada equipe
+• Conte os penais e tiros livres contra cada equipe com um toque, separados por tempo
 • Tocou na equipe ou no número errado? Desfaça o último ponto ou cartão por 15 segundos
 
 ANTES E DEPOIS DA PARTIDA
 • Cara ou coroa opcional no Watch para decidir quem dá o pontapé inicial
+• Prorrogação para jogos eliminatórios: dois tempos de 10 minutos e depois morte súbita, ou períodos de morte súbita de 5 minutos no rugby 7
 • Encerre a partida antes do tempo se ela for suspensa por clima, lesão ou condição do campo
 • Súmula com cada ponto e cartão, pronta para compartilhar como texto com as equipes ou a sua associação de árbitros
+• Histórico de partidas: cada partida encerrada fica guardada no seu iPhone, pronta para consultar e compartilhar
 
 DO SEU JEITO
 • Sem Apple Watch? Conduza a partida inteira pelo iPhone
@@ -370,6 +382,12 @@ To test with Apple Watch: open the Watch app, then on iPhone tap SEND SETUP TO W
 To test undo: record a score or card, then tap UNDO LAST ENTRY within 15 seconds.
 
 To test injury timers on iPhone: during play, tap INJURY, pick a team and number, then HIA · 12 MIN. Tap the player in the sanctions list to close it as back on or replaced, or tap a carded player to end the sin-bin now or fix the shirt number.
+
+To test the penalty count: during play, tap PEN or FK for a team (on the Watch Penalties page, one swipe right from the clock, or under SANCTIONS on the iPhone in iPhone-only mode). The totals appear in the half-time and full-time stats and in the shared match record.
+
+To test match history: finish a match (on iPhone, end both halves), go back to Match Setup and tap the Match History button next to Settings. Tap the match to open its record; swipe left to delete it.
+
+To test extra time: on Match Setup set Extra time to Fifteens, run the match on iPhone, and end both halves with the scores level. The match goes to an extra-time break; kick off ET1, or end it as a draw.
 
 To test the 20-minute red card: turn on "20-minute red card" on Match Setup, run the match on iPhone, then issue a RED 20' card. Giving the same player a second yellow asks to show a red instead.
 
@@ -433,11 +451,14 @@ SCORING
 • Tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3)
 • Record the scorer's shirt number
 • Half-time and full-time stats: the score by half and a scoring breakdown for each team
+• Count penalties and free kicks against each team with one tap, split by half
 • Tapped the wrong team or number? Undo the last score or card for 15 seconds
 
 AFTER THE FINAL WHISTLE
 • End a match early if it's abandoned for weather, injury or the pitch
+• Extra time for knockout matches, with sudden death
 • A match record with every score and card, ready to share as text with the teams or your referees' society
+• Match history: every finished match kept on your iPhone, ready to read and share again
 
 WORKS YOUR WAY
 • Save your default team names, half length, sin-bin length and shirt-number range
@@ -487,11 +508,14 @@ MARCADOR
 • Try (+5), try penal (+7), conversión (+2), penal y drop (+3)
 • Registra el número de camiseta de quien anota
 • Estadísticas de medio tiempo y final: marcador por tiempo y desglose de puntos de cada equipo
+• Cuenta los penales y golpes francos contra cada equipo con un toque, separados por tiempo
 • ¿Tocaste el equipo o el número equivocado? Deshaz la última anotación o tarjeta durante 15 segundos
 
 DESPUÉS DEL SILBATO FINAL
 • Termina el partido antes de tiempo si se suspende por clima, lesión o estado de la cancha
+• Tiempo extra para partidos de eliminación, con muerte súbita
 • Acta del partido con cada anotación y tarjeta, lista para compartir como texto con los equipos o tu asociación de árbitros
+• Historial de partidos: cada partido terminado queda guardado en tu iPhone, listo para consultar y compartir
 
 A TU MANERA
 • Guarda los nombres de equipo, la duración de cada tiempo, la duración de la exclusión y el rango de números de camiseta
@@ -541,11 +565,14 @@ SCORE
 • Essais (+5), essais de pénalité (+7), transformations (+2), pénalités et drops (+3)
 • Notez le numéro de maillot du marqueur
 • Statistiques à la mi-temps et en fin de match : score par mi-temps et détail des points de chaque équipe
+• Comptez les pénalités et coups francs concédés par chaque équipe d'un geste, par mi-temps
 • Mauvaise équipe ou mauvais numéro ? Annulez le dernier point ou carton pendant 15 secondes
 
 APRÈS LE COUP DE SIFFLET FINAL
 • Arrêtez le match avant la fin s'il est interrompu pour la météo, une blessure ou l'état du terrain
+• Prolongations pour les matchs à élimination, avec mort subite
 • Une feuille de match avec chaque point et chaque carton, prête à partager en texte avec les équipes ou votre comité d'arbitres
+• Historique des matchs : chaque match terminé est gardé sur votre iPhone, prêt à relire et partager
 
 À VOTRE FAÇON
 • Enregistrez vos noms d'équipe, la durée des mi-temps, la durée d'exclusion et la plage de numéros de maillot
@@ -595,11 +622,14 @@ PLACAR
 • Try (+5), try de penal (+7), conversão (+2), penal e drop goal (+3)
 • Registre o número da camisa de quem pontuou
 • Estatísticas do intervalo e do fim de jogo: placar por tempo e pontos de cada equipe
+• Conte os penais e tiros livres contra cada equipe com um toque, separados por tempo
 • Tocou na equipe ou no número errado? Desfaça o último ponto ou cartão por 15 segundos
 
 DEPOIS DO APITO FINAL
 • Encerre a partida antes do tempo se ela for suspensa por clima, lesão ou condição do campo
+• Prorrogação para jogos eliminatórios, com morte súbita
 • Súmula com cada ponto e cartão, pronta para compartilhar como texto com as equipes ou a sua associação de árbitros
+• Histórico de partidas: cada partida encerrada fica guardada no seu iPhone, pronta para consultar e compartilhar
 
 DO SEU JEITO
 • Salve os nomes das equipes, a duração dos tempos, a duração da exclusão e a faixa de números de camisa

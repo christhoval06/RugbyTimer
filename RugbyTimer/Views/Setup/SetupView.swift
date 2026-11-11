@@ -86,5 +86,6 @@ public struct SetupView: View {
         }
     )
     .environmentObject(AppSettings())
+    .environmentObject(MatchHistory(storage: InMemoryMatchHistoryStorage()))
     .preferredColorScheme(.dark)
 }

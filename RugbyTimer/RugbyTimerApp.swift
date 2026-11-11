@@ -12,6 +12,7 @@ import UIKit
 public struct RugbyTimerApp: App {
     @StateObject private var appState = AppState.launch()
     @StateObject private var settings = AppSettings()
+    @StateObject private var history = MatchHistory(storage: SwiftDataMatchHistoryStorage())
     @Environment(\.scenePhase) private var scenePhase
     @State private var isShowingSplash = !SplashOverlay.isSkipped
 
@@ -59,13 +60,15 @@ public struct RugbyTimerApp: App {
                         phoneControls: appState.isPhoneHosted ? appState.phoneControls : nil,
                         watchLink: appState.watchLinkStatus,
                         injuryTimers: appState.injuryTimers,
-                        offFieldActions: appState.isPhoneHosted ? appState.offFieldActions : nil
+                        offFieldActions: appState.isPhoneHosted ? appState.offFieldActions : nil,
+                        periodDuration: appState.currentPeriodSeconds
                     )
 
                 }
             }
             .splashOverlay(isPresented: $isShowingSplash)
             .environmentObject(settings)
+            .environmentObject(history)
             .environment(\.locale, settings.language.locale)
             .preferredColorScheme(.dark)
             .fullScreenCover(isPresented: showsOnboarding) {
@@ -74,6 +77,7 @@ public struct RugbyTimerApp: App {
                     .preferredColorScheme(.dark)
             }
             .modifier(SettingsSyncModifier(appState: appState, settings: settings))
+            .modifier(MatchHistoryRecorder(appState: appState, history: history))
             .environment(\.playerNumberRange, appState.playerNumbers)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in
                 UIApplication.shared.isIdleTimerDisabled = awake

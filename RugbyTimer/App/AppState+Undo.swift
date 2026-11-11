@@ -13,7 +13,7 @@ public extension MatchEvent {
     var isUndoable: Bool {
         switch type {
         case .tryScore, .yellowCard, .redCard: true
-        case .sub: startsInjury
+        case .sub: startsInjury || Infringement.of(self) != nil
         }
     }
 
@@ -27,7 +27,7 @@ public extension MatchEvent {
 extension AppState {
     /// The latest entry, while it is a score or card that can still be undone.
     public func undoableEntry(at now: Date = Date()) -> MatchEvent? {
-        guard matchPeriod == .firstHalf || matchPeriod == .secondHalf,
+        guard matchPeriod.isPlaying,
               let last = matchEvents.last, last.canUndo(at: now) else { return nil }
         return last
     }

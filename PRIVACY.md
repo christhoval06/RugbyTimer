@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Rugby Timer** for iPhone and Apple Watch
-Effective date: November 10, 2026
+Effective date: November 11, 2026
 
 Rugby Timer is a match clock for rugby referees. It's built so that your matches stay on your devices. This policy explains what the app handles and where that data goes.
 
@@ -18,6 +18,7 @@ Rugby Timer is a match clock for rugby referees. It's built so that your matches
 | --- | --- | --- |
 | Team names, half length, sin-bin length, half-time break, shirt-number range | Setting up a match | On your iPhone, and sent to your paired Apple Watch |
 | Scores, cards, shirt numbers and the match timeline | Running the match and building the match record | On the device running the match clock (your Apple Watch, or your iPhone in iPhone-only mode), saved in the app's own storage so the match survives the app closing. It's replaced by the next match and isn't saved to a server. |
+| Finished matches: teams, final score and the match timeline | The match history on your iPhone | On your iPhone, in the app's own storage, until you delete the match from the history. A Quick Match run on the Watch alone is sent to your paired iPhone at full time for its history. Never saved to a server. |
 | Preferences (default teams, haptics, keep screen awake, tap lock, coin toss, language) | Remembering your settings | On your device, in the app's local settings |
 | Apple Watch model name and battery level | Showing the Watch status on the iPhone Setup screen | Sent from your Watch to your paired iPhone only |
 
@@ -37,7 +38,7 @@ The app doesn't request your location, contacts, photos, camera or microphone.
 
 ## Sharing a match record
 
-When a match ends, you can share the match record as text. It goes through the standard iOS share sheet, to the app or person you pick. Rugby Timer doesn't keep a copy or send it anywhere else. Once shared, the receiving app's privacy policy applies.
+When a match ends, you can share the match record as text. It goes through the standard iOS share sheet, to the app or person you pick. The app keeps the match in your history on the iPhone, but doesn't send it anywhere else. Once shared, the receiving app's privacy policy applies.
 
 ## Contacting support and external links
 
@@ -51,7 +52,7 @@ Rugby Timer is meant for match officials. It doesn't collect personal informatio
 
 ## Deleting your data
 
-Use **Restore default settings** in Settings to reset your preferences. The language setting is kept. To remove everything the app has stored, delete Rugby Timer from your iPhone and Apple Watch.
+Swipe a match in **Match History** to delete it. Use **Restore default settings** in Settings to reset your preferences. The language setting is kept. To remove everything the app has stored, delete Rugby Timer from your iPhone and Apple Watch.
 
 ## Changes to this policy
 

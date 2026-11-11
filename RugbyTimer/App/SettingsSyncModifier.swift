@@ -28,6 +28,9 @@ struct SettingsSyncModifier: ViewModifier {
             .onChange(of: settings.twentyMinuteRedEnabled, initial: true) { _, value in
                 applySetupDefault { appState.twentyMinuteRedEnabled = value }
             }
+            .onChange(of: settings.extraTimeFormat, initial: true) { _, value in
+                applySetupDefault { appState.extraTimeFormat = value }
+            }
     }
 
     private func applyAllDefaults() {

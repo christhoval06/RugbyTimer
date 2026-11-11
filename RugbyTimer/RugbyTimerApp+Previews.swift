@@ -20,6 +20,7 @@ import SwiftUI
         onPrepareMatch: {}
     )
     .environmentObject(AppSettings())
+    .environmentObject(MatchHistory(storage: InMemoryMatchHistoryStorage()))
     .preferredColorScheme(.dark)
 }
 

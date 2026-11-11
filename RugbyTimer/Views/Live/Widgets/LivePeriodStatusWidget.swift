@@ -6,8 +6,9 @@ struct LivePeriodStatusWidget: View {
 
     private var tint: Color {
         switch matchPeriod {
-        case .firstHalf, .secondHalf: isRunning ? Color.pitchEmerald : Color.sinBinAmber
-        case .halfTime: Color.sinBinAmber
+        case .firstHalf, .secondHalf, .extraTimeFirstHalf, .extraTimeSecondHalf, .suddenDeath:
+            isRunning ? Color.pitchEmerald : Color.sinBinAmber
+        case .halfTime, .extraTimeBreak: Color.sinBinAmber
         case .preMatch, .fullTime: Color.outline
         }
     }
@@ -15,8 +16,10 @@ struct LivePeriodStatusWidget: View {
     private var status: LocalizedStringKey {
         switch matchPeriod {
         case .preMatch: "WAITING FOR KICKOFF"
-        case .firstHalf, .secondHalf: isRunning ? "CLOCK RUNNING" : "CLOCK PAUSED"
+        case .firstHalf, .secondHalf, .extraTimeFirstHalf, .extraTimeSecondHalf, .suddenDeath:
+            isRunning ? "CLOCK RUNNING" : "CLOCK PAUSED"
         case .halfTime: "TEAMS IN THE SHED"
+        case .extraTimeBreak: "LEVEL · EXTRA TIME NEXT"
         case .fullTime: "MATCH COMPLETE"
         }
     }
