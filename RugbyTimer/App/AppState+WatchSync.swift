@@ -22,6 +22,7 @@ extension AppState {
         isWatchOnlyMatch = false
         homeTeamName = configuration.home
         awayTeamName = configuration.away
+        makeTeamNamesDistinct()
         matchDurationSeconds = configuration.duration
         sinBinDurationSeconds = configuration.sinBinDurationSeconds ?? 600
         maxPlayerNumber = configuration.maxPlayerNumber ?? MatchEvent.playerNumbers.upperBound

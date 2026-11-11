@@ -6,7 +6,7 @@
 import Foundation
 
 /// Why a player is temporarily off: a head injury assessment or a blood injury.
-public enum InjuryKind: String, Codable, CaseIterable {
+nonisolated public enum InjuryKind: String, Codable, CaseIterable {
     case hia
     case blood
 
@@ -19,13 +19,13 @@ public enum InjuryKind: String, Codable, CaseIterable {
 }
 
 /// How an injury timer ends: the player comes back on, or the replacement becomes permanent.
-public enum InjuryOutcome: String, Codable {
+nonisolated public enum InjuryOutcome: String, Codable {
     case returned
     case replaced
 }
 
 /// A temporary replacement counted in real time, so it keeps running through stoppages and half-time.
-public struct InjuryTimer: Identifiable, Equatable, Codable {
+nonisolated public struct InjuryTimer: Identifiable, Equatable, Codable {
     public let id: UUID
     public let teamName: String
     public let playerNumber: Int

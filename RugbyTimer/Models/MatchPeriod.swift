@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum MatchPeriod: String, Equatable, Codable {
+nonisolated public enum MatchPeriod: String, Equatable, Codable {
     case preMatch = "PRE-MATCH"
     case firstHalf = "FIRST HALF (H1)"
     case halfTime = "HALF-TIME BREAK"

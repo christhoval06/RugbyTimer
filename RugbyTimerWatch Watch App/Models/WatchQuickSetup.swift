@@ -2,7 +2,7 @@ import Foundation
 
 /// The choices on the Watch Quick Match screen. The last choices are remembered,
 /// so the next quick match is a single tap on READY.
-struct WatchQuickSetup: Codable, Equatable {
+nonisolated struct WatchQuickSetup: Codable, Equatable {
     static let halfMinuteOptions = [40, 35, 30, 25, 20, 15, 10, 7]
     static let breakMinuteOptions = [1, 2, 5, 10, 15]
     static let sinBinMinuteOptions = [10, 5, 2, 1]

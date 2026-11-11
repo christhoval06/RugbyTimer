@@ -2,47 +2,6 @@ import Foundation
 import WatchConnectivity
 import Combine
 
-public struct MatchConfiguration: Codable, Equatable {
-    public var matchID: UUID
-    public var home: String
-    public var away: String
-    public var duration: Int
-    // Optional so setups from an older companion retain the 10-minute default.
-    public var sinBinDurationSeconds: Int? = nil
-    // Optional so older companions keep the default shirt-number range.
-    public var maxPlayerNumber: Int? = nil
-    // Optional so older companions keep plain taps on the Watch.
-    public var tapLockEnabled: Bool? = nil
-    // Optional so older companions skip the Watch coin toss.
-    public var coinTossEnabled: Bool? = nil
-    // Optional so older companions get the standard 2-minute half-time break.
-    public var halfTimeBreakSeconds: Int? = nil
-    // Optional so older companions keep full red cards only.
-    public var twentyMinuteRedEnabled: Bool? = nil
-}
-
-public struct MatchSnapshot: Codable, Equatable {
-    public var updatedAt = Date()
-    public var matchID: UUID
-    public var home: String
-    public var away: String
-    public var duration: Int
-    public var period: MatchPeriod
-    public var remaining: Int
-    public var isRunning: Bool
-    public var homeScore: Int
-    public var awayScore: Int
-    public var cards: [MatchCard]
-    public var rejectedConfigurationID: UUID? = nil
-    public var sinBinDurationSeconds: Int? = nil
-    // Optional so snapshots from an older Watch app keep decoding; the iPhone needs it for the match record.
-    public var events: [MatchEvent]? = nil
-    // When the running period reaches zero, so the iPhone keeps counting while out of range.
-    public var clockEndDate: Date? = nil
-    // Optional so snapshots from an older Watch app keep decoding.
-    public var injuries: [InjuryTimer]? = nil
-}
-
 public class WatchConnectivityService: NSObject, ObservableObject {
     @Published public var receivedConfiguration: MatchConfiguration?
     @Published public var receivedSnapshot: MatchSnapshot?
@@ -104,13 +63,13 @@ public class WatchConnectivityService: NSObject, ObservableObject {
         }
     }
 
-    private func updateWatchAvailability() {
+    func updateWatchAvailability() {
         #if os(iOS)
         isWatchAvailable = session.activationState == .activated && session.isPaired && session.isWatchAppInstalled
         #endif
     }
 
-    private func receive(_ context: [String: Any]) {
+    func receive(_ context: [String: Any]) {
         #if os(watchOS)
         if let data = context["configuration"] as? Data,
            let configuration = try? JSONDecoder().decode(MatchConfiguration.self, from: data) {
@@ -126,40 +85,5 @@ public class WatchConnectivityService: NSObject, ObservableObject {
         if let language = context["language"] as? String { UserDefaults.standard.set(language, forKey: AppLanguage.defaultsKey) }
         if let name = context["watchName"] as? String { connectedWatchName = name.uppercased() }
         if let battery = context["battery"] as? Int { watchBatteryLevel = battery }
-    }
-}
-
-extension WatchConnectivityService: WCSessionDelegate {
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        DispatchQueue.main.async {
-            self.isWatchReachable = session.isReachable
-            self.updateWatchAvailability()
-            self.receive(session.receivedApplicationContext)
-            self.flushContext()
-        }
-    }
-
-    public func sessionReachabilityDidChange(_ session: WCSession) {
-        DispatchQueue.main.async {
-            self.isWatchReachable = session.isReachable
-            self.flushContext()
-        }
-    }
-
-    #if os(iOS)
-    public func sessionWatchStateDidChange(_ session: WCSession) {
-        DispatchQueue.main.async { self.updateWatchAvailability() }
-    }
-
-    public func sessionDidBecomeInactive(_ session: WCSession) {}
-    public func sessionDidDeactivate(_ session: WCSession) { session.activate() }
-    #endif
-
-    public func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
-        DispatchQueue.main.async { self.receive(applicationContext) }
-    }
-
-    public func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
-        DispatchQueue.main.async { self.receive(message) }
     }
 }

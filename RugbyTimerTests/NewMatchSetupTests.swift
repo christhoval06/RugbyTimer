@@ -82,3 +82,31 @@ struct NewMatchSetupTests {
         #expect(state.hasConfiguredMatch)
     }
 }
+
+/// Two sides must never share a name: scores and cards are matched by team name.
+struct TeamNameTests {
+    @MainActor @Test func repeatedAwayNameIsTagged() {
+        let state = AppState()
+        state.homeTeamName = "Lions"
+        state.awayTeamName = " lions "
+        state.prepareMatch(onPhone: true)
+        #expect(state.homeTeamName == "Lions")
+        #expect(state.awayTeamName != state.homeTeamName)
+        #expect(state.awayTeamName.hasPrefix("lions"))
+
+        state.startMatch()
+        state.recordScore(team: state.awayTeamName, points: 5, description: "Try scored (+5)")
+        #expect(state.awayScore == 5)
+        #expect(state.homeScore == 0)
+    }
+
+    @MainActor @Test func blankNamesAreFilled() {
+        let state = AppState()
+        state.homeTeamName = "  "
+        state.awayTeamName = ""
+        state.prepareMatch(onPhone: true)
+        #expect(!state.homeTeamName.isEmpty)
+        #expect(!state.awayTeamName.isEmpty)
+        #expect(state.homeTeamName != state.awayTeamName)
+    }
+}

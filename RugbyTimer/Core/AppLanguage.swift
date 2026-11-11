@@ -7,7 +7,7 @@ import Foundation
 
 /// The language picked in Settings. `system` follows the device and falls back to English
 /// when the device language is not one the app ships. The Watch receives the iPhone's choice.
-public enum AppLanguage: String, CaseIterable, Identifiable, Codable {
+nonisolated public enum AppLanguage: String, CaseIterable, Identifiable, Codable {
     case system
     case english = "en"
     case spanish = "es"
@@ -54,7 +54,7 @@ public enum AppLanguage: String, CaseIterable, Identifiable, Codable {
 public extension String {
     /// Localized into the app language from Settings, falling back to English.
     /// Use this instead of `String(localized:)`, which only follows the device language.
-    init(appLocalized resource: LocalizedStringResource) {
+    nonisolated init(appLocalized resource: LocalizedStringResource) {
         var resource = resource
         resource.locale = AppLanguage.current.locale
         self.init(localized: resource)

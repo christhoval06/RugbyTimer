@@ -6,7 +6,7 @@
 import Foundation
 
 /// What the referee picks when showing a card.
-public enum Sanction: Equatable {
+nonisolated public enum Sanction: Equatable {
     case yellow
     /// Sent off; a replacement can come on after 20 minutes (World Rugby's 20-minute red card).
     case twentyMinuteRed

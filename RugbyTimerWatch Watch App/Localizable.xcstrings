@@ -48,6 +48,28 @@
         }
       }
     },
+    "%@ (Away)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Visitante)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Extérieur)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Visitante)"
+          }
+        }
+      }
+    },
     "%@ can replace #%lld" : {
       "localizations" : {
         "es" : {

@@ -22,7 +22,7 @@ public struct TimerRingView: View {
 
     /// Colour band of the clock: green for most of the half, yellow when the half is
     /// closing, red once time is up and play runs on to the next dead ball.
-    public enum Zone: Equatable {
+    nonisolated public enum Zone: Equatable {
         case normal, closing, timeUp
     }
 

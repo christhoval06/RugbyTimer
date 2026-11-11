@@ -7,14 +7,14 @@
 
 import Foundation
 
-public enum MatchEventType: Equatable, Codable {
+nonisolated public enum MatchEventType: Equatable, Codable {
     case tryScore(points: Int) // +5 for try, +2 for conversion, +3 for penalty/drop goal
     case yellowCard
     case redCard
     case sub
 }
 
-public struct MatchEvent: Identifiable, Equatable, Codable {
+nonisolated public struct MatchEvent: Identifiable, Equatable, Codable {
     /// Shirt numbers a referee can pick for scorers and sanctions (match-day squad plus extras).
     public static let playerNumbers = 1...40
 

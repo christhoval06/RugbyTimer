@@ -19,7 +19,8 @@ struct HalfTimeBreakTests {
 
         #expect(state.matchPeriod == .halfTime)
         #expect(state.matchEvents.last?.overtimeSeconds == 72)
-        let startedAt = try? #require(state.halfTimeStartedAt)
+        let startedAt = state.halfTimeStartedAt
+        #expect(startedAt != nil)
         #expect(state.halfTimeBreakEndsAt == startedAt?.addingTimeInterval(900))
     }
 

@@ -13,6 +13,7 @@ extension AppState {
         let id = UUID()
         matchID = id
         isPhoneHosted = onPhone
+        makeTeamNamesDistinct()
         resetMatchData()
         if onPhone {
             currentScreen = .liveMatch

@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum CardType: String, Equatable, Codable {
+nonisolated public enum CardType: String, Equatable, Codable {
     case yellow
     case red
 }
 
-public struct MatchCard: Identifiable, Equatable, Codable {
+nonisolated public struct MatchCard: Identifiable, Equatable, Codable {
     public let id: UUID
     public let teamName: String
     public private(set) var playerNumber: Int

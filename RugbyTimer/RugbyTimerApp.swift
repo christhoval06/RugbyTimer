@@ -56,7 +56,7 @@ public struct RugbyTimerApp: App {
                         onScoreTapped: {},
                         onStartSecondHalf: {},
                         onReturnToSetup: { appState.returnToSetup() },
-                        phoneControls: appState.isPhoneHosted ? phoneControls : nil,
+                        phoneControls: appState.isPhoneHosted ? appState.phoneControls : nil,
                         watchLink: appState.watchLinkStatus,
                         injuryTimers: appState.injuryTimers,
                         offFieldActions: appState.isPhoneHosted ? appState.offFieldActions : nil
@@ -73,21 +73,7 @@ public struct RugbyTimerApp: App {
                     .environment(\.locale, settings.language.locale)
                     .preferredColorScheme(.dark)
             }
-            .onChange(of: settings.language, initial: true) { _, language in
-                appState.connectivityService.sendAppLanguage(language)
-            }
-            .task { applyAllDefaults() }
-            .onChange(of: settings.defaultHalfSeconds) { _, value in applySetupDefault { appState.matchDurationSeconds = value } }
-            .onChange(of: settings.defaultSinBinSeconds) { _, value in applySetupDefault { appState.sinBinDurationSeconds = value } }
-            .onChange(of: settings.defaultHomeTeam) { _, value in applySetupDefault { appState.homeTeamName = value } }
-            .onChange(of: settings.defaultAwayTeam) { _, value in applySetupDefault { appState.awayTeamName = value } }
-            .onChange(of: settings.maxPlayerNumber, initial: true) { _, value in appState.maxPlayerNumber = value }
-            .onChange(of: settings.tapLockEnabled, initial: true) { _, value in appState.tapLockEnabled = value }
-            .onChange(of: settings.halfTimeBreakSeconds) { _, value in applySetupDefault { appState.halfTimeBreakSeconds = value } }
-            .onChange(of: settings.coinTossEnabled, initial: true) { _, value in appState.coinTossEnabled = value }
-            .onChange(of: settings.twentyMinuteRedEnabled, initial: true) { _, value in
-                applySetupDefault { appState.twentyMinuteRedEnabled = value }
-            }
+            .modifier(SettingsSyncModifier(appState: appState, settings: settings))
             .environment(\.playerNumberRange, appState.playerNumbers)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in
                 UIApplication.shared.isIdleTimerDisabled = awake
@@ -97,25 +83,6 @@ public struct RugbyTimerApp: App {
                 if phase == .active { appState.timerService.refresh() } else { appState.saveMatch() }
             }
         }
-    }
-
-    private var phoneControls: LiveMatchControls {
-        var controls = LiveMatchControls(
-            onKickOff: { appState.startMatch() },
-            onToggleClock: { appState.toggleClock() },
-            onEndPeriod: { appState.endPeriod() },
-            onStartSecondHalf: { appState.startSecondHalf() },
-            onScore: { team, player, points, description in
-                appState.recordScore(team: team, playerNumber: player, points: points, description: description)
-            },
-            onCard: { team, player, sanction in appState.issue(sanction, team: team, playerNum: player) }
-        )
-        controls.lastEntry = appState.matchEvents.last
-        controls.matchEvents = appState.matchEvents
-        controls.twentyMinuteRedEnabled = appState.twentyMinuteRedEnabled
-        controls.onInjury = { appState.startInjury($0, team: $1, playerNum: $2) }
-        controls.onUndo = { appState.undoLastEntry() }
-        return controls
     }
 
     private var showsOnboarding: Binding<Bool> {
@@ -130,54 +97,4 @@ public struct RugbyTimerApp: App {
         settings.keepScreenAwake && appState.currentScreen != .setup
     }
 
-    private func applyAllDefaults() {
-        guard !appState.hasConfiguredMatch else { return }
-        appState.matchDurationSeconds = settings.defaultHalfSeconds
-        appState.sinBinDurationSeconds = settings.defaultSinBinSeconds
-        appState.halfTimeBreakSeconds = settings.halfTimeBreakSeconds
-        appState.homeTeamName = settings.defaultHomeTeam
-        appState.awayTeamName = settings.defaultAwayTeam
-    }
-
-    /// Settings edits refresh the pending setup, never a match already in progress.
-    private func applySetupDefault(_ apply: () -> Void) {
-        guard appState.currentScreen == .setup else { return }
-        apply()
-    }
-}
-
-// MARK: - iPhone App Previews
-#Preview("iPhone Flow - Setup Screen") {
-    let state = AppState()
-    state.currentScreen = .setup
-    return SetupView(
-        homeTeamName: .constant("Rangers RFC"),
-        awayTeamName: .constant("City Lions"),
-        selectedDurationSeconds: .constant(2400),
-        sinBinDurationSeconds: .constant(600),
-        isWatchSynced: true,
-        watchName: "APPLE WATCH ULTRA",
-        watchBattery: 98,
-        onPrepareMatch: {}
-    )
-    .environmentObject(AppSettings())
-    .preferredColorScheme(.dark)
-}
-
-#Preview("iPhone Flow - Live Match Screen") {
-    let state = AppState()
-    state.currentScreen = .liveMatch
-    return LiveMatchView(
-        timerService: state.timerService,
-        activeCards: [
-            MatchCard(teamName: "Rangers RFC", playerNumber: 8, type: .yellow, durationSeconds: 540)
-        ],
-        homeTeamName: state.homeTeamName,
-        awayTeamName: state.awayTeamName,
-        matchPeriod: .firstHalf,
-        onAddCard: { _, _, _ in },
-        onScoreTapped: {},
-        onStartSecondHalf: {}
-    )
-    .preferredColorScheme(.dark)
 }

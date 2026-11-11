@@ -8,7 +8,7 @@
 import Foundation
 
 /// How a team scored: tries, penalty tries, conversions, penalty goals and drop goals.
-public struct ScoreBreakdown: Equatable {
+nonisolated public struct ScoreBreakdown: Equatable {
     public var tries = 0
     /// Awarded tries (+7, no conversion attempt).
     public var penaltyTries = 0
@@ -18,13 +18,13 @@ public struct ScoreBreakdown: Equatable {
     public var points = 0
 }
 
-public enum MatchResult: Equatable {
+nonisolated public enum MatchResult: Equatable {
     case win(team: String, margin: Int)
     case draw
 }
 
 /// Pure match statistics derived from the event log, shared by iPhone and Watch.
-public enum MatchStats {
+nonisolated public enum MatchStats {
     static let halfTimeWhistle = "HALF-TIME WHISTLE"
 
     public static func breakdown(of events: [MatchEvent], team: String) -> ScoreBreakdown {

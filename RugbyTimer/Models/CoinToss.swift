@@ -5,12 +5,12 @@
 
 import Foundation
 
-public enum CoinFace: String, Codable, CaseIterable {
+nonisolated public enum CoinFace: String, Codable, CaseIterable {
     case heads
     case tails
 }
 
-public enum TossSide: String, Codable {
+nonisolated public enum TossSide: String, Codable {
     case home
     case away
 
@@ -18,14 +18,14 @@ public enum TossSide: String, Codable {
 }
 
 /// What the captain who won the toss decides.
-public enum TossChoice: String, Codable {
+nonisolated public enum TossChoice: String, Codable {
     case kickOff
     case chooseEnd
 }
 
 /// The pre-match coin toss: the toss winner kicks off or picks an end, and the other
 /// team kicks off the second half.
-public struct CoinTossResult: Codable, Equatable {
+nonisolated public struct CoinTossResult: Codable, Equatable {
     public var caller: TossSide
     public var call: CoinFace
     public var outcome: CoinFace

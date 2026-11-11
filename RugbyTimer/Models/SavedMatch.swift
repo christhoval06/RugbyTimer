@@ -7,7 +7,7 @@ import Foundation
 
 /// Everything needed to pick a match back up after the app is closed or crashes:
 /// the setup, the score, sin-bins, the record and the clock.
-public struct SavedMatch: Codable, Equatable {
+nonisolated public struct SavedMatch: Codable, Equatable {
     public var matchID: UUID
     public var isWatchOnlyMatch: Bool
     public var isPhoneHosted: Bool

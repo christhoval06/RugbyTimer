@@ -27,20 +27,23 @@ final class WatchBreakAlerts {
         arm(at: endsAt.addingTimeInterval(-60), id: Self.oneMinuteID,
             title: String(appLocalized: "Break: 1 minute left"),
             body: String(appLocalized: "Get the teams ready for the second half."),
-            haptic: HapticService.playSinBinExpired)
+            haptic: { HapticService.playSinBinExpired() })
         arm(at: endsAt, id: Self.breakOverID,
             title: String(appLocalized: "Break over"),
             body: String(appLocalized: "Call the teams back for the second-half kick-off."),
-            haptic: HapticService.playTimeUp)
+            haptic: { HapticService.playTimeUp() })
     }
 
-    private func arm(at date: Date, id: String, title: String, body: String, haptic: @escaping () -> Void) {
+    private func arm(at date: Date, id: String, title: String, body: String, haptic: @escaping @MainActor () -> Void) {
         let interval = date.timeIntervalSinceNow
         guard interval > 0 else { return }
 
         let timer = Timer(fire: date, interval: 0, repeats: false) { _ in
-            // A suspended app gets the notification instead; avoid a double buzz.
-            if WKApplication.shared().applicationState == .active { haptic() }
+            // The timer is on the main run loop. A suspended app gets the notification instead;
+            // avoid a double buzz.
+            MainActor.assumeIsolated {
+                if WKApplication.shared().applicationState == .active { haptic() }
+            }
         }
         RunLoop.main.add(timer, forMode: .common)
         timers.append(timer)

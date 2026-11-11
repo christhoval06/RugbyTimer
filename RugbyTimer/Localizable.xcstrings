@@ -26,6 +26,28 @@
         }
       }
     },
+    "%@ (Away)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Visitante)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Extérieur)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Visitante)"
+          }
+        }
+      }
+    },
     "20-Minute Red Card (Second Yellow) - #%lld" : {
       "localizations" : {
         "es" : {
@@ -154,6 +176,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liberar substituto agora"
+          }
+        }
+      }
+    },
+    "Away" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visitante"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extérieur"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visitante"
           }
         }
       }
@@ -506,6 +550,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "HIA · voltou - #%lld"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domicile"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mandante"
           }
         }
       }
