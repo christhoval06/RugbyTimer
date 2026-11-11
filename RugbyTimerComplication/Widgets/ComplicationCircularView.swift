@@ -7,7 +7,7 @@ struct ComplicationCircularView: View {
 
     var body: some View {
         ZStack {
-            if entry.snapshot.isIdle {
+            if entry.glance.isIdle {
                 AccessoryWidgetBackground()
                 Image(systemName: "figure.rugby")
                     .font(.system(size: 22, weight: .semibold))
@@ -15,10 +15,10 @@ struct ComplicationCircularView: View {
             } else {
                 ring.tint(entry.tint).widgetAccentable()
                 VStack(spacing: 0) {
-                    Text(entry.snapshot.periodLabel)
+                    Text(entry.glance.periodLabel)
                         .font(.system(size: 9, weight: .heavy))
                         .foregroundStyle(entry.tint)
-                    (entry.showsClock ? entry.clockText : Text(verbatim: entry.score))
+                    (entry.glance.showsClock ? entry.clockText : Text(verbatim: entry.glance.score))
                         .font(.system(size: 13, weight: .heavy).width(.condensed))
                         .monospacedDigit()
                         .multilineTextAlignment(.center)
@@ -30,12 +30,12 @@ struct ComplicationCircularView: View {
     }
 
     @ViewBuilder private var ring: some View {
-        let snapshot = entry.snapshot
-        if let end = snapshot.clockEndsAt, entry.date < end, snapshot.periodSeconds > 0 {
-            ProgressView(timerInterval: end.addingTimeInterval(-TimeInterval(snapshot.periodSeconds))...end,
+        let glance = entry.glance
+        if let end = glance.clockEndsAt, entry.date < end, glance.periodSeconds > 0 {
+            ProgressView(timerInterval: end.addingTimeInterval(-TimeInterval(glance.periodSeconds))...end,
                          countsDown: true, label: { EmptyView() }, currentValueLabel: { EmptyView() })
                 .progressViewStyle(.circular)
-        } else if entry.showsClock && !entry.isAtBreak {
+        } else if entry.glance.showsClock && !entry.glance.isAtBreak {
             ProgressView(value: entry.progress).progressViewStyle(.circular)
         } else {
             AccessoryWidgetBackground()

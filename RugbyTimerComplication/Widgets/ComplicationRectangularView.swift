@@ -6,7 +6,7 @@ struct ComplicationRectangularView: View {
     let entry: MatchClockEntry
 
     var body: some View {
-        if entry.snapshot.isIdle {
+        if entry.glance.isIdle {
             Label {
                 Text(verbatim: "RUGBY TIMER") // l10n-ignore: app name
                     .font(.system(size: 15, weight: .heavy).width(.condensed))
@@ -24,7 +24,7 @@ struct ComplicationRectangularView: View {
                         .lineLimit(1)
                         .minimumScaleFactor(0.7)
                         .widgetAccentable()
-                    if entry.showsClock {
+                    if entry.glance.showsClock {
                         entry.clockText
                             .font(.system(size: 17, weight: .heavy).width(.condensed))
                             .monospacedDigit()
@@ -32,7 +32,7 @@ struct ComplicationRectangularView: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                 }
-                Text(verbatim: "\(entry.homeCode) \(entry.score) \(entry.awayCode)") // l10n-ignore: team codes and score
+                Text(verbatim: "\(entry.glance.homeCode) \(entry.glance.score) \(entry.glance.awayCode)") // l10n-ignore: team codes and score
                     .font(.system(size: 20, weight: .black).width(.condensed))
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)

@@ -6,7 +6,7 @@ struct ComplicationSinBinRow: View {
     let entry: MatchClockEntry
 
     var body: some View {
-        let count = entry.snapshot.sinBinCount
+        let count = entry.glance.sinBinCount
         if count > 0 {
             HStack(spacing: 3) {
                 Image(systemName: "rectangle.portrait.fill")

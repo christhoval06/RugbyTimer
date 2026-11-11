@@ -10,6 +10,9 @@
 		3FED9BF930A42F60003929D4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED9BF830A42F60003929D4 /* WidgetKit.framework */; };
 		3FED9BFB30A42F60003929D4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED9BFA30A42F60003929D4 /* SwiftUI.framework */; };
 		3FED9C0A30A42F62003929D4 /* RugbyTimerComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3FED9BF630A42F60003929D4 /* RugbyTimerComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3FEDA3F630A4363E003929D4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED9BF830A42F60003929D4 /* WidgetKit.framework */; };
+		3FEDA3F730A4363E003929D4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED9BFA30A42F60003929D4 /* SwiftUI.framework */; };
+		3FEDA40430A43641003929D4 /* RugbyTimerLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3FEDA3F530A4363E003929D4 /* RugbyTimerLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3FEE2BF430A142CF002F1651 /* RugbyTimerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3FEE2BD430A142CD002F1651 /* RugbyTimerWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -20,6 +23,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3FED9BF530A42F60003929D4;
 			remoteInfo = RugbyTimerComplicationExtension;
+		};
+		3FEDA40230A43641003929D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FEE2B6630A0F2A8002F1651 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FEDA3F430A4363E003929D4;
+			remoteInfo = RugbyTimerLiveActivityExtension;
 		};
 		3FEE2B8030A0F2AA002F1651 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -70,6 +80,17 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FEDA40930A43641003929D4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3FEDA40430A43641003929D4 /* RugbyTimerLiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3FEE2BF830A142CF002F1651 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +109,7 @@
 		3FED9BF830A42F60003929D4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		3FED9BFA30A42F60003929D4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		3FED9C1030A42F8E003929D4 /* RugbyTimerComplicationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RugbyTimerComplicationExtension.entitlements; sourceTree = "<group>"; };
+		3FEDA3F530A4363E003929D4 /* RugbyTimerLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RugbyTimerLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEE2B6E30A0F2A8002F1651 /* RugbyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RugbyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEE2B7F30A0F2AA002F1651 /* RugbyTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RugbyTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEE2B8930A0F2AA002F1651 /* RugbyTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RugbyTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,15 +131,39 @@
 			membershipExceptions = (
 				Core/DesignTokens.swift,
 				Models/ClockZone.swift,
+				Models/MatchGlance.swift,
+				"Models/MatchGlance+Clock.swift",
+				"Views/Shared/MatchGlance+Display.swift",
+				"Views/Shared/MatchGlance+Samples.swift",
 			);
 			target = 3FED9BF530A42F60003929D4 /* RugbyTimerComplicationExtension */;
 		};
 		3FED9C2230A4310000000002 /* Exceptions for "RugbyTimerWatch Watch App" folder in "RugbyTimerComplicationExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Complication/ComplicationSnapshot.swift,
+				Complication/ComplicationStore.swift,
 			);
 			target = 3FED9BF530A42F60003929D4 /* RugbyTimerComplicationExtension */;
+		};
+		3FEDA40830A43641003929D4 /* Exceptions for "RugbyTimerLiveActivity" folder in "RugbyTimerLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3FEDA3F430A4363E003929D4 /* RugbyTimerLiveActivityExtension */;
+		};
+		3FEDA41130A4370000000001 /* Exceptions for "RugbyTimer" folder in "RugbyTimerLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Core/DesignTokens.swift,
+				Models/ClockZone.swift,
+				Models/MatchActivityAttributes.swift,
+				Models/MatchGlance.swift,
+				"Models/MatchGlance+Clock.swift",
+				"Views/Shared/MatchGlance+Display.swift",
+				"Views/Shared/MatchGlance+Samples.swift",
+			);
+			target = 3FEDA3F430A4363E003929D4 /* RugbyTimerLiveActivityExtension */;
 		};
 		3FEE2B9130A0F2AA002F1651 /* Exceptions for "RugbyTimer" folder in "RugbyTimer" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -155,9 +201,11 @@
 				"App/AppState+Cards.swift",
 				"App/AppState+CoinToss.swift",
 				"App/AppState+ExtraTime.swift",
+				"App/AppState+GlanceChanges.swift",
 				"App/AppState+HalfTimeBreak.swift",
 				"App/AppState+Injuries.swift",
 				"App/AppState+MatchFlow.swift",
+				"App/AppState+MatchGlance.swift",
 				"App/AppState+NewMatch.swift",
 				"App/AppState+Penalties.swift",
 				"App/AppState+PeriodEnd.swift",
@@ -178,6 +226,8 @@
 				Models/InjuryTimer.swift,
 				Models/MatchCard.swift,
 				Models/MatchEvent.swift,
+				Models/MatchGlance.swift,
+				"Models/MatchGlance+Clock.swift",
 				Models/MatchPeriod.swift,
 				Models/MatchStats.swift,
 				Models/Sanction.swift,
@@ -216,6 +266,14 @@
 			path = RugbyTimerComplication;
 			sourceTree = "<group>";
 		};
+		3FEDA3F830A4363E003929D4 /* RugbyTimerLiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3FEDA40830A43641003929D4 /* Exceptions for "RugbyTimerLiveActivity" folder in "RugbyTimerLiveActivityExtension" target */,
+			);
+			path = RugbyTimerLiveActivity;
+			sourceTree = "<group>";
+		};
 		3FEE2B7030A0F2A8002F1651 /* RugbyTimer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -223,6 +281,7 @@
 				3FEE2BC330A0F8F9002F1651 /* Exceptions for "RugbyTimer" folder in "RugbyTimerTests" target */,
 				3FEE2C0030A1431E002F1651 /* Exceptions for "RugbyTimer" folder in "RugbyTimerWatch Watch App" target */,
 				3FED9C2130A4310000000001 /* Exceptions for "RugbyTimer" folder in "RugbyTimerComplicationExtension" target */,
+				3FEDA41130A4370000000001 /* Exceptions for "RugbyTimer" folder in "RugbyTimerLiveActivityExtension" target */,
 			);
 			path = RugbyTimer;
 			sourceTree = "<group>";
@@ -265,6 +324,15 @@
 			files = (
 				3FED9BFB30A42F60003929D4 /* SwiftUI.framework in Frameworks */,
 				3FED9BF930A42F60003929D4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDA3F230A4363E003929D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEDA3F730A4363E003929D4 /* SwiftUI.framework in Frameworks */,
+				3FEDA3F630A4363E003929D4 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +401,7 @@
 				3FEE2BE330A142CF002F1651 /* RugbyTimerWatch Watch AppTests */,
 				3FEE2BED30A142CF002F1651 /* RugbyTimerWatch Watch AppUITests */,
 				3FED9BFC30A42F60003929D4 /* RugbyTimerComplication */,
+				3FEDA3F830A4363E003929D4 /* RugbyTimerLiveActivity */,
 				3FED9BF730A42F60003929D4 /* Frameworks */,
 				3FEE2B6F30A0F2A8002F1651 /* Products */,
 			);
@@ -348,6 +417,7 @@
 				3FEE2BE030A142CF002F1651 /* RugbyTimerWatch Watch AppTests.xctest */,
 				3FEE2BEA30A142CF002F1651 /* RugbyTimerWatch Watch AppUITests.xctest */,
 				3FED9BF630A42F60003929D4 /* RugbyTimerComplicationExtension.appex */,
+				3FEDA3F530A4363E003929D4 /* RugbyTimerLiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,6 +447,28 @@
 			productReference = 3FED9BF630A42F60003929D4 /* RugbyTimerComplicationExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		3FEDA3F430A4363E003929D4 /* RugbyTimerLiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FEDA40530A43641003929D4 /* Build configuration list for PBXNativeTarget "RugbyTimerLiveActivityExtension" */;
+			buildPhases = (
+				3FEDA3F130A4363E003929D4 /* Sources */,
+				3FEDA3F230A4363E003929D4 /* Frameworks */,
+				3FEDA3F330A4363E003929D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3FEDA3F830A4363E003929D4 /* RugbyTimerLiveActivity */,
+			);
+			name = RugbyTimerLiveActivityExtension;
+			packageProductDependencies = (
+			);
+			productName = RugbyTimerLiveActivityExtension;
+			productReference = 3FEDA3F530A4363E003929D4 /* RugbyTimerLiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3FEE2B6D30A0F2A8002F1651 /* RugbyTimer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FEE2B9230A0F2AA002F1651 /* Build configuration list for PBXNativeTarget "RugbyTimer" */;
@@ -385,11 +477,13 @@
 				3FEE2B6B30A0F2A8002F1651 /* Frameworks */,
 				3FEE2B6C30A0F2A8002F1651 /* Resources */,
 				3FEE2BF830A142CF002F1651 /* Embed Watch Content */,
+				3FEDA40930A43641003929D4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				3FEE2BF330A142CF002F1651 /* PBXTargetDependency */,
+				3FEDA40330A43641003929D4 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				3FEE2B7030A0F2A8002F1651 /* RugbyTimer */,
@@ -530,6 +624,9 @@
 					3FED9BF530A42F60003929D4 = {
 						CreatedOnToolsVersion = 26.5;
 					};
+					3FEDA3F430A4363E003929D4 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					3FEE2B6D30A0F2A8002F1651 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -578,12 +675,20 @@
 				3FEE2BDF30A142CF002F1651 /* RugbyTimerWatch Watch AppTests */,
 				3FEE2BE930A142CF002F1651 /* RugbyTimerWatch Watch AppUITests */,
 				3FED9BF530A42F60003929D4 /* RugbyTimerComplicationExtension */,
+				3FEDA3F430A4363E003929D4 /* RugbyTimerLiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3FED9BF430A42F60003929D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDA3F330A4363E003929D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -642,6 +747,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FEDA3F130A4363E003929D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3FEE2B6A30A0F2A8002F1651 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,6 +803,11 @@
 			isa = PBXTargetDependency;
 			target = 3FED9BF530A42F60003929D4 /* RugbyTimerComplicationExtension */;
 			targetProxy = 3FED9C0830A42F62003929D4 /* PBXContainerItemProxy */;
+		};
+		3FEDA40330A43641003929D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FEDA3F430A4363E003929D4 /* RugbyTimerLiveActivityExtension */;
+			targetProxy = 3FEDA40230A43641003929D4 /* PBXContainerItemProxy */;
 		};
 		3FEE2B8130A0F2AA002F1651 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -786,6 +903,71 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+		3FEDA40630A43641003929D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HA64587VPE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RugbyTimerLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rugby Timer";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.christhoval.apps.RugbyTimer.RugbyTimerLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FEDA40730A43641003929D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HA64587VPE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RugbyTimerLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rugby Timer";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.christhoval.apps.RugbyTimer.RugbyTimerLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1270,6 +1452,15 @@
 			buildConfigurations = (
 				3FED9C0C30A42F62003929D4 /* Debug */,
 				3FED9C0D30A42F62003929D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FEDA40530A43641003929D4 /* Build configuration list for PBXNativeTarget "RugbyTimerLiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEDA40630A43641003929D4 /* Debug */,
+				3FEDA40730A43641003929D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

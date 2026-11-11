@@ -10,23 +10,17 @@ struct MatchClockProvider: TimelineProvider {
 
     func getSnapshot(in context: Context, completion: @escaping (MatchClockEntry) -> Void) {
         let snapshot = ComplicationStore.load()
-        completion(context.isPreview && snapshot.isIdle ? MatchClockEntry.samples[0] : MatchClockEntry(date: Date(), snapshot: snapshot))
+        completion(context.isPreview && snapshot.isIdle ? MatchClockEntry.samples[0] : MatchClockEntry(date: Date(), glance: snapshot))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<MatchClockEntry>) -> Void) {
         let snapshot = ComplicationStore.load()
         let now = Date()
         let dates = [now] + Self.changeDates(for: snapshot).filter { $0 > now }.sorted()
-        completion(Timeline(entries: dates.map { MatchClockEntry(date: $0, snapshot: snapshot) }, policy: .never))
+        completion(Timeline(entries: dates.map { MatchClockEntry(date: $0, glance: snapshot) }, policy: .never))
     }
 
-    static func changeDates(for snapshot: ComplicationSnapshot) -> [Date] {
-        var dates = [snapshot.breakEndsAt, snapshot.nextSinBinEndsAt].compactMap { $0 }
-        if let end = snapshot.clockEndsAt {
-            dates.append(end)
-            let closing = ClockZone.closingThreshold(totalDuration: snapshot.periodSeconds)
-            dates.append(end.addingTimeInterval(-TimeInterval(closing)))
-        }
-        return dates
+    static func changeDates(for glance: MatchGlance) -> [Date] {
+        [glance.breakEndsAt, glance.nextSinBinEndsAt, glance.clockEndsAt, glance.closingAt].compactMap { $0 }
     }
 }

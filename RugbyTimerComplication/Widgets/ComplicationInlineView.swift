@@ -6,12 +6,12 @@ struct ComplicationInlineView: View {
     let entry: MatchClockEntry
 
     var body: some View {
-        if entry.snapshot.isIdle {
+        if entry.glance.isIdle {
             Text("\(Image(systemName: "figure.rugby")) RUGBY TIMER") // l10n-ignore: app name
-        } else if entry.showsClock {
-            Text("\(entry.snapshot.periodLabel) \(entry.score) · \(entry.clockText)") // l10n-ignore: translated label and score
+        } else if entry.glance.showsClock {
+            Text("\(entry.glance.periodLabel) \(entry.glance.score) · \(entry.clockText)") // l10n-ignore: translated label and score
         } else {
-            Text(verbatim: "\(entry.snapshot.periodLabel) \(entry.homeCode) \(entry.score) \(entry.awayCode)") // l10n-ignore: translated label and score
+            Text(verbatim: "\(entry.glance.periodLabel) \(entry.glance.homeCode) \(entry.glance.score) \(entry.glance.awayCode)") // l10n-ignore: translated label and score
         }
     }
 }

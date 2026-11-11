@@ -6,19 +6,19 @@ struct ComplicationCornerView: View {
     let entry: MatchClockEntry
 
     var body: some View {
-        if entry.snapshot.isIdle {
+        if entry.glance.isIdle {
             Image(systemName: "figure.rugby")
                 .font(.system(size: 20, weight: .semibold))
                 .widgetAccentable()
         } else {
-            (entry.showsClock ? entry.clockText : Text(verbatim: entry.score))
+            (entry.glance.showsClock ? entry.clockText : Text(verbatim: entry.glance.score))
                 .font(.system(size: 15, weight: .heavy).width(.condensed))
                 .monospacedDigit()
                 .multilineTextAlignment(.center)
                 .foregroundStyle(entry.tint)
                 .widgetAccentable()
                 .widgetLabel {
-                    Text(verbatim: entry.showsClock ? "\(entry.snapshot.periodLabel) \(entry.score)" : entry.snapshot.periodLabel) // l10n-ignore: translated label and score
+                    Text(verbatim: entry.glance.showsClock ? "\(entry.glance.periodLabel) \(entry.glance.score)" : entry.glance.periodLabel) // l10n-ignore: translated label and score
                 }
         }
     }

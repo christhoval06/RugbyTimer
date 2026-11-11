@@ -2,8 +2,8 @@ import Foundation
 import Testing
 @testable import RugbyTimerWatch_Watch_App
 
-/// What the watch-face complication is given to show.
-struct ComplicationSnapshotTests {
+/// What the Watch complication and the iPhone Live Activity are given to show.
+struct MatchGlanceTests {
     @MainActor private func liveMatch(now: @escaping () -> Date) -> AppState {
         let state = AppState(timerService: MatchTimerService(initialSeconds: 2400, now: now))
         state.connectivityService.receivedConfiguration = MatchConfiguration(
@@ -13,7 +13,7 @@ struct ComplicationSnapshotTests {
     }
 
     @MainActor @Test func noMatchIsIdle() {
-        #expect(AppState().complicationSnapshot == .idle)
+        #expect(AppState().matchGlance == .idle)
     }
 
     @MainActor @Test func runningClockGivesItsEndDateAndSinBins() {
@@ -23,7 +23,7 @@ struct ComplicationSnapshotTests {
         state.recordScore(team: "Rangers RFC", points: 5, description: "Try scored (+5)")
         state.addCard(team: "City Lions", playerNum: 8, type: .yellow)
 
-        let snapshot = state.complicationSnapshot
+        let snapshot = state.matchGlance
         #expect(snapshot.isMatchLive && snapshot.isRunning)
         #expect(snapshot.clockEndsAt == now.addingTimeInterval(2400))
         #expect(snapshot.periodSeconds == 2400)
@@ -40,7 +40,7 @@ struct ComplicationSnapshotTests {
         state.addCard(team: "City Lions", playerNum: 8, type: .yellow)
         state.timerService.pause()
 
-        let snapshot = state.complicationSnapshot
+        let snapshot = state.matchGlance
         #expect(!snapshot.isRunning)
         #expect(snapshot.clockSeconds == 2400)
         #expect(snapshot.nextSinBinEndsAt == nil, "A stopped sin-bin has no end time")
@@ -48,11 +48,11 @@ struct ComplicationSnapshotTests {
     }
 
     @Test func storeRoundTripsAndFallsBackToIdle() throws {
-        let defaults = try #require(UserDefaults(suiteName: "ComplicationSnapshotTests"))
-        defaults.removePersistentDomain(forName: "ComplicationSnapshotTests")
+        let defaults = try #require(UserDefaults(suiteName: "MatchGlanceTests"))
+        defaults.removePersistentDomain(forName: "MatchGlanceTests")
         #expect(ComplicationStore.load(from: defaults) == .idle)
 
-        var snapshot = ComplicationSnapshot.idle
+        var snapshot = MatchGlance.idle
         snapshot.homeTeamName = "Rangers RFC"
         snapshot.homeScore = 12
         ComplicationStore.save(snapshot, to: defaults)
@@ -60,7 +60,7 @@ struct ComplicationSnapshotTests {
     }
 
     @Test func teamCodesAreThreeLetters() {
-        #expect(ComplicationSnapshot.code(for: "Rangers RFC") == "RAN")
-        #expect(ComplicationSnapshot.code(for: "St. Kilda") == "STK")
+        #expect(MatchGlance.code(for: "Rangers RFC") == "RAN")
+        #expect(MatchGlance.code(for: "St. Kilda") == "STK")
     }
 }

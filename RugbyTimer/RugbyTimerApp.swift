@@ -78,6 +78,7 @@ public struct RugbyTimerApp: App {
             }
             .modifier(SettingsSyncModifier(appState: appState, settings: settings))
             .modifier(MatchHistoryRecorder(appState: appState, history: history))
+            .modifier(MatchLiveActivityModifier(appState: appState))
             .environment(\.playerNumberRange, appState.playerNumbers)
             .onChange(of: keepsScreenAwake, initial: true) { _, awake in
                 UIApplication.shared.isIdleTimerDisabled = awake

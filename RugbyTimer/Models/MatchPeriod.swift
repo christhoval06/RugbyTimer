@@ -20,7 +20,7 @@ nonisolated public enum MatchPeriod: String, Equatable, Codable {
     case suddenDeath = "SUDDEN DEATH"
 }
 
-public extension MatchPeriod {
+nonisolated public extension MatchPeriod {
     /// What people read. `rawValue` stays English because it is synced to the Watch.
     var title: LocalizedStringResource {
         switch self {
