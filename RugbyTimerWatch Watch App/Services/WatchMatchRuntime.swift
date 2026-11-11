@@ -15,6 +15,7 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
     private let extendedSession = WatchExtendedSession()
     private let alerts = WatchMatchAlerts()
     private let breakAlerts = WatchBreakAlerts()
+    private let complications = WatchComplicationPublisher()
     /// The Quick Match last handed to the iPhone's history, so it's sent once.
     private var sentFinishedMatchID: UUID?
 
@@ -23,6 +24,7 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
         self.appState = appState
         subscriptions.removeAll()
         alerts.activate()
+        complications.attach(to: appState)
 
         appState.timerService.$isRunning
             // Cards re-sync when one is added, removed, ended early or renumbered, not on every tick.
