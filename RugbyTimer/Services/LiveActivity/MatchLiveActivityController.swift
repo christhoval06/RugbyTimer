@@ -12,16 +12,20 @@ final class MatchLiveActivityController {
     private static let log = Logger(subsystem: "dev.christhoval.apps.RugbyTimer", category: "LiveActivity") // l10n-ignore
     private var subscriptions = Set<AnyCancellable>()
     private weak var appState: AppState?
+    private weak var settings: AppSettings?
     private var activity: Activity<MatchActivityAttributes>?
 
-    func attach(to appState: AppState) {
+    func attach(to appState: AppState, settings: AppSettings) {
         guard self.appState == nil else { return }
         self.appState = appState
+        self.settings = settings
         // After a relaunch (crash recovery), carry on with the activity already on screen.
         activity = Activity<MatchActivityAttributes>.activities.first
         appState.glanceChanges
-            .combineLatest(appState.$currentScreen.removeDuplicates())
-            .sink { [weak self] _, _ in self?.refresh() }
+            .combineLatest(appState.$currentScreen.removeDuplicates(), settings.$liveActivityEnabled.removeDuplicates())
+            // Published values change in willSet; read them once the change has landed.
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _, _, _ in self?.refresh() }
             .store(in: &subscriptions)
         // A start refused in the background (iOS only starts activities from the foreground) is retried here.
         NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
@@ -35,6 +39,7 @@ final class MatchLiveActivityController {
         let content = ActivityContent(state: glance, staleDate: glance.clockEndsAt ?? glance.breakEndsAt)
         let plan = LiveActivityPlan.action(for: appState.matchPeriod, matchID: appState.matchID,
                                            isMatchShown: appState.currentScreen != .setup,
+                                           isEnabled: settings?.liveActivityEnabled ?? true,
                                            activityMatchID: activity?.attributes.matchID)
         switch plan {
         case .none:

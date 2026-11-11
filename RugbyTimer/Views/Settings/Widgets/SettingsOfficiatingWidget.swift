@@ -26,6 +26,11 @@ struct SettingsOfficiatingWidget: View {
                 subtitle: "While following a live match", tint: .sinBinAmber,
                 isOn: $settings.keepScreenAwake
             )
+            SettingsDividerWidget()
+            SettingsToggleRowWidget(
+                symbol: "lock.iphone", title: "Live Activity",
+                subtitle: "Clock and score on the Lock Screen", isOn: $settings.liveActivityEnabled
+            )
         }
     }
 }

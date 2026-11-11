@@ -10,13 +10,16 @@ nonisolated enum LiveActivityPlan: Equatable {
     /// A different match is on: end the old activity and start one for this match.
     case replace
 
-    /// - Parameter isMatchShown: the live match screen is up (not Match Setup).
+    /// - Parameters:
+    ///   - isMatchShown: the live match screen is up (not Match Setup).
+    ///   - isEnabled: Settings › Live Activity; turning it off removes the activity at once.
     ///
     /// iOS only lets the app *start* an activity while it's on screen, so it starts as soon as the
     /// match is set up (READY, 0–0), not at kick-off: when the Watch runs the match, kick-off
     /// happens on the Watch with the iPhone in a pocket. Updates from the background are allowed.
-    static func action(for period: MatchPeriod, matchID: UUID?, isMatchShown: Bool,
+    static func action(for period: MatchPeriod, matchID: UUID?, isMatchShown: Bool, isEnabled: Bool = true,
                        activityMatchID: UUID?) -> LiveActivityPlan {
+        guard isEnabled else { return activityMatchID == nil ? .none : .end(keepsFinalScore: false) }
         let isOn = isMatchShown && matchID != nil && (period == .preMatch || period.isPlaying || period.isBreak)
         guard let activityMatchID else { return isOn ? .start : .none }
         guard activityMatchID == matchID else { return isOn ? .replace : .end(keepsFinalScore: false) }

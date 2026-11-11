@@ -39,6 +39,15 @@ struct LiveActivityPlanTests {
         #expect(plan(.preMatch, matchID: UUID(), shown: false, activity: match) == .end(keepsFinalScore: false))
     }
 
+    @Test func turningItOffRemovesTheActivityAndStartsNone() {
+        let off = { (activity: UUID?) in
+            LiveActivityPlan.action(for: .firstHalf, matchID: self.match, isMatchShown: true, isEnabled: false,
+                                    activityMatchID: activity)
+        }
+        #expect(off(nil) == .none)
+        #expect(off(match) == .end(keepsFinalScore: false))
+    }
+
     @Test func glanceIgnoresEndDateJitterButNotRealChanges() {
         var glance = MatchGlance.idle
         glance.clockEndsAt = Date(timeIntervalSince1970: 1_000)

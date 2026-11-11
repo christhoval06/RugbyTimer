@@ -41,6 +41,7 @@ final class AppSettings: ObservableObject {
         static let extraTime = "settings.extraTimeFormat"
         static let substitutions = "settings.substitutionRules"
         static let halfTimeBreak = "settings.halfTimeBreakSeconds"
+        static let liveActivity = "settings.liveActivityEnabled"
         static let language = AppLanguage.defaultsKey
     }
 
@@ -67,6 +68,8 @@ final class AppSettings: ObservableObject {
         didSet { defaults.set(try? JSONEncoder().encode(substitutionRules), forKey: Key.substitutions) }
     }
     @Published var halfTimeBreakSeconds: Int { didSet { defaults.set(halfTimeBreakSeconds, forKey: Key.halfTimeBreak) } }
+    /// The match clock and score on the Lock Screen and in the Dynamic Island.
+    @Published var liveActivityEnabled: Bool { didSet { defaults.set(liveActivityEnabled, forKey: Key.liveActivity) } }
     /// Not part of "Restore defaults": resetting would switch the app to a language the referee may not read.
     @Published var language: AppLanguage { didSet { defaults.set(language.rawValue, forKey: Key.language) } }
 
@@ -87,26 +90,10 @@ final class AppSettings: ObservableObject {
         substitutionRules = defaults.data(forKey: Key.substitutions)
             .flatMap { try? JSONDecoder().decode(SubstitutionRules.self, from: $0) } ?? SubstitutionRules()
         halfTimeBreakSeconds = defaults.positiveInt(forKey: Key.halfTimeBreak) ?? Self.standardHalfTimeBreakSeconds
+        liveActivityEnabled = defaults.object(forKey: Key.liveActivity) as? Bool ?? true
         language = defaults.string(forKey: Key.language).flatMap(AppLanguage.init(rawValue:)) ?? .system
         // UI tests launch straight into Match Setup; not persisted.
         if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") { hasCompletedOnboarding = true }
-    }
-
-    /// Restores every preference except the onboarding flag.
-    func resetToStandard() {
-        defaultHalfSeconds = Self.standardHalfSeconds
-        defaultSinBinSeconds = Self.standardSinBinSeconds
-        maxPlayerNumber = Self.standardMaxPlayerNumber
-        defaultHomeTeam = Self.standardHomeTeam
-        defaultAwayTeam = Self.standardAwayTeam
-        hapticsEnabled = true
-        keepScreenAwake = true
-        tapLockEnabled = true
-        coinTossEnabled = false
-        twentyMinuteRedEnabled = false
-        extraTimeFormat = .off
-        substitutionRules = SubstitutionRules()
-        halfTimeBreakSeconds = Self.standardHalfTimeBreakSeconds
     }
 }
 

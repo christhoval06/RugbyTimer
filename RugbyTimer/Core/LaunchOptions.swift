@@ -6,8 +6,8 @@
 import Foundation
 
 /// Builds the app's state, settings and history. UI tests launch with `-uiTesting`, and then
-/// every launch starts clean: no saved match to recover, default settings, an empty history
-/// kept in memory. Nothing a test does touches the referee's real data.
+/// every launch starts clean: no saved match to recover, default settings (Live Activity off),
+/// an empty history kept in memory. Nothing a test does touches the referee's real data.
 enum LaunchOptions {
     static var isUITesting: Bool { ProcessInfo.processInfo.arguments.contains(uiTestingArgument) }
     static let uiTestingArgument = "-uiTesting" // l10n-ignore: launch argument
@@ -18,7 +18,10 @@ enum LaunchOptions {
     }
 
     static func makeSettings() -> AppSettings {
-        AppSettings(defaults: settingsDefaults)
+        let settings = AppSettings(defaults: settingsDefaults)
+        // Test runs would otherwise leave a Live Activity behind on the simulator.
+        if isUITesting { settings.liveActivityEnabled = false }
+        return settings
     }
 
     static func makeHistory() -> MatchHistory {
