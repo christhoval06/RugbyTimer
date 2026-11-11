@@ -35,13 +35,6 @@ struct WatchLiveMatchView: View {
 
     private var isPlaying: Bool { matchPeriod.isPlaying }
 
-    private var summary: WatchMatchSummary {
-        WatchMatchSummary(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
-                          homeScore: homeScore, awayScore: awayScore, matchPeriod: matchPeriod,
-                          activeCards: activeCards, matchEvents: matchEvents,
-                          breakEndsAt: halfTimeBreakEndsAt, breakSeconds: halfTimeBreakSeconds, injuries: injuryTimers)
-    }
-
     var body: some View {
         TabView(selection: $page) {
             if isPlaying {

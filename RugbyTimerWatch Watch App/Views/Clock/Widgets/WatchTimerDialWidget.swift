@@ -10,8 +10,6 @@ struct WatchTimerDialWidget: View {
     let overtimeSeconds: Int
     let periodLabel: LocalizedStringResource
 
-    private static let tickCount = 60
-
     private var zone: TimerRingView.Zone {
         TimerRingView.zone(timeRemaining: timeRemaining, totalDuration: totalDuration, overtimeSeconds: overtimeSeconds)
     }
@@ -43,34 +41,8 @@ struct WatchTimerDialWidget: View {
             let ringInset = size * 0.11
 
             ZStack {
-                ForEach(0..<Self.tickCount, id: \.self) { index in
-                    let isMajor = index % 5 == 0
-                    let isLit = Double(index) / Double(Self.tickCount) < remainingFraction
-                    Capsule()
-                        .fill(isLit ? tint.opacity(isMajor ? 0.9 : 0.4) : Color.armorBorder)
-                        .frame(width: isMajor ? 2 : 1, height: isMajor ? size * 0.05 : size * 0.025)
-                        .offset(y: -size / 2 + size * 0.03)
-                        .rotationEffect(.degrees(Double(index) / Double(Self.tickCount) * 360))
-                }
-
-                Circle()
-                    .stroke(Color.armorBorder, lineWidth: ringWidth)
-                    .padding(ringInset)
-
-                Circle()
-                    .trim(from: 0, to: remainingFraction)
-                    .stroke(
-                        zone == .timeUp
-                            ? AnyShapeStyle(tint)
-                            : AnyShapeStyle(AngularGradient(colors: [tint.opacity(0.35), tint], center: .center,
-                                                            startAngle: .degrees(0),
-                                                            endAngle: .degrees(360 * max(remainingFraction, 0.01)))),
-                        style: StrokeStyle(lineWidth: ringWidth, lineCap: .round)
-                    )
-                    .rotationEffect(.degrees(-90))
-                    .padding(ringInset)
-                    .shadow(color: tint.opacity(isRunning ? 0.45 : 0), radius: 5)
-                    .animation(.linear(duration: 1), value: remainingFraction)
+                WatchDialRingWidget(size: size, fraction: remainingFraction, tint: tint,
+                                    isTimeUp: zone == .timeUp, isRunning: isRunning)
 
                 VStack(spacing: size * 0.02) {
                     HStack(spacing: 3) {
