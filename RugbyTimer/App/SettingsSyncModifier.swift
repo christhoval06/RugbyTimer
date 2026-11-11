@@ -31,6 +31,9 @@ struct SettingsSyncModifier: ViewModifier {
             .onChange(of: settings.extraTimeFormat, initial: true) { _, value in
                 applySetupDefault { appState.extraTimeFormat = value }
             }
+            .onChange(of: settings.substitutionRules, initial: true) { _, value in
+                applySetupDefault { appState.substitutionRules = value }
+            }
     }
 
     private func applyAllDefaults() {

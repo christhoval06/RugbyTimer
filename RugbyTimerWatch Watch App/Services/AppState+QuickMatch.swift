@@ -22,6 +22,7 @@ extension AppState {
         coinTossEnabled = setup.coinTossEnabled
         twentyMinuteRedEnabled = setup.twentyMinuteRedEnabled
         extraTimeFormat = setup.extraTimeFormat
+        substitutionRules = setup.substitutionRules
         maxPlayerNumber = MatchEvent.playerNumbers.upperBound
         resetMatchData()
     }

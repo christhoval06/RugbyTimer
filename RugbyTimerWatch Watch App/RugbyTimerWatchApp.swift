@@ -57,7 +57,9 @@ public struct RugbyTimerWatchApp: App {
                         onUndo: { appState.undoLastEntry() },
                         nextExtraPeriod: appState.nextExtraPeriod,
                         onStartExtraPeriod: appState.startExtraPeriod,
-                        onConcede: { appState.concede($0, team: $1) }
+                        onConcede: { appState.concede($0, team: $1) },
+                        substitutionRules: appState.substitutionRules,
+                        onSubstitute: { appState.substitute(team: $0, off: $1, on: $2) }
                     )
                 }
             }

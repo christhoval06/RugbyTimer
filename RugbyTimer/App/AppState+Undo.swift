@@ -13,7 +13,7 @@ public extension MatchEvent {
     var isUndoable: Bool {
         switch type {
         case .tryScore, .yellowCard, .redCard: true
-        case .sub: startsInjury || Infringement.of(self) != nil
+        case .sub: startsInjury || Infringement.of(self) != nil || Substitution.of(self) != nil
         }
     }
 

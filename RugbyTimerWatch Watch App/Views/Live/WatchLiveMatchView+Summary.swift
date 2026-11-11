@@ -6,6 +6,7 @@ extension WatchLiveMatchView {
         WatchMatchSummary(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
                           homeScore: homeScore, awayScore: awayScore, matchPeriod: matchPeriod,
                           activeCards: activeCards, matchEvents: matchEvents,
-                          breakEndsAt: halfTimeBreakEndsAt, breakSeconds: halfTimeBreakSeconds, injuries: injuryTimers)
+                          breakEndsAt: halfTimeBreakEndsAt, breakSeconds: halfTimeBreakSeconds, injuries: injuryTimers,
+                          substitutionRules: substitutionRules)
     }
 }

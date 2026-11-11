@@ -106,7 +106,9 @@ public extension MatchEvent {
             case "Won the toss · chose an end": return String(appLocalized: "Won the toss · chose an end")
             case "Penalty conceded": return String(appLocalized: "Penalty conceded")
             case "Free kick conceded": return String(appLocalized: "Free kick conceded")
-            default: return InjuryTimer.localizedDescription(of: description) ?? description
+            default:
+                if let substitution = Substitution.of(self) { return substitution.localizedDescription }
+                return InjuryTimer.localizedDescription(of: description) ?? description
             }
         }
     }

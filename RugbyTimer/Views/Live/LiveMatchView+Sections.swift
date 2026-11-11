@@ -26,6 +26,7 @@ extension LiveMatchView {
         LiveSinBinWidget(cards: activeCards, injuries: injuryTimers, actions: offFieldActions)
         LivePenaltyCountWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, events: matchEvents,
                                onConcede: isPlaying ? phoneControls?.onConcede : nil)
+        LiveSubstitutionCountWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, events: matchEvents)
     }
 
     /// Landscape clock column at full time: the result and the record share button.

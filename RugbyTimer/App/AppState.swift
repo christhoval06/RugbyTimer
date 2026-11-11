@@ -33,6 +33,8 @@ public class AppState: ObservableObject {
     @Published public var twentyMinuteRedEnabled: Bool = false
     /// Extra time when a knockout match is level at full time (see `AppState+ExtraTime`).
     @Published public var extraTimeFormat: ExtraTimeFormat = .off
+    /// Substitutions tracked this match, and the limit per team (see `AppState+Substitutions`).
+    @Published public var substitutionRules = SubstitutionRules()
     /// Length of the half-time interval, counted down on the Watch from the half-time whistle.
     @Published public var halfTimeBreakSeconds: Int = 120
     /// When the half-time whistle went; nil outside the break.
@@ -46,9 +48,7 @@ public class AppState: ObservableObject {
     @Published public var activeCards: [MatchCard] = []
     /// Players temporarily off for an HIA or a blood injury (see `AppState+Injuries`).
     @Published public var injuryTimers: [InjuryTimer] = []
-
     @Published public var matchEvents: [MatchEvent] = []
-
     @Published public var matchPeriod: MatchPeriod = .preMatch
 
     // Services

@@ -21,6 +21,9 @@ public struct LiveMatchControls {
     public var onInjury: (InjuryKind, String, Int) -> Void = { _, _, _ in }
     /// Counts a penalty or free kick against a team.
     public var onConcede: (Infringement, String) -> Void = { _, _ in }
+    /// Records a substitution: team, number off, number on. `activeCards` feeds its warnings.
+    public var onSubstitute: (String, Int, Int) -> Void = { _, _, _ in }
+    public var activeCards: [MatchCard] = []
     /// Extra-time break: the period the next kick-off starts, and ending level instead.
     public var nextExtraPeriod: MatchPeriod?
     public var onStartExtraPeriod: () -> Void = {}

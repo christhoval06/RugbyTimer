@@ -27,6 +27,8 @@ nonisolated public struct MatchConfiguration: Codable, Equatable {
     public var twentyMinuteRedEnabled: Bool? = nil
     // Optional so older companions play no extra time.
     public var extraTimeFormat: ExtraTimeFormat? = nil
+    // Optional so older companions don't track substitutions.
+    public var substitutionRules: SubstitutionRules? = nil
 }
 
 nonisolated public struct MatchSnapshot: Codable, Equatable {

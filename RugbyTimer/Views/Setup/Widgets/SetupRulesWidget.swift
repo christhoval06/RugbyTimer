@@ -19,6 +19,8 @@ struct SetupRulesWidget: View {
                 SetupTwentyMinuteRedToggleWidget()
                 Rectangle().fill(Color.armorBorder).frame(height: 1).padding(.horizontal, 14)
                 SetupExtraTimeWidget()
+                Rectangle().fill(Color.armorBorder).frame(height: 1).padding(.horizontal, 14)
+                SetupSubstitutionsWidget()
             }
             .buttonStyle(.plain)
             .background(Color.surfaceContainer, in: RoundedRectangle(cornerRadius: 14))

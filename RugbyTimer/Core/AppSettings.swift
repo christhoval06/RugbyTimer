@@ -39,6 +39,7 @@ final class AppSettings: ObservableObject {
         static let coinToss = "settings.coinTossEnabled"
         static let twentyMinuteRed = "settings.twentyMinuteRedEnabled"
         static let extraTime = "settings.extraTimeFormat"
+        static let substitutions = "settings.substitutionRules"
         static let halfTimeBreak = "settings.halfTimeBreakSeconds"
         static let language = AppLanguage.defaultsKey
     }
@@ -61,6 +62,10 @@ final class AppSettings: ObservableObject {
     @Published var extraTimeFormat: ExtraTimeFormat {
         didSet { defaults.set(extraTimeFormat.rawValue, forKey: Key.extraTime) }
     }
+    /// Substitutions on or off, and the per-team limit; remembered for the next match.
+    @Published var substitutionRules: SubstitutionRules {
+        didSet { defaults.set(try? JSONEncoder().encode(substitutionRules), forKey: Key.substitutions) }
+    }
     @Published var halfTimeBreakSeconds: Int { didSet { defaults.set(halfTimeBreakSeconds, forKey: Key.halfTimeBreak) } }
     /// Not part of "Restore defaults": resetting would switch the app to a language the referee may not read.
     @Published var language: AppLanguage { didSet { defaults.set(language.rawValue, forKey: Key.language) } }
@@ -79,6 +84,8 @@ final class AppSettings: ObservableObject {
         coinTossEnabled = defaults.bool(forKey: Key.coinToss)
         twentyMinuteRedEnabled = defaults.bool(forKey: Key.twentyMinuteRed)
         extraTimeFormat = defaults.string(forKey: Key.extraTime).flatMap(ExtraTimeFormat.init(rawValue:)) ?? .off
+        substitutionRules = defaults.data(forKey: Key.substitutions)
+            .flatMap { try? JSONDecoder().decode(SubstitutionRules.self, from: $0) } ?? SubstitutionRules()
         halfTimeBreakSeconds = defaults.positiveInt(forKey: Key.halfTimeBreak) ?? Self.standardHalfTimeBreakSeconds
         language = defaults.string(forKey: Key.language).flatMap(AppLanguage.init(rawValue:)) ?? .system
         // UI tests launch straight into Match Setup; not persisted.
@@ -98,6 +105,7 @@ final class AppSettings: ObservableObject {
         coinTossEnabled = false
         twentyMinuteRedEnabled = false
         extraTimeFormat = .off
+        substitutionRules = SubstitutionRules()
         halfTimeBreakSeconds = Self.standardHalfTimeBreakSeconds
     }
 }

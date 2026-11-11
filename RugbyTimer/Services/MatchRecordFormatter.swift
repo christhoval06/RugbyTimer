@@ -44,7 +44,16 @@ public enum MatchRecordFormatter {
         }
 
         lines += penaltyLines(events: events, teams: [homeTeam, awayTeam])
+        lines += substitutionLines(events: events, teams: [homeTeam, awayTeam])
         return lines.joined(separator: "\n")
+    }
+
+    /// "SUBSTITUTIONS" with each team's count; empty when none were recorded.
+    private static func substitutionLines(events: [MatchEvent], teams: [String]) -> [String] {
+        guard events.contains(where: { Substitution.of($0) != nil }) else { return [] }
+        return ["", String(appLocalized: "SUBSTITUTIONS")] + teams.map { team in
+            String(appLocalized: "\(team): \(Substitution.count(in: events, team: team))")
+        }
     }
 
     /// "PENALTIES CONCEDED" with each team's penalties (by half) and free kicks; empty when none.

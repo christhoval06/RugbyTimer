@@ -15,6 +15,8 @@ struct WatchMatchSummary {
     var breakSeconds = 120
     /// HIA and blood timers still running.
     var injuries: [InjuryTimer] = []
+    /// Substitution counts show in the stats when the match tracks them.
+    var substitutionRules = SubstitutionRules()
 
     var result: MatchResult {
         MatchStats.result(home: homeTeamName, away: awayTeamName, homeScore: homeScore, awayScore: awayScore)

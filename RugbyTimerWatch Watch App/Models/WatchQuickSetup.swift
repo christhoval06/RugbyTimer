@@ -15,6 +15,13 @@ nonisolated struct WatchQuickSetup: Codable, Equatable {
     var coinTossEnabled = false
     var twentyMinuteRedEnabled = false
     var extraTimeFormat = ExtraTimeFormat.off
+    /// Optional so choices saved before substitutions existed still load.
+    var substitutions: SubstitutionRules? = nil
+
+    var substitutionRules: SubstitutionRules {
+        get { substitutions ?? SubstitutionRules() }
+        set { substitutions = newValue }
+    }
 
     static func load(from defaults: UserDefaults = .standard) -> WatchQuickSetup {
         guard let data = defaults.data(forKey: defaultsKey),

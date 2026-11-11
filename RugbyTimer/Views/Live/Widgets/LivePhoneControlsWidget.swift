@@ -34,9 +34,11 @@ struct LivePhoneControlsWidget: View {
             case .halfTime:
                 LiveKickOffButtonWidget(title: "KICK OFF H2", subtitle: "START THE SECOND HALF",
                                         identifier: "kickOffSecondHalf", action: controls.onStartSecondHalf)
+                LiveSubstitutionTileWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, controls: controls)
             case .extraTimeBreak:
                 LiveExtraTimeBreakWidget(nextPeriod: controls.nextExtraPeriod, onKickOff: controls.onStartExtraPeriod,
                                          onEndAsDraw: controls.onEndMatch)
+                LiveSubstitutionTileWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, controls: controls)
             case .firstHalf, .secondHalf, .extraTimeFirstHalf, .extraTimeSecondHalf, .suddenDeath:
                 HStack(spacing: 10) {
                     LiveControlTileWidget(symbol: "plus.circle.fill", title: "SCORE", tint: Color.pitchEmerald,
@@ -56,6 +58,7 @@ struct LivePhoneControlsWidget: View {
                         isConfirmingEnd = true
                     }
                 }
+                LiveSubstitutionTileWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, controls: controls)
                 LiveUndoLastWidget(lastEntry: controls.lastEntry, onUndo: controls.onUndo)
             case .fullTime:
                 EmptyView()

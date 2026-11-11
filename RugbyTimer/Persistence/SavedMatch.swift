@@ -23,6 +23,7 @@ nonisolated public struct SavedMatch: Codable, Equatable {
     public var halfTimeBreakSeconds: Int
     public var twentyMinuteRedEnabled: Bool? = nil
     public var extraTimeFormat: ExtraTimeFormat? = nil
+    public var substitutionRules: SubstitutionRules? = nil
     public var halfTimeStartedAt: Date?
     public var coinToss: CoinTossResult?
 

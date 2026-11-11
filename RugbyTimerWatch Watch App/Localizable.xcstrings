@@ -48,6 +48,50 @@
         }
       }
     },
+    "#%lld has a card. A carded player can't be replaced." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld tiene tarjeta. Un jugador amonestado no puede ser reemplazado."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld a un carton. Un joueur sanctionné ne peut pas être remplacé."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld tem cartão. Um jogador punido não pode ser substituído."
+          }
+        }
+      }
+    },
+    "#%lld has already been replaced." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld ya fue reemplazado."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld a déjà été remplacé."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld já foi substituído."
+          }
+        }
+      }
+    },
     "%@ (Away)" : {
       "localizations" : {
         "es" : {
@@ -88,6 +132,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ pode substituir o #%2$lld"
+          }
+        }
+      }
+    },
+    "%@: %lld substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: %lld cambios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ : %lld remplacements"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: %lld substituições"
           }
         }
       }
@@ -509,6 +575,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ALTERAR CONFIGURAÇÃO"
+          }
+        }
+      }
+    },
+    "Check this substitution" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisa este cambio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vérifiez ce remplacement"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confira esta substituição"
           }
         }
       }
@@ -1547,6 +1635,28 @@
         }
       }
     },
+    "No limit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin límite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans limite"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem limite"
+          }
+        }
+      }
+    },
     "No more extra time. The match ends level, ready for a kicking competition." : {
       "localizations" : {
         "es" : {
@@ -1745,6 +1855,94 @@
         }
       }
     },
+    "Per team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por equipo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par équipe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por equipe"
+          }
+        }
+      }
+    },
+    "PLAYER OFF" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SALE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SORTANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAI"
+          }
+        }
+      }
+    },
+    "PLAYER ON" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRA"
+          }
+        }
+      }
+    },
+    "Record anyway" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar igual"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer quand même"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar mesmo assim"
+          }
+        }
+      }
+    },
     "REPLACED" : {
       "localizations" : {
         "es" : {
@@ -1807,6 +2005,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartão vermelho"
+          }
+        }
+      }
+    },
+    "REPLACEMENT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REEMPLAZO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRÉE / SORTIE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TROCA"
           }
         }
       }
@@ -1921,6 +2141,28 @@
         }
       }
     },
+    "SUB" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIAR"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACER"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIR"
+          }
+        }
+      }
+    },
     "SUB ON" : {
       "localizations" : {
         "es" : {
@@ -1939,6 +2181,138 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SUBSTITUTO"
+          }
+        }
+      }
+    },
+    "SUBS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPL."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBST."
+          }
+        }
+      }
+    },
+    "SUBSTITUTION" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACEMENT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIÇÃO"
+          }
+        }
+      }
+    },
+    "Substitution for %@: number %lld off, number %lld on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambio de %@: sale el número %lld, entra el número %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement pour %@ : le numéro %lld sort, le numéro %lld entre"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição de %@: sai o número %lld, entra o número %lld"
+          }
+        }
+      }
+    },
+    "Substitution · #%lld off, #%lld on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambio · sale #%lld, entra #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement · #%lld sort, #%lld entre"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição · sai #%lld, entra #%lld"
+          }
+        }
+      }
+    },
+    "Substitution, pick the numbers first" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambio, elige primero los números"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement, choisissez d'abord les numéros"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição, escolha primeiro os números"
+          }
+        }
+      }
+    },
+    "Substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacements"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituições"
           }
         }
       }
@@ -2137,6 +2511,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A substituição é definitiva"
+          }
+        }
+      }
+    },
+    "This team has already made %lld substitutions." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este equipo ya hizo %lld cambios."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette équipe a déjà fait %lld remplacements."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta equipe já fez %lld substituições."
           }
         }
       }

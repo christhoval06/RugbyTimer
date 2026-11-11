@@ -24,6 +24,8 @@ extension AppState {
         controls.onInjury = { [weak self] in self?.startInjury($0, team: $1, playerNum: $2) }
         controls.onUndo = { [weak self] in self?.undoLastEntry() }
         controls.onConcede = { [weak self] in self?.concede($0, team: $1) }
+        controls.onSubstitute = { [weak self] in self?.substitute(team: $0, off: $1, on: $2) }
+        controls.activeCards = activeCards
         controls.nextExtraPeriod = nextExtraPeriod
         controls.onStartExtraPeriod = { [weak self] in self?.startExtraPeriod() }
         controls.onEndMatch = { [weak self] in self?.endMatch() }

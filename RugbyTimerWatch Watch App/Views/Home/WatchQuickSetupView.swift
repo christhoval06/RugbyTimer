@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// Quick Match setup on the Watch: half length, half-time break, sin-bin, tap lock, coin toss, 20-minute red and extra time.
+/// Quick Match setup on the Watch: half length, half-time break, sin-bin, tap lock, coin toss, 20-minute red,
+/// extra time and substitutions.
 /// Teams are always Team A and Team B; there's no team editor on the wrist.
 struct WatchQuickSetupView: View {
     let onReady: (WatchQuickSetup) -> Void
@@ -27,6 +28,21 @@ struct WatchQuickSetupView: View {
                         Text("Off").tag(ExtraTimeFormat.off)
                         Text("Fifteens").tag(ExtraTimeFormat.twoHalves)
                         Text("Sevens").tag(ExtraTimeFormat.suddenDeath)
+                    }
+                }
+                .tint(Color.pitchEmerald)
+                Section {
+                    Toggle("Substitutions", isOn: $setup.substitutionRules.isEnabled)
+                    if setup.substitutionRules.isEnabled {
+                        Picker("Per team", selection: $setup.substitutionRules.limit) {
+                            ForEach(SubstitutionRules.limitOptions, id: \.self) { limit in
+                                if limit == SubstitutionRules.unlimited {
+                                    Text("No limit").tag(limit)
+                                } else {
+                                    Text(verbatim: "\(limit)").tag(limit)
+                                }
+                            }
+                        }
                     }
                 }
                 .tint(Color.pitchEmerald)

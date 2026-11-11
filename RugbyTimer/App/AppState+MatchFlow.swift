@@ -24,7 +24,7 @@ extension AppState {
             sinBinDurationSeconds: sinBinDurationSeconds, maxPlayerNumber: maxPlayerNumber,
             tapLockEnabled: tapLockEnabled, coinTossEnabled: coinTossEnabled,
             halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled,
-            extraTimeFormat: extraTimeFormat
+            extraTimeFormat: extraTimeFormat, substitutionRules: substitutionRules
         ))
         currentScreen = .liveMatch
     }

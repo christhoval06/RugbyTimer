@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct WatchLiveMatchView: View {
-    /// Swipe order while playing: Sanctions ← Penalties ← Clock → Score → Result (last).
-    enum Page: Hashable { case sanctions, penalties, clock, score, result }
+    /// Swipe order while playing: Substitutions ← Sanctions ← Penalties ← Clock → Score → Result (last).
+    /// Substitutions also show at the breaks, and only when the match tracks them.
+    enum Page: Hashable { case substitutions, sanctions, penalties, clock, score, result }
 
     let timerService: MatchTimerService
     let activeCards: [MatchCard]
@@ -30,44 +31,16 @@ struct WatchLiveMatchView: View {
     var nextExtraPeriod: MatchPeriod? = nil
     var onStartExtraPeriod: () -> Void = {}
     var onConcede: (Infringement, String) -> Void = { _, _ in }
+    var substitutionRules = SubstitutionRules()
+    var onSubstitute: (String, Int, Int) -> Void = { _, _, _ in }
 
-    @State private var page: Page = .clock
+    @State var page: Page = .clock
 
-    private var isPlaying: Bool { matchPeriod.isPlaying }
+    var isPlaying: Bool { matchPeriod.isPlaying }
 
     var body: some View {
         TabView(selection: $page) {
-            if isPlaying {
-                WatchSanctionsPageView(
-                    homeTeamName: homeTeamName,
-                    awayTeamName: awayTeamName,
-                    activeCards: activeCards,
-                    injuries: injuryTimers,
-                    matchEvents: matchEvents,
-                    twentyMinuteRedEnabled: twentyMinuteRedEnabled,
-                    actions: offFieldActions,
-                    onStartInjury: { kind, team, number in
-                        onStartInjury(kind, team, number)
-                        returnToMatch()
-                    },
-                    onAddCard: { team, number, sanction in
-                        onAddCard(team, number, sanction)
-                        returnToMatch()
-                    }
-                )
-                .tag(Page.sanctions)
-
-                WatchPenaltiesPageView(
-                    homeTeamName: homeTeamName,
-                    awayTeamName: awayTeamName,
-                    events: matchEvents,
-                    onConcede: { kind, team in
-                        onConcede(kind, team)
-                        returnToMatch()
-                    }
-                )
-                .tag(Page.penalties)
-            }
+            offFieldPages
 
             WatchClockPageView(
                 timerService: timerService,
@@ -104,12 +77,13 @@ struct WatchLiveMatchView: View {
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
         .background(Color.pitchVoid.ignoresSafeArea())
-        .onChange(of: isPlaying) { _, playing in
-            if !playing && (page == .sanctions || page == .penalties || page == .score) { page = .clock }
+        .onChange(of: matchPeriod) {
+            if !isPlaying && (page == .sanctions || page == .penalties || page == .score) { page = .clock }
+            if !showsSubstitutions && page == .substitutions { page = .clock }
         }
     }
 
-    private func returnToMatch() {
+    func returnToMatch() {
         withAnimation { page = .clock }
     }
 }

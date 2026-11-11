@@ -26,6 +26,10 @@ struct WatchResultPageView: View {
                 if summary.isStopped {
                     WatchScoringBreakdownWidget(summary: summary)
                     WatchPenaltyStatsWidget(summary: summary)
+                    if summary.substitutionRules.isEnabled {
+                        WatchSubstitutionCountsWidget(homeTeamName: summary.homeTeamName, awayTeamName: summary.awayTeamName,
+                                                      rules: summary.substitutionRules, events: summary.matchEvents)
+                    }
                 }
 
                 if isFullTime {

@@ -31,6 +31,7 @@ extension AppState {
         halfTimeBreakSeconds = configuration.halfTimeBreakSeconds ?? 120
         twentyMinuteRedEnabled = configuration.twentyMinuteRedEnabled ?? false
         extraTimeFormat = configuration.extraTimeFormat ?? .off
+        substitutionRules = configuration.substitutionRules ?? SubstitutionRules()
         resetMatchData()
         publishWatchSnapshot()
     }

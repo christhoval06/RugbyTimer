@@ -4,6 +4,75 @@
     "" : {
       "shouldTranslate" : false
     },
+    "#%lld has a card. A carded player can't be replaced." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld tiene tarjeta. Un jugador amonestado no puede ser reemplazado."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld a un carton. Un joueur sanctionné ne peut pas être remplacé."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld tem cartão. Um jogador punido não pode ser substituído."
+          }
+        }
+      }
+    },
+    "#%lld has already been replaced." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld ya fue reemplazado."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld a déjà été remplacé."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%lld já foi substituído."
+          }
+        }
+      }
+    },
+    "%@: %lld" : {
+      "shouldTranslate" : false
+    },
+    "%@: %lld substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: %lld cambios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ : %lld remplacements"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: %lld substituições"
+          }
+        }
+      }
+    },
     "+%@" : {
       "shouldTranslate" : false
     },
@@ -491,6 +560,28 @@
         }
       }
     },
+    "Check this substitution" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisa este cambio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vérifiez ce remplacement"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confira esta substituição"
+          }
+        }
+      }
+    },
     "CONCEDED" : {
       "localizations" : {
         "es" : {
@@ -531,6 +622,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CONFIRMAR VERMELHO 20 MIN · #%lld"
+          }
+        }
+      }
+    },
+    "CONFIRM · #%lld OFF, #%lld ON" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR · SALE #%lld, ENTRA #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMER · #%lld SORT, #%lld ENTRE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR · SAI #%lld, ENTRA #%lld"
           }
         }
       }
@@ -1437,6 +1550,72 @@
         }
       }
     },
+    "NO LIMIT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SIN LÍMITE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SANS LIMITE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEM LIMITE"
+          }
+        }
+      }
+    },
+    "No limit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin límite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans limite"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem limite"
+          }
+        }
+      }
+    },
+    "No limit · rolling substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin límite · cambios libres"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans limite · remplacements libres"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem limite · substituições livres"
+          }
+        }
+      }
+    },
     "NO MATCHES YET" : {
       "localizations" : {
         "es" : {
@@ -1521,6 +1700,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desligado · o empate encerra a partida"
+          }
+        }
+      }
+    },
+    "Off · no substitutions page on the Watch" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado · sin página de cambios en el Watch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé · pas de page de remplacements sur la Watch"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desativado · sem página de substituições no Watch"
           }
         }
       }
@@ -1679,6 +1880,28 @@
         }
       }
     },
+    "PICK OFF AND ON NUMBERS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ELIGE QUIÉN SALE Y QUIÉN ENTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CHOISISSEZ LE SORTANT ET L'ENTRANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESCOLHA QUEM SAI E QUEM ENTRA"
+          }
+        }
+      }
+    },
     "PICK THE RIGHT NUMBER" : {
       "localizations" : {
         "es" : {
@@ -1789,6 +2012,50 @@
         }
       }
     },
+    "PLAYER OFF" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SALE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SORTANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAI"
+          }
+        }
+      }
+    },
+    "PLAYER ON" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRA"
+          }
+        }
+      }
+    },
     "QUICK MATCH" : {
       "localizations" : {
         "es" : {
@@ -1807,6 +2074,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PARTIDA RÁPIDA"
+          }
+        }
+      }
+    },
+    "Record anyway" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar igual"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer quand même"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar mesmo assim"
           }
         }
       }
@@ -1873,6 +2162,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartão vermelho (segundo amarelo) - #%lld"
+          }
+        }
+      }
+    },
+    "REPLACEMENT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REEMPLAZO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRÉE / SORTIE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TROCA"
           }
         }
       }
@@ -2027,6 +2338,160 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "COMEÇAR O 2º TEMPO DA PRORROGAÇÃO"
+          }
+        }
+      }
+    },
+    "SUBS %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPL. %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBST. %lld"
+          }
+        }
+      }
+    },
+    "SUBS %lld/%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS %lld/%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPL. %lld/%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBST. %lld/%lld"
+          }
+        }
+      }
+    },
+    "SUBSTITUTION" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACEMENT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIÇÃO"
+          }
+        }
+      }
+    },
+    "Substitution · #%lld off, #%lld on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambio · sale #%lld, entra #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement · #%lld sort, #%lld entre"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição · sai #%lld, entra #%lld"
+          }
+        }
+      }
+    },
+    "SUBSTITUTIONS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACEMENTS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIÇÕES"
+          }
+        }
+      }
+    },
+    "Substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacements"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituições"
+          }
+        }
+      }
+    },
+    "Substitutions per team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios por equipo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacements par équipe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituições por equipe"
           }
         }
       }
@@ -2229,6 +2694,28 @@
         }
       }
     },
+    "This team has already made %lld substitutions." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este equipo ya hizo %lld cambios."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette équipe a déjà fait %lld remplacements."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta equipe já fez %lld substituições."
+          }
+        }
+      }
+    },
     "UNDO LAST ENTRY" : {
       "localizations" : {
         "es" : {
@@ -2269,6 +2756,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desfazer %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "UP TO %lld PER TEAM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HASTA %lld POR EQUIPO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JUSQU'À %lld PAR ÉQUIPE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ATÉ %lld POR EQUIPE"
+          }
+        }
+      }
+    },
+    "Up to %lld per team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasta %lld por equipo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jusqu'à %lld par équipe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Até %lld por equipe"
           }
         }
       }

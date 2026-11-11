@@ -41,7 +41,7 @@ extension AppState {
             sinBinSeconds: sinBinDurationSeconds, maxPlayerNumber: maxPlayerNumber,
             tapLockEnabled: tapLockEnabled, coinTossEnabled: coinTossEnabled,
             halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled,
-            extraTimeFormat: extraTimeFormat, halfTimeStartedAt: halfTimeStartedAt,
+            extraTimeFormat: extraTimeFormat, substitutionRules: substitutionRules, halfTimeStartedAt: halfTimeStartedAt,
             coinToss: coinToss, period: matchPeriod, homeScore: homeScore, awayScore: awayScore,
             cards: activeCards, injuries: injuryTimers, cardsClock: lastClockReading, events: matchEvents,
             clockSeconds: timerService.clockSeconds, clockEndDate: timerService.endDate
@@ -63,6 +63,7 @@ extension AppState {
         halfTimeBreakSeconds = saved.halfTimeBreakSeconds
         twentyMinuteRedEnabled = saved.twentyMinuteRedEnabled ?? false
         extraTimeFormat = saved.extraTimeFormat ?? .off
+        substitutionRules = saved.substitutionRules ?? SubstitutionRules()
         halfTimeStartedAt = saved.halfTimeStartedAt
         coinToss = saved.coinToss
         matchPeriod = saved.period
