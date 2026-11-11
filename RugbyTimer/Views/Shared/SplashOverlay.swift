@@ -6,6 +6,7 @@ struct SplashOverlay: ViewModifier {
     static let displaySeconds = 1.4
 
     /// UI tests launch with `-skipOnboarding` to go straight to Match Setup, so they skip the splash too.
+    /// (They also pass `-uiTesting` to start from a clean state; see `LaunchOptions`.)
     static var isSkipped: Bool {
         ProcessInfo.processInfo.arguments.contains("-skipOnboarding") // l10n-ignore
     }

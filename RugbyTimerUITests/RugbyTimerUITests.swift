@@ -25,7 +25,7 @@ final class RugbyTimerUITests: XCTestCase {
     @MainActor
     func testSetupPreparesMatchWithoutStartingOnPhone() throws {
         let app = XCUIApplication()
-        app.launchArguments.append("-skipOnboarding")
+        app.launchArguments += ["-skipOnboarding", "-uiTesting"]
         app.launch()
         let sendSetup = app.buttons["sendMatchSetup"]
         XCTAssertTrue(sendSetup.waitForExistence(timeout: 5))
@@ -55,7 +55,7 @@ final class RugbyTimerUITests: XCTestCase {
     @MainActor
     func testSetupWidgetsKeepCustomDurations() throws {
         let app = XCUIApplication()
-        app.launchArguments.append("-skipOnboarding")
+        app.launchArguments += ["-skipOnboarding", "-uiTesting"]
         app.launch()
 
         let customDuration = app.buttons["customMatchDuration"]

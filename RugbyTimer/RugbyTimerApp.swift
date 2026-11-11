@@ -10,9 +10,9 @@ import UIKit
 
 @main
 public struct RugbyTimerApp: App {
-    @StateObject private var appState = AppState.launch()
-    @StateObject private var settings = AppSettings()
-    @StateObject private var history = MatchHistory(storage: SwiftDataMatchHistoryStorage())
+    @StateObject private var appState = LaunchOptions.makeAppState()
+    @StateObject private var settings = LaunchOptions.makeSettings()
+    @StateObject private var history = LaunchOptions.makeHistory()
     @Environment(\.scenePhase) private var scenePhase
     @State private var isShowingSplash = !SplashOverlay.isSkipped
 

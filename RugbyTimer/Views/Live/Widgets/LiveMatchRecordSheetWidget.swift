@@ -24,6 +24,7 @@ struct LiveMatchRecordSheetWidget: View {
                 Button("Done", action: onDone)
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Color.pitchEmerald)
+                    .accessibilityIdentifier("closeMatchRecord")
             }
             .padding(20)
 

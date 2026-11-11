@@ -39,7 +39,7 @@ A match clock for rugby referees, built for iPhone and Apple Watch. It keeps the
 
 The Watch target has the HealthKit capability (`RugbyTimerWatch Watch App.entitlements`) and the `workout-processing` background mode. With automatic signing, Xcode adds HealthKit to the Watch App ID on the first device build. The Watch asks for Health access once, on the ready screen before kick-off. Decline it to test the extended runtime fallback.
 
-Pass the `-skipOnboarding` launch argument to skip the splash screen and onboarding and go straight to Match Setup. The UI tests use it.
+Pass the `-skipOnboarding` launch argument to skip the splash screen and onboarding and go straight to Match Setup. UI tests also pass `-uiTesting`, so every launch starts clean: no match to recover, default settings, and an empty history kept in memory (see `LaunchOptions`). Nothing a UI test does touches your real data.
 
 ## Running tests
 
@@ -81,7 +81,7 @@ RugbyTimerWatch Watch App/     watchOS app
     ├── Result/                Score, scoring breakdown, discipline and penalty stats
     └── Shared/Widgets/        Widgets used by several screens (page title, pickers, tap lock, off-field rows)
 RugbyTimerTests/               Unit tests (coin toss, half-time break, end match early, phone-hosted match, crash recovery, undo, law updates, injuries and sin-bin edits, penalty counts, extra time, match history)
-RugbyTimerUITests/             UI tests
+RugbyTimerUITests/             UI tests (setup, match record sharing, penalty count, extra time, match history)
 scripts/check_localization.py  Localization audit
 ```
 

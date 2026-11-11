@@ -15,7 +15,9 @@ public struct MatchPersistence {
 
     public static var defaultURL: URL {
         let folder = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        return folder.appendingPathComponent("current-match.json") // l10n-ignore: file name
+        // UI tests (`-uiTesting`) keep their match apart from the referee's real one.
+        let isUITesting = ProcessInfo.processInfo.arguments.contains("-uiTesting") // l10n-ignore: launch argument
+        return folder.appendingPathComponent(isUITesting ? "uitest-match.json" : "current-match.json") // l10n-ignore: file name
     }
 
     public func load() -> SavedMatch? {

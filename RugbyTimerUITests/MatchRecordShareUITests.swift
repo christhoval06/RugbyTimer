@@ -9,7 +9,7 @@ final class MatchRecordShareUITests: XCTestCase {
     @MainActor
     func testMatchRecordSheetIsNeverEmpty() throws {
         let app = XCUIApplication()
-        app.launchArguments.append("-skipOnboarding")
+        app.launchArguments += ["-skipOnboarding", "-uiTesting"]
         app.launch()
         playPhoneMatchToFullTime(app)
 
@@ -17,11 +17,12 @@ final class MatchRecordShareUITests: XCTestCase {
         XCTAssertTrue(share.waitForExistence(timeout: 5))
         for attempt in 1...5 {
             share.tap()
-            let record = app.staticTexts.containing(NSPredicate(format: "label CONTAINS 'MATCH RECORD'")).element(boundBy: 0)
-            let recordBody = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'RUGBY TIMER'")).firstMatch
-            XCTAssertTrue(record.waitForExistence(timeout: 5), "Sheet did not open on attempt \(attempt)")
-            XCTAssertTrue(recordBody.waitForExistence(timeout: 2), "Record text was empty on attempt \(attempt)")
-            app.buttons["Done"].tap()
+            // The sheet's own Done button proves the sheet is open (the live screen also says "RUGBY TIMER").
+            let close = app.buttons["closeMatchRecord"]
+            XCTAssertTrue(close.waitForExistence(timeout: 5), "Sheet did not open on attempt \(attempt)")
+            XCTAssertTrue(recordBody(app).waitForExistence(timeout: 2), "Record text was empty on attempt \(attempt)")
+            close.tap()
+            XCTAssertTrue(close.waitForNonExistence(timeout: 5), "Sheet did not close on attempt \(attempt)")
             XCTAssertTrue(share.waitForExistence(timeout: 5))
         }
     }
@@ -29,24 +30,24 @@ final class MatchRecordShareUITests: XCTestCase {
     @MainActor
     func testMatchRecordSheetSurvivesRotation() throws {
         let app = XCUIApplication()
-        app.launchArguments.append("-skipOnboarding")
+        app.launchArguments += ["-skipOnboarding", "-uiTesting"]
         app.launch()
         playPhoneMatchToFullTime(app)
         defer { XCUIDevice.shared.orientation = .portrait }
 
         tap(app.buttons["shareMatchRecord"])
-        let recordBody = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'RUGBY TIMER'")).firstMatch
-        XCTAssertTrue(recordBody.waitForExistence(timeout: 5))
+        let record = recordBody(app)
+        XCTAssertTrue(record.waitForExistence(timeout: 5))
         XCUIDevice.shared.orientation = .landscapeLeft
-        XCTAssertTrue(recordBody.waitForExistence(timeout: 5), "Record text was lost after rotating to landscape")
+        XCTAssertTrue(record.waitForExistence(timeout: 5), "Record text was lost after rotating to landscape")
         XCUIDevice.shared.orientation = .portrait
-        XCTAssertTrue(recordBody.waitForExistence(timeout: 5), "Record text was lost after rotating back")
+        XCTAssertTrue(record.waitForExistence(timeout: 5), "Record text was lost after rotating back")
     }
 
     @MainActor
     func testLandscapeFullTimeShowsResultAndShareOnLeft() throws {
         let app = XCUIApplication()
-        app.launchArguments.append("-skipOnboarding")
+        app.launchArguments += ["-skipOnboarding", "-uiTesting"]
         app.launch()
         playPhoneMatchToFullTime(app)
         defer { XCUIDevice.shared.orientation = .portrait }
@@ -67,8 +68,7 @@ final class MatchRecordShareUITests: XCTestCase {
         add(shot)
 
         share.tap()
-        let recordBody = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'RUGBY TIMER'")).firstMatch
-        XCTAssertTrue(recordBody.waitForExistence(timeout: 5))
+        XCTAssertTrue(recordBody(app).waitForExistence(timeout: 5))
     }
 
     @MainActor
@@ -83,7 +83,7 @@ final class MatchRecordShareUITests: XCTestCase {
         tap(app.buttons["Blow for half-time"])
         tap(app.buttons["kickOffSecondHalf"])
         tap(app.buttons["END MATCH"])
-        tap(app.buttons["Blow for full time"])
+        tap(app.buttons["Blow the whistle"])
     }
 
     @MainActor
