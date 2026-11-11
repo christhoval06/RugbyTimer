@@ -18,21 +18,27 @@ TARGETS = {
     "RugbyTimer": ("RugbyTimer/Localizable.xcstrings", "Debug-iphonesimulator/RugbyTimer.build"),
     "RugbyTimerWatch Watch App": ("RugbyTimerWatch Watch App/Localizable.xcstrings",
                                   "Debug-watchsimulator/RugbyTimerWatch Watch App.build"),
+    "RugbyTimerComplicationExtension": ("RugbyTimerComplication/Localizable.xcstrings",
+                                        "Debug-watchsimulator/RugbyTimerComplicationExtension.build"),
+    # No catalog: it only shows labels the app translated, so it must extract no strings.
+    "RugbyTimerLiveActivityExtension": (None, "Debug-iphonesimulator/RugbyTimerLiveActivityExtension.build"),
 }
-SOURCE_DIRS = ["RugbyTimer", "RugbyTimerWatch Watch App"]
+SOURCE_DIRS = ["RugbyTimer", "RugbyTimerWatch Watch App", "RugbyTimerComplication", "RugbyTimerLiveActivity"]
 LITERAL = re.compile(r'"((?:[^"\\]|\\.)*)"')
 SPECIFIER = re.compile(r"%(?:\d+\$)?(?:lld|ld|d|@|f|\.\d+f)")
 INTERPOLATION = re.compile(r"\\\((?:[^()]|\([^()]*\))*\)")
 # Lines whose literals are never shown to people.
 NON_UI_CONTEXT = re.compile(
     r"accessibilityIdentifier\(|systemName:|symbol:|Image\(\"|forKey|\.custom\(\"|Color\(hex:|URL\(string:"
-    r"|print\(|context\[|Context\[|launchArguments|UserDefaults|static let \w+(ID|Key|Prefix)\b|identifier:|id: \""
+    r"|print\(|context\[|Context\[|launchArguments|UserDefaults|static let \w+(ID|Key|Prefix)\b|static let kind = |log\.\w+\(|identifier:|id: \""
     # Values synced between devices or used as sample data stay English by design.
     r"|[tT]eamName: \"|[tT]eamName: String = \"|description: \"|== \"OFFICIAL\"|Team = \"|infoDictionary|info\?\[|arguments\.contains|WatchName = \"|watchName: String = \""
 )
 
 
 def catalog_problems(path):
+    if path is None:
+        return set(), []
     strings = json.load(open(os.path.join(ROOT, path)))["strings"]
     problems = []
     for key, entry in strings.items():
@@ -111,6 +117,8 @@ def main():
         all_keys |= keys
         if args.derived_data:
             missing = extracted_keys(args.derived_data, build_dir) - keys
+            if catalog is None:  # without a catalog a key shows as written: fine when it has no words
+                missing = {key for key in missing if re.search(r"[A-Za-z]{2,}", SPECIFIER.sub("", key))}
             problems += [f"not in catalog: {key!r}" for key in sorted(missing)]
         print(f"{target}: {len(keys)} keys, {len(problems)} problems")
         for problem in problems:

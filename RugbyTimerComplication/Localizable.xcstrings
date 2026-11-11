@@ -9,13 +9,14 @@
             "value" : "%1$@ %2$@ · %3$@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%@ RUGBY TIMER" : {
-
+      "shouldTranslate" : false
     },
     "+%@" : {
-
+      "shouldTranslate" : false
     },
     "Match clock" : {
       "localizations" : {
