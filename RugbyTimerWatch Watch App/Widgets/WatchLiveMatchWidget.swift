@@ -16,6 +16,10 @@ struct WatchLiveMatchWidget: View {
     var halfTimeBreakEndsAt: Date? = nil
     var halfTimeBreakSeconds = 120
     var twentyMinuteRedEnabled = false
+    var injuryTimers: [InjuryTimer] = []
+    /// End a sin-bin, fix a number, end an injury timer; nil keeps the lists read-only.
+    var offFieldActions: OffFieldActions? = nil
+    var onStartInjury: (InjuryKind, String, Int) -> Void = { _, _, _ in }
     let onAddCard: (String, Int, Sanction) -> Void
     let onScore: (String, Int?, Int, String) -> Void
     let onStartSecondHalf: () -> Void
@@ -32,7 +36,7 @@ struct WatchLiveMatchWidget: View {
         WatchMatchSummary(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
                           homeScore: homeScore, awayScore: awayScore, matchPeriod: matchPeriod,
                           activeCards: activeCards, matchEvents: matchEvents,
-                          breakEndsAt: halfTimeBreakEndsAt, breakSeconds: halfTimeBreakSeconds)
+                          breakEndsAt: halfTimeBreakEndsAt, breakSeconds: halfTimeBreakSeconds, injuries: injuryTimers)
     }
 
     var body: some View {
@@ -42,8 +46,14 @@ struct WatchLiveMatchWidget: View {
                     homeTeamName: homeTeamName,
                     awayTeamName: awayTeamName,
                     activeCards: activeCards,
+                    injuries: injuryTimers,
                     matchEvents: matchEvents,
                     twentyMinuteRedEnabled: twentyMinuteRedEnabled,
+                    actions: offFieldActions,
+                    onStartInjury: { kind, team, number in
+                        onStartInjury(kind, team, number)
+                        returnToMatch()
+                    },
                     onAddCard: { team, number, sanction in
                         onAddCard(team, number, sanction)
                         returnToMatch()
@@ -61,6 +71,7 @@ struct WatchLiveMatchWidget: View {
                 onEndMatch: onEndMatch,
                 onNewMatch: onNewMatch,
                 lastEntry: matchEvents.last,
+                offFieldActions: offFieldActions,
                 onUndo: onUndo
             )
             .tag(Page.clock)

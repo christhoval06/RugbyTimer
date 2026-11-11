@@ -17,6 +17,8 @@ public struct LiveMatchControls {
     public var matchEvents: [MatchEvent] = []
     /// Offers a 20-minute red, and makes a second yellow one.
     public var twentyMinuteRedEnabled = false
+    /// Starts an HIA or blood replacement timer.
+    public var onInjury: (InjuryKind, String, Int) -> Void = { _, _, _ in }
 
     public init(
         onKickOff: @escaping () -> Void,

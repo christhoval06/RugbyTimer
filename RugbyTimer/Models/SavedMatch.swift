@@ -29,6 +29,7 @@ public struct SavedMatch: Codable, Equatable {
     public var homeScore: Int
     public var awayScore: Int
     public var cards: [MatchCard]
+    public var injuries: [InjuryTimer]? = nil
     /// The clock reading the sin-bins were last counted to, so they catch up after a relaunch.
     public var cardsClock: Int
     public var events: [MatchEvent]

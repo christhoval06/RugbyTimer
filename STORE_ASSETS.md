@@ -84,6 +84,8 @@ CARDS AND SIN-BINS
 • Red cards logged as sent off, with the shirt number
 • Optional 20-minute red card: a countdown until the team can bring on a replacement
 • A second yellow for the same player prompts a red card
+• HIA (12 min) and blood replacement (15 min) timers, logged in the match record
+• End a sin-bin early or fix a wrong shirt number with a tap
 
 SCORING
 • Tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3)
@@ -161,6 +163,8 @@ TARJETAS Y EXCLUSIONES
 • Tarjetas rojas registradas como expulsión, con el número de camiseta
 • Tarjeta roja de 20 minutos opcional: cuenta regresiva hasta que el equipo pueda hacer entrar un reemplazo
 • Una segunda amarilla al mismo jugador propone mostrar la roja
+• Temporizadores de HIA (12 min) y reemplazo por sangre (15 min), registrados en el acta
+• Termina una exclusión antes de tiempo o corrige un número de camiseta con un toque
 
 MARCADOR
 • Try (+5), try penal (+7), conversión (+2), penal y drop (+3)
@@ -238,6 +242,8 @@ CARTONS ET EXCLUSIONS
 • Cartons rouges enregistrés comme expulsion, avec le numéro de maillot
 • Carton rouge de 20 minutes en option : un décompte jusqu'à l'entrée d'un remplaçant
 • Un deuxième carton jaune pour le même joueur propose un carton rouge
+• Minuteurs HIA (12 min) et remplacement saignement (15 min), notés sur la feuille de match
+• Terminez une exclusion plus tôt ou corrigez un numéro de maillot d'un geste
 
 SCORE
 • Essais (+5), essais de pénalité (+7), transformations (+2), pénalités et drops (+3)
@@ -315,6 +321,8 @@ CARTÕES E EXCLUSÕES
 • Cartões vermelhos registrados como expulsão, com o número da camisa
 • Cartão vermelho de 20 minutos opcional: contagem até a equipe poder colocar um substituto
 • Um segundo amarelo para o mesmo jogador sugere o cartão vermelho
+• Cronômetros de HIA (12 min) e substituição por sangue (15 min), registrados na súmula
+• Encerre uma exclusão antes do tempo ou corrija um número de camisa com um toque
 
 PLACAR
 • Try (+5), try de penal (+7), conversão (+2), penal e drop goal (+3)
@@ -360,6 +368,8 @@ To test on iPhone only: complete or skip the onboarding, set the teams and half 
 To test with Apple Watch: open the Watch app, then on iPhone tap SEND SETUP TO WATCH. The match appears on the Watch, ready to kick off. To test the Watch on its own, tap QUICK MATCH on the Watch main screen.
 
 To test undo: record a score or card, then tap UNDO LAST ENTRY within 15 seconds.
+
+To test injury timers on iPhone: during play, tap INJURY, pick a team and number, then HIA · 12 MIN. Tap the player in the sanctions list to close it as back on or replaced, or tap a carded player to end the sin-bin now or fix the shirt number.
 
 To test the 20-minute red card: turn on "20-minute red card" on Match Setup, run the match on iPhone, then issue a RED 20' card. Giving the same player a second yellow asks to show a red instead.
 
@@ -416,6 +426,8 @@ CARDS AND SIN-BINS
 • Red cards logged as sent off, with the shirt number
 • Optional 20-minute red card: a countdown until the team can bring on a replacement
 • A second yellow for the same player prompts a red card
+• HIA (12 min) and blood replacement (15 min) timers, logged in the match record
+• End a sin-bin early or fix a wrong shirt number with a tap
 
 SCORING
 • Tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3)
@@ -468,6 +480,8 @@ TARJETAS Y EXCLUSIONES
 • Tarjetas rojas registradas como expulsión, con el número de camiseta
 • Tarjeta roja de 20 minutos opcional: cuenta regresiva hasta que el equipo pueda hacer entrar un reemplazo
 • Una segunda amarilla al mismo jugador propone mostrar la roja
+• Temporizadores de HIA (12 min) y reemplazo por sangre (15 min), registrados en el acta
+• Termina una exclusión antes de tiempo o corrige un número de camiseta con un toque
 
 MARCADOR
 • Try (+5), try penal (+7), conversión (+2), penal y drop (+3)
@@ -520,6 +534,8 @@ CARTONS ET EXCLUSIONS
 • Cartons rouges enregistrés comme expulsion, avec le numéro de maillot
 • Carton rouge de 20 minutes en option : un décompte jusqu'à l'entrée d'un remplaçant
 • Un deuxième carton jaune pour le même joueur propose un carton rouge
+• Minuteurs HIA (12 min) et remplacement saignement (15 min), notés sur la feuille de match
+• Terminez une exclusion plus tôt ou corrigez un numéro de maillot d'un geste
 
 SCORE
 • Essais (+5), essais de pénalité (+7), transformations (+2), pénalités et drops (+3)
@@ -572,6 +588,8 @@ CARTÕES E EXCLUSÕES
 • Cartões vermelhos registrados como expulsão, com o número da camisa
 • Cartão vermelho de 20 minutos opcional: contagem até a equipe poder colocar um substituto
 • Um segundo amarelo para o mesmo jogador sugere o cartão vermelho
+• Cronômetros de HIA (12 min) e substituição por sangue (15 min), registrados na súmula
+• Encerre uma exclusão antes do tempo ou corrija um número de camisa com um toque
 
 PLACAR
 • Try (+5), try de penal (+7), conversão (+2), penal e drop goal (+3)

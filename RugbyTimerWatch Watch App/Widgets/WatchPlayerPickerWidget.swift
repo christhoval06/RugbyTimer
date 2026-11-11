@@ -4,12 +4,14 @@ import SwiftUI
 struct WatchPlayerPickerWidget: View {
     @Binding var playerNumber: Int?
     var allowsNone = false
+    /// The first row's text with `allowsNone`: no scorer, or no player picked yet.
+    var noneLabel: LocalizedStringKey = "— NO PLAYER"
     @Environment(\.playerNumberRange) private var playerNumberRange
 
     var body: some View {
         Picker("Player", selection: $playerNumber) {
             if allowsNone {
-                Text("— NO PLAYER")
+                Text(noneLabel)
                     .font(.system(size: 12, weight: .bold).width(.condensed))
                     .foregroundStyle(Color.outline)
                     .tag(Int?.none)

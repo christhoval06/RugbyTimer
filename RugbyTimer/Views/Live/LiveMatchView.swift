@@ -26,6 +26,9 @@ public struct LiveMatchView: View {
     public var phoneControls: LiveMatchControls?
     /// Non-nil while mirroring a Watch: shows a warning once the Watch stops reporting.
     public var watchLink: WatchLinkStatus?
+    public var injuryTimers: [InjuryTimer]
+    /// Non-nil when this iPhone runs the match: the sanctions rows can be edited.
+    public var offFieldActions: OffFieldActions?
 
     public init(
         timerService: MatchTimerService,
@@ -42,7 +45,9 @@ public struct LiveMatchView: View {
         onStartSecondHalf: @escaping () -> Void,
         onReturnToSetup: (() -> Void)? = nil,
         phoneControls: LiveMatchControls? = nil,
-        watchLink: WatchLinkStatus? = nil
+        watchLink: WatchLinkStatus? = nil,
+        injuryTimers: [InjuryTimer] = [],
+        offFieldActions: OffFieldActions? = nil
     ) {
         self.timerService = timerService
         self.activeCards = activeCards
@@ -59,6 +64,8 @@ public struct LiveMatchView: View {
         self.onReturnToSetup = onReturnToSetup
         self.phoneControls = phoneControls
         self.watchLink = watchLink
+        self.injuryTimers = injuryTimers
+        self.offFieldActions = offFieldActions
     }
 
     var isPlaying: Bool { matchPeriod == .firstHalf || matchPeriod == .secondHalf }

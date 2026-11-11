@@ -12,6 +12,7 @@ struct WatchClockPageWidget: View {
     var onNewMatch: (() -> Void)? = nil
     /// The latest score or card, offered for undo while its window is open.
     var lastEntry: MatchEvent? = nil
+    var offFieldActions: OffFieldActions? = nil
     var onUndo: () -> Void = {}
 
     var body: some View {
@@ -27,8 +28,9 @@ struct WatchClockPageWidget: View {
                         WatchBreakCountdownWidget(endsAt: breakEndsAt, totalSeconds: summary.breakSeconds)
                     }
                     // Players still off when the second half kicks off.
-                    if !summary.carriedSinBins.isEmpty {
-                        WatchSinBinListWidget(cards: summary.carriedSinBins, title: "STILL OFF FOR H2")
+                    if !summary.carriedSinBins.isEmpty || !summary.injuries.isEmpty {
+                        WatchSinBinListWidget(cards: summary.carriedSinBins, injuries: summary.injuries,
+                                              title: "STILL OFF FOR H2", actions: offFieldActions)
                     }
                     WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
                                              onEndMatch: onEndMatch)

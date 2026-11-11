@@ -57,7 +57,9 @@ public struct RugbyTimerApp: App {
                         onStartSecondHalf: {},
                         onReturnToSetup: { appState.returnToSetup() },
                         phoneControls: appState.isPhoneHosted ? phoneControls : nil,
-                        watchLink: appState.watchLinkStatus
+                        watchLink: appState.watchLinkStatus,
+                        injuryTimers: appState.injuryTimers,
+                        offFieldActions: appState.isPhoneHosted ? appState.offFieldActions : nil
                     )
 
                 }
@@ -111,6 +113,7 @@ public struct RugbyTimerApp: App {
         controls.lastEntry = appState.matchEvents.last
         controls.matchEvents = appState.matchEvents
         controls.twentyMinuteRedEnabled = appState.twentyMinuteRedEnabled
+        controls.onInjury = { appState.startInjury($0, team: $1, playerNum: $2) }
         controls.onUndo = { appState.undoLastEntry() }
         return controls
     }

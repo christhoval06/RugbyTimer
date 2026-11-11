@@ -23,7 +23,7 @@ extension LiveMatchView {
         LiveScoreboardWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
                              homeScore: homeScore, awayScore: awayScore)
         LiveScoringWidget(events: matchEvents, homeTeamName: homeTeamName)
-        LiveSinBinWidget(cards: activeCards)
+        LiveSinBinWidget(cards: activeCards, injuries: injuryTimers, actions: offFieldActions)
     }
 
     /// Landscape clock column at full time: the result and the record share button.

@@ -44,6 +44,8 @@ public class AppState: ObservableObject {
     @Published public var homeScore: Int = 0
     @Published public var awayScore: Int = 0
     @Published public var activeCards: [MatchCard] = []
+    /// Players temporarily off for an HIA or a blood injury (see `AppState+Injuries`).
+    @Published public var injuryTimers: [InjuryTimer] = []
 
     @Published public var matchEvents: [MatchEvent] = []
 

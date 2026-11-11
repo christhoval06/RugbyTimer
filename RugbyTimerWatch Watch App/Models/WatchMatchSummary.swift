@@ -13,6 +13,8 @@ struct WatchMatchSummary {
     /// When the half-time interval is due to end; nil outside the break.
     var breakEndsAt: Date? = nil
     var breakSeconds = 120
+    /// HIA and blood timers still running.
+    var injuries: [InjuryTimer] = []
 
     var result: MatchResult {
         MatchStats.result(home: homeTeamName, away: awayTeamName, homeScore: homeScore, awayScore: awayScore)

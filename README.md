@@ -8,12 +8,14 @@ A match clock for rugby referees, built for iPhone and Apple Watch. It keeps the
 - **Half-time break**: pick 2, 5, 10 or 15 minutes, or a custom length (1–30). The Watch counts the break down and alerts you when it ends.
 - **Coin toss**: an optional toss on the Watch before kick-off, turned on from Setup, that records which team kicks off.
 - **Sin-bins and cards**: yellow cards start a countdown (default 10 minutes, configurable). Red cards are logged as expulsions. With the **20-minute red card** rule on (Setup, or the Watch Quick Match), a red can also be a 20-minute red: the player is off for good, and the team can bring on a replacement when the 20 minutes run out. A second yellow for the same player asks to show a red instead, which ends their sin-bin (a 20-minute red when the rule is on).
+- **Injury timers**: start an HIA (12 minutes) or a blood replacement (15 minutes) for a shirt number. They run in real time, through stoppages and half-time, and the Watch alerts you when time is up. Close each one as *back on* or *replaced*; both are logged in the match record.
+- **Sin-bin control**: on the device running the match, tap a player in the off-field list to end their sin-bin (or 20-minute red) early or fix a wrong shirt number, on the card and in the record. The card picker starts empty, so a card never goes to a number you didn't pick.
 - **Scoring**: tries (+5), penalty tries (+7), conversions (+2), penalty goals and drop goals (+3), with the scorer's shirt number.
 - **Match stats**: half-time and full-time summaries on the Watch, with the score by half and a scoring breakdown per team.
 - **End match early**: abandon a match for weather, injury or the pitch. The Watch asks first, then the current score becomes the final result.
 - **Apple Watch first**: set the match up on iPhone and run it from the Watch. With Health access, the Watch runs the match as a Rugby workout, which keeps it running from kick-off to full time and saves the workout to Health. Without it, the Watch falls back to an extended runtime session. Either way it schedules alerts for half-time, the half-time break and sin-bin expiry.
 - **Crash recovery**: the device running the clock saves the match after every change. If the app is closed or crashes, it reopens on the same match, with the clock, score, sin-bins and record intact.
-- **Undo last entry**: for 15 seconds after a score or card, an Undo button takes it back (wrong team, wrong number or a mis-tap). Undoing a card also removes its sin-bin.
+- **Undo last entry**: for 15 seconds after a score, card or injury timer, an Undo button takes it back (wrong team, wrong number or a mis-tap). Undoing a card also removes its sin-bin.
 - **iPhone-only mode**: if no Watch is paired, the whole match runs on the phone.
 - **Watch Quick Match**: no iPhone at the ground? Set up a match on the Watch alone (half length, break, sin-bin length, tap lock, coin toss, 20-minute red) and play Team A against Team B. The Watch remembers the last choices. A Quick Match isn't sent to the iPhone.
 - **Match record**: a timeline of every score and sanction, which you can share as text when the match ends.
@@ -61,7 +63,7 @@ RugbyTimer/                    iPhone app
 │   └── Shared/                Reusable pieces such as the minutes entry alert
 └── Localizable.xcstrings
 RugbyTimerWatch Watch App/     watchOS app: widgets, Quick Match, match summary, workout session, extended runtime fallback and alerts
-RugbyTimerTests/               Unit tests (coin toss, half-time break, end match early, phone-hosted match, crash recovery, undo, law updates)
+RugbyTimerTests/               Unit tests (coin toss, half-time break, end match early, phone-hosted match, crash recovery, undo, law updates, injuries and sin-bin edits)
 RugbyTimerUITests/             UI tests
 scripts/check_localization.py  Localization audit
 ```

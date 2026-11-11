@@ -43,7 +43,7 @@ extension AppState {
             halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled,
             halfTimeStartedAt: halfTimeStartedAt,
             coinToss: coinToss, period: matchPeriod, homeScore: homeScore, awayScore: awayScore,
-            cards: activeCards, cardsClock: lastClockReading, events: matchEvents,
+            cards: activeCards, injuries: injuryTimers, cardsClock: lastClockReading, events: matchEvents,
             clockSeconds: timerService.clockSeconds, clockEndDate: timerService.endDate
         )
     }
@@ -68,6 +68,7 @@ extension AppState {
         homeScore = saved.homeScore
         awayScore = saved.awayScore
         matchEvents = saved.events
+        injuryTimers = saved.injuries ?? []
         // Sin-bins catch up from the reading they were saved at as the restored clock ticks in.
         activeCards = saved.cards
         lastClockReading = saved.cardsClock

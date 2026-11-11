@@ -56,6 +56,7 @@ extension AppState {
         mirroredCards = snapshot.cards
         mirroredClock = snapshot.remaining
         if let events = snapshot.events { matchEvents = events }
+        injuryTimers = snapshot.injuries ?? []
         // Older Watch builds send no end date; the send time plus the reading is within a second.
         let endDate = snapshot.clockEndDate
             ?? sentAt.addingTimeInterval(TimeInterval(snapshot.remaining))
@@ -75,7 +76,8 @@ extension AppState {
             rejectedConfigurationID: rejectedConfigurationID,
             sinBinDurationSeconds: sinBinDurationSeconds,
             events: matchEvents,
-            clockEndDate: timerService.endDate
+            clockEndDate: timerService.endDate,
+            injuries: injuryTimers
         ))
         #endif
     }

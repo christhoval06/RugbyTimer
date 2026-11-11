@@ -10,6 +10,7 @@ struct LivePhoneControlsWidget: View {
 
     @State private var isScoring = false
     @State private var isCarding = false
+    @State private var isRecordingInjury = false
     @State private var isConfirmingEnd = false
 
     private var endTitle: LocalizedStringKey { matchPeriod == .firstHalf ? "END FIRST HALF" : "END MATCH" }
@@ -29,6 +30,9 @@ struct LivePhoneControlsWidget: View {
                                           isFilled: true) { isScoring = true }
                     LiveControlTileWidget(symbol: "rectangle.portrait.fill", title: "CARD", tint: Color.cardYellow,
                                           isFilled: true) { isCarding = true }
+                    LiveControlTileWidget(symbol: "cross.case.fill", title: "INJURY", tint: Color.iceTitanium) {
+                        isRecordingInjury = true
+                    }
                 }
                 HStack(spacing: 10) {
                     LiveControlTileWidget(symbol: isRunning ? "pause.fill" : "play.fill",
@@ -54,6 +58,9 @@ struct LivePhoneControlsWidget: View {
         }
         .sheet(isPresented: $isScoring) {
             LiveScoreSheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, onScore: controls.onScore)
+        }
+        .sheet(isPresented: $isRecordingInjury) {
+            LiveInjurySheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName, onStart: controls.onInjury)
         }
         .sheet(isPresented: $isCarding) {
             LiveCardSheetWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,

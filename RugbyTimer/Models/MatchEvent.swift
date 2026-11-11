@@ -101,7 +101,7 @@ public extension MatchEvent {
             case Self.matchEndedEarly: return String(appLocalized: "MATCH ENDED EARLY")
             case "Won the toss · kicks off": return String(appLocalized: "Won the toss · kicks off")
             case "Won the toss · chose an end": return String(appLocalized: "Won the toss · chose an end")
-            default: return description
+            default: return InjuryTimer.localizedDescription(of: description) ?? description
             }
         }
     }

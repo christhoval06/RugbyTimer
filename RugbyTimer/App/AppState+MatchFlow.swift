@@ -41,6 +41,7 @@ extension AppState {
         homeScore = 0
         awayScore = 0
         activeCards = []
+        injuryTimers = []
         mirroredCards = []
         coinToss = nil
         halfTimeStartedAt = nil

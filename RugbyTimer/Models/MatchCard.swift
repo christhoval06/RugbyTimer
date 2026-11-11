@@ -15,7 +15,7 @@ public enum CardType: String, Equatable, Codable {
 public struct MatchCard: Identifiable, Equatable, Codable {
     public let id: UUID
     public let teamName: String
-    public let playerNumber: Int
+    public private(set) var playerNumber: Int
     public let type: CardType
     public private(set) var remainingSeconds: Int
     /// Yellow: the player can return. 20-minute red: a replacement can come on. Full red: always.
@@ -48,5 +48,17 @@ public struct MatchCard: Identifiable, Equatable, Codable {
         if remainingSeconds <= 0 {
             isExpired = true
         }
+    }
+
+    /// The referee ends the countdown now: the player can return, or a replacement can come on.
+    public mutating func endNow() {
+        guard countsDown else { return }
+        remainingSeconds = 0
+        isExpired = true
+    }
+
+    /// Fixes a shirt number entered by mistake.
+    public mutating func renumber(_ number: Int) {
+        playerNumber = number
     }
 }

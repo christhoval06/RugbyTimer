@@ -23,8 +23,15 @@ final class WatchMatchRuntime: NSObject, ObservableObject {
         alerts.activate()
 
         appState.timerService.$isRunning
-            .combineLatest(appState.$matchPeriod, appState.$activeCards.map { $0.map(\.id) }.removeDuplicates(),
+            // Cards re-sync when one is added, removed, ended early or renumbered, not on every tick.
+            .combineLatest(appState.$matchPeriod,
+                           appState.$activeCards.map { $0.map { "\($0.id)\($0.isExpired)\($0.playerNumber)" } }
+                               .removeDuplicates(),
                            appState.$halfTimeStartedAt)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in self?.sync() }
+            .store(in: &subscriptions)
+        appState.$injuryTimers.map { $0.map(\.id) }.removeDuplicates()
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.sync() }
             .store(in: &subscriptions)

@@ -9,17 +9,17 @@ public extension MatchEvent {
     /// How long after a score or card the referee can still take it back.
     static let undoWindow: TimeInterval = 15
 
-    /// Scores and cards can be undone; whistles and the coin toss cannot.
-    var isScoreOrCard: Bool {
+    /// Scores, cards and the start of an injury timer can be undone; whistles and the coin toss cannot.
+    var isUndoable: Bool {
         switch type {
         case .tryScore, .yellowCard, .redCard: true
-        case .sub: false
+        case .sub: startsInjury
         }
     }
 
     /// True for a score or card entered less than `undoWindow` ago.
     func canUndo(at now: Date = Date()) -> Bool {
-        guard isScoreOrCard, let recordedAt else { return false }
+        guard isUndoable, let recordedAt else { return false }
         return now.timeIntervalSince(recordedAt) <= Self.undoWindow
     }
 }
@@ -32,7 +32,7 @@ extension AppState {
         return last
     }
 
-    /// Takes back the latest score or card (wrong team, wrong number, mis-tap).
+    /// Takes back the latest score, card or injury timer (wrong team, wrong number, mis-tap).
     public func undoLastEntry(at now: Date = Date()) {
         guard let entry = undoableEntry(at: now) else { return }
         removeEntry(entry)
@@ -40,7 +40,7 @@ extension AppState {
 
     /// Removes a score or card from the record and reverses what it did to the score or sin-bins.
     func removeEntry(_ entry: MatchEvent) {
-        guard entry.isScoreOrCard, let index = matchEvents.firstIndex(where: { $0.id == entry.id }) else { return }
+        guard entry.isUndoable, let index = matchEvents.firstIndex(where: { $0.id == entry.id }) else { return }
         switch entry.type {
         case .tryScore(let points):
             if entry.teamName == homeTeamName {
@@ -53,7 +53,7 @@ extension AppState {
             // A second-yellow red ended a running sin-bin; put it back.
             if let replaced = entry.replacedCard { activeCards.append(replaced) }
         case .sub:
-            return
+            injuryTimers.removeAll { $0.id == entry.cardID }
         }
         matchEvents.remove(at: index)
         HapticService.playStartStop()

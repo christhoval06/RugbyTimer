@@ -39,6 +39,8 @@ public struct MatchSnapshot: Codable, Equatable {
     public var events: [MatchEvent]? = nil
     // When the running period reaches zero, so the iPhone keeps counting while out of range.
     public var clockEndDate: Date? = nil
+    // Optional so snapshots from an older Watch app keep decoding.
+    public var injuries: [InjuryTimer]? = nil
 }
 
 public class WatchConnectivityService: NSObject, ObservableObject {
