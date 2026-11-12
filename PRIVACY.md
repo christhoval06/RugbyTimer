@@ -20,6 +20,7 @@ Rugby Timer is a match clock for rugby referees. It's built so that your matches
 | Scores, cards, shirt numbers and the match timeline | Running the match and building the match record | On the device running the match clock (your Apple Watch, or your iPhone in iPhone-only mode), saved in the app's own storage so the match survives the app closing. It's replaced by the next match and isn't saved to a server. |
 | Finished matches: teams, final score and the match timeline | The match history on your iPhone | On your iPhone, in the app's own storage, until you delete the match from the history. A Quick Match run on the Watch alone is sent to your paired iPhone at full time for its history. Never saved to a server. |
 | Preferences (default teams, haptics, keep screen awake, tap lock, coin toss, language) | Remembering your settings | On your device, in the app's local settings |
+| Team names, score, match clock and sin-bins | The Live Activity on your iPhone Lock Screen and Dynamic Island, the Match widget, and the Watch complication | Shared on the same device between the app and its widgets. A Live Activity and Lock Screen widgets can be seen without unlocking the phone; turn the Live Activity off in Settings, or remove the widget, if you don't want that. |
 | Apple Watch model name and battery level | Showing the Watch status on the iPhone Setup screen | Sent from your Watch to your paired iPhone only |
 
 Team names and shirt numbers are whatever you type in. The app doesn't ask for players' names or any other personal details.

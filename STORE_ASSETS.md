@@ -37,6 +37,8 @@ Each field shows its store limit. Paste the contents of the code block only.
 | Apple Watch | Ships with a watchOS app. The Watch runs matches set up on the iPhone, and can also run a Quick Match on its own. |
 | App Privacy | **Data Not Collected**. The optional Rugby workout is written to Apple Health on the device and never leaves it, which Apple doesn't count as collection. |
 | HealthKit | Uses HealthKit to save each match as a Rugby workout. Health permission prompts are localized in `InfoPlist.xcstrings`. App Review needs the privacy policy URL to be live. |
+| Widgets | iPhone: a Live Activity on the Lock Screen and Dynamic Island during a match, and a "Match" widget for the Home Screen and Lock Screen. Apple Watch: a watch face complication. They read the match from an App Group on the device. |
+| Privacy manifests | `PrivacyInfo.xcprivacy` in the iPhone app, the Watch app and both widget extensions: no tracking, no collected data, `UserDefaults` reasons CA92.1 (apps) and 1C8F.1 (App Group). |
 
 ### English (U.S.)
 
@@ -77,6 +79,7 @@ RUN THE MATCH FROM YOUR WRIST
 • Accidental tap lock, so a sleeve or a wet glove doesn't change the match
 • Each match runs as a Rugby workout: the Watch stays on the match from kick-off to full time, then saves it to Health with your distance, heart rate and energy (optional)
 • No phone at the ground? Start a Quick Match straight from the Watch
+• Log substitutions by shirt number, with an optional limit for each team
 
 CARDS AND SIN-BINS
 • Yellow cards start a sin-bin countdown (10 minutes by default, adjustable)
@@ -103,6 +106,7 @@ BEFORE AND AFTER THE MATCH
 
 WORKS YOUR WAY
 • No Apple Watch? Run the whole match on your iPhone
+• Follow the clock and score on your iPhone Lock Screen and Dynamic Island, in a Home Screen widget, and in a complication on your Watch face
 • If the app closes or crashes mid-match, it reopens right where you were: clock, score and sin-bins included
 • Save your default team names, half length, sin-bin length and shirt-number range
 • Designed for direct sunlight and floodlights: high-contrast dark screens and large numbers
@@ -159,6 +163,7 @@ DIRIGE EL PARTIDO DESDE TU MUÑECA
 • Bloqueo de toques accidentales, para que una manga o un guante mojado no cambien el partido
 • Cada partido se registra como un entrenamiento de rugby: el Watch sigue el partido del pitazo inicial al final y lo guarda en Salud con tu distancia, frecuencia cardíaca y energía (opcional)
 • ¿Sin teléfono en la cancha? Inicia un Partido Rápido directamente desde el Watch
+• Registra las sustituciones por número de camiseta, con un límite opcional por equipo
 
 TARJETAS Y EXCLUSIONES
 • La tarjeta amarilla inicia la cuenta regresiva de la exclusión (10 minutos por defecto, ajustable)
@@ -185,6 +190,7 @@ ANTES Y DESPUÉS DEL PARTIDO
 
 A TU MANERA
 • ¿Sin Apple Watch? Dirige todo el partido desde tu iPhone
+• Sigue el reloj y el marcador en la pantalla bloqueada y la Dynamic Island del iPhone, en un widget de la pantalla de inicio y en una complicación del Apple Watch
 • Si la app se cierra o falla a mitad del partido, vuelve justo donde estabas: con el reloj, el marcador y las exclusiones
 • Guarda los nombres de equipo, la duración de cada tiempo, la duración de la exclusión y el rango de números de camiseta
 • Diseñada para sol directo y luz artificial: pantallas oscuras de alto contraste y números grandes
@@ -241,6 +247,7 @@ DIRIGEZ LE MATCH DEPUIS VOTRE POIGNET
 • Anti-appui accidentel : une manche ou un gant mouillé ne modifie pas le match
 • Chaque match est enregistré comme une séance de rugby : la Watch suit le match du coup d'envoi au coup de sifflet final, puis l'enregistre dans Santé avec votre distance, votre fréquence cardiaque et votre énergie (facultatif)
 • Pas de téléphone au bord du terrain ? Lancez un Match rapide directement depuis la Watch
+• Notez les remplacements par numéro de maillot, avec une limite facultative par équipe
 
 CARTONS ET EXCLUSIONS
 • Le carton jaune lance le décompte de l'exclusion (10 minutes par défaut, réglable)
@@ -267,6 +274,7 @@ AVANT ET APRÈS LE MATCH
 
 À VOTRE FAÇON
 • Pas d'Apple Watch ? Dirigez tout le match sur votre iPhone
+• Suivez le chrono et le score sur l'écran verrouillé et la Dynamic Island de l'iPhone, dans un widget de l'écran d'accueil et dans une complication du cadran de la Watch
 • Si l'app se ferme ou plante en plein match, elle reprend là où vous en étiez : chrono, score et exclusions compris
 • Enregistrez vos noms d'équipe, la durée des mi-temps, la durée d'exclusion et la plage de numéros de maillot
 • Pensée pour le plein soleil et les projecteurs : écrans sombres à fort contraste et grands chiffres
@@ -323,6 +331,7 @@ CONDUZA A PARTIDA PELO PULSO
 • Bloqueio de toques acidentais, para que uma manga ou uma luva molhada não altere a partida
 • Cada partida é registrada como um treino de rúgbi: o Watch acompanha a partida do pontapé inicial ao apito final e salva no Saúde com sua distância, frequência cardíaca e energia (opcional)
 • Sem celular no campo? Comece uma Partida Rápida direto pelo Watch
+• Registre as substituições pelo número da camisa, com limite opcional por equipe
 
 CARTÕES E EXCLUSÕES
 • O cartão amarelo inicia a contagem da exclusão (10 minutos por padrão, ajustável)
@@ -349,6 +358,7 @@ ANTES E DEPOIS DA PARTIDA
 
 DO SEU JEITO
 • Sem Apple Watch? Conduza a partida inteira pelo iPhone
+• Acompanhe o cronômetro e o placar na Tela Bloqueada e na Dynamic Island do iPhone, em um widget da Tela de Início e em uma complicação no mostrador do Watch
 • Se o app fechar ou travar no meio da partida, ele volta exatamente de onde parou: cronômetro, placar e exclusões incluídos
 • Salve os nomes das equipes, a duração dos tempos, a duração da exclusão e a faixa de números de camisa
 • Feito para sol forte e refletores: telas escuras de alto contraste e números grandes
@@ -390,6 +400,10 @@ To test match history: finish a match (on iPhone, end both halves), go back to M
 To test extra time: on Match Setup set Extra time to Fifteens, run the match on iPhone, and end both halves with the scores level. The match goes to an extra-time break; kick off ET1, or end it as a draw.
 
 To test the 20-minute red card: turn on "20-minute red card" on Match Setup, run the match on iPhone, then issue a RED 20' card. Giving the same player a second yellow asks to show a red instead.
+
+To test substitutions: turn on Substitutions on Match Setup, run the match on iPhone, tap SUBSTITUTION, pick the player going off and the player coming on, then confirm. Each team's count shows on the live screen and in the match record.
+
+To test the Live Activity and widgets: start a match on iPhone, then lock the phone. The clock and score show on the Lock Screen (and in the Dynamic Island on supported iPhones). The Live Activity can be turned off in Settings. Add the Rugby Timer "Match" widget to the Home Screen or Lock Screen: it shows the match under way, or the last result between matches. On Apple Watch, add the Rugby Timer complication to a watch face.
 
 HealthKit and background use on Apple Watch: the Watch asks for Health access once, on the ready screen before kick-off. With access, each match runs as an HKWorkoutSession (activity type Rugby). This keeps the match clock, half-time and sin-bin alerts accurate for the whole match while the referee's wrist is down, and the workout is saved to Health at full time. The app reads heart rate, distance and active energy only for that workout. If Health access is declined, the Watch uses an extended runtime session (physical-therapy mode) during each half and the half-time break instead, which reads no health data.
 
