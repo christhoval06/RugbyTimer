@@ -1004,6 +1004,8 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RugbyTimer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rugby Timer";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1048,6 +1050,8 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RugbyTimer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rugby Timer";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1307,7 +1311,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RugbyTimerWatch Watch App/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = RugbyTimerWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rugby Timer";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Rugby Timer reads your heart rate, distance and energy while it records each match you referee as a Rugby workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Rugby Timer saves each match you referee to Health as a Rugby workout, with its time, distance and energy.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1345,7 +1350,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RugbyTimerWatch Watch App/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = RugbyTimerWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rugby Timer";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Rugby Timer reads your heart rate, distance and energy while it records each match you referee as a Rugby workout.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Rugby Timer saves each match you referee to Health as a Rugby workout, with its time, distance and energy.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
