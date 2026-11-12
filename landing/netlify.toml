@@ -1,0 +1,36 @@
+# Netlify reads this file from the base directory ("landing"), so paths here are relative to it.
+# The repository is cloned whole, so the build can still read ../PRIVACY.md and ../TERMS.md.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 8, React Router 8 and jsdom need Node 22.22+ / 24.15+.
+  NODE_VERSION = "24"
+
+# Single-page app: serve index.html for /privacy, /terms and any other path,
+# so a fresh load or a shared link works. Real files (assets, icons) are served first.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Fingerprinted build output never changes: cache it for a year.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"

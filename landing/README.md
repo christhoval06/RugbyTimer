@@ -66,7 +66,7 @@ src/
 
 `npm run build` writes a static site to `dist/`. It uses browser routing, so the host must serve `index.html` for unknown paths (for example `/privacy` on a fresh load):
 
-- **Netlify:** add `public/_redirects` with `/* /index.html 200`.
+- **Netlify:** already set up in [`netlify.toml`](netlify.toml): build command, `dist` output, Node 24, the `/*` → `/index.html` rewrite, long caching for `/assets/*` and basic security headers. In the Netlify UI set **Base directory** to `landing`; the file supplies the rest.
 - **Vercel:** add a rewrite from `/(.*)` to `/index.html` in `vercel.json`.
 - **Cloudflare Pages / GitHub Pages:** use a `404.html` copy of `index.html`, or the host's single-page app setting.
 
