@@ -1,0 +1,124 @@
+{
+  "meta": { "homeTitle": "Rugby Timer · Cronômetro de partida para árbitros de rugby" },
+  "a11y": {
+    "skip": "Pular para o conteúdo",
+    "language": "Idioma",
+    "languageCurrent": "Idioma: {{language}}",
+    "home": "Início do Rugby Timer",
+    "mainNav": "Principal",
+    "footerNav": "Legal"
+  },
+  "nav": { "features": "Recursos", "watch": "Apple Watch", "faq": "Perguntas", "privacy": "Política de Privacidade", "terms": "Termos e Condições" },
+  "cta": { "download": "Baixe na App Store", "howItWorks": "Veja como funciona" },
+  "hero": {
+    "eyebrow": "Feito para árbitros de rugby",
+    "title": "O cronômetro de partida que acompanha o jogo",
+    "subtitle": "Controle o cronômetro, as exclusões e o placar pelo Apple Watch ou pelo iPhone, sem tirar os olhos do jogo.",
+    "badges": ["Compra única", "Sem anúncios", "Sem contas", "Funciona offline"]
+  },
+  "features": {
+    "eyebrow": "Tudo em uma tela",
+    "title": "Menos tempo no aparelho, mais tempo no jogo",
+    "intro": "O Rugby Timer foi feito por um árbitro, para árbitros. Cada tela foi pensada para sol forte, refletores, luvas molhadas e uma olhada rápida.",
+    "items": [
+      { "icon": "clock", "title": "Um cronômetro legível", "body": "Números grandes e de alto contraste para cada tempo, de 40 a 7 minutos no sevens, com o tempo jogado depois do cronômetro registrado." },
+      { "icon": "card", "title": "Cartões e exclusões", "body": "O cartão amarelo inicia sozinho uma contagem de 10 minutos. Veja de relance quem está fora e por quanto tempo." },
+      { "icon": "score", "title": "Placar em dois toques", "body": "Trys, conversões, penais, drop goals e trys de penal, com o número da camisa de quem pontuou." },
+      { "icon": "lock", "title": "Tela Bloqueada e widgets", "body": "Uma Atividade ao Vivo mantém o cronômetro e o placar na Tela Bloqueada e na Dynamic Island. Os widgets mostram o último resultado." },
+      { "icon": "watch", "title": "Apple Watch em primeiro lugar", "body": "Configure no iPhone e conduza a partida pelo pulso, com alertas no intervalo e no fim de uma exclusão." },
+      { "icon": "record", "title": "Súmula da partida", "body": "Cada ponto e cartão com o minuto, pronta para compartilhar como texto com as equipes ou a sua associação de árbitros." }
+    ]
+  },
+  "showcase": {
+    "label": "Rugby Timer em uso",
+    "items": [
+      {
+        "eyebrow": "Atividade ao Vivo",
+        "title": "A partida na sua Tela Bloqueada",
+        "body": "Bloqueie o iPhone e o cronômetro continua correndo à vista, com o placar e qualquer jogador excluído.",
+        "points": ["Atividade ao Vivo na Tela Bloqueada e na Dynamic Island", "Widgets na Tela de Início e na Tela Bloqueada com o seu último resultado", "Desative quando quiser nos Ajustes"]
+      },
+      {
+        "eyebrow": "Placar",
+        "title": "Cada ponto, cada exclusão",
+        "body": "Uma linha do tempo da partida em tempo real, com cada cartão amarelo em contagem regressiva até o jogador poder voltar.",
+        "points": ["Linha do tempo dos pontos com o minuto e o placar parcial", "Exclusões que correm junto com o cronômetro", "Contagem de penais e tiros livres de cada equipe"]
+      },
+      {
+        "eyebrow": "Pontos e disciplina",
+        "title": "Rápido, mesmo com luvas molhadas",
+        "body": "Escolha a equipe e o número da camisa, depois o ponto ou o cartão. Botões grandes e nada de menus complicados.",
+        "points": ["Desfaça o último ponto ou cartão por 15 segundos", "Um segundo amarelo para o mesmo jogador sugere o vermelho", "Contagem opcional para a substituição no cartão vermelho de 20 minutos"]
+      },
+      {
+        "eyebrow": "Depois do apito",
+        "title": "A súmula em segundos",
+        "body": "No fim do jogo, o Rugby Timer escreve a súmula para você: placar final, linha do tempo minuto a minuto e resumo disciplinar.",
+        "points": ["Compartilhe como texto com qualquer app", "Cada partida encerrada fica no histórico do iPhone", "Consulte e compartilhe uma partida antiga quando quiser"]
+      }
+    ]
+  },
+  "watch": {
+    "eyebrow": "Apple Watch",
+    "title": "A partida inteira no seu pulso",
+    "body": "Envie a configuração pelo iPhone ou comece uma Partida Rápida só no Watch. O cronômetro, o placar e as exclusões ficam no seu pulso.",
+    "points": [
+      { "title": "Alertas com o pulso abaixado", "body": "Alertas hápticos no intervalo, no fim do intervalo e no fim de uma exclusão." },
+      { "title": "Treino de rúgbi", "body": "Se quiser, registre cada partida como treino no Saúde, com distância, frequência cardíaca e energia." },
+      { "title": "Bloqueio de toques", "body": "Uma manga ou uma luva molhada não vão alterar a partida sem querer." },
+      { "title": "Partida Rápida", "body": "Sem celular no campo? Configure e conduza uma partida só com o Watch." }
+    ]
+  },
+  "more": {
+    "eyebrow": "Do seu jeito",
+    "title": "Pronto para qualquer jogo",
+    "intro": "Do sevens de clube às finais eliminatórias, o Rugby Timer se adapta à partida à sua frente.",
+    "items": [
+      { "title": "Só com iPhone", "body": "Sem Apple Watch? Conduza a partida inteira pelo iPhone." },
+      { "title": "Recuperação", "body": "Se o app fechar no meio da partida, ele volta exatamente de onde parou, com cronômetro e exclusões." },
+      { "title": "Prorrogação", "body": "Dois tempos de 10 minutos e depois morte súbita, ou períodos de morte súbita de 5 minutos no sevens." },
+      { "title": "Cronômetros de lesão", "body": "HIA (12 minutos) e substituição por sangue (15 minutos), registrados na súmula." },
+      { "title": "Cara ou coroa", "body": "Cara ou coroa opcional no Watch para decidir quem dá o pontapé inicial." },
+      { "title": "Quatro idiomas", "body": "Português do Brasil, inglês, espanhol e francês, no iPhone e no Apple Watch." }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Privacidade desde o início",
+    "title": "Suas partidas ficam com você",
+    "body": "O Rugby Timer não envia seus dados para nenhum servidor, nem para o nosso. Os treinos vão apenas para o app Saúde dos seus aparelhos.",
+    "points": ["Sem contas", "Sem anúncios", "Sem rastreamento"],
+    "link": "Leia a política de privacidade"
+  },
+  "faq": {
+    "eyebrow": "Perguntas",
+    "title": "Perguntas frequentes",
+    "items": [
+      { "q": "Preciso de um Apple Watch?", "a": "Não. Você pode conduzir a partida inteira pelo iPhone. Com um Apple Watch, você configura no iPhone e conduz pelo pulso, ou começa uma Partida Rápida só no Watch." },
+      { "q": "Quanto custa?", "a": "O Rugby Timer é uma compra única de US$ 1,99 nos Estados Unidos; a App Store mostra o preço do seu país. Não tem anúncios, assinaturas nem compras no app." },
+      { "q": "Precisa de internet?", "a": "Não. O app funciona offline. O iPhone e o Apple Watch se comunicam diretamente por Bluetooth ou Wi-Fi local." },
+      { "q": "Posso seguir as regras da minha competição?", "a": "Sim. Ajuste a duração dos tempos, da exclusão e do intervalo, a prorrogação e o cartão vermelho de 20 minutos, e salve os seus padrões." },
+      { "q": "Quais idiomas ele tem?", "a": "Português do Brasil, inglês, espanhol e francês. O idioma segue o do seu aparelho e pode ser trocado nos Ajustes." },
+      { "q": "Do que eu preciso?", "a": "Um iPhone com iOS 26.5 ou posterior. O Apple Watch com watchOS 26.5 ou posterior é opcional." }
+    ]
+  },
+  "final": {
+    "title": "Pronto para o pontapé inicial?",
+    "body": "Baixe o Rugby Timer e leve o cronômetro, as exclusões e o placar para o campo.",
+    "contactLead": "Dúvidas ou sugestões?"
+  },
+  "footer": {
+    "tagline": "O cronômetro de partida para árbitros de rugby, no iPhone e no Apple Watch.",
+    "legal": "Legal",
+    "contact": "Contato",
+    "trademarks": "Apple, Apple Watch, iPhone e App Store são marcas comerciais da Apple Inc., registradas nos EUA e em outros países e regiões."
+  },
+  "legal": {
+    "englishOnly": "Este documento é publicado em inglês. Se uma tradução for adicionada no futuro, a versão em inglês continuará sendo a que vale.",
+    "backHome": "Voltar ao início"
+  },
+  "notFound": {
+    "title": "Bola fora",
+    "body": "A página que você procura não existe ou foi movida.",
+    "back": "Voltar ao início"
+  }
+}

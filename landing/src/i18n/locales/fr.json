@@ -1,0 +1,124 @@
+{
+  "meta": { "homeTitle": "Rugby Timer · Chrono de match pour arbitres de rugby" },
+  "a11y": {
+    "skip": "Aller au contenu",
+    "language": "Langue",
+    "languageCurrent": "Langue : {{language}}",
+    "home": "Accueil Rugby Timer",
+    "mainNav": "Principal",
+    "footerNav": "Mentions légales"
+  },
+  "nav": { "features": "Fonctionnalités", "watch": "Apple Watch", "faq": "FAQ", "privacy": "Politique de confidentialité", "terms": "Conditions générales" },
+  "cta": { "download": "Télécharger sur l'App Store", "howItWorks": "Voir comment ça marche" },
+  "hero": {
+    "eyebrow": "Conçue pour les arbitres de rugby",
+    "title": "Le chrono de match qui suit le rythme du jeu",
+    "subtitle": "Gérez le chrono, les exclusions et le score depuis votre Apple Watch ou votre iPhone, sans quitter le jeu des yeux.",
+    "badges": ["Achat unique", "Sans pub", "Sans compte", "Fonctionne hors ligne"]
+  },
+  "features": {
+    "eyebrow": "Tout sur un seul écran",
+    "title": "Moins de temps sur l'écran, plus sur le jeu",
+    "intro": "Rugby Timer est conçue par un arbitre, pour les arbitres. Chaque écran est pensé pour le plein soleil, les projecteurs, les gants mouillés et un coup d'œil rapide.",
+    "items": [
+      { "icon": "clock", "title": "Un chrono lisible", "body": "De grands chiffres à fort contraste pour chaque mi-temps, de 40 à 7 minutes pour le rugby à 7, avec le temps joué après le chrono enregistré." },
+      { "icon": "card", "title": "Cartons et exclusions", "body": "Un carton jaune lance seul un décompte de 10 minutes. Voyez d'un coup d'œil qui est exclu et pour combien de temps." },
+      { "icon": "score", "title": "Le score en deux gestes", "body": "Essais, transformations, pénalités, drops et essais de pénalité, avec le numéro du marqueur." },
+      { "icon": "lock", "title": "Écran verrouillé et widgets", "body": "Une Activité en direct garde le chrono et le score sur l'écran verrouillé et la Dynamic Island. Les widgets affichent le dernier résultat." },
+      { "icon": "watch", "title": "L'Apple Watch d'abord", "body": "Préparez le match sur iPhone et dirigez-le depuis votre poignet, avec des alertes à la mi-temps et à la fin d'une exclusion." },
+      { "icon": "record", "title": "Feuille de match", "body": "Chaque point et chaque carton avec sa minute, prêts à partager en texte avec les équipes ou votre comité d'arbitres." }
+    ]
+  },
+  "showcase": {
+    "label": "Rugby Timer en action",
+    "items": [
+      {
+        "eyebrow": "Activité en direct",
+        "title": "Le match sur votre écran verrouillé",
+        "body": "Verrouillez l'iPhone : le chrono continue sous vos yeux, avec le score et les joueurs exclus.",
+        "points": ["Activité en direct sur l'écran verrouillé et la Dynamic Island", "Widgets sur l'écran d'accueil et l'écran verrouillé avec votre dernier résultat", "Désactivable à tout moment dans les réglages"]
+      },
+      {
+        "eyebrow": "Tableau des scores",
+        "title": "Chaque point, chaque exclusion",
+        "body": "La chronologie du match en temps réel, avec chaque carton jaune décompté jusqu'au retour du joueur.",
+        "points": ["Chronologie des points avec la minute et le score du moment", "Des exclusions qui suivent le chrono", "Pénalités et coups francs comptés pour chaque équipe"]
+      },
+      {
+        "eyebrow": "Points et discipline",
+        "title": "Rapide, même avec des gants mouillés",
+        "body": "Choisissez l'équipe et le numéro, puis le point ou le carton. De grandes zones à toucher, sans menus compliqués.",
+        "points": ["Annulez le dernier point ou carton pendant 15 secondes", "Un deuxième jaune pour le même joueur propose le rouge", "Décompte facultatif du remplacement pour le carton rouge de 20 minutes"]
+      },
+      {
+        "eyebrow": "Après le coup de sifflet",
+        "title": "La feuille de match en quelques secondes",
+        "body": "À la fin du match, Rugby Timer rédige la feuille de match pour vous : score final, chronologie minute par minute et bilan disciplinaire.",
+        "points": ["Partagez-la en texte avec n'importe quelle app", "Chaque match terminé est gardé dans l'historique de l'iPhone", "Relisez et partagez un ancien match à tout moment"]
+      }
+    ]
+  },
+  "watch": {
+    "eyebrow": "Apple Watch",
+    "title": "Tout le match à votre poignet",
+    "body": "Envoyez la préparation depuis l'iPhone, ou lancez un Match rapide sur la Watch seule. Le chrono, le score et les exclusions restent à votre poignet.",
+    "points": [
+      { "title": "Alertes poignet baissé", "body": "Alertes haptiques à la mi-temps, à la fin de la pause et à la fin d'une exclusion." },
+      { "title": "Séance de rugby", "body": "Si vous le souhaitez, enregistrez chaque match comme séance dans Santé, avec distance, fréquence cardiaque et énergie." },
+      { "title": "Anti-appui", "body": "Une manche ou un gant mouillé ne modifiera pas le match par accident." },
+      { "title": "Match rapide", "body": "Pas de téléphone au bord du terrain ? Préparez et dirigez un match avec la Watch seule." }
+    ]
+  },
+  "more": {
+    "eyebrow": "À votre façon",
+    "title": "Prête pour tous les matchs",
+    "intro": "Du rugby à 7 en club aux finales à élimination, Rugby Timer s'adapte au match que vous arbitrez.",
+    "items": [
+      { "title": "iPhone seul", "body": "Pas d'Apple Watch ? Dirigez tout le match sur votre iPhone." },
+      { "title": "Reprise après fermeture", "body": "Si l'app se ferme en plein match, elle reprend là où vous en étiez, chrono et exclusions compris." },
+      { "title": "Prolongations", "body": "Deux périodes de 10 minutes puis mort subite, ou périodes de mort subite de 5 minutes pour le rugby à 7." },
+      { "title": "Minuteurs de blessure", "body": "HIA (12 minutes) et remplacement saignement (15 minutes), notés sur la feuille de match." },
+      { "title": "Tirage au sort", "body": "Tirage au sort facultatif sur la Watch pour décider qui donne le coup d'envoi." },
+      { "title": "Quatre langues", "body": "Français, anglais, espagnol et portugais du Brésil, sur iPhone et Apple Watch." }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Confidentialité par conception",
+    "title": "Vos matchs restent chez vous",
+    "body": "Rugby Timer n'envoie vos données à aucun serveur, pas même le nôtre. Les séances vont uniquement dans l'app Santé de vos appareils.",
+    "points": ["Aucun compte", "Aucune pub", "Aucun suivi"],
+    "link": "Lire la politique de confidentialité"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Questions fréquentes",
+    "items": [
+      { "q": "Faut-il une Apple Watch ?", "a": "Non. Vous pouvez diriger tout le match sur votre iPhone. Avec une Apple Watch, vous préparez sur l'iPhone et dirigez depuis votre poignet, ou lancez un Match rapide sur la Watch seule." },
+      { "q": "Combien ça coûte ?", "a": "Rugby Timer est un achat unique de 1,99 USD aux États-Unis ; l'App Store affiche le prix de votre pays. Pas de pub, d'abonnement ni d'achats intégrés." },
+      { "q": "Faut-il une connexion internet ?", "a": "Non. L'app fonctionne hors ligne. L'iPhone et l'Apple Watch communiquent directement en Bluetooth ou en Wi-Fi local." },
+      { "q": "Puis-je suivre les règles de ma compétition ?", "a": "Oui. Réglez la durée des mi-temps, de l'exclusion et de la pause, les prolongations et le carton rouge de 20 minutes, et enregistrez vos réglages par défaut." },
+      { "q": "Quelles langues sont disponibles ?", "a": "Français, anglais, espagnol et portugais du Brésil. La langue suit celle de votre appareil et se change dans les réglages." },
+      { "q": "De quoi ai-je besoin ?", "a": "D'un iPhone sous iOS 26.5 ou version ultérieure. L'Apple Watch sous watchOS 26.5 ou version ultérieure est facultative." }
+    ]
+  },
+  "final": {
+    "title": "Prêt pour le coup d'envoi ?",
+    "body": "Téléchargez Rugby Timer et emportez le chrono, les exclusions et le score sur le terrain.",
+    "contactLead": "Une question, une suggestion ?"
+  },
+  "footer": {
+    "tagline": "Le chrono de match des arbitres de rugby, sur iPhone et Apple Watch.",
+    "legal": "Mentions légales",
+    "contact": "Contact",
+    "trademarks": "Apple, Apple Watch, iPhone et App Store sont des marques d'Apple Inc., déposées aux États-Unis et dans d'autres pays et régions."
+  },
+  "legal": {
+    "englishOnly": "Ce document est publié en anglais. Si une traduction est ajoutée plus tard, la version anglaise restera celle qui s'applique.",
+    "backHome": "Retour à l'accueil"
+  },
+  "notFound": {
+    "title": "Ballon en touche",
+    "body": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  }
+}

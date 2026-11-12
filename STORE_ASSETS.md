@@ -17,7 +17,7 @@ Each field shows its store limit. Paste the contents of the code block only.
 | Website / Marketing URL | https://christhoval.dev |
 | Support URL | https://christhoval.dev |
 | Privacy policy URL | Publish [PRIVACY.md](PRIVACY.md) at a public URL and paste it here |
-| Price | Free |
+| Price | US$1.99, paid up front (Apple sets the matching price tier in other countries) |
 | Ads | None |
 | In-app purchases | None |
 | Copyright (App Store) | © 2026 Christhoval Barba |

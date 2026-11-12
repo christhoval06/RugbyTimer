@@ -59,3 +59,8 @@ __pycache__/
 
 # Tool output
 graphify-out/
+
+# Landing page (Node)
+node_modules/
+landing/dist/
+*.tsbuildinfo

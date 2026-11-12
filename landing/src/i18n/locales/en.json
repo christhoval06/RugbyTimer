@@ -1,0 +1,124 @@
+{
+  "meta": { "homeTitle": "Rugby Timer · Match clock for rugby referees" },
+  "a11y": {
+    "skip": "Skip to content",
+    "language": "Language",
+    "languageCurrent": "Language: {{language}}",
+    "home": "Rugby Timer home",
+    "mainNav": "Main",
+    "footerNav": "Legal"
+  },
+  "nav": { "features": "Features", "watch": "Apple Watch", "faq": "FAQ", "privacy": "Privacy Policy", "terms": "Terms & Conditions" },
+  "cta": { "download": "Get it on the App Store", "howItWorks": "See how it works" },
+  "hero": {
+    "eyebrow": "Built for rugby referees",
+    "title": "The match clock that keeps up with the game",
+    "subtitle": "Run the clock, sin-bins and score from your Apple Watch or iPhone, and keep your eyes on the game.",
+    "badges": ["One-time purchase", "No ads", "No accounts", "Works offline"]
+  },
+  "features": {
+    "eyebrow": "Everything on one screen",
+    "title": "Less time on the device, more on the game",
+    "intro": "Rugby Timer was built by a referee, for referees. Every screen is designed for sunlight, floodlights, wet gloves and a quick glance.",
+    "items": [
+      { "icon": "clock", "title": "A clock you can read", "body": "Big, high-contrast numbers for each half, from 40 minutes down to 7 for sevens, with time played past the clock recorded." },
+      { "icon": "card", "title": "Cards and sin-bins", "body": "A yellow card starts a 10-minute countdown on its own. See who's off and for how long, at a glance." },
+      { "icon": "score", "title": "Score in two taps", "body": "Tries, conversions, penalties, drop goals and penalty tries, with the scorer's shirt number." },
+      { "icon": "lock", "title": "Lock Screen and widgets", "body": "A Live Activity keeps the clock and score on your Lock Screen and Dynamic Island. Widgets show the last result." },
+      { "icon": "watch", "title": "Apple Watch first", "body": "Set up on iPhone, run the match from your wrist, with alerts at half-time and when a sin-bin ends." },
+      { "icon": "record", "title": "Match record", "body": "Every score and card with its minute, ready to share as text with the teams or your referees' society." }
+    ]
+  },
+  "showcase": {
+    "label": "Rugby Timer in use",
+    "items": [
+      {
+        "eyebrow": "Live Activity",
+        "title": "The match on your Lock Screen",
+        "body": "Lock your iPhone and the clock keeps counting where you can see it, with the score and any player in the sin-bin.",
+        "points": ["Live Activity on the Lock Screen and Dynamic Island", "Home Screen and Lock Screen widgets with your last result", "Turn it off any time in Settings"]
+      },
+      {
+        "eyebrow": "Scoreboard",
+        "title": "Every score, every sin-bin",
+        "body": "A running timeline of the match, with each yellow card counting down until the player can return.",
+        "points": ["Scoring timeline with the minute and the running score", "Sin-bin countdowns that run with the clock", "Penalty and free-kick counts for each team"]
+      },
+      {
+        "eyebrow": "Scoring and discipline",
+        "title": "Fast, even with wet gloves",
+        "body": "Pick the team and shirt number, then the score or the card. Large targets and no fiddly menus.",
+        "points": ["Undo the last score or card for 15 seconds", "A second yellow for the same player prompts a red", "Optional 20-minute red card replacement countdown"]
+      },
+      {
+        "eyebrow": "After the whistle",
+        "title": "A match record in seconds",
+        "body": "At full time, Rugby Timer writes the match record for you: final score, a minute-by-minute timeline and the discipline summary.",
+        "points": ["Share it as text with any app", "Every finished match kept in your history on iPhone", "Read and share a past match again any time"]
+      }
+    ]
+  },
+  "watch": {
+    "eyebrow": "Apple Watch",
+    "title": "The whole match on your wrist",
+    "body": "Send the setup from your iPhone, or start a Quick Match on the Watch alone. The clock, the score and the sin-bins stay on your wrist.",
+    "points": [
+      { "title": "Alerts, wrist down", "body": "Haptic alerts at half-time, at the end of the break and when a sin-bin ends." },
+      { "title": "Rugby workout", "body": "Optionally record each match as a workout in Health, with distance, heart rate and energy." },
+      { "title": "Tap lock", "body": "A sleeve or a wet glove won't change the match by accident." },
+      { "title": "Quick Match", "body": "No phone at the ground? Set up and run a match on the Watch alone." }
+    ]
+  },
+  "more": {
+    "eyebrow": "Works your way",
+    "title": "Ready for any fixture",
+    "intro": "From club sevens to knockout finals, Rugby Timer adapts to the match in front of you.",
+    "items": [
+      { "title": "iPhone-only mode", "body": "No Apple Watch? Run the whole match on your iPhone." },
+      { "title": "Crash recovery", "body": "If the app closes mid-match, it reopens right where you were, clock and sin-bins included." },
+      { "title": "Extra time", "body": "Two 10-minute halves then sudden death, or 5-minute sudden-death periods for sevens." },
+      { "title": "Injury timers", "body": "HIA (12 minutes) and blood replacement (15 minutes) timers, logged in the match record." },
+      { "title": "Coin toss", "body": "An optional coin toss on the Watch to decide who kicks off." },
+      { "title": "Four languages", "body": "English, Spanish, French and Brazilian Portuguese, on iPhone and Apple Watch." }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Private by design",
+    "title": "Your matches stay with you",
+    "body": "Rugby Timer doesn't send your data to any server, including ours. Workouts go only to the Health app on your devices.",
+    "points": ["No accounts", "No ads", "No tracking"],
+    "link": "Read the privacy policy"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Frequently asked",
+    "items": [
+      { "q": "Do I need an Apple Watch?", "a": "No. You can run the whole match on your iPhone. With an Apple Watch, you set up on the iPhone and run the match from your wrist, or start a Quick Match on the Watch alone." },
+      { "q": "How much does it cost?", "a": "Rugby Timer is a one-time purchase of US$1.99 in the United States; the App Store shows the price in your country. There are no ads, subscriptions or in-app purchases." },
+      { "q": "Does it need an internet connection?", "a": "No. The app works offline. Your iPhone and Apple Watch talk to each other directly over Bluetooth or local Wi-Fi." },
+      { "q": "Can I match my competition's rules?", "a": "Yes. Set the half length, sin-bin length, half-time break, extra time and the 20-minute red card to match your competition, and save your defaults." },
+      { "q": "Which languages does it support?", "a": "English, Spanish, French and Brazilian Portuguese. The language follows your device, and you can change it in Settings." },
+      { "q": "What do I need to run it?", "a": "An iPhone with iOS 26.5 or later. An Apple Watch with watchOS 26.5 or later is optional." }
+    ]
+  },
+  "final": {
+    "title": "Ready for kick-off?",
+    "body": "Download Rugby Timer and take the clock, the sin-bins and the score onto the pitch with you.",
+    "contactLead": "Questions or feedback?"
+  },
+  "footer": {
+    "tagline": "The match clock for rugby referees, on iPhone and Apple Watch.",
+    "legal": "Legal",
+    "contact": "Contact",
+    "trademarks": "Apple, Apple Watch, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions."
+  },
+  "legal": {
+    "englishOnly": "This document is published in English. If a translation is added later, the English version will remain the one that applies.",
+    "backHome": "Back to home"
+  },
+  "notFound": {
+    "title": "Out of play",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
+  }
+}

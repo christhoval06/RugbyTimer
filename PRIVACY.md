@@ -1,7 +1,7 @@
 # Privacy Policy
 
-**Rugby Timer** for iPhone and Apple Watch
-Effective date: November 11, 2026
+**Rugby Timer** for iPhone and Apple Watch, and this website\
+Effective date: November 12, 2026
 
 Rugby Timer is a match clock for rugby referees. It's built so that your matches stay on your devices. This policy explains what the app handles and where that data goes.
 
@@ -47,6 +47,10 @@ If you email support from Settings, your email app opens with the app version fi
 
 Settings also links to the developer's website and GitHub. They open in your browser and are covered by their own privacy policies.
 
+## This website
+
+The Rugby Timer website doesn't use cookies, analytics, advertising or tracking tools, and it loads its fonts from its own server rather than a third party. If you pick a language on the site, that choice is saved in your browser's local storage so the site remembers it; you can clear it by clearing your browser's site data. Like any website, the server that hosts it may keep standard access logs (such as IP address, browser type and the pages requested) to deliver the site and keep it secure. The App Store button takes you to Apple's App Store, which is covered by Apple's privacy policy.
+
 ## Children
 
 Rugby Timer is meant for match officials. It doesn't collect personal information from anyone, children included.
@@ -61,6 +65,6 @@ If this policy changes, the new version will be published here with a new effect
 
 ## Contact
 
-Christhoval Barba
-Email: [me@christhoval.dev](mailto:me@christhoval.dev)
+Christhoval Barba\
+Email: [me@christhoval.dev](mailto:me@christhoval.dev)\
 Website: [christhoval.dev](https://christhoval.dev)
