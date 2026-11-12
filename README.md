@@ -55,6 +55,8 @@ From Xcode, press ⌘U on either scheme. From the command line:
 xcodebuild test -project RugbyTimer.xcodeproj -scheme RugbyTimer -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 
+Before a release, run [TESTING.md](TESTING.md) on a real iPhone and Apple Watch. It covers what the simulator can't: App Group signing, the widgets and complication, the Live Activity, Health workouts and alerts with your wrist down.
+
 ## Project structure
 
 ```
