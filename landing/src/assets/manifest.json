@@ -1,0 +1,146 @@
+{
+  "locales": ["en", "es", "fr", "pt-BR"],
+  "phone": [
+    {
+      "id": "match-clock",
+      "file": "phone/match-clock.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Live match on iPhone: the first-half clock with 17:37 left, Rangers RFC leading.",
+        "es": "Partido en vivo en el iPhone: el reloj del primer tiempo con 17:37 por jugar y Rangers RFC al frente.",
+        "fr": "Match en direct sur iPhone : le chrono de la première mi-temps à 17:37 de la fin, Rangers RFC en tête.",
+        "pt-BR": "Partida ao vivo no iPhone: o cronômetro do primeiro tempo com 17:37 restantes e o Rangers RFC na frente."
+      }
+    },
+    {
+      "id": "lock-screen-live-activity",
+      "file": "phone/lock-screen-live-activity.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Live Activity on the iPhone Lock Screen: first half, 16:24 left, Rangers RFC 12, City Lions 3, one player in the sin-bin.",
+        "es": "Actividad en vivo en la pantalla bloqueada del iPhone: primer tiempo, quedan 16:24, Rangers RFC 12, City Lions 3 y un jugador excluido.",
+        "fr": "Activité en direct sur l'écran verrouillé de l'iPhone : première mi-temps, 16:24 restantes, Rangers RFC 12, City Lions 3, un joueur exclu.",
+        "pt-BR": "Atividade ao Vivo na Tela Bloqueada do iPhone: primeiro tempo, 16:24 restantes, Rangers RFC 12, City Lions 3 e um jogador excluído."
+      }
+    },
+    {
+      "id": "scoreboard",
+      "file": "phone/scoreboard.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Scoreboard with Rangers RFC 12, City Lions 3, the scoring timeline and a yellow-card sin-bin counting down.",
+        "es": "Marcador con Rangers RFC 12 y City Lions 3, la cronología de anotaciones y una exclusión por tarjeta amarilla en cuenta regresiva.",
+        "fr": "Tableau des scores Rangers RFC 12, City Lions 3, avec la chronologie des points et une exclusion pour carton jaune en décompte.",
+        "pt-BR": "Placar com Rangers RFC 12 e City Lions 3, a linha do tempo dos pontos e uma exclusão por cartão amarelo em contagem regressiva."
+      }
+    },
+    {
+      "id": "record-score",
+      "file": "phone/record-score.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Record Score sheet: pick the team and the scorer's shirt number, then try, conversion, penalty, drop goal or penalty try.",
+        "es": "Hoja para registrar una anotación: elige el equipo y el número de camiseta, y luego try, conversión, penal, drop o try penal.",
+        "fr": "Saisie d'un score : choisissez l'équipe et le numéro du marqueur, puis essai, transformation, pénalité, drop ou essai de pénalité.",
+        "pt-BR": "Tela de registro de pontos: escolha a equipe e o número da camisa, depois try, conversão, penal, drop goal ou try de penal."
+      }
+    },
+    {
+      "id": "issue-card",
+      "file": "phone/issue-card.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Issue Card sheet: a yellow card for City Lions number 6, ready to confirm.",
+        "es": "Hoja para mostrar una tarjeta: tarjeta amarilla para el número 6 de City Lions, lista para confirmar.",
+        "fr": "Attribution d'un carton : carton jaune pour le numéro 6 de City Lions, prêt à être confirmé.",
+        "pt-BR": "Tela de cartões: cartão amarelo para o número 6 do City Lions, pronto para confirmar."
+      }
+    },
+    {
+      "id": "full-time",
+      "file": "phone/full-time.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Full time on iPhone: Rangers RFC 12, City Lions 8, with a button to share the match record.",
+        "es": "Final del partido en el iPhone: Rangers RFC 12, City Lions 8, con un botón para compartir el acta.",
+        "fr": "Fin du match sur iPhone : Rangers RFC 12, City Lions 8, avec un bouton pour partager la feuille de match.",
+        "pt-BR": "Fim de jogo no iPhone: Rangers RFC 12, City Lions 8, com um botão para compartilhar a súmula."
+      }
+    },
+    {
+      "id": "match-record",
+      "file": "phone/match-record.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Match record as text: final score, minute-by-minute timeline and discipline summary, ready to share.",
+        "es": "Acta del partido en texto: marcador final, cronología minuto a minuto y resumen disciplinario, lista para compartir.",
+        "fr": "Feuille de match en texte : score final, chronologie minute par minute et bilan disciplinaire, prête à partager.",
+        "pt-BR": "Súmula em texto: placar final, linha do tempo minuto a minuto e resumo disciplinar, pronta para compartilhar."
+      }
+    },
+    {
+      "id": "match-setup",
+      "file": "phone/match-setup.png",
+      "width": 1320,
+      "height": 2868,
+      "alt": {
+        "en": "Match Setup: home and away teams, half length, and buttons to run the match on iPhone or send it to Apple Watch.",
+        "es": "Configuración del partido: equipos local y visitante, duración de cada tiempo y botones para dirigirlo en el iPhone o enviarlo al Apple Watch.",
+        "fr": "Préparation du match : équipes à domicile et à l'extérieur, durée des mi-temps et boutons pour diriger le match sur iPhone ou l'envoyer à l'Apple Watch.",
+        "pt-BR": "Configuração da partida: equipes da casa e visitante, duração dos tempos e botões para conduzir no iPhone ou enviar ao Apple Watch."
+      }
+    }
+  ],
+  "watch": [
+    {
+      "id": "match-clock",
+      "file": "watch/match-clock.png",
+      "width": 416,
+      "height": 496,
+      "alt": {
+        "en": "Apple Watch match clock: first half, 18:08 left, with time played and time remaining.",
+        "es": "Reloj del partido en el Apple Watch: primer tiempo, quedan 18:08, con el tiempo jugado y el restante.",
+        "fr": "Chrono du match sur Apple Watch : première mi-temps, 18:08 restantes, avec le temps joué et le temps restant.",
+        "pt-BR": "Cronômetro da partida no Apple Watch: primeiro tempo, 18:08 restantes, com o tempo jogado e o restante."
+      }
+    },
+    {
+      "id": "score",
+      "file": "watch/score.png",
+      "width": 416,
+      "height": 496,
+      "alt": {
+        "en": "Apple Watch score page: 12–3, pick the team and shirt number, then try or conversion.",
+        "es": "Página de marcador en el Apple Watch: 12–3, elige el equipo y el número de camiseta, y luego try o conversión.",
+        "fr": "Page des points sur Apple Watch : 12–3, choisissez l'équipe et le numéro, puis essai ou transformation.",
+        "pt-BR": "Página de pontos no Apple Watch: 12–3, escolha a equipe e o número da camisa, depois try ou conversão."
+      }
+    },
+    {
+      "id": "result-sin-bin",
+      "file": "watch/result-sin-bin.png",
+      "width": 416,
+      "height": 496,
+      "alt": {
+        "en": "Apple Watch live result: Rangers RFC 12, City Lions 3, with City Lions number 6 in the sin-bin for 4:50.",
+        "es": "Resultado en vivo en el Apple Watch: Rangers RFC 12, City Lions 3, con el número 6 de City Lions excluido por 4:50.",
+        "fr": "Résultat en direct sur Apple Watch : Rangers RFC 12, City Lions 3, le numéro 6 de City Lions exclu encore 4:50.",
+        "pt-BR": "Resultado ao vivo no Apple Watch: Rangers RFC 12, City Lions 3, com o número 6 do City Lions excluído por 4:50."
+      }
+    }
+  ],
+  "brand": [
+    { "id": "app-icon", "file": "brand/app-icon.svg", "width": 1024, "height": 1024 },
+    { "id": "app-icon-tinted", "file": "brand/app-icon-tinted.svg", "width": 1024, "height": 1024 },
+    { "id": "app-icon-png", "file": "brand/app-icon-1024.png", "width": 1024, "height": 1024 },
+    { "id": "app-icon-dark-png", "file": "brand/app-icon-dark-1024.png", "width": 1024, "height": 1024 },
+    { "id": "app-icon-tinted-png", "file": "brand/app-icon-tinted-1024.png", "width": 1024, "height": 1024 }
+  ]
+}
