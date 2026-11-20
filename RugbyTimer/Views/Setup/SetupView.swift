@@ -40,28 +40,27 @@ public struct SetupView: View {
     }
 
     public var body: some View {
-        VStack(spacing: 0) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    SetupHeaderWidget(isWatchAvailable: isWatchAvailable)
-                    SetupWatchStatusWidget(isWatchSynced: isWatchSynced, watchName: watchName,
-                                           watchBattery: watchBattery, isWatchAvailable: isWatchAvailable)
-                    SetupTeamsWidget(homeTeamName: $homeTeamName, awayTeamName: $awayTeamName)
-                    SetupDurationWidget(selectedDurationSeconds: $selectedDurationSeconds)
-                    SetupRulesWidget(sinBinDurationSeconds: $sinBinDurationSeconds,
-                                     halfTimeBreakSeconds: $halfTimeBreakSeconds)
-                }
-                .padding(.horizontal, 20)
-                .padding(.top, 20)
-                .padding(.bottom, 24)
-                .frame(maxWidth: 600)
-                .frame(maxWidth: .infinity)
+        ScrollWithCollapsibleFooter {
+            VStack(alignment: .leading, spacing: 24) {
+                SetupHeaderWidget(isWatchAvailable: isWatchAvailable)
+                SetupWatchStatusWidget(isWatchSynced: isWatchSynced, watchName: watchName,
+                                       watchBattery: watchBattery, isWatchAvailable: isWatchAvailable)
+                SetupTeamsWidget(homeTeamName: $homeTeamName, awayTeamName: $awayTeamName)
+                SetupDurationWidget(selectedDurationSeconds: $selectedDurationSeconds)
+                SetupRulesWidget(sinBinDurationSeconds: $sinBinDurationSeconds,
+                                 halfTimeBreakSeconds: $halfTimeBreakSeconds)
+                SetupWatchDisplayWidget()
             }
-            .scrollDismissesKeyboard(.interactively)
-            .clipped()
+            .padding(.horizontal, 20)
+            .padding(.top, 20)
+            .padding(.bottom, 24)
+            .frame(maxWidth: 600)
+            .frame(maxWidth: .infinity)
+        } footer: {
             SetupPrepareWidget(isWatchAvailable: isWatchAvailable, onPrepareMatch: onPrepareMatch,
                                onRunOnPhone: onRunOnPhone)
         }
+        .scrollDismissesKeyboard(.interactively)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.pitchVoid.ignoresSafeArea())
     }

@@ -7,17 +7,22 @@ struct WatchPenaltiesPageView: View {
     let homeTeamName: String
     let awayTeamName: String
     let events: [MatchEvent]
+    var fixedTeam: String? = nil
     let onConcede: (Infringement, String) -> Void
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 6) {
-                WatchPageTitleWidget(eyebrow: "CONCEDED BY", title: "PENALTIES", tint: .sinBinAmber)
-                teamSection(homeTeamName, tint: .pitchEmerald)
-                teamSection(awayTeamName, tint: .sinBinAmber)
+        if let fixedTeam {
+            teamSection(fixedTeam, tint: fixedTeam == homeTeamName ? .pitchEmerald : .sinBinAmber)
+        } else {
+            ScrollView {
+                VStack(spacing: 6) {
+                    WatchPageTitleWidget(eyebrow: "CONCEDED BY", title: "PENALTIES", tint: .sinBinAmber)
+                    teamSection(homeTeamName, tint: .pitchEmerald)
+                    teamSection(awayTeamName, tint: .sinBinAmber)
+                }
+                .padding(.vertical, 4)
+                .scenePadding(.horizontal)
             }
-            .padding(.vertical, 4)
-            .scenePadding(.horizontal)
         }
     }
 

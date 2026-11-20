@@ -383,31 +383,38 @@ Primeira versão do Rugby Timer. Configure a partida no iPhone e controle o cron
 **Notes** · limit 4000
 
 ```text
-Rugby Timer is a match clock for rugby referees. No account or sign-in is needed.
+Rugby Timer is a match clock for rugby union referees. It keeps the game clock, sin-bin countdowns, score and disciplinary record on Apple Watch (or iPhone if no Watch is paired), and produces a shareable match record at full time.
 
-To test on iPhone only: complete or skip the onboarding, set the teams and half length on Match Setup, then tap RUN MATCH ON IPHONE (or RUN ON THIS IPHONE INSTEAD when a Watch is paired). Kick off, add a score or a yellow card, and end the half.
+NO ACCOUNT, NO LOGIN, NO IN-APP PURCHASES, NO USER-GENERATED CONTENT. Paid up front. All features work as soon as the app opens.
 
-To test with Apple Watch: open the Watch app, then on iPhone tap SEND SETUP TO WATCH. The match appears on the Watch, ready to kick off. To test the Watch on its own, tap QUICK MATCH on the Watch main screen.
+EXTERNAL SERVICES: none. No servers, analytics, ads, payment or AI services. Only on-device Apple frameworks: WatchConnectivity, HealthKit (optional, Watch), ActivityKit/WidgetKit, SwiftData, local notifications. Data stays on the user's devices.
 
-To test undo: record a score or card, then tap UNDO LAST ENTRY within 15 seconds.
+REGIONS: works the same in all regions. Localized in English, Spanish, French and Brazilian Portuguese.
 
-To test injury timers on iPhone: during play, tap INJURY, pick a team and number, then HIA · 12 MIN. Tap the player in the sanctions list to close it as back on or replaced, or tap a carded player to end the sin-bin now or fix the shirt number.
+REGULATED / THIRD-PARTY MATERIAL: not applicable. Not affiliated with World Rugby or any union; uses no third-party logos or content.
 
-To test the penalty count: during play, tap PEN or FK for a team (on the Watch Penalties page, one swipe right from the clock, or under SANCTIONS on the iPhone in iPhone-only mode). The totals appear in the half-time and full-time stats and in the shared match record.
+HOW TO TEST
+iPhone only: complete or skip onboarding. On Match Setup set the teams and half length, tap RUN MATCH ON IPHONE (or RUN ON THIS IPHONE INSTEAD when a Watch is paired). Kick off, add a score or a yellow card, end the half.
 
-To test match history: finish a match (on iPhone, end both halves), go back to Match Setup and tap the Match History button next to Settings. Tap the match to open its record; swipe left to delete it.
+With Apple Watch: open the Watch app, then on iPhone tap SEND SETUP TO WATCH. The match appears on the Watch, ready to kick off. To test the Watch alone, tap QUICK MATCH on the Watch main screen.
 
-To test extra time: on Match Setup set Extra time to Fifteens, run the match on iPhone, and end both halves with the scores level. The match goes to an extra-time break; kick off ET1, or end it as a draw.
+Undo: record a score or card, then tap UNDO LAST ENTRY within 15 seconds.
 
-To test the 20-minute red card: turn on "20-minute red card" on Match Setup, run the match on iPhone, then issue a RED 20' card. Giving the same player a second yellow asks to show a red instead.
+Injury timers (iPhone): during play tap INJURY, pick a team and number, then HIA · 12 MIN. Tap the player in the sanctions list to close it as back on or replaced.
 
-To test substitutions: turn on Substitutions on Match Setup, run the match on iPhone, tap SUBSTITUTION, pick the player going off and the player coming on, then confirm. Each team's count shows on the live screen and in the match record.
+Penalty count: tap PEN or FK for a team (Watch: swipe right from the clock; iPhone: under SANCTIONS). Totals show in the stats and match record.
 
-To test the Live Activity and widgets: start a match on iPhone, then lock the phone. The clock and score show on the Lock Screen (and in the Dynamic Island on supported iPhones). The Live Activity can be turned off in Settings. Add the Rugby Timer "Match" widget to the Home Screen or Lock Screen: it shows the match under way, or the last result between matches. On Apple Watch, add the Rugby Timer complication to a watch face.
+Match history: finish a match, go back to Match Setup and tap Match History. Tap a match to open its record; swipe left to delete.
 
-HealthKit and background use on Apple Watch: the Watch asks for Health access once, on the ready screen before kick-off. With access, each match runs as an HKWorkoutSession (activity type Rugby). This keeps the match clock, half-time and sin-bin alerts accurate for the whole match while the referee's wrist is down, and the workout is saved to Health at full time. The app reads heart rate, distance and active energy only for that workout. If Health access is declined, the Watch uses an extended runtime session (physical-therapy mode) during each half and the half-time break instead, which reads no health data.
+Extra time: set Extra time to Fifteens, run on iPhone, end both halves level. Kick off ET1 or end as a draw.
 
-The app collects no data and makes no network requests. Health data stays in Apple Health on the user's devices.
+20-minute red: turn it on in Match Setup, then issue a RED 20' card.
+
+Substitutions: turn on Substitutions in Match Setup, tap SUBSTITUTION, pick off and on, confirm.
+
+Live Activity and widgets: start a match on iPhone and lock the phone. Add the "Match" widget to the Home or Lock Screen. On Apple Watch, add the Rugby Timer complication.
+
+HealthKit (Apple Watch): the Watch asks for Health access once before kick-off. With access, each match runs as an HKWorkoutSession (Rugby), which keeps the clock and alerts accurate with the wrist down, and saves the workout to Health. It reads heart rate, distance and active energy only for that workout. If declined, the Watch uses an extended runtime session instead.
 ```
 
 ---

@@ -6,7 +6,8 @@
 import Foundation
 
 extension AppState {
-    func receiveConfiguration(_ configuration: MatchConfiguration) {
+    #if os(watchOS)
+    func receiveConfiguration(_ configuration: MatchConfiguration, displayDefaults: UserDefaults = .standard) {
         // The iPhone resends its last setup with every context update (language, telemetry);
         // one already applied or left on the Watch must not replace a Watch-only match.
         guard configuration.matchID != matchID, configuration.matchID != lastAppliedConfigurationID,
@@ -32,9 +33,11 @@ extension AppState {
         twentyMinuteRedEnabled = configuration.twentyMinuteRedEnabled ?? false
         extraTimeFormat = configuration.extraTimeFormat ?? .off
         substitutionRules = configuration.substitutionRules ?? SubstitutionRules()
+        configuration.watchDisplayPreferences?.save(to: displayDefaults)
         resetMatchData()
         publishWatchSnapshot()
     }
+    #endif
 
     public func applyWatchSnapshot(_ snapshot: MatchSnapshot) {
         #if !os(watchOS)

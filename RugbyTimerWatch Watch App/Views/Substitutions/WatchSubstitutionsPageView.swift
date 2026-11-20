@@ -1,45 +1,57 @@
 import SwiftUI
 
-/// Substitutions page, left of Sanctions: pick the team, the number going off and the number
-/// coming on, then SUB. A likely mistake (limit reached, carded player, already replaced) asks first.
+/// Records a substitution for the selected team, with warnings for limits and ineligible players.
 struct WatchSubstitutionsPageView: View {
     let homeTeamName: String
     let awayTeamName: String
     let rules: SubstitutionRules
     let matchEvents: [MatchEvent]
     let activeCards: [MatchCard]
+    var fixedTeam: String? = nil
+    var dismissesAfterSubstitution = false
     let onSubstitute: (String, Int, Int) -> Void
 
+    @Environment(\.dismiss) private var dismiss
     @State private var selectedTeam: String?
     @State private var offNumber: Int?
     @State private var onNumber: Int?
     @State private var warning: SubstitutionWarning?
 
-    private var team: String { selectedTeam ?? homeTeamName }
+    private var team: String { fixedTeam ?? selectedTeam ?? homeTeamName }
     private var isReady: Bool { offNumber != nil && onNumber != nil && offNumber != onNumber }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 6) {
-                WatchPageTitleWidget(eyebrow: "REPLACEMENT", title: "SUBSTITUTION", tint: .pitchEmerald)
-                WatchTeamToggleWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
-                                      selectedTeam: Binding(get: { team }, set: { selectedTeam = $0 }))
-                HStack(spacing: 4) {
-                    numberColumn("PLAYER OFF", number: $offNumber, tint: .sinBinAmber)
-                    numberColumn("PLAYER ON", number: $onNumber, tint: .pitchEmerald)
+        Group {
+            if fixedTeam != nil {
+                form
+            } else {
+                ScrollView {
+                    form.padding(.vertical, 4).scenePadding(.horizontal)
                 }
-                subButton
-                WatchSubstitutionCountsWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
-                                              rules: rules, events: matchEvents)
             }
-            .padding(.vertical, 4)
-            .scenePadding(.horizontal)
         }
         .confirmationDialog("Check this substitution", isPresented: isWarning, titleVisibility: .visible) {
             Button("Record anyway") { record() }
             Button("Cancel", role: .cancel) {}
         } message: {
             Text(verbatim: warning?.message ?? "")
+        }
+    }
+
+    private var form: some View {
+        VStack(spacing: 6) {
+            WatchPageTitleWidget(eyebrow: "REPLACEMENT", title: "SUBSTITUTION", tint: .pitchEmerald)
+            if fixedTeam == nil {
+                WatchTeamToggleWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
+                                      selectedTeam: Binding(get: { team }, set: { selectedTeam = $0 }))
+            }
+            HStack(spacing: 4) {
+                numberColumn("PLAYER OFF", number: $offNumber, tint: .sinBinAmber)
+                numberColumn("PLAYER ON", number: $onNumber, tint: .pitchEmerald)
+            }
+            subButton
+            WatchSubstitutionCountsWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
+                                          rules: rules, events: matchEvents, fixedTeam: fixedTeam)
         }
     }
 
@@ -87,6 +99,7 @@ struct WatchSubstitutionsPageView: View {
         onSubstitute(team, offNumber, onNumber)
         self.offNumber = nil
         self.onNumber = nil
+        if dismissesAfterSubstitution { dismiss() }
     }
 }
 

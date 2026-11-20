@@ -29,7 +29,8 @@ public struct RugbyTimerWatchApp: App {
                         onCoinToss: appState.coinTossEnabled ? { appState.recordCoinToss($0) } : nil,
                         onStartMatch: appState.startMatch,
                         leaveKind: appState.isWatchOnlyMatch ? .changeSetup : .quickMatchInstead,
-                        onLeave: { appState.leaveMatch() }
+                        onLeave: { appState.leaveMatch() },
+                        showsDisplaySettings: !appState.isWatchOnlyMatch
                     )
                 } else {
                     WatchLiveMatchView(

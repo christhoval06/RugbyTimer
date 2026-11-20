@@ -8,7 +8,7 @@ import Foundation
 extension AppState {
     /// Sets up a new match. `onPhone: false` sends it to the Watch, which then runs the match;
     /// `onPhone: true` runs it on this iPhone (iPhone-only mode, for referees without a Watch).
-    public func prepareMatch(onPhone: Bool = false) {
+    public func prepareMatch(onPhone: Bool = false, watchDisplayPreferences: WatchDisplayPreferences? = nil) {
         guard matchPeriod == .preMatch || matchPeriod == .fullTime else { return }
         let id = UUID()
         matchID = id
@@ -24,7 +24,8 @@ extension AppState {
             sinBinDurationSeconds: sinBinDurationSeconds, maxPlayerNumber: maxPlayerNumber,
             tapLockEnabled: tapLockEnabled, coinTossEnabled: coinTossEnabled,
             halfTimeBreakSeconds: halfTimeBreakSeconds, twentyMinuteRedEnabled: twentyMinuteRedEnabled,
-            extraTimeFormat: extraTimeFormat, substitutionRules: substitutionRules
+            extraTimeFormat: extraTimeFormat, substitutionRules: substitutionRules,
+            watchDisplayPreferences: watchDisplayPreferences
         ))
         currentScreen = .liveMatch
     }

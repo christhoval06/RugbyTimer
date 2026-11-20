@@ -28,22 +28,26 @@ final class RugbyTimerUITests: XCTestCase {
         app.launchArguments += ["-skipOnboarding", "-uiTesting"]
         app.launch()
         let sendSetup = app.buttons["sendMatchSetup"]
+        let runOnPhone = app.buttons["runMatchOnPhone"]
+        let form = app.scrollViews.firstMatch
         XCTAssertTrue(sendSetup.waitForExistence(timeout: 5))
-        XCTAssertTrue(sendSetup.isHittable, "The setup action should remain visible without scrolling")
+        XCTAssertTrue(sendSetup.isHittable)
+        XCTAssertTrue(runOnPhone.isHittable)
         let topScreenshot = XCTAttachment(screenshot: app.screenshot())
         topScreenshot.name = "iPhone setup overview"
         topScreenshot.lifetime = .keepAlways
         add(topScreenshot)
-        let actionY = sendSetup.frame.minY
-        app.swipeUp()
-        XCTAssertEqual(sendSetup.frame.minY, actionY, accuracy: 1, "The send action must stay pinned while scrolling")
-        XCTAssertTrue(sendSetup.isHittable)
+        form.swipeUp()
+        XCTAssertTrue(sendSetup.waitForNonExistence(timeout: 3))
+        XCTAssertFalse(runOnPhone.exists)
         let rulesScreenshot = XCTAttachment(screenshot: app.screenshot())
-        rulesScreenshot.name = "iPhone setup rules and pinned action"
+        rulesScreenshot.name = "iPhone setup with footer hidden"
         rulesScreenshot.lifetime = .keepAlways
         add(rulesScreenshot)
-        for _ in 0..<4 where !sendSetup.isHittable { app.swipeUp() }
+        form.swipeDown()
         XCTAssertTrue(sendSetup.waitForExistence(timeout: 5))
+        XCTAssertTrue(sendSetup.isHittable)
+        XCTAssertTrue(runOnPhone.isHittable)
         sendSetup.tap()
         XCTAssertTrue(app.staticTexts["Start the match on Apple Watch"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["PRE-MATCH"].exists)

@@ -7,23 +7,17 @@ struct WatchScorePageView: View {
     let awayScore: Int
     let onScore: (String, Int?, Int, String) -> Void
 
+    let fixedTeam: String?
+
     @State private var selectedTeam: String
     @State private var scorer: Int?
-
-    /// `description` stays English because it is synced to the iPhone; `label` is what the referee reads.
-    private static let scoreTypes: [ScoreType] = [
-        ScoreType(id: "TRY", label: "TRY", points: 5, description: "Try scored (+5)"),
-        ScoreType(id: "CONV", label: "CONV", points: 2, description: "Conversion (+2)"),
-        ScoreType(id: "PEN", label: "PEN", points: 3, description: "Penalty goal (+3)"),
-        ScoreType(id: "DROP", label: "DROP", points: 3, description: "Drop goal (+3)"),
-        ScoreType(id: "PT", label: "PEN TRY", points: 7, description: "Penalty try (+7)")
-    ]
 
     init(
         homeTeamName: String,
         awayTeamName: String,
         homeScore: Int,
         awayScore: Int,
+        fixedTeam: String? = nil,
         onScore: @escaping (String, Int?, Int, String) -> Void
     ) {
         self.homeTeamName = homeTeamName
@@ -31,47 +25,49 @@ struct WatchScorePageView: View {
         self.homeScore = homeScore
         self.awayScore = awayScore
         self.onScore = onScore
-        _selectedTeam = State(initialValue: homeTeamName)
+        self.fixedTeam = fixedTeam
+        _selectedTeam = State(initialValue: fixedTeam ?? homeTeamName)
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 6) {
-                HStack(alignment: .bottom) {
-                    WatchPageTitleWidget(eyebrow: "POINTS", title: "SCORE", tint: .pitchEmerald)
-                    Text("\(homeScore)–\(awayScore)")
-                        .font(.system(size: 15, weight: .heavy, design: .monospaced))
-                        .foregroundStyle(Color.iceTitanium)
-                        .fixedSize()
-                        .accessibilityLabel("\(homeScore) to \(awayScore)")
-                }
-
-                WatchTeamToggleWidget(
-                    homeTeamName: homeTeamName,
-                    awayTeamName: awayTeamName,
-                    selectedTeam: $selectedTeam
-                )
-                .onChange(of: selectedTeam) { scorer = nil }
-
-                WatchPlayerPickerWidget(playerNumber: $scorer, allowsNone: true)
-
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 6), GridItem(.flexible(), spacing: 6)], spacing: 6) {
-                    ForEach(Self.scoreTypes.dropLast(), id: \.id) { scoreType in
-                        scoreButton(scoreType)
+        if fixedTeam != nil {
+            scoringControls
+        } else {
+            ScrollView {
+                VStack(spacing: 6) {
+                    HStack(alignment: .bottom) {
+                        WatchPageTitleWidget(eyebrow: "POINTS", title: "SCORE", tint: .pitchEmerald)
+                        Text("\(homeScore)–\(awayScore)")
+                            .font(.system(size: 15, weight: .heavy, design: .monospaced))
+                            .foregroundStyle(Color.iceTitanium)
+                            .fixedSize()
+                            .accessibilityLabel("\(homeScore) to \(awayScore)")
                     }
+                    WatchTeamToggleWidget(homeTeamName: homeTeamName, awayTeamName: awayTeamName,
+                                          selectedTeam: $selectedTeam)
+                        .onChange(of: selectedTeam) { scorer = nil }
+                    scoringControls
                 }
-                // The penalty try gets the full width under the grid.
-                if let penaltyTry = Self.scoreTypes.last { scoreButton(penaltyTry) }
+                .padding(.vertical, 4)
+                .scenePadding(.horizontal)
             }
-            .padding(.vertical, 4)
-            .scenePadding(.horizontal)
         }
     }
 
-    private func scoreButton(_ scoreType: ScoreType) -> some View {
+    private var scoringControls: some View {
+        VStack(spacing: 6) {
+            WatchPlayerPickerWidget(playerNumber: $scorer, allowsNone: true)
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 6), GridItem(.flexible(), spacing: 6)], spacing: 6) {
+                ForEach(WatchScoreType.all.dropLast(), id: \.id) { scoreButton($0) }
+            }
+            if let penaltyTry = WatchScoreType.all.last { scoreButton(penaltyTry) }
+        }
+    }
+
+    private func scoreButton(_ scoreType: WatchScoreType) -> some View {
         Button {
             HapticService.playStartStop()
-            onScore(selectedTeam, scorer, scoreType.points, scoreType.description)
+            onScore(fixedTeam ?? selectedTeam, scorer, scoreType.points, scoreType.description)
             scorer = nil
         } label: {
             VStack(spacing: 0) {
@@ -93,19 +89,17 @@ struct WatchScorePageView: View {
         .accessibilityLabel(scoreAccessibilityLabel(scoreType))
     }
 
-    private func scoreAccessibilityLabel(_ scoreType: ScoreType) -> String {
-        let event = MatchEvent(minute: 0, teamName: selectedTeam, type: .tryScore(points: scoreType.points),
+    private func scoreAccessibilityLabel(_ scoreType: WatchScoreType) -> String {
+        let team = fixedTeam ?? selectedTeam
+        let event = MatchEvent(minute: 0, teamName: team, type: .tryScore(points: scoreType.points),
                                description: scoreType.description)
-        guard let scorer else { return String(appLocalized: "\(event.localizedDescription) for \(selectedTeam)") }
-        return String(appLocalized: "\(event.localizedDescription) for \(selectedTeam), number \(scorer)")
+        guard let scorer else { return String(appLocalized: "\(event.localizedDescription) for \(team)") }
+        return String(appLocalized: "\(event.localizedDescription) for \(team), number \(scorer)")
     }
 }
 
-private struct ScoreType {
-    let id: String
-    let label: LocalizedStringKey
-    let points: Int
-    let description: String
-
-    var isTry: Bool { id == "TRY" }
+#Preview {
+    WatchScorePageView(homeTeamName: "Rangers RFC", awayTeamName: "City Lions", homeScore: 12, awayScore: 7) {
+        _, _, _, _ in
+    }
 }

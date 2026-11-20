@@ -73,17 +73,8 @@ final class MatchRecordShareUITests: XCTestCase {
 
     @MainActor
     private func playPhoneMatchToFullTime(_ app: XCUIApplication) {
-        let runOnPhone = app.buttons["runMatchOnPhone"]
-        XCTAssertTrue(runOnPhone.waitForExistence(timeout: 5))
-        for _ in 0..<4 where !runOnPhone.isHittable { app.swipeUp() }
-        runOnPhone.tap()
-
-        tap(app.buttons["kickOffFirstHalf"])
-        tap(app.buttons["END FIRST HALF"])
-        tap(app.buttons["Blow for half-time"])
-        tap(app.buttons["kickOffSecondHalf"])
-        tap(app.buttons["END MATCH"])
-        tap(app.buttons["Blow the whistle"])
+        kickOffPhoneMatch(app)
+        playToFullTime(app)
     }
 
     @MainActor

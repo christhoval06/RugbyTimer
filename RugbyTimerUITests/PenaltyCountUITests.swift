@@ -26,7 +26,9 @@ final class PenaltyCountUITests: XCTestCase {
         attachScreenshot(app, named: "Penalty counts and list")
 
         // Undo takes back the last one: the free kick.
-        tapElement(app.buttons["undoLastEntry"])
+        let undo = app.buttons["undoLastEntry"]
+        if !undo.isHittable { app.scrollViews.firstMatch.swipeDown() }
+        tapElement(undo)
         XCTAssertEqual(homeFreeKick.label, "Free kicks against Rangers RFC: 0")
         XCTAssertEqual(awayPenalty.label, "Penalties against City Lions: 2")
     }

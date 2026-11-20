@@ -4,6 +4,37 @@
     "" : {
       "shouldTranslate" : false
     },
+    "–" : {
+      "shouldTranslate" : false
+    },
+    "#%lld" : {
+      "shouldTranslate" : false
+    },
+    "#%lld · %@" : {
+      "shouldTranslate" : false
+    },
+    "#%lld already has a yellow card. A second yellow is a red card." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El #%lld ya tiene una tarjeta amarilla. Una segunda amarilla es tarjeta roja."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le n°%lld a déjà un carton jaune. Un deuxième carton jaune entraîne un carton rouge."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O #%lld já tem um cartão amarelo. O segundo amarelo é cartão vermelho."
+          }
+        }
+      }
+    },
     "#%lld has a card. A carded player can't be replaced." : {
       "localizations" : {
         "es" : {
@@ -48,52 +79,27 @@
         }
       }
     },
-    "%@: %lld" : {
+    "%@" : {
       "shouldTranslate" : false
     },
-    "%@: %lld substitutions" : {
+    "%@ (Away)" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@: %lld cambios"
+            "value" : "%@ (Visitante)"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ : %lld remplacements"
+            "value" : "%@ (Extérieur)"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@: %lld substituições"
-          }
-        }
-      }
-    },
-    "+%@" : {
-      "shouldTranslate" : false
-    },
-    "#%lld already has a yellow card. A second yellow is a red card." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El #%lld ya tiene una tarjeta amarilla. Una segunda amarilla es tarjeta roja."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le n°%lld a déjà un carton jaune. Un deuxième carton jaune entraîne un carton rouge."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O #%lld já tem um cartão amarelo. O segundo amarelo é cartão vermelho."
+            "value" : "%@ (Visitante)"
           }
         }
       }
@@ -120,24 +126,49 @@
         }
       }
     },
-    "%@ (Away)" : {
+    "%@ WIN" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ (Visitante)"
+            "value" : "GANA %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ (Extérieur)"
+            "value" : "%@ L'EMPORTE"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ (Visitante)"
+            "value" : "%@ VENCE"
+          }
+        }
+      }
+    },
+    "%@, %@, %@" : {
+      "shouldTranslate" : false
+    },
+    "%@, %lld points" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %lld puntos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %lld points"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %lld pontos"
           }
         }
       }
@@ -186,6 +217,31 @@
         }
       }
     },
+    "%@: %lld" : {
+      "shouldTranslate" : false
+    },
+    "%@: %lld substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: %lld cambios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ : %lld remplacements"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@: %lld substituições"
+          }
+        }
+      }
+    },
     "%@: penalties %lld (H1 %lld, H2 %lld) · free kicks %lld" : {
       "localizations" : {
         "es" : {
@@ -204,2683 +260,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@: penais %2$lld (1T %3$lld, 2T %4$lld) · tiros livres %5$lld"
-          }
-        }
-      }
-    },
-    "2 × 10 min, then sudden death" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2 × 10 min, luego muerte súbita"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2 × 10 min, puis mort subite"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2 × 10 min, depois morte súbita"
-          }
-        }
-      }
-    },
-    "20-Minute Red Card (Second Yellow) - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Roja de 20 minutos (segunda amarilla) - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge de 20 minutes (deuxième jaune) - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vermelho de 20 minutos (segundo amarelo) - #%lld"
-          }
-        }
-      }
-    },
-    "20-Minute Red Card - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Roja de 20 minutos - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge de 20 minutes - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vermelho de 20 minutos - #%lld"
-          }
-        }
-      }
-    },
-    "20-minute red card" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tarjeta roja de 20 minutos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge de 20 minutes"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cartão vermelho de 20 minutos"
-          }
-        }
-      }
-    },
-    "20-minute red · Replacement can come on" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Roja de 20 min · Ya puede entrar un reemplazo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rouge 20 min · Le remplaçant peut entrer"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vermelho 20 min · Substituto pode entrar"
-          }
-        }
-      }
-    },
-    "20-minute red · Replacement in" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Roja de 20 min · Reemplazo en"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rouge 20 min · Remplaçant dans"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vermelho 20 min · Substituto em"
-          }
-        }
-      }
-    },
-    "APPLE WATCH" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "APPLE WATCH"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "APPLE WATCH"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "APPLE WATCH"
-          }
-        }
-      }
-    },
-    "Allow replacement now" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Permitir reemplazo ahora"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Autoriser le remplaçant maintenant"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liberar substituto agora"
-          }
-        }
-      }
-    },
-    "Away" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Visitante"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Extérieur"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Visitante"
-          }
-        }
-      }
-    },
-    "BLOOD · 15 MIN" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SANGRE · 15 MIN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SAIGNEMENT · 15 MIN"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SANGUE · 15 MIN"
-          }
-        }
-      }
-    },
-    "Back on" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vuelve al campo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Retour en jeu"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Volta a campo"
-          }
-        }
-      }
-    },
-    "Blood replacement - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reemplazo por sangre - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplacement saignement - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituição por sangue - #%lld"
-          }
-        }
-      }
-    },
-    "Blood replacement · 15 min" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reemplazo por sangre · 15 min"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplacement saignement · 15 min"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituição por sangue · 15 min"
-          }
-        }
-      }
-    },
-    "Blood · replaced - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sangre · reemplazado - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saignement · remplacé - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sangue · substituído - #%lld"
-          }
-        }
-      }
-    },
-    "Blood · returned - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sangre · volvió - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saignement · revenu - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sangue · voltou - #%lld"
-          }
-        }
-      }
-    },
-    "Blow the whistle" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pitar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Siffler"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apitar"
-          }
-        }
-      }
-    },
-    "Check this substitution" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revisa este cambio"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vérifiez ce remplacement"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Confira esta substituição"
-          }
-        }
-      }
-    },
-    "CONCEDED" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONCEDIDOS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONCÉDÉES"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONCEDIDOS"
-          }
-        }
-      }
-    },
-    "CONFIRM 20-MIN RED · #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR ROJA 20 MIN · #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMER ROUGE 20 MIN · N°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR VERMELHO 20 MIN · #%lld"
-          }
-        }
-      }
-    },
-    "CONFIRM · #%lld OFF, #%lld ON" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR · SALE #%lld, ENTRA #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMER · #%lld SORT, #%lld ENTRE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CONFIRMAR · SAI #%lld, ENTRA #%lld"
-          }
-        }
-      }
-    },
-    "CORRECTION" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CORRECCIÓN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CORRECTION"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CORREÇÃO"
-          }
-        }
-      }
-    },
-    "END AS A DRAW" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TERMINAR EMPATADO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TERMINER SUR UN NUL"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENCERRAR EMPATADO"
-          }
-        }
-      }
-    },
-    "END ET1" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TERMINAR TE1"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN PROL. 1"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENCERRAR PR1"
-          }
-        }
-      }
-    },
-    "END EXTRA TIME" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TERMINAR TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN DES PROLONGATIONS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENCERRAR PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "END SUDDEN DEATH" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TERMINAR MUERTE SÚBITA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN DE MORT SUBITE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENCERRAR MORTE SÚBITA"
-          }
-        }
-      }
-    },
-    "ET FULL-TIME WHISTLE" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FINAL DEL TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN DES PROLONGATIONS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIM DA PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "ET HALF-TIME WHISTLE" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESCANSO DEL TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MI-TEMPS DES PROLONGATIONS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INTERVALO DA PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "EXTRA TIME" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROLONGATIONS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "EXTRA TIME (ET1)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TIEMPO EXTRA (TE1)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROLONGATION (P1)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRORROGAÇÃO (PR1)"
-          }
-        }
-      }
-    },
-    "EXTRA TIME (ET2)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TIEMPO EXTRA (TE2)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROLONGATION (P2)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRORROGAÇÃO (PR2)"
-          }
-        }
-      }
-    },
-    "EXTRA TIME · ET1" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TIEMPO EXTRA · TE1"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROLONGATION · P1"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRORROGAÇÃO · PR1"
-          }
-        }
-      }
-    },
-    "EXTRA TIME · ET2" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TIEMPO EXTRA · TE2"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROLONGATION · P2"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRORROGAÇÃO · PR2"
-          }
-        }
-      }
-    },
-    "EXTRA-TIME BREAK" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESCANSO ANTES DEL TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PAUSE AVANT PROLONGATION"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INTERVALO DA PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "End sin-bin now" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terminar exclusión ahora"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terminer l'exclusion maintenant"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Encerrar exclusão agora"
-          }
-        }
-      }
-    },
-    "End the match" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terminar el partido"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terminer le match"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Encerrar a partida"
-          }
-        }
-      }
-    },
-    "Every match you finish, on iPhone or Apple Watch, is kept here with its full record." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cada partido que terminas, en el iPhone o el Apple Watch, se guarda aquí con su acta completa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chaque match terminé, sur iPhone ou Apple Watch, est gardé ici avec sa feuille de match complète."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cada partida que você termina, no iPhone ou no Apple Watch, fica guardada aqui com a súmula completa."
-          }
-        }
-      }
-    },
-    "Extra time" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tiempo extra"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prolongations"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prorrogação"
-          }
-        }
-      }
-    },
-    "FIRST SCORE WINS" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EL PRIMER PUNTO GANA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LES PREMIERS POINTS GAGNENT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "QUEM PONTUAR PRIMEIRO VENCE"
-          }
-        }
-      }
-    },
-    "FIX SHIRT NUMBER" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CORREGIR NÚMERO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CORRIGER LE NUMÉRO"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CORRIGIR NÚMERO"
-          }
-        }
-      }
-    },
-    "FK" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GF"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CF"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TL"
-          }
-        }
-      }
-    },
-    "FULL TIME · 2 × %lld min + extra time" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FINAL · 2 × %lld min + tiempo extra"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN DU MATCH · 2 × %lld min + prolongations"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIM DE JOGO · 2 × %lld min + prorrogação"
-          }
-        }
-      }
-    },
-    "Fifteens" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby XV"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby à XV"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby XV"
-          }
-        }
-      }
-    },
-    "Fix shirt number" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Corregir número de camiseta"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Corriger le numéro de maillot"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Corrigir número da camisa"
-          }
-        }
-      }
-    },
-    "Free kick conceded" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Golpe franco en contra"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Coup franc concédé"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tiro livre cometido"
-          }
-        }
-      }
-    },
-    "Free kicks against %@: %lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Golpes francos contra %1$@: %2$lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Coups francs contre %1$@ : %2$lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tiros livres contra %1$@: %2$lld"
-          }
-        }
-      }
-    },
-    "HIA - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA - #%lld"
-          }
-        }
-      }
-    },
-    "HIA · 12 MIN" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · 12 MIN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · 12 MIN"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · 12 MIN"
-          }
-        }
-      }
-    },
-    "HIA · 12 min off-field assessment" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · evaluación fuera del campo de 12 min"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · évaluation hors du terrain de 12 min"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · avaliação fora de campo de 12 min"
-          }
-        }
-      }
-    },
-    "HIA · replaced - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · reemplazado - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · remplacé - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · substituído - #%lld"
-          }
-        }
-      }
-    },
-    "HIA · returned - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · volvió - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · revenu - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIA · voltou - #%lld"
-          }
-        }
-      }
-    },
-    "Home" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Local"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Domicile"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mandante"
-          }
-        }
-      }
-    },
-    "INJURED PLAYER'S SIDE" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EQUIPO DEL LESIONADO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ÉQUIPE DU BLESSÉ"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EQUIPE DO LESIONADO"
-          }
-        }
-      }
-    },
-    "INJURY" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LESIÓN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BLESSURE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LESÃO"
-          }
-        }
-      }
-    },
-    "IPHONE" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IPHONE"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IPHONE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IPHONE"
-          }
-        }
-      }
-    },
-    "KICK OFF ET1" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SAQUE TE1"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COUP D'ENVOI P1"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PONTAPÉ PR1"
-          }
-        }
-      }
-    },
-    "KICK OFF ET2" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SAQUE TE2"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COUP D'ENVOI P2"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PONTAPÉ PR2"
-          }
-        }
-      }
-    },
-    "LEVEL · EXTRA TIME NEXT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EMPATE · SIGUE TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ÉGALITÉ · PROLONGATIONS ENSUITE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EMPATE · PRORROGAÇÃO A SEGUIR"
-          }
-        }
-      }
-    },
-    "Level at full time. Kick off extra time, or end as a draw" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empate al final. Inicia el tiempo extra o termina empatado"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Égalité à la fin. Lancez les prolongations ou terminez sur un nul"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empate no fim. Comece a prorrogação ou encerre empatado"
-          }
-        }
-      }
-    },
-    "Level at full time. Start extra time on Apple Watch" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empate al final. Inicia el tiempo extra en el Apple Watch"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Égalité à la fin. Lancez les prolongations sur l'Apple Watch"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empate no fim. Comece a prorrogação no Apple Watch"
-          }
-        }
-      }
-    },
-    "MATCH CLOCK FOR REFEREES" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RELOJ DE PARTIDO PARA ÁRBITROS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CHRONO DE MATCH POUR ARBITRES"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CRONÔMETRO DE PARTIDA PARA ÁRBITROS"
-          }
-        }
-      }
-    },
-    "Match History" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Historial de partidos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Historique des matchs"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Histórico de partidas"
-          }
-        }
-      }
-    },
-    "NO LIMIT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SIN LÍMITE"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SANS LIMITE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SEM LIMITE"
-          }
-        }
-      }
-    },
-    "No limit" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sin límite"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sans limite"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem limite"
-          }
-        }
-      }
-    },
-    "No limit · rolling substitutions" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sin límite · cambios libres"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sans limite · remplacements libres"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem limite · substituições livres"
-          }
-        }
-      }
-    },
-    "NO MATCHES YET" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AÚN NO HAY PARTIDOS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PAS ENCORE DE MATCHS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "NENHUMA PARTIDA AINDA"
-          }
-        }
-      }
-    },
-    "LAST MATCH" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ÚLTIMO PARTIDO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DERNIER MATCH"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ÚLTIMA PARTIDA"
-          }
-        }
-      }
-    },
-    "No more extra time. The match ends level, ready for a kicking competition." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No habrá más tiempo extra. El partido termina empatado, listo para la tanda de patadas."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plus de prolongations. Le match se termine sur un nul, prêt pour les tirs au but."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem mais prorrogação. A partida termina empatada, pronta para a disputa de chutes."
-          }
-        }
-      }
-    },
-    "Off" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apagado"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desligado"
-          }
-        }
-      }
-    },
-    "Off · a level match ends as a draw" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apagado · el empate termina el partido"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé · un nul termine le match"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desligado · o empate encerra a partida"
-          }
-        }
-      }
-    },
-    "Off · no substitutions page on the Watch" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desactivado · sin página de cambios en el Watch"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé · pas de page de remplacements sur la Watch"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desativado · sem página de substituições no Watch"
-          }
-        }
-      }
-    },
-    "Off · red cards are full send-offs" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apagado · la roja es expulsión definitiva"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé · le rouge est une exclusion définitive"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desligado · vermelho é expulsão definitiva"
-          }
-        }
-      }
-    },
-    "Opens options for this player" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abre las opciones de este jugador"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ouvre les options pour ce joueur"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abre as opções deste jogador"
-          }
-        }
-      }
-    },
-    "Opens the match record" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abre el acta del partido"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ouvre la feuille de match"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abre a súmula da partida"
-          }
-        }
-      }
-    },
-    "PEN" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PEN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PÉN"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PEN"
-          }
-        }
-      }
-    },
-    "PENALTIES" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PENALES"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PÉNALITÉS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PENAIS"
-          }
-        }
-      }
-    },
-    "PENALTIES CONCEDED" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PENALES CONCEDIDOS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PÉNALITÉS CONCÉDÉES"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PENAIS COMETIDOS"
-          }
-        }
-      }
-    },
-    "PENALTY TRY" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TRY PENAL"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ESSAI DE PÉNALITÉ"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TRY DE PENAL"
-          }
-        }
-      }
-    },
-    "PICK OFF AND ON NUMBERS" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ELIGE QUIÉN SALE Y QUIÉN ENTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CHOISISSEZ LE SORTANT ET L'ENTRANT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ESCOLHA QUEM SAI E QUEM ENTRA"
-          }
-        }
-      }
-    },
-    "PICK THE RIGHT NUMBER" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ELIGE EL NÚMERO CORRECTO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CHOISISSEZ LE BON NUMÉRO"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ESCOLHA O NÚMERO CERTO"
-          }
-        }
-      }
-    },
-    "Penalties against %@: %lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Penales contra %1$@: %2$lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pénalités contre %1$@ : %2$lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Penais contra %1$@: %2$lld"
-          }
-        }
-      }
-    },
-    "Penalty conceded" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Penal en contra"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pénalité concédée"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Penal cometido"
-          }
-        }
-      }
-    },
-    "Penalty try (+7)" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Try penal (+7)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Essai de pénalité (+7)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Try de penal (+7)"
-          }
-        }
-      }
-    },
-    "Permanently replaced" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reemplazo definitivo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplacé définitivement"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituído definitivamente"
-          }
-        }
-      }
-    },
-    "PLAYER OFF" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SALE"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SORTANT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SAI"
-          }
-        }
-      }
-    },
-    "PLAYER ON" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENTRANT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENTRA"
-          }
-        }
-      }
-    },
-    "QUICK MATCH" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PARTIDO RÁPIDO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MATCH RAPIDE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PARTIDA RÁPIDA"
-          }
-        }
-      }
-    },
-    "Record anyway" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar igual"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enregistrer quand même"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar mesmo assim"
-          }
-        }
-      }
-    },
-    "RED 20'" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ROJA 20'"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ROUGE 20'"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VERMELHO 20'"
-          }
-        }
-      }
-    },
-    "Record a yellow only" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar solo amarilla"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enregistrer un jaune seulement"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar só amarelo"
-          }
-        }
-      }
-    },
-    "Red Card (Second Yellow) - #%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tarjeta roja (segunda amarilla) - #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carton rouge (deuxième jaune) - n°%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cartão vermelho (segundo amarelo) - #%lld"
-          }
-        }
-      }
-    },
-    "REPLACEMENT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REEMPLAZO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENTRÉE / SORTIE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TROCA"
-          }
-        }
-      }
-    },
-    "Replacement after 20 min · second yellow too" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reemplazo a los 20 min · también 2.ª amarilla"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplaçant après 20 min · 2e jaune aussi"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituto após 20 min · 2º amarelo também"
-          }
-        }
-      }
-    },
-    "SAVE NUMBER" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GUARDAR NÚMERO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENREGISTRER LE NUMÉRO"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SALVAR NÚMERO"
-          }
-        }
-      }
-    },
-    "SECOND YELLOW" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SEGUNDA AMARILLA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DEUXIÈME JAUNE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SEGUNDO AMARELO"
-          }
-        }
-      }
-    },
-    "SHOW ALL · %lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VER TODOS · %lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOUT AFFICHER · %lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VER TODOS · %lld"
-          }
-        }
-      }
-    },
-    "SHOW LESS" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VER MENOS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AFFICHER MOINS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VER MENOS"
-          }
-        }
-      }
-    },
-    "START EXTRA TIME" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INICIA EL TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LANCER LES PROLONGATIONS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COMEÇAR A PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "START THE SECOND HALF OF EXTRA TIME" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INICIA LA SEGUNDA MITAD DEL TIEMPO EXTRA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LANCER LA 2E PROLONGATION"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COMEÇAR O 2º TEMPO DA PRORROGAÇÃO"
-          }
-        }
-      }
-    },
-    "SUBS %lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CAMBIOS %lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REMPL. %lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SUBST. %lld"
-          }
-        }
-      }
-    },
-    "SUBS %lld/%lld" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CAMBIOS %lld/%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REMPL. %lld/%lld"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SUBST. %lld/%lld"
-          }
-        }
-      }
-    },
-    "SUBSTITUTION" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CAMBIO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REMPLACEMENT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SUBSTITUIÇÃO"
-          }
-        }
-      }
-    },
-    "Substitution · #%lld off, #%lld on" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambio · sale #%lld, entra #%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplacement · #%lld sort, #%lld entre"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituição · sai #%lld, entra #%lld"
-          }
-        }
-      }
-    },
-    "SUBSTITUTIONS" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CAMBIOS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REMPLACEMENTS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SUBSTITUIÇÕES"
-          }
-        }
-      }
-    },
-    "Substitutions" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambios"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplacements"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituições"
-          }
-        }
-      }
-    },
-    "Substitutions per team" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambios por equipo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplacements par équipe"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Substituições por equipe"
-          }
-        }
-      }
-    },
-    "SUDDEN DEATH" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MUERTE SÚBITA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MORT SUBITE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MORTE SÚBITA"
-          }
-        }
-      }
-    },
-    "SUDDEN DEATH WHISTLE" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN DE MUERTE SÚBITA"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN DE MORT SUBITE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIM DA MORTE SÚBITA"
-          }
-        }
-      }
-    },
-    "Sevens" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby 7"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby à 7"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rugby 7"
-          }
-        }
-      }
-    },
-    "Show a 20-minute red" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrar roja de 20 minutos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Montrer un rouge de 20 minutes"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrar vermelho de 20 minutos"
-          }
-        }
-      }
-    },
-    "Show a red card" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrar tarjeta roja"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Montrer un carton rouge"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrar cartão vermelho"
-          }
-        }
-      }
-    },
-    "Sudden death · 5 min periods" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Muerte súbita · periodos de 5 min"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mort subite · périodes de 5 min"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Morte súbita · períodos de 5 min"
-          }
-        }
-      }
-    },
-    "TAP TO COUNT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOCA PARA CONTAR"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOUCHER POUR COMPTER"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOQUE PARA CONTAR"
-          }
-        }
-      }
-    },
-    "TEMPORARY REPLACEMENT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REEMPLAZO TEMPORAL"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "REMPLACEMENT TEMPORAIRE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SUBSTITUIÇÃO TEMPORÁRIA"
-          }
-        }
-      }
-    },
-    "The clock stops and the period is recorded in the match record. A level match goes to extra time when it's on." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El reloj se detiene y el periodo queda en el acta. Un empate pasa al tiempo extra si está activado."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le chrono s'arrête et la période est notée sur la feuille de match. Une égalité passe aux prolongations si elles sont activées."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O cronômetro para e o período fica na súmula. Um empate vai para a prorrogação se estiver ativada."
-          }
-        }
-      }
-    },
-    "This team has already made %lld substitutions." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Este equipo ya hizo %lld cambios."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cette équipe a déjà fait %lld remplacements."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esta equipe já fez %lld substituições."
-          }
-        }
-      }
-    },
-    "UNDO LAST ENTRY" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESHACER ÚLTIMO REGISTRO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ANNULER LA DERNIÈRE SAISIE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESFAZER ÚLTIMO REGISTRO"
-          }
-        }
-      }
-    },
-    "Undo %@, %@" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Deshacer %1$@, %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Annuler %1$@, %2$@"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desfazer %1$@, %2$@"
-          }
-        }
-      }
-    },
-    "UP TO %lld PER TEAM" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HASTA %lld POR EQUIPO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "JUSQU'À %lld PAR ÉQUIPE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ATÉ %lld POR EQUIPE"
-          }
-        }
-      }
-    },
-    "Up to %lld per team" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hasta %lld por equipo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jusqu'à %lld par équipe"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Até %lld por equipe"
-          }
-        }
-      }
-    },
-    "–" : {
-      "shouldTranslate" : false
-    },
-    "#%lld" : {
-      "shouldTranslate" : false
-    },
-    "#%lld · %@" : {
-      "shouldTranslate" : false
-    },
-    "%@" : {
-      "shouldTranslate" : false
-    },
-    "%@ WIN" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GANA %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ L'EMPORTE"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ VENCE"
-          }
-        }
-      }
-    },
-    "%@, %@, %@" : {
-      "shouldTranslate" : false
-    },
-    "%@, %lld points" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@, %lld puntos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@, %lld points"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@, %lld pontos"
           }
         }
       }
@@ -3151,10 +530,10 @@
         }
       }
     },
-    "%lld'" : {
+    "%lld%%" : {
       "shouldTranslate" : false
     },
-    "%lld%%" : {
+    "+%@" : {
       "shouldTranslate" : false
     },
     "+%lld" : {
@@ -3162,6 +541,28 @@
     },
     "1 MIN" : {
       "shouldTranslate" : false
+    },
+    "2 × 10 min, then sudden death" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 × 10 min, luego muerte súbita"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 × 10 min, puis mort subite"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 × 10 min, depois morte súbita"
+          }
+        }
+      }
     },
     "2 MIN" : {
       "shouldTranslate" : false
@@ -3187,6 +588,116 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mais de 15 anos jogando pelo Titanes Rugby Club e sete pela seleção do Panamá me ensinaram o jogo. Apitar me ensinou do que o relógio realmente precisa. Criei o Rugby Timer para quem está com o apito."
+          }
+        }
+      }
+    },
+    "20-minute red · Replacement can come on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roja de 20 min · Ya puede entrar un reemplazo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rouge 20 min · Le remplaçant peut entrer"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vermelho 20 min · Substituto pode entrar"
+          }
+        }
+      }
+    },
+    "20-minute red · Replacement in" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roja de 20 min · Reemplazo en"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rouge 20 min · Remplaçant dans"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vermelho 20 min · Substituto em"
+          }
+        }
+      }
+    },
+    "20-minute red card" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta roja de 20 minutos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge de 20 minutes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartão vermelho de 20 minutos"
+          }
+        }
+      }
+    },
+    "20-Minute Red Card - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roja de 20 minutos - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge de 20 minutes - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vermelho de 20 minutos - #%lld"
+          }
+        }
+      }
+    },
+    "20-Minute Red Card (Second Yellow) - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roja de 20 minutos (segunda amarilla) - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge de 20 minutes (deuxième jaune) - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vermelho de 20 minutos (segundo amarelo) - #%lld"
           }
         }
       }
@@ -3257,6 +768,51 @@
         }
       }
     },
+    "ACTIVE TIMERS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CRONÓMETROS ACTIVOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MINUTEURS ACTIFS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CRONÔMETROS ATIVOS"
+          }
+        }
+      }
+    },
+    "Allow replacement now" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permitir reemplazo ahora"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoriser le remplaçant maintenant"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liberar substituto agora"
+          }
+        }
+      }
+    },
     "Any number" : {
       "localizations" : {
         "es" : {
@@ -3297,6 +853,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Idioma do app"
+          }
+        }
+      }
+    },
+    "APPLE WATCH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APPLE WATCH"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APPLE WATCH"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APPLE WATCH"
+          }
+        }
+      }
+    },
+    "Applied when you send setup to the Watch." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se aplica al enviar la configuración al reloj."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appliqué lors de l’envoi de la configuration à la montre."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicado ao enviar a configuração para o relógio."
+          }
+        }
+      }
+    },
+    "Away" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visitante"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extérieur"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visitante"
           }
         }
       }
@@ -3367,24 +989,134 @@
         }
       }
     },
-    "Blow for full time" : {
+    "Back on" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pitar el final"
+            "value" : "Vuelve al campo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Siffler la fin du match"
+            "value" : "Retour en jeu"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apitar o fim do jogo"
+            "value" : "Volta a campo"
+          }
+        }
+      }
+    },
+    "BLOOD · 15 MIN" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SANGRE · 15 MIN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAIGNEMENT · 15 MIN"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SANGUE · 15 MIN"
+          }
+        }
+      }
+    },
+    "Blood · replaced - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sangre · reemplazado - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saignement · remplacé - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sangue · substituído - #%lld"
+          }
+        }
+      }
+    },
+    "Blood · returned - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sangre · volvió - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saignement · revenu - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sangue · voltou - #%lld"
+          }
+        }
+      }
+    },
+    "Blood replacement - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reemplazo por sangre - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement saignement - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição por sangue - #%lld"
+          }
+        }
+      }
+    },
+    "Blood replacement · 15 min" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reemplazo por sangre · 15 min"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement saignement · 15 min"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição por sangue · 15 min"
           }
         }
       }
@@ -3407,6 +1139,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apitar o intervalo"
+          }
+        }
+      }
+    },
+    "Blow the whistle" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pitar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siffler"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apitar"
           }
         }
       }
@@ -3473,6 +1227,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CARTÃO"
+          }
+        }
+      }
+    },
+    "Check this substitution" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisa este cambio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vérifiez ce remplacement"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confira esta substituição"
+          }
+        }
+      }
+    },
+    "Clock and score on the Lock Screen" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reloj y marcador en la pantalla bloqueada"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chrono et score sur l’écran verrouillé"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cronômetro e placar na Tela Bloqueada"
           }
         }
       }
@@ -3583,6 +1381,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cara ou coroa"
+          }
+        }
+      }
+    },
+    "CONCEDED" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONCEDIDOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONCÉDÉES"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONCEDIDOS"
+          }
+        }
+      }
+    },
+    "CONFIRM · #%lld OFF, #%lld ON" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR · SALE #%lld, ENTRA #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMER · #%lld SORT, #%lld ENTRE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR · SAI #%lld, ENTRA #%lld"
+          }
+        }
+      }
+    },
+    "CONFIRM 20-MIN RED · #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR ROJA 20 MIN · #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMER ROUGE 20 MIN · N°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CONFIRMAR VERMELHO 20 MIN · #%lld"
           }
         }
       }
@@ -3759,6 +1623,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "COPIAR TEXTO"
+          }
+        }
+      }
+    },
+    "CORRECTION" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CORRECCIÓN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CORRECTION"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CORREÇÃO"
           }
         }
       }
@@ -4159,6 +2045,72 @@
         }
       }
     },
+    "END AS A DRAW" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TERMINAR EMPATADO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TERMINER SUR UN NUL"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENCERRAR EMPATADO"
+          }
+        }
+      }
+    },
+    "END ET1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TERMINAR TE1"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN PROL. 1"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENCERRAR PR1"
+          }
+        }
+      }
+    },
+    "END EXTRA TIME" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TERMINAR TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN DES PROLONGATIONS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENCERRAR PRORROGAÇÃO"
+          }
+        }
+      }
+    },
     "END FIRST HALF" : {
       "localizations" : {
         "es" : {
@@ -4199,6 +2151,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ENCERRAR JOGO"
+          }
+        }
+      }
+    },
+    "End sin-bin now" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminar exclusión ahora"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminer l'exclusion maintenant"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encerrar exclusão agora"
+          }
+        }
+      }
+    },
+    "END SUDDEN DEATH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TERMINAR MUERTE SÚBITA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN DE MORT SUBITE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENCERRAR MORTE SÚBITA"
+          }
+        }
+      }
+    },
+    "End the match" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminar el partido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminer le match"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encerrar a partida"
           }
         }
       }
@@ -4291,6 +2309,138 @@
         }
       }
     },
+    "ET BREAK" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESC PR"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAUSE PROL"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INT PR"
+          }
+        }
+      }
+    },
+    "ET FULL-TIME WHISTLE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINAL DEL TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN DES PROLONGATIONS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIM DA PRORROGAÇÃO"
+          }
+        }
+      }
+    },
+    "ET HALF-TIME WHISTLE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESCANSO DEL TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MI-TEMPS DES PROLONGATIONS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INTERVALO DA PRORROGAÇÃO"
+          }
+        }
+      }
+    },
+    "ET1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PR1"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROL1"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PR1"
+          }
+        }
+      }
+    },
+    "ET2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PR2"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROL2"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PR2"
+          }
+        }
+      }
+    },
+    "Every match you finish, on iPhone or Apple Watch, is kept here with its full record." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada partido que terminas, en el iPhone o el Apple Watch, se guarda aquí con su acta completa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque match terminé, sur iPhone ou Apple Watch, est gardé ici avec sa feuille de match complète."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada partida que você termina, no iPhone ou no Apple Watch, fica guardada aqui com a súmula completa."
+          }
+        }
+      }
+    },
     "EVERY NEW SETUP" : {
       "localizations" : {
         "es" : {
@@ -4335,6 +2485,29 @@
         }
       }
     },
+    "Extended layout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista ampliada"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vue étendue"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualização estendida"
+          }
+        }
+      }
+    },
     "Extended squad" : {
       "localizations" : {
         "es" : {
@@ -4353,6 +2526,182 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elenco ampliado"
+          }
+        }
+      }
+    },
+    "Extra time" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo extra"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prolongations"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prorrogação"
+          }
+        }
+      }
+    },
+    "EXTRA TIME" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROLONGATIONS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRORROGAÇÃO"
+          }
+        }
+      }
+    },
+    "EXTRA TIME · ET1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIEMPO EXTRA · TE1"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROLONGATION · P1"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRORROGAÇÃO · PR1"
+          }
+        }
+      }
+    },
+    "EXTRA TIME · ET2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIEMPO EXTRA · TE2"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROLONGATION · P2"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRORROGAÇÃO · PR2"
+          }
+        }
+      }
+    },
+    "EXTRA TIME (ET1)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIEMPO EXTRA (TE1)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROLONGATION (P1)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRORROGAÇÃO (PR1)"
+          }
+        }
+      }
+    },
+    "EXTRA TIME (ET2)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIEMPO EXTRA (TE2)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROLONGATION (P2)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRORROGAÇÃO (PR2)"
+          }
+        }
+      }
+    },
+    "EXTRA-TIME BREAK" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESCANSO ANTES DEL TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAUSE AVANT PROLONGATION"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INTERVALO DA PRORROGAÇÃO"
+          }
+        }
+      }
+    },
+    "Fifteens" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby XV"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby à XV"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby XV"
           }
         }
       }
@@ -4423,6 +2772,160 @@
         }
       }
     },
+    "FIRST SCORE WINS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EL PRIMER PUNTO GANA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LES PREMIERS POINTS GAGNENT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QUEM PONTUAR PRIMEIRO VENCE"
+          }
+        }
+      }
+    },
+    "Fix shirt number" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corregir número de camiseta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corriger le numéro de maillot"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrigir número da camisa"
+          }
+        }
+      }
+    },
+    "FIX SHIRT NUMBER" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CORREGIR NÚMERO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CORRIGER LE NUMÉRO"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CORRIGIR NÚMERO"
+          }
+        }
+      }
+    },
+    "FK" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GF"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CF"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TL"
+          }
+        }
+      }
+    },
+    "Free kick conceded" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Golpe franco en contra"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coup franc concédé"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiro livre cometido"
+          }
+        }
+      }
+    },
+    "Free kicks against %@: %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Golpes francos contra %1$@: %2$lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coups francs contre %1$@ : %2$lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiros livres contra %1$@: %2$lld"
+          }
+        }
+      }
+    },
+    "FT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIM"
+          }
+        }
+      }
+    },
     "FULL TIME" : {
       "localizations" : {
         "es" : {
@@ -4463,6 +2966,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "FIM DE JOGO · 2 × %lld min"
+          }
+        }
+      }
+    },
+    "FULL TIME · 2 × %lld min + extra time" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINAL · 2 × %lld min + tiempo extra"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN DU MATCH · 2 × %lld min + prolongations"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIM DE JOGO · 2 × %lld min + prorrogação"
           }
         }
       }
@@ -4541,6 +3066,50 @@
     },
     "GitHub" : {
       "shouldTranslate" : false
+    },
+    "H1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1T"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1MT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1T"
+          }
+        }
+      }
+    },
+    "H2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2T"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2MT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2T"
+          }
+        }
+      }
     },
     "HALF" : {
       "localizations" : {
@@ -4696,6 +3265,116 @@
         }
       }
     },
+    "HIA - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA - #%lld"
+          }
+        }
+      }
+    },
+    "HIA · 12 MIN" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · 12 MIN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · 12 MIN"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · 12 MIN"
+          }
+        }
+      }
+    },
+    "HIA · 12 min off-field assessment" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · evaluación fuera del campo de 12 min"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · évaluation hors du terrain de 12 min"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · avaliação fora de campo de 12 min"
+          }
+        }
+      }
+    },
+    "HIA · replaced - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · reemplazado - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · remplacé - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · substituído - #%lld"
+          }
+        }
+      }
+    },
+    "HIA · returned - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · volvió - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · revenu - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIA · voltou - #%lld"
+          }
+        }
+      }
+    },
     "Hold to start, pause, score, card or end a half" : {
       "localizations" : {
         "es" : {
@@ -4714,6 +3393,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Segure para iniciar, pausar, pontuar, dar cartão ou encerrar um tempo"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domicile"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mandante"
           }
         }
       }
@@ -4806,6 +3507,28 @@
         }
       }
     },
+    "HT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESC"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INT"
+          }
+        }
+      }
+    },
     "I've played rugby in Panama for more than 15 years with Titanes Rugby Club, and represented the national team from 2015 to 2022. Today I also referee. Rugby Timer is the tool I wanted with the whistle in my hand: the clock, the sin-bins and the score on my wrist, so my eyes stay on the game." : {
       "localizations" : {
         "es" : {
@@ -4850,6 +3573,73 @@
         }
       }
     },
+    "INJURED PLAYER'S SIDE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EQUIPO DEL LESIONADO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÉQUIPE DU BLESSÉ"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EQUIPE DO LESIONADO"
+          }
+        }
+      }
+    },
+    "INJURY" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LESIÓN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BLESSURE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LESÃO"
+          }
+        }
+      }
+    },
+    "Injury timers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cronómetros de lesiones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minuteurs de blessure"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temporizadores de lesão"
+          }
+        }
+      }
+    },
     "iOS developer · Rugby player · Referee" : {
       "localizations" : {
         "es" : {
@@ -4868,6 +3658,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desenvolvedor iOS · Jogador de rugby · Árbitro"
+          }
+        }
+      }
+    },
+    "IPHONE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPHONE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPHONE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPHONE"
           }
         }
       }
@@ -5004,50 +3816,6 @@
         }
       }
     },
-    "Live Activity" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Actividad en vivo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activité en direct"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Atividade ao Vivo"
-          }
-        }
-      }
-    },
-    "Clock and score on the Lock Screen" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reloj y marcador en la pantalla bloqueada"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chrono et score sur l’écran verrouillé"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cronômetro e placar na Tela Bloqueada"
-          }
-        }
-      }
-    },
     "KICK OFF" : {
       "localizations" : {
         "es" : {
@@ -5066,6 +3834,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PONTAPÉ INICIAL"
+          }
+        }
+      }
+    },
+    "KICK OFF ET1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAQUE TE1"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COUP D'ENVOI P1"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PONTAPÉ PR1"
+          }
+        }
+      }
+    },
+    "KICK OFF ET2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAQUE TE2"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COUP D'ENVOI P2"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PONTAPÉ PR2"
           }
         }
       }
@@ -5158,6 +3970,28 @@
         }
       }
     },
+    "LAST MATCH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÚLTIMO PARTIDO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DERNIER MATCH"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÚLTIMA PARTIDA"
+          }
+        }
+      }
+    },
     "Last update %@ ago. The clock keeps counting here; scores and cards update when the Watch reconnects." : {
       "localizations" : {
         "es" : {
@@ -5202,6 +4036,94 @@
         }
       }
     },
+    "LEVEL · EXTRA TIME NEXT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EMPATE · SIGUE TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÉGALITÉ · PROLONGATIONS ENSUITE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EMPATE · PRORROGAÇÃO A SEGUIR"
+          }
+        }
+      }
+    },
+    "Level at full time. Kick off extra time, or end as a draw" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empate al final. Inicia el tiempo extra o termina empatado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Égalité à la fin. Lancez les prolongations ou terminez sur un nul"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empate no fim. Comece a prorrogação ou encerre empatado"
+          }
+        }
+      }
+    },
+    "Level at full time. Start extra time on Apple Watch" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empate al final. Inicia el tiempo extra en el Apple Watch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Égalité à la fin. Lancez les prolongations sur l'Apple Watch"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empate no fim. Comece a prorrogação no Apple Watch"
+          }
+        }
+      }
+    },
+    "Live Activity" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad en vivo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activité en direct"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atividade ao Vivo"
+          }
+        }
+      }
+    },
     "LIVE MATCH" : {
       "localizations" : {
         "es" : {
@@ -5242,6 +4164,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RELÓGIO DO JOGO"
+          }
+        }
+      }
+    },
+    "MATCH CLOCK FOR REFEREES" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RELOJ DE PARTIDO PARA ÁRBITROS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CHRONO DE MATCH POUR ARBITRES"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CRONÔMETRO DE PARTIDA PARA ÁRBITROS"
           }
         }
       }
@@ -5374,6 +4318,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Formato do jogo por tempo"
+          }
+        }
+      }
+    },
+    "Match History" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historial de partidos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historique des matchs"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Histórico de partidas"
           }
         }
       }
@@ -5689,6 +4655,116 @@
         }
       }
     },
+    "No limit" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin límite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans limite"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem limite"
+          }
+        }
+      }
+    },
+    "NO LIMIT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SIN LÍMITE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SANS LIMITE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEM LIMITE"
+          }
+        }
+      }
+    },
+    "No limit · rolling substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin límite · cambios libres"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans limite · remplacements libres"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem limite · substituições livres"
+          }
+        }
+      }
+    },
+    "NO MATCHES YET" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AÚN NO HAY PARTIDOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAS ENCORE DE MATCHS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NENHUMA PARTIDA AINDA"
+          }
+        }
+      }
+    },
+    "No more extra time. The match ends level, ready for a kicking competition." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No habrá más tiempo extra. El partido termina empatado, listo para la tanda de patadas."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus de prolongations. Le match se termine sur un nul, prêt pour les tirs au but."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem mais prorrogação. A partida termina empatada, pronta para a disputa de chutes."
+          }
+        }
+      }
+    },
     "No player number" : {
       "localizations" : {
         "es" : {
@@ -5707,6 +4783,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sem número"
+          }
+        }
+      }
+    },
+    "No players off the field" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay jugadores fuera del campo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun joueur hors du terrain"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum jogador fora de campo"
           }
         }
       }
@@ -5755,6 +4854,50 @@
         }
       }
     },
+    "Off" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desligado"
+          }
+        }
+      }
+    },
+    "Off · a level match ends as a draw" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagado · el empate termina el partido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé · un nul termine le match"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desligado · o empate encerra a partida"
+          }
+        }
+      }
+    },
     "Off · kick off without a toss" : {
       "localizations" : {
         "es" : {
@@ -5773,6 +4916,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desativado · pontapé sem sorteio"
+          }
+        }
+      }
+    },
+    "Off · no substitutions page on the Watch" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado · sin página de cambios en el Watch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé · pas de page de remplacements sur la Watch"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desativado · sem página de substituições no Watch"
+          }
+        }
+      }
+    },
+    "Off · red cards are full send-offs" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagado · la roja es expulsión definitiva"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé · le rouge est une exclusion définitive"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desligado · vermelho é expulsão definitiva"
           }
         }
       }
@@ -5953,6 +5140,50 @@
         }
       }
     },
+    "Opens options for this player" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre las opciones de este jugador"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre les options pour ce joueur"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre as opções deste jogador"
+          }
+        }
+      }
+    },
+    "Opens the match record" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre el acta del partido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre la feuille de match"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre a súmula da partida"
+          }
+        }
+      }
+    },
     "OPTIONAL" : {
       "localizations" : {
         "es" : {
@@ -6085,6 +5316,94 @@
         }
       }
     },
+    "PEN" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PEN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PÉN"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PEN"
+          }
+        }
+      }
+    },
+    "PENALTIES" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENALES"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PÉNALITÉS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENAIS"
+          }
+        }
+      }
+    },
+    "Penalties against %@: %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penales contra %1$@: %2$lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pénalités contre %1$@ : %2$lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penais contra %1$@: %2$lld"
+          }
+        }
+      }
+    },
+    "PENALTIES CONCEDED" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENALES CONCEDIDOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PÉNALITÉS CONCÉDÉES"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENAIS COMETIDOS"
+          }
+        }
+      }
+    },
     "PENALTY" : {
       "localizations" : {
         "es" : {
@@ -6103,6 +5422,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PENAL"
+          }
+        }
+      }
+    },
+    "Penalty conceded" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penal en contra"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pénalité concédée"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penal cometido"
           }
         }
       }
@@ -6129,6 +5470,50 @@
         }
       }
     },
+    "PENALTY TRY" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TRY PENAL"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESSAI DE PÉNALITÉ"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TRY DE PENAL"
+          }
+        }
+      }
+    },
+    "Penalty try (+7)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try penal (+7)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essai de pénalité (+7)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try de penal (+7)"
+          }
+        }
+      }
+    },
     "PER HALF" : {
       "localizations" : {
         "es" : {
@@ -6147,6 +5532,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "POR TEMPO"
+          }
+        }
+      }
+    },
+    "Permanently replaced" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reemplazo definitivo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacé définitivement"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituído definitivamente"
+          }
+        }
+      }
+    },
+    "PICK OFF AND ON NUMBERS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ELIGE QUIÉN SALE Y QUIÉN ENTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CHOISISSEZ LE SORTANT ET L'ENTRANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESCOLHA QUEM SAI E QUEM ENTRA"
+          }
+        }
+      }
+    },
+    "PICK THE RIGHT NUMBER" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ELIGE EL NÚMERO CORRECTO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CHOISISSEZ LE BON NUMÉRO"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESCOLHA O NÚMERO CERTO"
           }
         }
       }
@@ -6213,6 +5664,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jogador · 2015–2022"
+          }
+        }
+      }
+    },
+    "PLAYER OFF" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SALE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SORTANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAI"
+          }
+        }
+      }
+    },
+    "PLAYER ON" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRANT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRA"
           }
         }
       }
@@ -6305,6 +5800,28 @@
         }
       }
     },
+    "QUICK MATCH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PARTIDO RÁPIDO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MATCH RAPIDE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PARTIDA RÁPIDA"
+          }
+        }
+      }
+    },
     "QUICK TOGGLES" : {
       "localizations" : {
         "es" : {
@@ -6393,182 +5910,6 @@
         }
       }
     },
-    "H1" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1T"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1MT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1T"
-          }
-        }
-      }
-    },
-    "H2" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2T"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2MT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2T"
-          }
-        }
-      }
-    },
-    "HT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESC"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MT"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INT"
-          }
-        }
-      }
-    },
-    "FT" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIN"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FIM"
-          }
-        }
-      }
-    },
-    "ET1" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PR1"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROL1"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PR1"
-          }
-        }
-      }
-    },
-    "ET2" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PR2"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PROL2"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PR2"
-          }
-        }
-      }
-    },
-    "SD" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MS"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MS"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MS"
-          }
-        }
-      }
-    },
-    "ET BREAK" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESC PR"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PAUSE PROL"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INT PR"
-          }
-        }
-      }
-    },
     "READY FOR KICKOFF" : {
       "localizations" : {
         "es" : {
@@ -6587,6 +5928,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PRONTO PARA O INÍCIO"
+          }
+        }
+      }
+    },
+    "Record a yellow only" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar solo amarilla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer un jaune seulement"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar só amarelo"
+          }
+        }
+      }
+    },
+    "Record anyway" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar igual"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer quand même"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar mesmo assim"
           }
         }
       }
@@ -6631,6 +6016,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VERMELHO"
+          }
+        }
+      }
+    },
+    "RED 20'" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ROJA 20'"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ROUGE 20'"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VERMELHO 20'"
           }
         }
       }
@@ -6701,6 +6108,28 @@
         }
       }
     },
+    "Red Card (Second Yellow) - #%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta roja (segunda amarilla) - #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carton rouge (deuxième jaune) - n°%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartão vermelho (segundo amarelo) - #%lld"
+          }
+        }
+      }
+    },
     "REMAINING" : {
       "localizations" : {
         "es" : {
@@ -6719,6 +6148,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RESTANTE"
+          }
+        }
+      }
+    },
+    "REPLACEMENT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REEMPLAZO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENTRÉE / SORTIE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TROCA"
+          }
+        }
+      }
+    },
+    "Replacement after 20 min · second yellow too" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reemplazo a los 20 min · también 2.ª amarilla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplaçant après 20 min · 2e jaune aussi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituto após 20 min · 2º amarelo também"
           }
         }
       }
@@ -7125,6 +6598,28 @@
         }
       }
     },
+    "SAVE NUMBER" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GUARDAR NÚMERO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ENREGISTRER LE NUMÉRO"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SALVAR NÚMERO"
+          }
+        }
+      }
+    },
     "SCORE" : {
       "localizations" : {
         "es" : {
@@ -7235,6 +6730,28 @@
         }
       }
     },
+    "SD" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MS"
+          }
+        }
+      }
+    },
     "SECOND HALF · H2" : {
       "localizations" : {
         "es" : {
@@ -7275,6 +6792,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SEGUNDO TEMPO (T2)"
+          }
+        }
+      }
+    },
+    "SECOND YELLOW" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEGUNDA AMARILLA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DEUXIÈME JAUNE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEGUNDO AMARELO"
           }
         }
       }
@@ -7411,6 +6950,28 @@
         }
       }
     },
+    "Sevens" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby 7"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby à 7"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rugby 7"
+          }
+        }
+      }
+    },
     "SEVENS" : {
       "localizations" : {
         "es" : {
@@ -7495,6 +7056,117 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Números de camisa"
+          }
+        }
+      }
+    },
+    "Show a 20-minute red" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar roja de 20 minutos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montrer un rouge de 20 minutes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar vermelho de 20 minutos"
+          }
+        }
+      }
+    },
+    "Show a red card" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar tarjeta roja"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montrer un carton rouge"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar cartão vermelho"
+          }
+        }
+      }
+    },
+    "SHOW ALL · %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VER TODOS · %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOUT AFFICHER · %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VER TODOS · %lld"
+          }
+        }
+      }
+    },
+    "SHOW LESS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VER MENOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AFFICHER MOINS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VER MENOS"
+          }
+        }
+      }
+    },
+    "Show penalties and sanctions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar infracciones y sanciones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher les pénalités et les sanctions"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar penalidades e sanções"
           }
         }
       }
@@ -7631,6 +7303,28 @@
         }
       }
     },
+    "START EXTRA TIME" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIA EL TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LANCER LES PROLONGATIONS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COMEÇAR A PRORROGAÇÃO"
+          }
+        }
+      }
+    },
     "START THE FIRST HALF" : {
       "localizations" : {
         "es" : {
@@ -7697,6 +7391,28 @@
         }
       }
     },
+    "START THE SECOND HALF OF EXTRA TIME" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIA LA SEGUNDA MITAD DEL TIEMPO EXTRA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LANCER LA 2E PROLONGATION"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COMEÇAR O 2º TEMPO DA PRORROGAÇÃO"
+          }
+        }
+      }
+    },
     "Start the second half on Apple Watch" : {
       "localizations" : {
         "es" : {
@@ -7737,6 +7453,226 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "XV titular"
+          }
+        }
+      }
+    },
+    "SUBS %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPL. %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBST. %lld"
+          }
+        }
+      }
+    },
+    "SUBS %lld/%lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS %lld/%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPL. %lld/%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBST. %lld/%lld"
+          }
+        }
+      }
+    },
+    "SUBSTITUTION" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACEMENT"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIÇÃO"
+          }
+        }
+      }
+    },
+    "Substitution · #%lld off, #%lld on" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambio · sale #%lld, entra #%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacement · #%lld sort, #%lld entre"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituição · sai #%lld, entra #%lld"
+          }
+        }
+      }
+    },
+    "Substitutions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacements"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituições"
+          }
+        }
+      }
+    },
+    "SUBSTITUTIONS" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAMBIOS"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACEMENTS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIÇÕES"
+          }
+        }
+      }
+    },
+    "Substitutions per team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios por equipo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacements par équipe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Substituições por equipe"
+          }
+        }
+      }
+    },
+    "SUDDEN DEATH" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MUERTE SÚBITA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MORT SUBITE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MORTE SÚBITA"
+          }
+        }
+      }
+    },
+    "Sudden death · 5 min periods" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muerte súbita · periodos de 5 min"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mort subite · périodes de 5 min"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morte súbita · períodos de 5 min"
+          }
+        }
+      }
+    },
+    "SUDDEN DEATH WHISTLE" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN DE MUERTE SÚBITA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIN DE MORT SUBITE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIM DA MORTE SÚBITA"
           }
         }
       }
@@ -7825,6 +7761,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toque em Pontapé inicial para iniciar o relógio"
+          }
+        }
+      }
+    },
+    "TAP TO COUNT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOCA PARA CONTAR"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOUCHER POUR COMPTER"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOQUE PARA CONTAR"
           }
         }
       }
@@ -7939,6 +7897,28 @@
         }
       }
     },
+    "TEMPORARY REPLACEMENT" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REEMPLAZO TEMPORAL"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMPLACEMENT TEMPORAIRE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUBSTITUIÇÃO TEMPORÁRIA"
+          }
+        }
+      }
+    },
     "THE APP & ITS MAKER" : {
       "localizations" : {
         "es" : {
@@ -7961,24 +7941,24 @@
         }
       }
     },
-    "The clock stops and the half is recorded in the match record." : {
+    "The clock stops and the period is recorded in the match record. A level match goes to extra time when it's on." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "El reloj se detiene y el tiempo queda registrado en el acta."
+            "value" : "El reloj se detiene y el periodo queda en el acta. Un empate pasa al tiempo extra si está activado."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le chrono s'arrête et la mi-temps est inscrite sur la feuille de match."
+            "value" : "Le chrono s'arrête et la période est notée sur la feuille de match. Une égalité passe aux prolongations si elles sont activées."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O relógio para e o tempo fica registrado na súmula."
+            "value" : "O cronômetro para e o período fica na súmula. Um empate vai para a prorrogação se estiver ativada."
           }
         }
       }
@@ -8023,6 +8003,51 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O CONFRONTO"
+          }
+        }
+      }
+    },
+    "This team has already made %lld substitutions." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este equipo ya hizo %lld cambios."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette équipe a déjà fait %lld remplacements."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta equipe já fez %lld substituições."
+          }
+        }
+      }
+    },
+    "TIME DETAILS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DETALLES DEL TIEMPO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DÉTAILS DU TEMPS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DETALHES DO TEMPO"
           }
         }
       }
@@ -8140,6 +8165,94 @@
         }
       }
     },
+    "Undo %@, %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deshacer %1$@, %2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler %1$@, %2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desfazer %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "UNDO LAST ENTRY" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESHACER ÚLTIMO REGISTRO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ANNULER LA DERNIÈRE SAISIE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESFAZER ÚLTIMO REGISTRO"
+          }
+        }
+      }
+    },
+    "Up to %lld per team" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasta %lld por equipo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jusqu'à %lld par équipe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Até %lld por equipe"
+          }
+        }
+      }
+    },
+    "UP TO %lld PER TEAM" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HASTA %lld POR EQUIPO"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JUSQU'À %lld PAR ÉQUIPE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ATÉ %lld POR EQUIPE"
+          }
+        }
+      }
+    },
     "VISITOR" : {
       "localizations" : {
         "es" : {
@@ -8246,6 +8359,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "WATCH CONECTADO"
+          }
+        }
+      }
+    },
+    "Watch display settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla del reloj"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichage de la montre"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tela do relógio"
           }
         }
       }

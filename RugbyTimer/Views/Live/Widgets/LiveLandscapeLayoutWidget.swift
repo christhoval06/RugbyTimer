@@ -27,16 +27,14 @@ struct LiveLandscapeLayoutWidget<Clock: View, Details: View, Footer: View>: View
 
             Color.armorBorder.frame(width: 1)
 
-            VStack(spacing: 0) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 20) { details }
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 16)
-                }
-                .scrollBounceBehavior(.basedOnSize)
-                .clipped()
+            ScrollWithCollapsibleFooter {
+                VStack(alignment: .leading, spacing: 20) { details }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 16)
+            } footer: {
                 footer
             }
+            .scrollBounceBehavior(.basedOnSize)
             .frame(maxWidth: .infinity)
         }
     }

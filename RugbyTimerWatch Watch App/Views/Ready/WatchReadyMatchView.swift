@@ -12,6 +12,7 @@ struct WatchReadyMatchView: View {
     /// Back to the main screen: CHANGE SETUP for a Quick Match, QUICK MATCH INSTEAD for an iPhone setup.
     var leaveKind: WatchLeaveMatchWidget.Kind = .quickMatchInstead
     var onLeave: (() -> Void)? = nil
+    var showsDisplaySettings = true
 
     @State private var showsCoinToss = false
 
@@ -34,6 +35,9 @@ struct WatchReadyMatchView: View {
                 }
                 if let onLeave {
                     WatchLeaveMatchWidget(kind: leaveKind, onLeave: onLeave)
+                }
+                if showsDisplaySettings {
+                    WatchDisplaySettingsButton()
                 }
             }
             .padding(.vertical, 4)

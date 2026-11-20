@@ -4,6 +4,9 @@ import SwiftUI
 /// the scoring breakdown (with points per half) and, at full time, the discipline summary.
 struct WatchResultPageView: View {
     let summary: WatchMatchSummary
+    var showsExpandedDetails = false
+    var onNewMatch: (() -> Void)? = nil
+    var onReturnToClock: (() -> Void)? = nil
 
     private var isFullTime: Bool { summary.matchPeriod == .fullTime }
 
@@ -16,6 +19,10 @@ struct WatchResultPageView: View {
                     tint: isFullTime ? .iceTitanium : .pitchEmerald
                 )
 
+                if isFullTime && showsExpandedDetails {
+                    WatchFullTimeWidget(summary: summary)
+                }
+
                 WatchScoreboardWidget(
                     homeTeamName: summary.homeTeamName,
                     awayTeamName: summary.awayTeamName,
@@ -23,8 +30,22 @@ struct WatchResultPageView: View {
                     awayScore: summary.awayScore
                 )
 
-                if summary.isStopped {
+                if !isFullTime, let onReturnToClock {
+                    Button(action: onReturnToClock) {
+                        Label("MATCH CLOCK", systemImage: "timer")
+                            .font(.system(size: 11, weight: .heavy).width(.condensed))
+                            .foregroundStyle(Color.pitchEmerald)
+                            .frame(maxWidth: .infinity, minHeight: 36)
+                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.armorBorder))
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                if summary.isStopped || showsExpandedDetails {
                     WatchScoringBreakdownWidget(summary: summary)
+                }
+
+                if summary.isStopped {
                     WatchPenaltyStatsWidget(summary: summary)
                     if summary.substitutionRules.isEnabled {
                         WatchSubstitutionCountsWidget(homeTeamName: summary.homeTeamName, awayTeamName: summary.awayTeamName,
@@ -33,11 +54,18 @@ struct WatchResultPageView: View {
                 }
 
                 if isFullTime {
+                    if showsExpandedDetails {
+                        WatchTimePastClockWidget(firstHalf: summary.timePastClock.firstHalf,
+                                                 secondHalf: summary.timePastClock.secondHalf)
+                    }
                     WatchDisciplineStatsWidget(
                         homeTeamName: summary.homeTeamName,
                         awayTeamName: summary.awayTeamName,
                         events: summary.matchEvents
                     )
+                    if let onNewMatch {
+                        WatchLeaveMatchWidget(kind: .newMatch, onLeave: onNewMatch)
+                    }
                 } else if !summary.carriedSinBins.isEmpty {
                     WatchSinBinListWidget(cards: summary.carriedSinBins)
                 }

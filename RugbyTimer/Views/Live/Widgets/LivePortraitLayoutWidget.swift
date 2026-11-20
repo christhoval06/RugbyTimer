@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Portrait layout: one scrolling column of match sections above a pinned footer.
+/// Portrait layout: one scrolling column of match sections and a footer.
 struct LivePortraitLayoutWidget<Content: View, Footer: View>: View {
     private let content: Content
     private let footer: Footer
@@ -11,16 +11,14 @@ struct LivePortraitLayoutWidget<Content: View, Footer: View>: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) { content }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 20)
-                    .padding(.bottom, 24)
-                    .frame(maxWidth: 600)
-                    .frame(maxWidth: .infinity)
-            }
-            .clipped()
+        ScrollWithCollapsibleFooter {
+            VStack(alignment: .leading, spacing: 24) { content }
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
+                .padding(.bottom, 24)
+                .frame(maxWidth: 600)
+                .frame(maxWidth: .infinity)
+        } footer: {
             footer
         }
     }

@@ -67,6 +67,9 @@ final class AppSettings: ObservableObject {
     @Published var substitutionRules: SubstitutionRules {
         didSet { defaults.set(try? JSONEncoder().encode(substitutionRules), forKey: Key.substitutions) }
     }
+    @Published var watchDisplayPreferences: WatchDisplayPreferences {
+        didSet { watchDisplayPreferences.save(to: defaults) }
+    }
     @Published var halfTimeBreakSeconds: Int { didSet { defaults.set(halfTimeBreakSeconds, forKey: Key.halfTimeBreak) } }
     /// The match clock and score on the Lock Screen and in the Dynamic Island.
     @Published var liveActivityEnabled: Bool { didSet { defaults.set(liveActivityEnabled, forKey: Key.liveActivity) } }
@@ -89,6 +92,7 @@ final class AppSettings: ObservableObject {
         extraTimeFormat = defaults.string(forKey: Key.extraTime).flatMap(ExtraTimeFormat.init(rawValue:)) ?? .off
         substitutionRules = defaults.data(forKey: Key.substitutions)
             .flatMap { try? JSONDecoder().decode(SubstitutionRules.self, from: $0) } ?? SubstitutionRules()
+        watchDisplayPreferences = WatchDisplayPreferences.load(from: defaults)
         halfTimeBreakSeconds = defaults.positiveInt(forKey: Key.halfTimeBreak) ?? Self.standardHalfTimeBreakSeconds
         liveActivityEnabled = defaults.object(forKey: Key.liveActivity) as? Bool ?? true
         language = defaults.string(forKey: Key.language).flatMap(AppLanguage.init(rawValue:)) ?? .system

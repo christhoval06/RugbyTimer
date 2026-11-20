@@ -7,6 +7,7 @@ struct WatchSubstitutionCountsWidget: View {
     let awayTeamName: String
     let rules: SubstitutionRules
     let events: [MatchEvent]
+    var fixedTeam: String? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -15,9 +16,13 @@ struct WatchSubstitutionCountsWidget: View {
                 .tracking(1)
                 .foregroundStyle(Color.pitchEmerald)
                 .accessibilityHidden(true)
-            row(homeTeamName, tint: .pitchEmerald)
-            Rectangle().fill(Color.armorBorder).frame(height: 1).accessibilityHidden(true)
-            row(awayTeamName, tint: .sinBinAmber)
+            if let fixedTeam {
+                row(fixedTeam, tint: fixedTeam == homeTeamName ? .pitchEmerald : .sinBinAmber)
+            } else {
+                row(homeTeamName, tint: .pitchEmerald)
+                Rectangle().fill(Color.armorBorder).frame(height: 1).accessibilityHidden(true)
+                row(awayTeamName, tint: .sinBinAmber)
+            }
         }
         .padding(8)
         .background(Color.surfaceContainer, in: RoundedRectangle(cornerRadius: 12))

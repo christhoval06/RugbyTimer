@@ -29,6 +29,8 @@ nonisolated public struct MatchConfiguration: Codable, Equatable {
     public var extraTimeFormat: ExtraTimeFormat? = nil
     // Optional so older companions don't track substitutions.
     public var substitutionRules: SubstitutionRules? = nil
+    // Older iPhones leave the Watch's display preferences as they are.
+    public var watchDisplayPreferences: WatchDisplayPreferences? = nil
 }
 
 nonisolated public struct MatchSnapshot: Codable, Equatable {

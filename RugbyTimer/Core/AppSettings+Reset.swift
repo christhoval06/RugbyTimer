@@ -15,6 +15,7 @@ extension AppSettings {
         twentyMinuteRedEnabled = false
         extraTimeFormat = .off
         substitutionRules = SubstitutionRules()
+        watchDisplayPreferences = .standard
         halfTimeBreakSeconds = Self.standardHalfTimeBreakSeconds
         liveActivityEnabled = true
     }

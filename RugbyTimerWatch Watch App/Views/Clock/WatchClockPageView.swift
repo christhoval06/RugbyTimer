@@ -17,6 +17,9 @@ struct WatchClockPageView: View {
     /// Extra-time break: the period the next kick-off starts.
     var nextExtraPeriod: MatchPeriod? = nil
     var onStartExtraPeriod: () -> Void = {}
+    var showsOffFieldPlayers = false
+    var tools: WatchMatchToolsWidget? = nil
+    var includesDetails = true
 
     var body: some View {
         ScrollView {
@@ -35,8 +38,10 @@ struct WatchClockPageView: View {
                         WatchSinBinListWidget(cards: summary.carriedSinBins, injuries: summary.injuries,
                                               title: "STILL OFF FOR H2", actions: offFieldActions)
                     }
-                    WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
-                                             onEndMatch: onEndMatch)
+                    if includesDetails {
+                        WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
+                                                 onEndMatch: onEndMatch)
+                    }
                 case .extraTimeBreak:
                     WatchLivePeriodWidget(matchPeriod: summary.matchPeriod)
                     WatchExtraTimeBreakWidget(homeScore: summary.homeScore, awayScore: summary.awayScore,
@@ -58,7 +63,9 @@ struct WatchClockPageView: View {
                     // The dial carries the period label, like the iPhone clock.
                     WatchLiveClockWidget(timerService: timerService, totalDuration: totalDuration,
                                          matchPeriod: summary.matchPeriod)
-                    WatchClockStatsWidget(timerService: timerService, totalDuration: totalDuration)
+                    if includesDetails {
+                        WatchClockStatsWidget(timerService: timerService, totalDuration: totalDuration)
+                    }
                     WatchUndoLastWidget(lastEntry: lastEntry, onUndo: onUndo)
                     WatchEndPeriodWidget(
                         timerService: timerService,
@@ -66,12 +73,24 @@ struct WatchClockPageView: View {
                         hasWinner: summary.matchPeriod == .suddenDeath && summary.homeScore != summary.awayScore,
                         onEndPeriod: onEndPeriod
                     )
-                    WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
-                                             onEndMatch: onEndMatch)
+                    if includesDetails {
+                        WatchEndMatchEarlyWidget(timerService: timerService, matchPeriod: summary.matchPeriod,
+                                                 onEndMatch: onEndMatch)
+                    }
+                    if showsOffFieldPlayers && (!summary.activeCards.isEmpty || !summary.injuries.isEmpty) {
+                        WatchSinBinListWidget(cards: summary.activeCards, injuries: summary.injuries,
+                                              title: "OFF THE FIELD", actions: offFieldActions)
+                    }
                 }
+                tools
             }
             .padding(.vertical, 4)
             .scenePadding(.horizontal)
         }
     }
+}
+
+#Preview {
+    WatchClockPageView(timerService: MatchTimerService(initialSeconds: 0),
+                       summary: .preview, totalDuration: 2400, onStartSecondHalf: {}, onEndPeriod: {})
 }

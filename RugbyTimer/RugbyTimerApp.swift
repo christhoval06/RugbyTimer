@@ -35,7 +35,7 @@ public struct RugbyTimerApp: App {
                         watchBattery: appState.connectivityService.watchBatteryLevel,
                         isWatchAvailable: appState.connectivityService.isWatchAvailable,
                         onPrepareMatch: {
-                            appState.prepareMatch()
+                            appState.prepareMatch(watchDisplayPreferences: settings.watchDisplayPreferences)
                         },
                         onRunOnPhone: {
                             appState.prepareMatch(onPhone: true)

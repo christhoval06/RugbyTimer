@@ -14,9 +14,8 @@ extension XCTestCase {
     @MainActor
     func kickOffPhoneMatch(_ app: XCUIApplication) {
         let runOnPhone = app.buttons["runMatchOnPhone"]
-        XCTAssertTrue(runOnPhone.waitForExistence(timeout: 5))
-        for _ in 0..<4 where !runOnPhone.isHittable { app.swipeUp() }
-        runOnPhone.tap()
+        if !runOnPhone.isHittable { app.scrollViews.firstMatch.swipeDown() }
+        tapElement(runOnPhone)
         tapElement(app.buttons["kickOffFirstHalf"])
     }
 

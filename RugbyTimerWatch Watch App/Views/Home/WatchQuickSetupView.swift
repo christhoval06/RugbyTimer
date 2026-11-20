@@ -12,6 +12,9 @@ struct WatchQuickSetupView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Watch display settings") {
+                    WatchDisplayTogglesWidget()
+                }
                 Section {
                     minutesPicker("Half length", selection: $setup.halfSeconds,
                                   options: WatchQuickSetup.halfMinuteOptions)

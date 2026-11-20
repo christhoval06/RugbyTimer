@@ -1,9 +1,7 @@
 import SwiftUI
 
 struct WatchLiveMatchView: View {
-    /// Swipe order while playing: Substitutions ← Sanctions ← Penalties ← Clock → Score → Result (last).
-    /// Substitutions also show at the breaks, and only when the match tracks them.
-    enum Page: Hashable { case substitutions, sanctions, penalties, clock, score, result }
+    typealias Page = WatchMatchPage
 
     let timerService: MatchTimerService
     let activeCards: [MatchCard]
@@ -34,56 +32,47 @@ struct WatchLiveMatchView: View {
     var substitutionRules = SubstitutionRules()
     var onSubstitute: (String, Int, Int) -> Void = { _, _, _ in }
 
+    @AppStorage(WatchDisplayPreferences.extendedLayoutKey) private var extendedLayout = false
+    @AppStorage(WatchDisplayPreferences.showDisciplineKey) private var showDiscipline = true
+
+    var showsDiscipline: Bool { showDiscipline }
+
     @State var page: Page = .clock
+    @State var centerPage: WatchCenterPagesWidget.Page = .timers
 
     var isPlaying: Bool { matchPeriod.isPlaying }
 
     var body: some View {
-        TabView(selection: $page) {
-            offFieldPages
-
-            WatchClockPageView(
-                timerService: timerService,
-                summary: summary,
-                totalDuration: totalDuration,
-                onStartSecondHalf: onStartSecondHalf,
-                onEndPeriod: onEndPeriod,
-                onEndMatch: onEndMatch,
-                onNewMatch: onNewMatch,
-                lastEntry: matchEvents.last,
-                offFieldActions: offFieldActions,
-                onUndo: onUndo,
-                nextExtraPeriod: nextExtraPeriod,
-                onStartExtraPeriod: onStartExtraPeriod
-            )
-            .tag(Page.clock)
-
-            if isPlaying {
-                WatchScorePageView(
-                    homeTeamName: homeTeamName,
-                    awayTeamName: awayTeamName,
-                    homeScore: homeScore,
-                    awayScore: awayScore,
-                    onScore: { team, player, points, description in
-                        onScore(team, player, points, description)
-                        returnToMatch()
-                    }
-                )
-                .tag(Page.score)
+        Group {
+            if extendedLayout {
+                extendedPages
+            } else {
+                compactPages
             }
-
-            WatchResultPageView(summary: summary)
-                .tag(Page.result)
         }
-        .tabViewStyle(.page(indexDisplayMode: .always))
         .background(Color.pitchVoid.ignoresSafeArea())
-        .onChange(of: matchPeriod) {
-            if !isPlaying && (page == .sanctions || page == .penalties || page == .score) { page = .clock }
+        .onChange(of: matchPeriod, initial: true) {
+            if case .team = page { page = .clock }
+            if !isPlaying && [.score, .sanctions, .penalties].contains(page) { page = .clock }
             if !showsSubstitutions && page == .substitutions { page = .clock }
+            centerPage = matchPeriod == .fullTime ? .results : .timers
+        }
+        .onChange(of: showDiscipline) {
+            if [.sanctions, .penalties].contains(page) { page = .clock }
+        }
+        .onChange(of: extendedMatchPages) {
+            if extendedLayout && !extendedMatchPages.contains(page) { page = .clock }
+        }
+        .onChange(of: extendedLayout) {
+            page = .clock
+            centerPage = matchPeriod == .fullTime ? .results : .timers
         }
     }
 
     func returnToMatch() {
-        withAnimation { page = .clock }
+        withAnimation {
+            page = .clock
+            centerPage = .timers
+        }
     }
 }
